@@ -1,0 +1,24 @@
+:root {
+    --primary-color: #8447FF;
+    --secondary-color: #D972FF;
+    --accent-color: #F9A620;
+    --additional-color: #21B792;
+    --text-color: #150509;
+    --background-color-1: #FFFFFF;
+    /* ზოგი სექციის ბექგრაუნდი */
+    --background-color-2: #F9F6FF;
+    /* ბოქსების ფერი */
+    --box-color: #8447FF;
+    /* ბოქსებზე ჰოვერისას */
+    --box-hover-color: #6323E4;
+    /* აიქონზე ჰოვერისას */
+    --icon-hover-color: #DAC8FF;
+    /* ფოტოების ფერები */
+    --photo-frame-color: #FFC619;
+    /* გრადიენტის ერთი ფერი */
+    --gradient-color-1: #3442D9;
+    /* გრადიენტის მეორე ფერი */
+    --gradient-color-2: #B947FF;
+
+    /* --font-family-base: 'Arial, sans-serif'; */
+}
