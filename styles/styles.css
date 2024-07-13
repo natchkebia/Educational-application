@@ -20,5 +20,156 @@
     /* გრადიენტის მეორე ფერი */
     --gradient-color-2: #B947FF;
 
-    /* --font-family-base: 'Arial, sans-serif'; */
+    --font-family-figaro: 'Arial, sans-serif';
+    --font-family-Gilroy: 'Arial, sans-serif';
+    /* ფონტები შესაცვლელია */
+}
+
+
+
+/* main reset styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*  */
+
+/* Often repeated styles */
+.container {
+    max-width: 1440px;
+    width: 100%;
+    /* padding არის იმისათვის რომ ბოლომდე ეკრანის დაპატარავებისას
+    არ მიეკრას კიდეებს კონტენტი*/
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+.btn {
+    border-radius: 8px;
+    background-color: var(--box-color);
+    font-family: var(--font-family-figaro);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    text-align: left;
+    color: var(--background-color-1);
+}
+
+/* padding ყველა btn–ს გაუწერე ცალკე*/
+
+
+
+.btn:hover {
+    background: #6323E4;
+}
+
+/* h1 {
+font-family: var(--font-family-Gilroy);
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 51px;
+    text-align: left;
+    color: var(--text-color);
+} */
+
+section .title {
+    font-family: var(--font-family-figaro);
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: left;
+    color: var(--text-color);
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--gradient-color-2), var(--gradient-color-1));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* slider arrows */
+
+.arrow-btn {
+    display: inline-block;
+    background-size: cover;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--box-color);
+    border-radius: 50%;
+    position: relative;
+    background-color: transparent;
+}
+
+.arrow-btn svg,
+.nav-icons svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.arrow-btn svg {
+    stroke: var(--box-color);
+}
+
+.arrow-btn:hover {
+    background-color: #8447FF4D;
+}
+
+.arrow-btn:active {
+    background-color: var(--box-color);
+}
+
+.arrow-btn:active svg {
+    stroke: var(--background-color-1);
+}
+
+.prew-btn {
+    transform: rotate(180deg);
+}
+
+/*  */
+
+/* headers icons */
+
+.nav-icons {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 8px;
+    /* padding: 10px; */
+    position: relative;
+}
+
+.nav-icons svg {
+    stroke: black;
+}
+
+.nav-icons:hover {
+    background-color: var(--background-color-2);
+}
+
+.nav-icons:hover svg {
+    stroke: var(--primary-color);
 }
