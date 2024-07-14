@@ -174,7 +174,7 @@ section .title {
 } */
 
 .footer__logo {
-    border-top: 1px solid #000000;
+    border-top: 1px solid #00000020;
 }
 
 .footer__logo a {
@@ -345,4 +345,41 @@ section .title {
     flex-direction: row;
     align-items: center;
 
+}
+
+
+/*  */
+.footer__social {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #00000020;
+    padding: 44px 0px;
+}
+
+.footer__rights span {
+    font-family: var(--font-family-figaro);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: var(--text-color);
+    opacity: 50%;
+}
+
+.footer__social--icons {
+    display: flex;
+    gap: 24px;
+}
+
+.footer__social--links {
+    width: 24px;
+    height: 24px;
+    margin-right: 24px;
+}
+
+.footer__social--links:last-child {
+    margin-right: 0px;
 }
