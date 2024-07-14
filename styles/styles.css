@@ -173,3 +173,5 @@ section .title {
 .nav-icons:hover svg {
     stroke: var(--primary-color);
 }
+
+/* test */
