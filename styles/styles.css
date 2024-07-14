@@ -68,6 +68,8 @@ svg {
     line-height: 19.2px;
     text-align: left;
     color: var(--background-color-1);
+    border: none;
+    outline: none;
 }
 
 .btn:hover {
@@ -153,4 +155,36 @@ section .title {
 
 .nav-icons:hover svg {
     stroke: var(--primary-color);
+}
+
+
+/* libary section */
+
+.library-video__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.library-video__container--text {
+    max-width: 564px;
+    width: 100%;
+}
+
+.library-video__container--text p {
+    font-family: var(--font-family-figaro);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-top: 42px;
+}
+
+.library-video__container--text button {
+    padding: 12px 46px;
+    margin-top: 42px;
+}
+
+.library-video__container--image {
+    max-width: 508px;
+    width: 100%;
 }
