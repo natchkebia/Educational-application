@@ -1,156 +1,207 @@
 :root {
-    --primary-color: #8447FF;
-    --secondary-color: #D972FF;
-    --accent-color: #F9A620;
-    --additional-color: #21B792;
-    --text-color: #150509;
-    --background-color-1: #FFFFFF;
-    /* ზოგი სექციის ბექგრაუნდი */
-    --background-color-2: #F9F6FF;
-    /* ბოქსების ფერი */
-    --box-color: #8447FF;
-    /* ბოქსებზე ჰოვერისას */
-    --box-hover-color: #6323E4;
-    /* აიქონზე ჰოვერისას */
-    --icon-hover-color: #DAC8FF;
-    /* ფოტოების ფერები */
-    --photo-frame-color: #FFC619;
-    /* გრადიენტის ერთი ფერი */
-    --gradient-color-1: #3442D9;
-    /* გრადიენტის მეორე ფერი */
-    --gradient-color-2: #B947FF;
+  --primary-color: #8447ff;
+  --secondary-color: #d972ff;
+  --accent-color: #f9a620;
+  --additional-color: #21b792;
+  --text-color: #150509;
+  --background-color-1: #ffffff;
+  /* ზოგი სექციის ბექგრაუნდი */
+  --background-color-2: #f9f6ff;
+  /* ბოქსების ფერი */
+  --box-color: #8447ff;
+  /* ბოქსებზე ჰოვერისას */
+  --box-hover-color: #6323e4;
+  /* აიქონზე ჰოვერისას */
+  --icon-hover-color: #dac8ff;
+  /* ფოტოების ფერები */
+  --photo-frame-color: #ffc619;
+  /* გრადიენტის ერთი ფერი */
+  --gradient-color-1: #3442d9;
+  /* გრადიენტის მეორე ფერი */
+  --gradient-color-2: #b947ff;
 
-    --font-family-figaro: 'Arial, sans-serif';
-    --font-family-Gilroy: 'Arial, sans-serif';
-    /* ფონტები შესაცვლელია */
+  --font-family-figaro: "Arial, sans-serif";
+  --font-family-Gilroy: "Arial, sans-serif";
+  /* ფონტები შესაცვლელია */
 }
-
-
 
 /* main reset styles */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 ul,
 ol {
-    list-style: none;
+  list-style: none;
 }
 
 img,
 svg {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* Often repeated styles */
 .container {
-    max-width: 1152px;
-    width: 100%;
-    padding: 0 16px;
-    margin: 0 auto;
+  max-width: 1152px;
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
 }
 
 .btn {
-    border-radius: 8px;
-    background-color: var(--box-color);
-    font-family: var(--font-family-figaro);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 19.2px;
-    text-align: left;
-    color: var(--background-color-1);
+  border-radius: 8px;
+  background-color: var(--box-color);
+  font-family: var(--font-family-figaro);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  text-align: left;
+  color: var(--background-color-1);
 }
 
 .btn:hover {
-    background: #6323E4;
+  background: #6323e4;
 }
 
-
 section .title {
-    font-family: var(--font-family-figaro);
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 48px;
-    text-align: left;
-    color: var(--text-color);
+  font-family: var(--font-family-figaro);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  text-align: left;
+  color: var(--text-color);
 }
 
 .gradient-text {
-    background: linear-gradient(90deg, var(--gradient-color-2), var(--gradient-color-1));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  background: linear-gradient(
+    90deg,
+    var(--gradient-color-2),
+    var(--gradient-color-1)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* slider arrows */
 
 .arrow-btn {
-    display: inline-block;
-    background-size: cover;
-    width: 46px;
-    height: 46px;
-    border: 1px solid var(--box-color);
-    border-radius: 50%;
-    position: relative;
-    background-color: transparent;
+  display: inline-block;
+  background-size: cover;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--box-color);
+  border-radius: 50%;
+  position: relative;
+  background-color: transparent;
 }
 
 .arrow-btn svg,
 .nav-icons svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .arrow-btn svg {
-    stroke: var(--box-color);
+  stroke: var(--box-color);
 }
 
 .arrow-btn:hover {
-    background-color: #8447FF4D;
+  background-color: var(--text-color);
 }
 
 .arrow-btn:active {
-    background-color: var(--box-color);
+  background-color: var(--box-color);
 }
 
 .arrow-btn:active svg {
-    stroke: var(--background-color-1);
+  stroke: var(--background-color-1);
 }
 
 .prew-btn {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* headers icons */
 
 .nav-icons {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    border-radius: 8px;
-    position: relative;
+  display: flex;
+  width: 40px;
+  background-color: transparent;
+  border-radius: 8px;
+  position: relative;
 }
 
 .nav-icons svg {
-    stroke: black;
+  stroke: black;
 }
 
 .nav-icons:hover {
-    background-color: var(--background-color-2);
+  background-color: var(--background-color-2);
 }
 
 .nav-icons:hover svg {
-    stroke: var(--primary-color);
+  stroke: var(--primary-color);
+}
+
+
+/* header */
+.header {
+  width: 100%;
+  position: fixed;
+}
+.header__logo--link {
+  display: inline-block;
+  width: 170px;
+}
+.header__logo--link img {
+  height: 58px;
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__nav--list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.header__nav--list .header__nav--list--link {
+  --font-family-figaro: "Arial, sans-serif";
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 19.2px;
+  opacity:  60%;
+  font-weight: 500;
+}
+.header__nav--list .header__nav--list--link:hover {
+  color: var(--box-color);
+  opacity: 100%;
+}
+.header__nav--icons {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  justify-content: space-between;
+}
+.login-btn {
+  padding: 10px 20px;
+  opacity: 100%;
+  cursor: pointer;
+}
+.burger-bar {
+  display: none;
 }
