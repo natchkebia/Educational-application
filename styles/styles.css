@@ -163,6 +163,7 @@ section .title {
 
 .hero {
   background-color: var(--background-color-2);
+  margin-top: 96px;
 }
 
 .hero__container {
