@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>educational application</title>
+    <title>Educational Application</title>
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
@@ -127,6 +127,98 @@
       </div>
     </header>
     <main></main>
+    <header></header>
+    <main>
+      <section class="hero">
+        <div class="hero__container">
+          <div class="hero__container--slider">
+            <div class="slider__slide">
+              <img
+                src="images/lending-slider/Developer (1)_2_desktop.png"
+                alt="Developer"
+              />
+              <div class="slider__text">
+                <h1>გახდი დეველოპერი!</h1>
+                <p>შეისწავლე <span>Front-end დეველოპმენტი</span></p>
+                <button class="btn">
+                  სრულად ნახვა
+                  <object type="image/svg+xml" data="icons/buttonErrow.svg"></object>
+                </button>
+              </div>
+            </div>
+            <div class="slider__slide">
+              <img
+                src="images/lending-slider/Designer_1_desktop.png"
+                alt="Designer"
+              />
+              <div class="slider__text">
+                <h1>გახდი დიზაინერი!</h1>
+                <p>შეისწავლე <span>გრაფიკული დიზაინი</span></p>
+                <button class="btn">
+                  სრულად ნახვა
+                  <object type="image/svg+xml" data="icons/buttonErrow.svg"></object>
+                </button>
+              </div>
+            </div>
+            <div class="slider__slide">
+              <img
+                src="images/lending-slider/Businessman_1-desktop.png"
+                alt="Businessman"
+              />
+              <div class="slider__text">
+                <h1>გახდი ბიზნესმენი!</h1>
+                <p>შექმენი საკუთარი <span>ბიზნესი/სტარტაპი</span></p>
+                <button class="btn">
+                  სრულად ნახვა
+                  <object type="image/svg+xml" data="icons/buttonErrow.svg"></object>
+                </button>
+              </div>
+            </div>
+          </div>
+          <a class="arrow-btn prew-btn prev" onclick="moveSlide(-1)">
+            <svg
+              width="46"
+              height="46"
+              viewBox="0 0 46 46"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21 17L26 23L21 29"
+                stroke=""
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="23" cy="23" r="22.5" stroke="#8447FF" />
+            </svg>
+          </a>
+          <a class="arrow-btn next" onclick="moveSlide(1)">
+            <svg
+              width="46"
+              height="46"
+              viewBox="0 0 46 46"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21 17L26 23L21 29"
+                stroke=""
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="23" cy="23" r="22.5" stroke="#8447FF" />
+            </svg>
+          </a>
+          <div class="dots-container">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer></footer>
     <script src="/js/script.js"></script>
   </body>
