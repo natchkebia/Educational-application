@@ -58,10 +58,6 @@ svg {
 }
 
 .btn {
-  width: 101px;
-  height: 40px;
-  margin-left: 24px;
-  padding: 10px 20px;
   border-radius: 8px;
   background-color: var(--box-color);
   font-family: var(--font-family-figaro);
@@ -142,7 +138,6 @@ section .title {
 .nav-icons {
   display: flex;
   width: 40px;
-  /* height: 40px; */
   background-color: transparent;
   border-radius: 8px;
   position: relative;
@@ -160,11 +155,11 @@ section .title {
   stroke: var(--primary-color);
 }
 
-/* header */
 
+/* header */
 .header {
-  /* height: 96px;
-  position: fixed; */
+  width: 100%;
+  position: fixed;
 }
 .header__logo--link {
   display: inline-block;
@@ -202,13 +197,11 @@ section .title {
   gap: 6px;
   justify-content: space-between;
 }
-
-/* .header__wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
-
+.login-btn {
+  padding: 10px 20px;
+  opacity: 100%;
+  cursor: pointer;
+}
 .burger-bar {
   display: none;
 }
