@@ -85,11 +85,9 @@ section .title {
 }
 
 .gradient-text {
-  background: linear-gradient(
-    90deg,
-    var(--gradient-color-2),
-    var(--gradient-color-1)
-  );
+  background: linear-gradient(90deg,
+      var(--gradient-color-2),
+      var(--gradient-color-1));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -159,11 +157,14 @@ section .title {
   stroke: var(--primary-color);
 }
 
+main {
+  margin-top: 96px;
+}
+
 /* hero section */
 
 .hero {
   background-color: var(--background-color-2);
-  margin-top: 96px;
 }
 
 .hero__container {
@@ -199,7 +200,7 @@ section .title {
   right: 140px;
 }
 
-.slider__text > h1 {
+.slider__text>h1 {
   font-family: var(--font-family-Gilroy);
   font-size: 40px;
   font-weight: 900;
@@ -274,6 +275,7 @@ section .title {
   background-color: var(--box-color);
 }
 
+
 /* hero section */
 
 .hero {
@@ -314,7 +316,7 @@ section .title {
   right: 140px;
 }
 
-.slider__text > h1 {
+.slider__text>h1 {
   font-family: var(--font-family-Gilroy);
   font-size: 40px;
   font-weight: 900;
@@ -394,48 +396,61 @@ section .title {
 .header {
   width: 100%;
   position: fixed;
+  z-index: 999;
+  top: 0;
+  background-color: var(--background-color-1);
 }
+
 .header__logo--link {
   display: inline-block;
   width: 170px;
 }
+
 .header__logo--link img {
   height: 58px;
 }
+
 .navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 96px;
 }
+
 .header__nav--list {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
 }
+
 .header__nav--list .header__nav--list--link {
   --font-family-figaro: "Arial, sans-serif";
   color: var(--text-color);
   font-size: 16px;
   line-height: 19.2px;
-  opacity:  60%;
+  opacity: 60%;
   font-weight: 500;
 }
+
 .header__nav--list .header__nav--list--link:hover {
   color: var(--box-color);
   opacity: 100%;
 }
+
 .header__nav--icons {
   display: flex;
   flex-direction: row;
   gap: 6px;
   justify-content: space-between;
 }
+
 .login-btn {
   padding: 10px 20px;
   opacity: 100%;
   cursor: pointer;
 }
+
 .burger-bar {
   display: none;
 }
