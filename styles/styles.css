@@ -51,7 +51,6 @@ svg {
 
 /* Often repeated styles */
 .container {
-  display: flex;
   max-width: 1152px;
   width: 100%;
   padding: 0 16px;
@@ -59,10 +58,6 @@ svg {
 }
 
 .btn {
-  width: 101px;
-  height: 40px;
-  margin-left: 24px;
-  padding: 10px 20px;
   border-radius: 8px;
   background-color: var(--box-color);
   font-family: var(--font-family-figaro);
@@ -143,7 +138,6 @@ section .title {
 .nav-icons {
   display: flex;
   width: 40px;
-  /* height: 40px; */
   background-color: transparent;
   border-radius: 8px;
   position: relative;
@@ -161,43 +155,62 @@ section .title {
   stroke: var(--primary-color);
 }
 
-/* testimonials */
-h1 {
-  --font-family-figaro: "Arial, sans-serif";
-  font-size: 40px;
+
+.illustrations {
+  padding: 0 24px;
 }
-p {
+.section__title {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+.section__title h3 {
+  --font-family-figaro: "Arial, sans-serif";
+  margin-bottom: 16px;
+  font-size: 40px;
+  line-height: 24px;
+  color: black;
+}
+.section__title p {
   --font-family-figaro: "Arial, sans-serif";
   font-size: 16px;
 }
-.testimonial-area {
-  background-color: var(--background-color-2);
+.illustrations__slider {
+  overflow-x: hidden;
+  margin: 0 auto;
 }
-.testimonials {
+.overflow {
+  /* width: 1544px; */
+  /* height: 101px; */
   display: flex;
   overflow: hidden;
+
 }
-.testimonial {
-  flex: 1;
-  text-align: left;
-  width: 270px;
-  height: 236px;
+.reverse .illustrations__wrapper {
+  animation-direction: reverse;
 }
-.testimonial img {
-  border-radius: 50%;
-  width: 74px;
-  height: 74px;
+.illustrations__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  animation: logoLoop 8s linear infinite ;
 }
-.testimonial h3 {
-  --font-family-figaro: "Arial, sans-serif";
-  font-size: 20px;
+.illustrations__item {
+  display: grid;
+  place-items: center;
+  padding: 0.5rem;
+  aspect-ratio: 30/9;
 }
-.testimonial p {
-  --font-family-figaro: "Arial, sans-serif";
-  font-size: 12px;
+.illustrations__item img {
+  width: 368px;
+  height: 101px;
 }
-.testimonial blockquote {
-  --font-family-figaro: "Arial, sans-serif";
-  font-size: 10px;
-  margin-top: 12px;
+
+@keyframes logoLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
