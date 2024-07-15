@@ -488,8 +488,8 @@ main {
 }
 
 
-.prev, .next {
-    top:80px;
+#prev, #next {
+    top:90px;
 }
 
   .courses__slider--card {
