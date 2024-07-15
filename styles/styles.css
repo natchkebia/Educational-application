@@ -717,3 +717,231 @@ main {
     max-width: 508px;
     width: 100%;
 }
+
+
+/* footer */
+
+/* @media (max-width: 768px) {
+    .footer__navigation {
+        flex-direction: column;
+    }
+
+    .list {
+        display: none;
+    }
+
+    .column.active .list {
+        display: block;
+    }
+} */
+
+.footer__logo {
+    border-top: 1px solid #00000020;
+}
+
+.footer__logo a {
+    width: 170px;
+    height: 58px;
+    display: inline-block;
+    margin: 40px auto;
+}
+
+.footer__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.footer__navigation {
+    width: 50%;
+    display: flex;
+    gap: 20px;
+}
+
+.footer__navigation .column {
+    flex: 1;
+}
+
+.column .column--title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 36px;
+    font-family: var(--font-family-figaro);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    text-align: left;
+
+}
+
+.arrow {
+    display: none;
+}
+
+
+.column .list li {
+    margin-bottom: 26px;
+    font-family: var(--font-family-figaro);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.8px;
+    text-align: left;
+}
+
+.column .list li:last-child {
+    margin-bottom: 0px;
+}
+
+
+/* subscription */
+
+.footer__contact {
+    max-width: 490px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.subscription {
+    width: 100%;
+    margin-bottom: 34px;
+}
+
+.subscription__form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.subscription__label {
+    margin-bottom: 36px;
+    font-family: var(--font-family-figaro);
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 19.2px;
+}
+
+.subscription__btn {
+    display: inline-flex;
+    max-width: 490px;
+    width: 100%;
+}
+
+.subscription__input {
+    width: 100%;
+    padding: 16px;
+    display: inline-block;
+    /* margin-bottom: 10px; */
+    font-family: var(--font-family-figaro);
+    font-size: 14px;
+    border: 1px solid #8447FF80;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    appearance: none;
+    outline: none;
+    background: none;
+}
+
+.subscription__button {
+    padding: 16px 40px;
+    font-family: var(--font-family-figaro);
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background-color: var(--box-color);
+    border: none;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.subscription__button:hover {
+    background-color: var(--box-hover-color);
+}
+
+
+
+/* contact */
+.footer__contact--info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+.footer__contact--call,
+.footer__contact--email {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__contact--call span,
+.footer__contact--email span {
+    font-family: var(--font-family-figaro);
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.footer__contact--call a,
+.footer__contact--email a {
+    font-family: var(--font-family-figaro);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23.97px;
+    color: var(--primary-color);
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+
+/*  */
+.footer__social {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #00000020;
+    padding: 44px 0px;
+}
+
+.footer__rights span {
+    font-family: var(--font-family-figaro);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: var(--text-color);
+    opacity: 50%;
+}
+
+.footer__social--icons {
+    display: flex;
+    gap: 24px;
+}
+
+.footer__social--links {
+    width: 24px;
+    height: 24px;
+    margin-right: 24px;
+}
+
+.footer__social--links:last-child {
+    margin-right: 0px;
+}
