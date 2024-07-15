@@ -50,6 +50,11 @@ svg {
 }
 
 /* Often repeated styles */
+body {
+    font-family: var(--font-family-figaro);
+    color: var(--text-color);
+}
+
 .container {
   max-width: 1152px;
   width: 100%;
@@ -453,4 +458,88 @@ main {
 
 .burger-bar {
   display: none;
+
+
+/* section about */
+.about {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: var(--background-color-1);
+
+}
+
+.about__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 47px;
+}
+
+.about__header--title {
+    max-width: 260px;
+    width: 100%;
+}
+
+.about__header--desc {
+    max-width: 658px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.about__cards--wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 24px;
+    row-gap: 16px;
+}
+
+.about__card {
+    max-width: 368px;
+    width: 100%;
+    height: 360px;
+    border-radius: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.about__card--img {
+    margin: 16px 18px auto 8px;
+}
+
+.about__card--content {
+    height: 154px;
+    display: flex;
+    align-content: space-between;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about__card--title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.about__card--title::before {
+    content: url('../images/icons/triangle.svg');
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-right: 9px;
+}
+
+.about__card--desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-right: 26px;
+    margin-bottom: 30px;
 }
