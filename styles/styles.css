@@ -53,7 +53,6 @@ svg {
 .container {
   display: flex;
   max-width: 1152px;
-  height: 58px;
   width: 100%;
   padding: 0 16px;
   margin: 0 auto;
@@ -162,34 +161,43 @@ section .title {
   stroke: var(--primary-color);
 }
 
-/* header */
-header {
-  width: 1440px;
-  height: 96px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo {
-  width: 170px;
-  height: 58px;
-  margin-right: 242px;
-}
-
-nav ul {
-  margin-top: 28px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-nav ul li a {
+/* testimonials */
+h1 {
   --font-family-figaro: "Arial, sans-serif";
-  color: var(--text-color);
-  font-size: 16px;
-  line-height: 19.2px;
-  padding: 10.5px 24px;
+  font-size: 40px;
 }
-
-nav ul li a:hover {
-  color: var(--box-color);
+p {
+  --font-family-figaro: "Arial, sans-serif";
+  font-size: 16px;
+}
+.testimonial-area {
+  background-color: var(--background-color-2);
+}
+.testimonials {
+  display: flex;
+  overflow: hidden;
+}
+.testimonial {
+  flex: 1;
+  text-align: left;
+  width: 270px;
+  height: 236px;
+}
+.testimonial img {
+  border-radius: 50%;
+  width: 74px;
+  height: 74px;
+}
+.testimonial h3 {
+  --font-family-figaro: "Arial, sans-serif";
+  font-size: 20px;
+}
+.testimonial p {
+  --font-family-figaro: "Arial, sans-serif";
+  font-size: 12px;
+}
+.testimonial blockquote {
+  --font-family-figaro: "Arial, sans-serif";
+  font-size: 10px;
+  margin-top: 12px;
 }
