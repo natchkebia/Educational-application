@@ -2,4 +2,8 @@
     .header__nav--list .header__nav--list--item {
         display: none;
     }
+        .burger-bar {
+            display: block;
+    
+        }
 }
