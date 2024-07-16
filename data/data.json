@@ -1,0 +1,131 @@
+{
+  "slider1": [
+    {
+      "photoDesktop": "./images/lending-slider/Developer_desktop.png",
+      "photoMobile": "./images/lending-slider/Developer_mobile.png",
+      "profession": "დეველოპერი",
+      "course_name": "Front-end დეველოპმენტი"
+    },
+    {
+      "photoDesktop": "./images/lending-slider/Designer_desktop.png",
+      "photoMobile": "./images/lending-slider/Designer_mobile.png",
+      "profession": "დიზაინერი",
+      "course_name": "გრაფიკული დიზაინი"
+    },
+    {
+      "photoDesktop": "./images/lending-slider/Businessman_desktop.png",
+      "photoMobile": "./images/lending-slider/Businessman_mobile.png",
+      "profession": "ბიზნესმენი",
+      "course_name": " შექმენი საკუთარი ბიზნესი/სტარტაპი"
+    }
+  ],
+
+  "slider2": [
+    {
+      "course_name": "JavaScript Basics",
+      "photo": "./images/cards-photos/Course1_1.png",
+      "price": "700",
+      "duration": "30",
+      "lessons": 10,
+      "course_description": "ისწავლეთ JavaScript-ის საფუძვლები, ყველაზე პოპულარული პროგრამირების ენა ვებ დეველოპმენტისთვის.",
+      "date": "1–28 ივლისი 2024",
+      "sale_percentage": 20,
+      "stars": 4.5
+    },
+    {
+      "course_name": "CSS Mastery",
+      "photo": "./images/cards-photos/Course2_1.png",
+      "price": "350",
+      "duration": "12",
+      "lessons": 4,
+      "course_description": "დაეუფლეთ CSS-ს და ისწავლეთ ვებ გვერდების პროფესიონალური სტილი.",
+      "date": "1–28 ივლისი 2024",
+      "sale_percentage": 15,
+      "stars": 4.7
+    },
+    {
+      "course_name": "კიბერუსაფრთხოების საფუძვლების კურსი",
+      "photo": "./images/cards-photos/Course3_1.png",
+      "price": "1090",
+      "duration": "20",
+      "lessons": 8,
+      "course_description": "ისწავლეთ კიბერუსაფრთხოების სფეროს ტენდენციები და მიმართულებები.",
+      "date": "1–17 ივლისი 2024",
+      "sale_percentage": 50,
+      "stars": 4.5
+    },
+    {
+      "course_name": "WordPress",
+      "photo": "./images/cards-photos/Course4_1.png",
+      "price": "400",
+      "duration": "12",
+      "lessons": 4,
+      "course_description": "შექმენით უფასო ვებსაიტი WordPress-ით",
+      "date": "1–28 აგვისტო 2024",
+      "sale_percentage": 30,
+      "stars": 4.1
+    }
+  ],
+  "slider3": [
+    {
+      "directionGeo": "დიზაინი",
+      "directionEng": "Design",
+      "img_link": "./images/Illustrations/design.png"
+    },
+    {
+      "directionGeo": "დეველოპმენტი",
+      "directionEng": "Development",
+      "img_link": "./images/Illustrations/development.png"
+    },
+    {
+      "directionGeo": "მარკეტინგი",
+      "directionEng": "Marketing",
+      "img_link": "./images/Illustrations/marketing.png"
+    },
+    {
+      "directionGeo": "ტექნოლოგიები",
+      "directionEng": "IT and software",
+      "img_link": "./images/Illustrations/itSoftware.png"
+    },
+    {
+      "directionGeo": "ბიზნესი",
+      "directionEng": "Business",
+      "img_link": "./images/Illustrations/business.png"
+    },
+    {
+      "directionGeo": "პერსონალური განვითარება",
+      "directionEng": "Personal development",
+      "img_link": "./images/Illustrations/personalDev.png"
+    }
+  ],
+  "slider4": [
+    {
+      "user_img": "./images/customers/user-1.png",
+      "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
+      "rating": 5,
+      "name": "ფელიპე მ.",
+      "username": "@username_of_person"
+    },
+    {
+      "user_img": "./images/customers/user-2.png",
+      "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
+      "rating": 5,
+      "name": "ჯენიფერ ჯ.",
+      "username": "@username_of_person"
+    },
+    {
+      "user_img": "./images/customers/user-3.png",
+      "comment": "მე პირდაპირ გამოვიყენე ცნებები და უნარები, რომლებიც ჩემი კურსებიდან ვისწავლე ახალი საინტერესო პროექტისთვის",
+      "rating": 5,
+      "name": "ნინო კ.",
+      "username": "@username_of_person"
+    },
+    {
+      "user_img": "./images/customers/user-4.png",
+      "comment": "„როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
+      "rating": 5,
+      "name": "ანასტასია ს.",
+      "username": "@username_of_person"
+    }
+  ]
+}
