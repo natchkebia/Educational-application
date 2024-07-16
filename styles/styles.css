@@ -162,42 +162,96 @@ section .title {
 }
 
 /* testimonials */
-h1 {
-  --font-family-figaro: "Arial, sans-serif";
-  font-size: 40px;
-}
-p {
-  --font-family-figaro: "Arial, sans-serif";
-  font-size: 16px;
-}
-.testimonial-area {
+
+.testimonials {
   background-color: var(--background-color-2);
 }
-.testimonials {
+.testimonial__slider--wrapper {
+  max-width: 1440px;
+  width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 100px;
+}
+.testslider {
+  width: 1152px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+.testimonial__slider--text {
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 100px;
+  margin-bottom: 49px;
+}
+.testimonials__container {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.3s ease;
+}
+.testimonials__slider--card {
+  min-width: 270px;
+  height: 236px;
+  position: relative;
+  background-color: white;
+  border-radius: 12px;
   overflow: hidden;
 }
-.testimonial {
-  flex: 1;
-  text-align: left;
-  width: 270px;
-  height: 236px;
+.testimonial__slider--description {
+  display: flex;
+  margin-top: 10px;
 }
-.testimonial img {
-  border-radius: 50%;
-  width: 74px;
-  height: 74px;
+.testimonial__slider--description p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  opacity: 70%;
 }
-.testimonial h3 {
-  --font-family-figaro: "Arial, sans-serif";
+.testslider__card--text {
+  width: 228px;
+  margin: 0 auto;
+  margin-top: 42px;
+  color: #000000;
+}
+.testslider__card--text h3 {
   font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 4px;
 }
-.testimonial p {
-  --font-family-figaro: "Arial, sans-serif";
+.testslider__card--comma {
+  display: flex;
+}
+.testslider__card--comma svg {
+  margin-left: 85px;
+}
+.testslider__card--text p {
   font-size: 12px;
+  font-weight: 350;
+  line-height: 14.4px;
+  opacity: 40%;
+  margin-bottom: 11px;
 }
-.testimonial blockquote {
-  --font-family-figaro: "Arial, sans-serif";
+.testslider__card----describe {
   font-size: 10px;
-  margin-top: 12px;
+  font-weight: 600;
+  line-height: 12px;
+  opacity: 50%;
+}
+.testimonials__slider--stars {
+  margin: 12px 0 0 21px;
+}
+#prev {
+  left: 0;
+  position: absolute;
+  top: 50%;
+}
+#next {
+  right: 0;
+  position: absolute;
+  top: 50%;
 }

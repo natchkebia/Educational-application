@@ -7,212 +7,422 @@
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
-    <header></header>
     <main>
-      <section class="testimonial-area">
-        <a class="arrow-btn prew-btn prev">
-          <svg
-            width="46"
-            height="46"
-            viewBox="0 0 46 46"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M21 17L26 23L21 29"
-              stroke=""
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <circle cx="23" cy="23" r="22.5" stroke="#8447FF" />
-          </svg>
-        </a>
+      <!-- testimonial -->
+      <section class="testimonials">
+        <div class="testimonial__slider--wrapper">
+          <div class="testslider">
+            <div class="testimonial__slider--text">
+              <h3 class="title">
+                როგორ გვაფასებენ
+                <span class="gradient-text">მომხმარებლები?</span>
+              </h3>
+              <div class="testimonial__slider--description">
+                <p>დავწეროთ მოკლე ტექსტი დაკავშირებული სექციასთან</p>
+                <img src="./cap.svg" alt="cap" />
+              </div>
+            </div>
+            <div class="testimonials__container">
+              <div class="testslide">
+                <div class="testslider__card--img">
+                  <img src="./person1.jpg" alt="first" />
+                </div>
+                <div class="testimonials__slider--card">
+                  <div class="testimonials__slider--wrapper">
+                    <div class="testslider__card--text">
+                      <div class="testslider__card--comma">
+                        <h3>ადამიანი 1</h3>
+                        <svg
+                          width="33"
+                          height="30"
+                          viewBox="0 0 33 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10.4444 0C3.33333 6.88889 0 14.2222 0 20.7778C0 26.1111 4 30 8 30C11.5556 30 14.4444 27.1111 14.4444 23.5556C14.4444 19 11.1111 16.6667 6.22222 16.6667C6.22222 11.2222 7.88889 8 13.1111 2.66667L10.4444 0ZM29 0C21.8889 6.88889 18.5556 14.2222 18.5556 20.7778C18.5556 26.1111 22.5556 30 26.5556 30C30.1111 30 33 27.1111 33 23.5556C33 19 29.6667 16.6667 24.7778 16.6667C24.7778 11.2222 26.4444 8 31.6667 2.66667L29 0Z"
+                            fill="#8447FF"
+                          />
+                        </svg>
+                      </div>
+                      <p>@username_of_person</p>
 
-        <h1>
-          როგორ გვაფასებენ <span class="gradient-text">მომხმარებლები?</span>
-        </h1>
-        <p>
-          დავწეროთ მოკლე ტექსტი დაკავშირებული სექციასთან
-          <!-- <img src="./images/testimonials/cap.svg" alt="" /> -->
-        </p>
-
-        <div class="testimonials">
-          <div class="testimonial">
-            <img src="./images/testimonials/person1.jpg" alt="" />
-            <h3>ადამიანი 1</h3>
-            <p>@username of person</p>
-            <blockquote>
-              შეფასება -- ლორემ იფსუმ დოლორ სით ამეთ, სთეთ ფროფრიაე ცონცეფთამ ად
-              ყუო, ეხ ფრო დიცათ ინსთრუცთიორ. ეთ თაციმათეს ელეცთრამ მედიოცრითათემ
-              ვიმ, ინ სედ ნოსთერ ოფორთეათ? ცუმ ალბუციუს დელეცთუს ცუ
-            </blockquote>
-            <div class="stars">
-              <span
-                ><svg
-                  width="156"
-                  height="28"
-                  viewBox="0 0 156 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14 0L17.1432 9.67376H27.3148L19.0858 15.6525L22.229 25.3262L14 19.3475L5.77101 25.3262L8.9142 15.6525L0.685208 9.67376H10.8568L14 0Z"
-                    fill="#FFC619"
-                  />
-                  <path
-                    d="M46 0L49.1432 9.67376H59.3148L51.0858 15.6525L54.229 25.3262L46 19.3475L37.771 25.3262L40.9142 15.6525L32.6852 9.67376H42.8568L46 0Z"
-                    fill="#FFC619"
-                  />
-                  <path
-                    d="M78 0L81.1432 9.67376H91.3148L83.0858 15.6525L86.229 25.3262L78 19.3475L69.771 25.3262L72.9142 15.6525L64.6852 9.67376H74.8568L78 0Z"
-                    fill="#FFC619"
-                  />
-                  <path
-                    d="M110 0L113.143 9.67376H123.315L115.086 15.6525L118.229 25.3262L110 19.3475L101.771 25.3262L104.914 15.6525L96.6852 9.67376H106.857L110 0Z"
-                    fill="#FFC619"
-                  />
-                  <path
-                    d="M142 0L145.143 9.67376H155.315L147.086 15.6525L150.229 25.3262L142 19.3475L133.771 25.3262L136.914 15.6525L128.685 9.67376H138.857L142 0Z"
-                    fill="#FFC619"
-                  />
-                </svg>
-              </span>
+                      <p class="testslider__card----describe">
+                        შეფასება -- ლორემ იფსუმ დოლორ სით ამეთ, სთეთ ფროფრიაე
+                        ცონცეფთამ ად ყუო, ეხ ფრო დიცათ ინსთრუცთიორ. ეთ თაციმათეს
+                        ელეცთრამ მედიოცრითათემ ვიმ, ინ სედ ნოსთერ ოფორთეათ? ცუმ
+                        ალბუციუს დელეცთუს ცუ
+                      </p>
+                    </div>
+                    <div class="testimonials__slider--stars">
+                      <svg
+                        width="156"
+                        height="28"
+                        viewBox="0 0 156 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 0L17.1432 9.67376H27.3148L19.0858 15.6525L22.229 25.3262L14 19.3475L5.77101 25.3262L8.9142 15.6525L0.685208 9.67376H10.8568L14 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M46 0L49.1432 9.67376H59.3148L51.0858 15.6525L54.229 25.3262L46 19.3475L37.771 25.3262L40.9142 15.6525L32.6852 9.67376H42.8568L46 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M78 0L81.1432 9.67376H91.3148L83.0858 15.6525L86.229 25.3262L78 19.3475L69.771 25.3262L72.9142 15.6525L64.6852 9.67376H74.8568L78 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M110 0L113.143 9.67376H123.315L115.086 15.6525L118.229 25.3262L110 19.3475L101.771 25.3262L104.914 15.6525L96.6852 9.67376H106.857L110 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M142 0L145.143 9.67376H155.315L147.086 15.6525L150.229 25.3262L142 19.3475L133.771 25.3262L136.914 15.6525L128.685 9.67376H138.857L142 0Z"
+                          fill="#FFC619"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="testslide">
+                <div class="testslider__card--img">
+                  <img src="./person2.jpg" alt="first" />
+                </div>
+                <div class="testimonials__slider--card">
+                  <div class="testimonials__slider--wrapper">
+                    <div class="testslider__card--text">
+                      <div class="testslider__card--comma">
+                        <h3>ადამიანი 2</h3>
+                        <svg
+                          width="33"
+                          height="30"
+                          viewBox="0 0 33 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10.4444 0C3.33333 6.88889 0 14.2222 0 20.7778C0 26.1111 4 30 8 30C11.5556 30 14.4444 27.1111 14.4444 23.5556C14.4444 19 11.1111 16.6667 6.22222 16.6667C6.22222 11.2222 7.88889 8 13.1111 2.66667L10.4444 0ZM29 0C21.8889 6.88889 18.5556 14.2222 18.5556 20.7778C18.5556 26.1111 22.5556 30 26.5556 30C30.1111 30 33 27.1111 33 23.5556C33 19 29.6667 16.6667 24.7778 16.6667C24.7778 11.2222 26.4444 8 31.6667 2.66667L29 0Z"
+                            fill="#8447FF"
+                          />
+                        </svg>
+                      </div>
+                      <p>@username_of_person</p>
+                      <p class="testslider__card----describe">
+                        შეფასება -- ლორემ იფსუმ დოლორ სით ამეთ, სთეთ ფროფრიაე
+                        ცონცეფთამ ად ყუო, ეხ ფრო დიცათ ინსთრუცთიორ. ეთ თაციმათეს
+                        ელეცთრამ მედიოცრითათემ ვიმ, ინ სედ ნოსთერ ოფორთეათ? ცუმ
+                        ალბუციუს დელეცთუს ცუ
+                      </p>
+                    </div>
+                    <div class="testimonials__slider--stars">
+                      <svg
+                        width="124"
+                        height="28"
+                        viewBox="0 0 124 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 0L17.1432 9.67376H27.3148L19.0858 15.6525L22.229 25.3262L14 19.3475L5.77101 25.3262L8.9142 15.6525L0.685208 9.67376H10.8568L14 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M46 0L49.1432 9.67376H59.3148L51.0858 15.6525L54.229 25.3262L46 19.3475L37.771 25.3262L40.9142 15.6525L32.6852 9.67376H42.8568L46 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M78 0L81.1432 9.67376H91.3148L83.0858 15.6525L86.229 25.3262L78 19.3475L69.771 25.3262L72.9142 15.6525L64.6852 9.67376H74.8568L78 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M110 0L113.143 9.67376H123.315L115.086 15.6525L118.229 25.3262L110 19.3475L101.771 25.3262L104.914 15.6525L96.6852 9.67376H106.857L110 0Z"
+                          fill="#FFC619"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="testslide">
+                <div class="testslider__card--img">
+                  <img src="./person3.jpg" alt="first" />
+                </div>
+                <div class="testimonials__slider--card">
+                  <div class="testimonials__slider--wrapper">
+                    <div class="testslider__card--text">
+                      <div class="testslider__card--comma">
+                        <h3>ადამიანი 3</h3>
+                        <svg
+                          width="33"
+                          height="30"
+                          viewBox="0 0 33 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10.4444 0C3.33333 6.88889 0 14.2222 0 20.7778C0 26.1111 4 30 8 30C11.5556 30 14.4444 27.1111 14.4444 23.5556C14.4444 19 11.1111 16.6667 6.22222 16.6667C6.22222 11.2222 7.88889 8 13.1111 2.66667L10.4444 0ZM29 0C21.8889 6.88889 18.5556 14.2222 18.5556 20.7778C18.5556 26.1111 22.5556 30 26.5556 30C30.1111 30 33 27.1111 33 23.5556C33 19 29.6667 16.6667 24.7778 16.6667C24.7778 11.2222 26.4444 8 31.6667 2.66667L29 0Z"
+                            fill="#8447FF"
+                          />
+                        </svg>
+                      </div>
+                      <p>@username_of_person</p>
+                      <p class="testslider__card----describe">
+                        შეფასება -- ლორემ იფსუმ დოლორ სით ამეთ, სთეთ ფროფრიაე
+                        ცონცეფთამ ად ყუო, ეხ ფრო დიცათ ინსთრუცთიორ. ეთ თაციმათეს
+                        ელეცთრამ მედიოცრითათემ ვიმ, ინ სედ ნოსთერ ოფორთეათ? ცუმ
+                        ალბუციუს დელეცთუს ცუ
+                      </p>
+                    </div>
+                    <div class="testimonials__slider--stars">
+                      <svg
+                        width="156"
+                        height="28"
+                        viewBox="0 0 156 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 0L17.1432 9.67376H27.3148L19.0858 15.6525L22.229 25.3262L14 19.3475L5.77101 25.3262L8.9142 15.6525L0.685208 9.67376H10.8568L14 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M46 0L49.1432 9.67376H59.3148L51.0858 15.6525L54.229 25.3262L46 19.3475L37.771 25.3262L40.9142 15.6525L32.6852 9.67376H42.8568L46 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M78 0L81.1432 9.67376H91.3148L83.0858 15.6525L86.229 25.3262L78 19.3475L69.771 25.3262L72.9142 15.6525L64.6852 9.67376H74.8568L78 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M110 0L113.143 9.67376H123.315L115.086 15.6525L118.229 25.3262L110 19.3475L101.771 25.3262L104.914 15.6525L96.6852 9.67376H106.857L110 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M142 0L145.143 9.67376H155.315L147.086 15.6525L150.229 25.3262L142 19.3475L133.771 25.3262L136.914 15.6525L128.685 9.67376H138.857L142 0Z"
+                          fill="#FFC619"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="testslide">
+                <div class="testslider__card--img">
+                  <img src="./person4.jpg" alt="first" />
+                </div>
+                <div class="testimonials__slider--card">
+                  <div class="testimonials__slider--wrapper">
+                    <div class="testslider__card--text">
+                      <div class="testslider__card--comma">
+                        <h3>ადამიანი 4</h3>
+                        <svg
+                          width="33"
+                          height="30"
+                          viewBox="0 0 33 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10.4444 0C3.33333 6.88889 0 14.2222 0 20.7778C0 26.1111 4 30 8 30C11.5556 30 14.4444 27.1111 14.4444 23.5556C14.4444 19 11.1111 16.6667 6.22222 16.6667C6.22222 11.2222 7.88889 8 13.1111 2.66667L10.4444 0ZM29 0C21.8889 6.88889 18.5556 14.2222 18.5556 20.7778C18.5556 26.1111 22.5556 30 26.5556 30C30.1111 30 33 27.1111 33 23.5556C33 19 29.6667 16.6667 24.7778 16.6667C24.7778 11.2222 26.4444 8 31.6667 2.66667L29 0Z"
+                            fill="#8447FF"
+                          />
+                        </svg>
+                      </div>
+                      <p>@username_of_person</p>
+                      <p class="testslider__card----describe">
+                        შეფასება -- ლორემ იფსუმ დოლორ სით ამეთ, სთეთ ფროფრიაე
+                        ცონცეფთამ ად ყუო, ეხ ფრო დიცათ ინსთრუცთიორ. ეთ თაციმათეს
+                        ელეცთრამ მედიოცრითათემ ვიმ, ინ სედ ნოსთერ ოფორთეათ? ცუმ
+                        ალბუციუს დელეცთუს ცუ
+                      </p>
+                    </div>
+                    <div class="testimonials__slider--stars">
+                      <svg
+                        width="92"
+                        height="28"
+                        viewBox="0 0 92 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 0L17.1432 9.67376H27.3148L19.0858 15.6525L22.229 25.3262L14 19.3475L5.77101 25.3262L8.9142 15.6525L0.685208 9.67376H10.8568L14 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M46 0L49.1432 9.67376H59.3148L51.0858 15.6525L54.229 25.3262L46 19.3475L37.771 25.3262L40.9142 15.6525L32.6852 9.67376H42.8568L46 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M78 0L81.1432 9.67376H91.3148L83.0858 15.6525L86.229 25.3262L78 19.3475L69.771 25.3262L72.9142 15.6525L64.6852 9.67376H74.8568L78 0Z"
+                          fill="#FFC619"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="testslide">
+                <div class="testslider__card--img">
+                  <img src="./person1.jpg" alt="first" />
+                </div>
+                <div class="testimonials__slider--card">
+                  <div class="testimonials__slider--wrapper">
+                    <div class="testslider__card--text">
+                      <div class="testslider__card--comma">
+                        <h3>ადამიანი 5</h3>
+                        <svg
+                          width="33"
+                          height="30"
+                          viewBox="0 0 33 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10.4444 0C3.33333 6.88889 0 14.2222 0 20.7778C0 26.1111 4 30 8 30C11.5556 30 14.4444 27.1111 14.4444 23.5556C14.4444 19 11.1111 16.6667 6.22222 16.6667C6.22222 11.2222 7.88889 8 13.1111 2.66667L10.4444 0ZM29 0C21.8889 6.88889 18.5556 14.2222 18.5556 20.7778C18.5556 26.1111 22.5556 30 26.5556 30C30.1111 30 33 27.1111 33 23.5556C33 19 29.6667 16.6667 24.7778 16.6667C24.7778 11.2222 26.4444 8 31.6667 2.66667L29 0Z"
+                            fill="#8447FF"
+                          />
+                        </svg>
+                      </div>
+                      <p>@username_of_person</p>
+                      <p class="testslider__card----describe">
+                        შეფასება -- ლორემ იფსუმ დოლორ სით ამეთ, სთეთ ფროფრიაე
+                        ცონცეფთამ ად ყუო, ეხ ფრო დიცათ ინსთრუცთიორ. ეთ თაციმათეს
+                        ელეცთრამ მედიოცრითათემ ვიმ, ინ სედ ნოსთერ ოფორთეათ? ცუმ
+                        ალბუციუს დელეცთუს ცუ
+                      </p>
+                    </div>
+                    <div class="testimonials__slider--stars">
+                      <svg
+                        width="156"
+                        height="28"
+                        viewBox="0 0 156 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 0L17.1432 9.67376H27.3148L19.0858 15.6525L22.229 25.3262L14 19.3475L5.77101 25.3262L8.9142 15.6525L0.685208 9.67376H10.8568L14 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M46 0L49.1432 9.67376H59.3148L51.0858 15.6525L54.229 25.3262L46 19.3475L37.771 25.3262L40.9142 15.6525L32.6852 9.67376H42.8568L46 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M78 0L81.1432 9.67376H91.3148L83.0858 15.6525L86.229 25.3262L78 19.3475L69.771 25.3262L72.9142 15.6525L64.6852 9.67376H74.8568L78 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M110 0L113.143 9.67376H123.315L115.086 15.6525L118.229 25.3262L110 19.3475L101.771 25.3262L104.914 15.6525L96.6852 9.67376H106.857L110 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M142 0L145.143 9.67376H155.315L147.086 15.6525L150.229 25.3262L142 19.3475L133.771 25.3262L136.914 15.6525L128.685 9.67376H138.857L142 0Z"
+                          fill="#FFC619"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="testslide">
+                <div class="testslider__card--img">
+                  <img src="./person3.jpg" alt="first" />
+                </div>
+                <div class="testimonials__slider--card">
+                  <div class="testimonials__slider--wrapper">
+                    <div class="testslider__card--text">
+                      <div class="testslider__card--comma">
+                        <h3>ადამიანი 6</h3>
+                        <svg
+                          width="33"
+                          height="30"
+                          viewBox="0 0 33 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10.4444 0C3.33333 6.88889 0 14.2222 0 20.7778C0 26.1111 4 30 8 30C11.5556 30 14.4444 27.1111 14.4444 23.5556C14.4444 19 11.1111 16.6667 6.22222 16.6667C6.22222 11.2222 7.88889 8 13.1111 2.66667L10.4444 0ZM29 0C21.8889 6.88889 18.5556 14.2222 18.5556 20.7778C18.5556 26.1111 22.5556 30 26.5556 30C30.1111 30 33 27.1111 33 23.5556C33 19 29.6667 16.6667 24.7778 16.6667C24.7778 11.2222 26.4444 8 31.6667 2.66667L29 0Z"
+                            fill="#8447FF"
+                          />
+                        </svg>
+                      </div>
+                      <p>@username_of_person</p>
+                      <p class="testslider__card----describe">
+                        შეფასება -- ლორემ იფსუმ დოლორ სით ამეთ, სთეთ ფროფრიაე
+                        ცონცეფთამ ად ყუო, ეხ ფრო დიცათ ინსთრუცთიორ. ეთ თაციმათეს
+                        ელეცთრამ მედიოცრითათემ ვიმ, ინ სედ ნოსთერ ოფორთეათ? ცუმ
+                        ალბუციუს დელეცთუს ცუ
+                      </p>
+                    </div>
+                    <div class="testimonials__slider--stars">
+                      <svg
+                        width="92"
+                        height="28"
+                        viewBox="0 0 92 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 0L17.1432 9.67376H27.3148L19.0858 15.6525L22.229 25.3262L14 19.3475L5.77101 25.3262L8.9142 15.6525L0.685208 9.67376H10.8568L14 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M46 0L49.1432 9.67376H59.3148L51.0858 15.6525L54.229 25.3262L46 19.3475L37.771 25.3262L40.9142 15.6525L32.6852 9.67376H42.8568L46 0Z"
+                          fill="#FFC619"
+                        />
+                        <path
+                          d="M78 0L81.1432 9.67376H91.3148L83.0858 15.6525L86.229 25.3262L78 19.3475L69.771 25.3262L72.9142 15.6525L64.6852 9.67376H74.8568L78 0Z"
+                          fill="#FFC619"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="testimonial">
-            <img src="./images/testimonials/person2.jpg" alt="" />
-            <h3>ადამიანი 2</h3>
-            <p>@username of person</p>
-            <blockquote>
-              შეფასება -- ლორემ იფსუმ დოლორ სით ამეთ, სთეთ ფროფრიაე ცონცეფთამ ად
-              ყუო, ეხ ფრო დიცათ ინსთრუცთიორ. ეთ თაციმათეს ელეცთრამ
-            </blockquote>
-            <div class="stars">
-              <span
-                ><svg
-                  width="124"
-                  height="28"
-                  viewBox="0 0 124 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14 0L17.1432 9.67376H27.3148L19.0858 15.6525L22.229 25.3262L14 19.3475L5.77101 25.3262L8.9142 15.6525L0.685208 9.67376H10.8568L14 0Z"
-                    fill="#FFC619"
-                  />
-                  <path
-                    d="M46 0L49.1432 9.67376H59.3148L51.0858 15.6525L54.229 25.3262L46 19.3475L37.771 25.3262L40.9142 15.6525L32.6852 9.67376H42.8568L46 0Z"
-                    fill="#FFC619"
-                  />
-                  <path
-                    d="M78 0L81.1432 9.67376H91.3148L83.0858 15.6525L86.229 25.3262L78 19.3475L69.771 25.3262L72.9142 15.6525L64.6852 9.67376H74.8568L78 0Z"
-                    fill="#FFC619"
-                  />
-                  <path
-                    d="M110 0L113.143 9.67376H123.315L115.086 15.6525L118.229 25.3262L110 19.3475L101.771 25.3262L104.914 15.6525L96.6852 9.67376H106.857L110 0Z"
-                    fill="#FFC619"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div class="testimonial">
-            <img src="./images/testimonials/person3.jpg" alt="" />
-            <h3>ადამიანი 3</h3>
-            <p>@username of person</p>
-            <blockquote>
-              შეფასება -- ლორემ იფსუმ დოლორ სით ამეთ, სთეთ ფროფრიაე ცონცეფთამ ად
-              ყუო, ეხ ფრო დიცათ ინსთრუცთიორ. ეთ თაციმათეს ელეცთრამ მედიოცრითათემ
-              ვიმ, ინ სედ ნოსთერ ოფორთეათ
-            </blockquote>
-            <div class="stars">
-              <span
-                ><svg
-                  width="156"
-                  height="28"
-                  viewBox="0 0 156 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14 0L17.1432 9.67376H27.3148L19.0858 15.6525L22.229 25.3262L14 19.3475L5.77101 25.3262L8.9142 15.6525L0.685208 9.67376H10.8568L14 0Z"
-                    fill="#FFC619"
-                  />
-                  <path
-                    d="M46 0L49.1432 9.67376H59.3148L51.0858 15.6525L54.229 25.3262L46 19.3475L37.771 25.3262L40.9142 15.6525L32.6852 9.67376H42.8568L46 0Z"
-                    fill="#FFC619"
-                  />
-                  <path
-                    d="M78 0L81.1432 9.67376H91.3148L83.0858 15.6525L86.229 25.3262L78 19.3475L69.771 25.3262L72.9142 15.6525L64.6852 9.67376H74.8568L78 0Z"
-                    fill="#FFC619"
-                  />
-                  <path
-                    d="M110 0L113.143 9.67376H123.315L115.086 15.6525L118.229 25.3262L110 19.3475L101.771 25.3262L104.914 15.6525L96.6852 9.67376H106.857L110 0Z"
-                    fill="#FFC619"
-                  />
-                  <path
-                    d="M142 0L145.143 9.67376H155.315L147.086 15.6525L150.229 25.3262L142 19.3475L133.771 25.3262L136.914 15.6525L128.685 9.67376H138.857L142 0Z"
-                    fill="#FFC619"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div class="testimonial">
-            <img src="./images/testimonials/person4.jpg" alt="" />
-            <h3>ადამიანი 4</h3>
-            <p>@username of person</p>
-            <blockquote>
-              შეფასება -- ლორემ იფსუმ დოლორ სით ამეთ, სთეთ ფროფრიაე ცონ
-            </blockquote>
-            <div class="stars">
-              <span
-                ><svg
-                  width="156"
-                  height="28"
-                  viewBox="0 0 156 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14 0L17.1432 9.67376H27.3148L19.0858 15.6525L22.229 25.3262L14 19.3475L5.77101 25.3262L8.9142 15.6525L0.685208 9.67376H10.8568L14 0Z"
-                    fill="#FFC619"
-                  />
-                  <path
-                    d="M46 0L49.1432 9.67376H59.3148L51.0858 15.6525L54.229 25.3262L46 19.3475L37.771 25.3262L40.9142 15.6525L32.6852 9.67376H42.8568L46 0Z"
-                    fill="#FFC619"
-                  />
-                  <path
-                    d="M78 0L81.1432 9.67376H91.3148L83.0858 15.6525L86.229 25.3262L78 19.3475L69.771 25.3262L72.9142 15.6525L64.6852 9.67376H74.8568L78 0Z"
-                    fill="#FFC619"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
+          <a class="arrow-btn prew-btn" id="prev" onclick="moveSlide(-1)">
+            <svg
+              width="46"
+              height="46"
+              viewBox="0 0 46 46"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21 17L26 23L21 29"
+                stroke=""
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="23" cy="23" r="22.5" stroke="#8447FF" />
+            </svg>
+          </a>
+          <a class="arrow-btn next" id="next" onclick="moveSlide(1)">
+            <svg
+              width="46"
+              height="46"
+              viewBox="0 0 46 46"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21 17L26 23L21 29"
+                stroke=""
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="23" cy="23" r="22.5" stroke="#8447FF" />
+            </svg>
+          </a>
         </div>
-        <a class="arrow-btn next">
-          <svg
-            width="46"
-            height="46"
-            viewBox="0 0 46 46"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M21 17L26 23L21 29"
-              stroke=""
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <circle cx="23" cy="23" r="22.5" stroke="#8447FF" />
-          </svg>
-        </a>
       </section>
     </main>
-    <footer></footer>
     <script src="/js/script.js"></script>
   </body>
 </html>
