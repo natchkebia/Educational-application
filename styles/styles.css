@@ -237,6 +237,15 @@ section .title {
   stroke: white;
 }
 
+.mobile-menu {
+  position: absolute;
+  top: 96px;
+  left: 0;
+  background: white;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+}
 
 
 
