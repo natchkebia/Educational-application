@@ -249,9 +249,10 @@ section .title {
   padding: 40px 0;
 }
 
+/*  */
 
-.mobile-menu.show .profile {
-  display: flex;
+.mobile-menu .profile {
+  display: none;
   align-items: center;
   gap: 16px;
   padding-bottom: 20px;
@@ -259,7 +260,14 @@ section .title {
   margin-bottom: 30px;
 }
 
-.mobile-menu.show .profile__photo {
+.mobile-menu .profile.show{
+  display: flex;
+}
+/*  */
+
+
+
+.mobile-menu .profile__photo {
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -335,16 +343,23 @@ section .title {
 
 .log-out {
   color: #F44336;
-  display: flex;
+  display: none;
   align-items: center;
   gap: 8px;
   position: absolute;
   bottom: 30px;
 }
+.log-out.show{
+  display: flex;
+}
 
+.authorization-link.hide{
+  display: none;
+}
 
-
-
+.hide{
+display: none;
+}
 
 
 /* main */
