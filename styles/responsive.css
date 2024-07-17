@@ -1,9 +1,36 @@
 @media (max-width: 1024px) {
+    .header__logo--link img {
+        height: 29px;
+    }
+
+    .header__logo--link {
+        width: 85px;
+    }
+
+    .navigation {
+        height: 60px;
+    }
+
     .header__nav--list .header__nav--list--item {
         display: none;
     }
-        .burger-bar {
-            display: block;
-    
-        }
+
+    .burger-bar {
+        display: block;
+    }
+
+    .burger-bar.active {
+        background-color: #202225;
+    }
+
+    .mobile-menu.show {
+        display: block;
+    }
+
+    main {
+        margin-top: 60px;
+    }
+
+
+
 }
