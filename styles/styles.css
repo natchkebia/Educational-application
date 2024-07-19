@@ -361,6 +361,10 @@ section .title {
 display: none;
 }
 
+.inactive{
+  overflow: hidden;
+}
+
 
 /* main */
 
