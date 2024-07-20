@@ -48,6 +48,47 @@ svg {
   max-width: 100%;
   height: auto;
 }
+
+/* Often repeated styles */
+body {
+  font-family: var(--font-family-figaro);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1152px;
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.btn {
+  border-radius: 8px;
+  background-color: var(--box-color);
+  font-family: var(--font-family-figaro);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  text-align: left;
+  color: var(--background-color-1);
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #6323e4;
+}
+
+section .title {
+  font-family: var(--font-family-figaro);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  text-align: left;
+  color: var(--text-color);
+}
+
 .gradient-text {
   background: linear-gradient(
     90deg,
@@ -57,36 +98,110 @@ svg {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  padding-bottom: .05em;
+  margin-bottom: -.05em;
 }
 
+/* slider arrows */
+
+.arrow-btn {
+  display: inline-block;
+  background-size: cover;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.arrow-btn svg,
+.nav-icons svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.arrow-btn svg {
+  stroke: var(--box-color);
+}
+
+.arrow-btn:hover {
+  background-color: #8447ff4d;
+}
+
+.arrow-btn:active {
+  background-color: var(--box-color);
+}
+
+.arrow-btn:active svg {
+  stroke: var(--background-color-1);
+}
+
+.prew-btn {
+  transform: rotate(180deg);
+}
+
+/* headers icons */
+
+.nav-icons {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 8px;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 8px;
+  position: relative;
+}
+
+.nav-icons svg {
+  stroke: black;
+}
+
+.nav-icons:hover {
+  background-color: var(--background-color-2);
+}
+
+.nav-icons:hover svg {
+  stroke: var(--primary-color);
+}
 
 /* illustrations */
 .illustrations {
-  padding: 0 24px;
+  padding: 100px 0;
 }
 .section__title {
   text-align: center;
   margin-bottom: 60px;
 }
 .section__title--text {
-  --font-family-figaro: "Arial, sans-serif";
+  margin-bottom: 16px;
+  font-family: var(--font-family-figaro);
   font-size: 40px;
   line-height: 48px;
   color: black;
 }
 .section__title--about {
-  --font-family-figaro: "Arial, sans-serif";
+  font-family: var(--font-family-figaro);
   font-weight: 400;
   opacity: 70%;
   font-size: 16px;
   line-height: 24px;
+  max-width: 658px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
 }
 .illustrations__slider {
   overflow-x: hidden;
 }
 .overflow {
-  /* width: 1544px;
-  height: 101px; */
   display: flex;
   overflow: hidden;
   margin: 0 auto;
@@ -104,8 +219,8 @@ svg {
   animation: logoLoop 18s linear infinite;
 }
 .illustrations__item {
-  margin: 0 24px 0 0 ;
-  width:368px;
+  margin: 0 24px 0 0;
+  width: 368px;
   height: 101px;
   flex-direction: row;
   display: flex;
@@ -114,10 +229,11 @@ svg {
   aspect-ratio: 30/9;
   background-color: #f9f6ff;
   border-radius: 8px;
+  border: 1px solid #8447ff4d;
 }
 
 .illustrations__item--text {
-  --font-family-figaro: "Arial, sans-serif";
+  font-family: var(--font-family-figaro);
   font-size: 16px;
   line-height: 19.2px;
   font-weight: 600;
@@ -127,10 +243,6 @@ svg {
 .illustrations__item--describe {
   margin-bottom: 12px;
 }
-/* .illustrations__item img {
-  width: 368px;
-  height: 101px;
-} */
 
 @keyframes logoLoop {
   from {
@@ -139,4 +251,4 @@ svg {
   to {
     transform: translateX(-100%);
   }
-} 
+}
