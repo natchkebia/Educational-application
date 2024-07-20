@@ -986,3 +986,71 @@ main {
 .hide {
   display: none;
 }
+
+
+/* card */
+
+.card {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px 0px #00000014;
+  position: relative;
+  top: 0;
+  left: 0;
+  min-height: 236px;
+  max-width: 270px;
+  width: 30%;
+  padding: 21px;
+}
+
+.card__img {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  /* left: 50%; */
+  transform: translateY(-50%);
+}
+
+.card .quots {
+  float: right;
+
+}
+
+.card__content--container {
+  margin-top: 42px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card__content--title h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 4px;
+}
+
+.card__content--title h4 {
+  font-size: 12px;
+  font-weight: 350;
+  line-height: 14.4px;
+  opacity: 40%;
+}
+
+.card__content--container p {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 12px;
+  opacity: 50%;
+}
+
+.card__content--container .card__stars {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
