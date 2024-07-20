@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener("DOMContentLoaded", () => {
   async function fetchData() {
     try {
@@ -9,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
       jsonData.cards.forEach((card) => {
         container.appendChild(createCard(card));
       });
+
+      showSlide(currentIndex); // Ensure the first slide is shown after cards are added
+      initTouchEvents(); // Initialize touch events after cards are added
     } catch (error) {
       console.error(
         "There has been a problem with your fetch operation:",
@@ -62,17 +64,21 @@ document.addEventListener("DOMContentLoaded", () => {
   function showSlide(index) {
     const slider = document.querySelector(".card-slider");
     const totalCards = slider.children.length;
-    const maxIndex = Math.ceil(totalCards / 4) - 1;
+
+    const cardsToShow = window.innerWidth <= 768 ? 1 : 4; // Adjust number of cards based on screen width
+    const maxIndex = Math.ceil(totalCards / cardsToShow) - 1;
 
     if (index < 0) {
-      currentIndex = 0;
-    } else if (index > maxIndex) {
       currentIndex = maxIndex;
+    } else if (index > maxIndex) {
+      currentIndex = 0;
     } else {
       currentIndex = index;
     }
 
-    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    slider.style.transform = `translateX(-${
+      currentIndex * (100 / cardsToShow)
+    }%)`;
   }
 
   function prevSlide() {
@@ -83,9 +89,44 @@ document.addEventListener("DOMContentLoaded", () => {
     showSlide(currentIndex + 1);
   }
 
-  fetchData().then(() => {
-    showSlide(currentIndex);
-  });
+  // Touch event handling
+  let startX = 0;
+  let currentX = 0;
+  let isDragging = false;
+
+  function initTouchEvents() {
+    const slider = document.querySelector(".card-slider");
+
+    slider.addEventListener("touchstart", (event) => {
+      startX = event.touches[0].clientX;
+      isDragging = true;
+    });
+
+    slider.addEventListener("touchmove", (event) => {
+      if (!isDragging) return;
+      currentX = event.touches[0].clientX;
+      const deltaX = currentX - startX;
+      slider.style.transform = `translateX(calc(-${
+        currentIndex * 100
+      }% + ${deltaX}px))`;
+    });
+
+    slider.addEventListener("touchend", () => {
+      if (!isDragging) return;
+      const deltaX = currentX - startX;
+      const threshold = slider.offsetWidth / 1; // Adjust threshold as needed
+      if (deltaX > threshold) {
+        prevSlide();
+      } else if (deltaX < -threshold) {
+        nextSlide();
+      } else {
+        showSlide(currentIndex);
+      }
+      isDragging = false;
+    });
+  }
+
+  fetchData();
 
   window.prevSlide = prevSlide;
   window.nextSlide = nextSlide;
