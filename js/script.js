@@ -1,28 +1,26 @@
 // testimonial
+const slides = document.querySelector(".testimonials__container");
+const prevButton = document.querySelector(".prev");
+const nextButton = document.querySelector(".next");
+let currentIndex = 0;
 
-let slide = document.querySelector(".testimonials__container");
-const prevButton = document.getElementById("prev");
-const nextButton = document.getElementById("next");
-
-let testimonialsCurrentINdex = 0;
-
-function updateSlide() {
-  let offset = -testimonialsCurrentINdex * (270 + 24);
-  slide.computedStyleMap.transform = `translateX(${offset}px)`;
+function updateSlider() {
+  const offset = -currentIndex * (270 + 24);
+  slides.style.transform = `translateX(${offset}px)`;
 }
 
-nextButton.addEventListener("moveSlide", () => {
-  testimonialsCurrentINdex++;
-  if (testimonialsCurrentINdex > slide.children.length - 4) {
-    testimonialsCurrentINdex = 0;
+nextButton.addEventListener("click", () => {
+  currentIndex++;
+  if (currentIndex > slides.children.length - 4) {
+    currentIndex = 0;
   }
-  updateSlide();
+  updateSlider();
 });
 
-prevButton.addEventListener("moveSlide", () => {
-  testimonialsCurrentINdex--;
-  if (testimonialsCurrentINdex < 0) {
-    testimonialsCurrentINdex = slide.children.length - 3;
+prevButton.addEventListener("click", () => {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = slides.children.length - 4;
   }
-  updateSlide();
+  updateSlider();
 });
