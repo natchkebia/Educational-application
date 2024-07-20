@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) throw new Error("Network response was not ok");
       const jsonData = await response.json();
       const container = document.getElementById("card-slider");
-      jsonData.cards.forEach((card) => {
+      jsonData.cardsTestimonials.forEach((card) => {
         container.appendChild(createCard(card));
       });
 
