@@ -1,0 +1,70 @@
+[
+  {
+    "name": "ადამიანი 1",
+    "username": "@username_of_person1",
+    "comment": "შეფასება -- ლორემ იფსუმ დოლორ სით ამეთ...",
+    "image": "./images/customers/Ellipse 49 (1).png"
+  },
+  {
+    "name": "ადამიანი 2",
+    "username": "@username_of_person2",
+    "comment": "შეფასება -- ლორემ იფსუმ დოლორ სით ამეთ...",
+    "image": "./images/customers/Ellipse 49 (2).png"
+  },
+  {
+    "user_img": "./images/customers/user-1.png",
+    "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
+    "rating": 5,
+    "name": "ფელიპე მ.",
+    "username": "@username_of_person"
+  },
+  {
+    "user_img": "./images/customers/user-2.png",
+    "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
+    "rating": 5,
+    "name": "ჯენიფერ ჯ.",
+    "username": "@username_of_person"
+  },
+  {
+    "user_img": "./images/customers/user-3.png",
+    "comment": "მე პირდაპირ გამოვიყენე ცნებები და უნარები, რომლებიც ჩემი კურსებიდან ვისწავლე ახალი საინტერესო პროექტისთვის",
+    "rating": 5,
+    "name": "ნინო კ.",
+    "username": "@username_of_person"
+  },
+  {
+    "user_img": "./images/customers/user-4.png",
+    "comment": "„როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
+    "rating": 5,
+    "name": "ანასტასია ს.",
+    "username": "@username_of_person"
+  },
+  {
+    "user_img": "./images/customers/user-1.png",
+    "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
+    "rating": 5,
+    "name": "ფელიპე მ.",
+    "username": "@username_of_person"
+  },
+  {
+    "user_img": "./images/customers/user-2.png",
+    "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
+    "rating": 5,
+    "name": "ჯენიფერ ჯ.",
+    "username": "@username_of_person"
+  },
+  {
+    "user_img": "./images/customers/user-3.png",
+    "comment": "მე პირდაპირ გამოვიყენე ცნებები და უნარები, რომლებიც ჩემი კურსებიდან ვისწავლე ახალი საინტერესო პროექტისთვის",
+    "rating": 5,
+    "name": "ნინო კ.",
+    "username": "@username_of_person"
+  },
+  {
+    "user_img": "./images/customers/user-4.png",
+    "comment": "„როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
+    "rating": 5,
+    "name": "ანასტასია ს.",
+    "username": "@username_of_person"
+  }
+]

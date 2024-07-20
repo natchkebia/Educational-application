@@ -957,13 +957,9 @@ main {
 .testimonials {
   padding: 100px 0;
   background-color: #F9F6FF;
-  /* position: relative;
-  top: 0;
-  left: 0; */
-
 }
 
-.testimonials .container {
+.testimonials__heading.container {
   margin-bottom: 49px;
 }
 
@@ -986,11 +982,6 @@ main {
   display: inline-block;
   margin-right: 10px;
 }
-
-.hide {
-  display: none;
-}
-
 
 /* card */
 
@@ -1015,7 +1006,6 @@ main {
   object-fit: cover;
   position: absolute;
   top: 0;
-  /* left: 50%; */
   transform: translateY(-50%);
 }
 
@@ -1085,5 +1075,4 @@ main {
   height: 46px;
 }
 
-.testimonials__slider--arrow .arrow-btn.prew-btn {
-}
+
