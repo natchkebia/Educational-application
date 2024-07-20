@@ -1051,13 +1051,18 @@ main {
 
 .testimonials__slider-wrapper {
   padding-top: 35px;
-      display: flex;
-        align-items: center;
-        justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* slider arrows */
-.testimonials__slider {}
+.testimonials__slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
 
 .testimonials__slider--arrow {
   position: absolute;
@@ -1075,4 +1080,50 @@ main {
   height: 46px;
 }
 
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+}
 
+.slider-container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.card-slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.card {
+  flex: 1 0 25%;
+  /* Show 4 cards at a time */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
