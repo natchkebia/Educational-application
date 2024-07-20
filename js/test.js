@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createCard(card) {
     const cardElement = document.createElement("div");
-    cardElement.className = "card";
+    cardElement.className = "testimonials__card";
 
     // Create a container for the stars
     const starsContainer = document.createElement("div");
