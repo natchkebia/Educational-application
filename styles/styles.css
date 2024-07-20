@@ -986,7 +986,7 @@ main {
 /* card */
 
 .testimonials__card {
-  flex: 1 0 25%;
+  flex: 1 0 23.5%;
   background-color: #FFFFFF;
   border-radius: 12px;
   box-shadow: 0px 0px 20px 0px #00000014;
@@ -1058,10 +1058,14 @@ main {
 }
 
 .testimonials__slider-wrapper {
-  padding-top: 35px;
+  /* padding-top: 35px; */
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 /* slider arrows */
@@ -1070,19 +1074,14 @@ main {
   justify-content: space-between;
   align-items: center;
   gap: 24px;
+  height: 338px;
 }
 
-.testimonials__slider--arrow {
-  position: absolute;
-  display: flex;
-  max-width: 1342px;
-  width: 100%;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: space-between;
+.testimonials .slider-container {
+  overflow: hidden;
 }
 
-.testimonials__slider--arrow .arrow-btn {
+.slider-container .arrow-btn {
   border: 1px solid #8447FF;
   width: 46px;
   height: 46px;
@@ -1090,38 +1089,7 @@ main {
 
 /* styles.css */
 
-
-.slider-container {
-  position: relative;
-  width: 80%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
 .testimonials .card-slider {
   display: flex;
   transition: transform 0.5s ease;
 }
-
-
-
-
-
-/* button {
-  position: absolute;
-  top: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-} */
-/* 
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-} */
