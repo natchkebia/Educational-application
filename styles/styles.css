@@ -226,7 +226,6 @@ section .title {
 
 .burger-bar {
   display: none;
-
 }
 
 .burger-bar.nav-icons {
@@ -240,7 +239,7 @@ section .title {
 .mobile-menu{
   display: none;
   position: absolute;
-  top: 60px;
+  top: 58px;
   left: 0;
   background: white;
   width: 100%;
