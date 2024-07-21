@@ -1,79 +1,83 @@
 @media (max-width: 1024px) {
-    .header__logo--link img {
-        height: 29px;
-    }
+  .header__logo--link img {
+    height: 29px;
+  }
 
-    .header__logo--link {
-        width: 85px;
-    }
+  .header__logo--link {
+    width: 85px;
+  }
 
-    .navigation {
-        height: 60px;
-    }
+  .navigation {
+    height: 60px;
+  }
 
-    .header__nav--list .header__nav--list--item {
-        display: none;
-    }
+  .header__nav--list .header__nav--list--item {
+    display: none;
+  }
 
-    .burger-bar {
-        display: block;
-    }
+  .burger-bar {
+    display: block;
+  }
 
-    .burger-bar.active {
-        background-color: #202225;
-    }
+  .burger-bar.active {
+    background-color: #202225;
+  }
 
-    .mobile-menu.show {
-        display: block;
-    }
+  .mobile-menu.show {
+    display: block;
+  }
 
-    main {
-        margin-top: 60px;
-    }
-          /* testimonials */
-          .testimonials__card {
-              flex: 1 0 29.5%;
-              min-width: 270px;
-          }
-    
-          .arrow__wrapper {
-              display: none;
-          }
-    
-          .testimonials .slider-container {
-              overflow: visible;
-          }
+  main {
+    margin-top: 60px;
+  }
+  /* testimonials */
+  .testimonials__card {
+    flex: 1 0 29.5%;
+    min-width: 270px;
+  }
 
+  .arrow__wrapper {
+    display: none;
+  }
+
+  .testimonials .slider-container {
+    overflow: visible;
+  }
 }
-
 
 @media (max-width: 700px) {
+  /* videos and library */
+  .library-video__container {
+    flex-direction: column;
+    margin-top: 30px;
+  }
 
-    /* videos and library */
-    .library-video__container {
-        flex-direction: column;
-        margin-top: 30px;
-    }
+  .library {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 
-    .library {
-        display: flex;
-        flex-direction: column-reverse;
-    }
+  .library-video__container--text p {
+    font-size: 16px;
+    margin-top: 16px;
+  }
+
+  .library__title,
+  .videos__title {
+    font-size: 26px;
+    font-weight: 31px;
+  }
 }
+@media (max-width: 600px) {
+  /* testimonials */
+  section .title,
+  .gradient-text {
+    font-size: 26px;
+    line-height: 31.2px;
+  }
 
-
- @media (max-width:600px) {
-
-     /* testimonials */
-     section .title,
-     .gradient-text {
-         font-size: 26px;
-         line-height: 31.2px;
-     }
-
-.testimonials__heading--desc span{
-        font-size: 14px;
-        line-height: 24px;
+  .testimonials__heading--desc span {
+    font-size: 14px;
+    line-height: 24px;
+  }
 }
-
- }
