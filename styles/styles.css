@@ -755,7 +755,7 @@ main {
 }
 
 .img1 {
-  background-image: url(/images/customers/Ellipse\ 49.png);
+  background-image: url(../images/customers/user-1.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -765,7 +765,7 @@ main {
 }
 
 .img2 {
-  background-image: url(/images/customers/Ellipse\ 49\ \(1\).png);
+  background-image: url(../images/customers/user-2.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -775,7 +775,7 @@ main {
 }
 
 .img3 {
-  background-image: url(/images/customers/Ellipse\ 49\ \(2\).png);
+  background-image: url(../images/customers/user-3.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -785,7 +785,7 @@ main {
 }
 
 .img4 {
-  background-image: url(/images/customers/Ellipse\ 50.png);
+  background-image: url(../images/customers/user-4.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -795,7 +795,7 @@ main {
 }
 
 .img5 {
-  background-image: url(/images/customers/Ellipse\ 49.png);
+  background-image: url(../images/customers/user-1.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
