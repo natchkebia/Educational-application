@@ -63,6 +63,8 @@ svg {
 body {
   font-family: var(--font-family-figaro);
   color: var(--text-color);
+  font-family: var(--font-family-figaro);
+  color: var(--text-color);
 }
 
 .container {
@@ -490,10 +492,10 @@ main {
   transition: background-color 0.6s ease;
 }
 
-.active,
+/* .active,
 .dot:hover {
   background-color: var(--box-color);
-}
+} */
 
 
 
@@ -868,20 +870,6 @@ main {
 
 /* footer */
 
-/* @media (max-width: 768px) {
-    .footer__navigation {
-        flex-direction: column;
-    }
-
-    .list {
-        display: none;
-    }
-
-    .column.active .list {
-        display: block;
-    }
-} */
-
 .footer__logo {
   border-top: 1px solid #00000020;
 }
@@ -910,6 +898,8 @@ main {
   flex: 1;
 }
 
+
+
 .column .column--title {
   display: flex;
   justify-content: space-between;
@@ -935,6 +925,7 @@ main {
   font-weight: 400;
   line-height: 16.8px;
   text-align: left;
+
 }
 
 .column .list li:last-child {
@@ -945,8 +936,7 @@ main {
 /* subscription */
 
 .footer__contact {
-  max-width: 490px;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -955,7 +945,8 @@ main {
 }
 
 .subscription {
-  width: 100%;
+  /* max-width: 490px; */
+  /* width: 100%; */
   margin-bottom: 34px;
 }
 
@@ -976,12 +967,13 @@ main {
 
 .subscription__btn {
   display: inline-flex;
-  max-width: 490px;
-  width: 100%;
+  /* max-width: 490px; */
+  /* width: 100%; */
 }
 
 .subscription__input {
-  width: 100%;
+  width: 317px;
+  /* width: 100%; */
   padding: 16px;
   display: inline-block;
   /* margin-bottom: 10px; */
@@ -1060,11 +1052,13 @@ main {
 /*  */
 .footer__social {
   display: flex;
+
   width: 100%;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid #00000020;
   padding: 44px 0px;
+  gap: 24px;
 }
 
 .footer__rights span {
@@ -1084,9 +1078,12 @@ main {
 }
 
 .footer__social--links {
+  display: flex;
   width: 24px;
   height: 24px;
   margin-right: 24px;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer__social--links:last-child {

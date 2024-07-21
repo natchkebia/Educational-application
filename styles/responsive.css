@@ -43,6 +43,28 @@
   .testimonials .slider-container {
     overflow: visible;
   }
+   .subscription__input {
+           max-width: 317px;
+           width: 100%;
+   }
+
+   .footer__contact--info {
+           flex-direction: column;
+           align-items: flex-start;
+   }
+
+   .footer__contact--call,
+   .footer__contact--email {
+           flex-direction: row;
+           align-items: flex-start;
+           justify-content: space-between;
+           width: 100%;
+   }
+
+   .subscription__btn {
+           max-width: 490px;
+           width: 100%;
+   }
 }
 
 @media (max-width: 700px) {
@@ -68,6 +90,72 @@
     font-weight: 31px;
   }
 }
+
+
+@media (max-width: 786px) {
+        .footer__content {
+                flex-direction: column;
+                gap: 40px;
+        }
+
+        .footer__navigation {
+                width: 100%;
+                flex-direction: column;
+                gap: 24px;
+        }
+
+        .list {
+                display: none;
+        }
+
+        .column .list li {
+                list-style: disc;
+                list-style-position: inside;
+                margin-left: 9px;
+        }
+
+        .footer__navigation .column.active .list {
+                display: block;
+                margin-top: 36px;
+        }
+
+        .footer__navigation .column--title .arrow {
+                display: inline-block;
+                transition: 0.3s linear;
+        }
+
+        .footer__navigation .column.active .arrow {
+                transform: rotate(180deg);
+        }
+
+        .footer__contact--info {
+                gap: 40px;
+        }
+
+        .footer__contact--call,
+        .footer__contact--email {
+                flex-direction: column;
+                align-items: flex-start;
+        }
+
+        .footer__social--links {
+                margin-right: 0;
+        }
+
+        .footer__contact {
+                width: 100%;
+        }
+
+        .subscription {
+                width: 100%;
+        }
+
+        .column .column--title {
+                margin-bottom: 0;
+        }
+
+}
+
 @media (max-width: 600px) {
   /* testimonials */
   section .title,
@@ -80,4 +168,16 @@
     font-size: 14px;
     line-height: 24px;
   }
+}
+
+
+
+
+@media (max-width: 425px) {
+        .footer__social {
+                flex-direction: column-reverse;
+                padding: 24px 0px;
+        }
+
+
 }
