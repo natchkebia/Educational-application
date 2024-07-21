@@ -30,9 +30,35 @@
     main {
         margin-top: 60px;
     }
+          /* testimonials */
+          .testimonials__card {
+              flex: 1 0 29.5%;
+              min-width: 270px;
+          }
+    
+          .arrow__wrapper {
+              display: none;
+          }
+    
+          .testimonials .slider-container {
+              overflow: visible;
+          }
 
 }
 
-@media (max-width: 768px){
-    
+
+
+ @media (max-width:600px) {
+
+     /* testimonials */
+     section .title,
+     .gradient-text {
+         font-size: 26px;
+         line-height: 31.2px;
+     }
+
+.testimonials__heading--desc span{
+        font-size: 14px;
+        line-height: 24px;
+}
 }
