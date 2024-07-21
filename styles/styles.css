@@ -98,8 +98,8 @@ section .title {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  padding-bottom: .05em;
-  margin-bottom: -.05em;
+  padding-bottom: 0.05em;
+  margin-bottom: -0.05em;
 }
 
 /* slider arrows */
@@ -233,12 +233,17 @@ section .title {
 }
 
 .illustrations__item--text {
+  width: 227px;
+  height: 50px;
   font-family: var(--font-family-figaro);
   font-size: 16px;
   line-height: 19.2px;
   font-weight: 600;
   margin-left: 20px;
   font-size: 16px;
+}
+.illustrations__item--text p {
+  margin-top: 12px;
 }
 .illustrations__item--describe {
   margin-bottom: 12px;
@@ -251,4 +256,39 @@ section .title {
   to {
     transform: translateX(-100%);
   }
+}
+
+/* lecturer and student */
+.illustrations__slider--lecturer {
+  width: 125.47px;
+  height: 49.97px;
+  margin-left: 187px;
+  margin-bottom: 13.03px;
+}
+.illustrations__slider--text {
+  width: 100px;
+  height: 30px;
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  padding: 8px 20px 8px 20px;
+}
+.illustrations__slider--lec {
+  font-family: var(--font-family-figaro);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14.4px;
+  color: #ffffff;
+}
+.orange {
+  margin-left: 98px;
+}
+.illustrations__slider--student {
+  width: 121.39px;
+  height: 54.01px;
+  margin-top: 29.03px;
+  margin-left: 1156px;
+}
+.student {
+  background-color: var( --additional-color);
+  margin-left: 19.39px;
 }
