@@ -1,0 +1,86 @@
+@media (max-width: 1024px) {
+        .subscription__input {
+                max-width: 317px;
+                width: 100%;
+        }
+
+        .footer__contact--info {
+                flex-direction: column;
+                align-items: flex-start;
+        }
+
+        .footer__contact--call,
+        .footer__contact--email {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+                width: 100%;
+        }
+
+        .subscription__btn {
+                max-width: 490px;
+                width: 100%;
+        }
+
+}
+
+@media (max-width: 786px) {
+        .footer__content {
+                flex-direction: column;
+                gap: 40px;
+        }
+
+        .footer__navigation {
+                width: 100%;
+                flex-direction: column;
+        }
+
+        .list {
+                display: none;
+        }
+
+        .footer__navigation .column.active .list {
+                display: block;
+        }
+
+        .footer__navigation .column--title .arrow {
+                display: inline-block;
+        }
+
+
+
+        .footer__contact--info {
+                gap: 40px;
+        }
+
+        .footer__contact--call,
+        .footer__contact--email {
+                flex-direction: column;
+                align-items: flex-start;
+        }
+
+        .footer__social--links {
+                margin-right: 0;
+        }
+}
+
+@media (max-width: 786px) {
+        .footer__contact {
+                width: 100%;
+        }
+
+        .subscription {
+                width: 100%;
+        }
+
+
+}
+
+@media (max-width: 425px) {
+.footer__social{
+        flex-direction: column-reverse;
+        padding: 24px 0px;
+}
+
+
+}
