@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "Figaro";
+  src: url("../fonts/FiraGO-Regular.ttf"), url("../fonts/FiraGO-Medium.ttf"),
+    url("../fonts/FiraGO-SemiBold.ttf"), url("../fonts/FiraGO-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy GEO Heavy.ttf");
+}
+
 :root {
   --primary-color: #8447ff;
   --secondary-color: #d972ff;
@@ -20,9 +31,8 @@
   /* გრადიენტის მეორე ფერი */
   --gradient-color-2: #b947ff;
 
-  --font-family-figaro: "Arial, sans-serif";
-  --font-family-Gilroy: "Arial, sans-serif";
-  /* ფონტები შესაცვლელია */
+  --font-family-figaro: "Figaro", sans-serif;
+  --font-family-Gilroy: "Gilroy", sans-serif;
 }
 
 /* main reset styles */
