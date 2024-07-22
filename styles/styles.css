@@ -216,7 +216,7 @@ section .title {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  animation: logoLoop 18s linear infinite;
+  animation: logoLoop 38s linear infinite;
 }
 .illustrations__item {
   margin: 0 24px 0 0;
@@ -255,6 +255,18 @@ section .title {
   }
   to {
     transform: translateX(-100%);
+  }
+}
+
+/* responsive */
+
+@media (max-width: 786px) {
+  .section__title--text {
+    font-size: 26px;
+    line-height: 31.2px;
+  }
+  .section__title--about {
+    font-size: 14px;
   }
 }
 
