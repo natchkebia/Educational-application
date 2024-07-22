@@ -73,10 +73,6 @@ body {
 }
 
 .btn {
-  width: 101px;
-  height: 40px;
-  margin-left: 24px;
-  padding: 10px 20px;
   border-radius: 8px;
   background-color: var(--box-color);
   font-family: var(--font-family-figaro);
@@ -85,9 +81,6 @@ body {
   line-height: 19.2px;
   text-align: left;
   color: var(--background-color-1);
-  outline: none;
-  border: none;
-  cursor: pointer;
   outline: none;
   border: none;
   cursor: pointer;
@@ -1001,7 +994,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  animation: logoLoop 18s linear infinite;
 }
 
 .illustrations__item {
@@ -1279,100 +1271,100 @@ main {
   margin: 0 auto;
 }
 
-  .reverse {
-    margin-top: 24px;
+.reverse {
+  margin-top: 24px;
+}
+
+.reverse .illustrations__wrapper {
+  animation-direction: reverse;
+}
+
+.illustrations__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  animation: logoLoop 18s linear infinite;
+}
+
+.illustrations__item {
+  margin: 0 24px 0 0;
+  width: 368px;
+  height: 101px;
+  flex-direction: row;
+  display: flex;
+  place-items: center;
+  padding: 0.5rem;
+  aspect-ratio: 30/9;
+  background-color: #f9f6ff;
+  border-radius: 8px;
+  border: 1px solid #8447ff4d;
+}
+
+.illustrations__item--text {
+  width: 227px;
+  height: 50px;
+  font-family: var(--font-family-figaro);
+  font-size: 16px;
+  line-height: 19.2px;
+  font-weight: 600;
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.illustrations__item--text p {
+  margin-top: 12px;
+}
+
+.illustrations__item--describe {
+  margin-bottom: 12px;
+}
+
+@keyframes logoLoop {
+  from {
+    transform: translateX(0);
   }
 
-  .reverse .illustrations__wrapper {
-    animation-direction: reverse;
+  to {
+    transform: translateX(-100%);
   }
+}
 
-  .illustrations__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    animation: logoLoop 18s linear infinite;
-  }
+/* lecturer and student */
+.illustrations__slider--lecturer {
+  width: 125.47px;
+  height: 49.97px;
+  margin-left: 187px;
+  margin-bottom: 13.03px;
+}
 
-  .illustrations__item {
-    margin: 0 24px 0 0;
-    width: 368px;
-    height: 101px;
-    flex-direction: row;
-    display: flex;
-    place-items: center;
-    padding: 0.5rem;
-    aspect-ratio: 30/9;
-    background-color: #f9f6ff;
-    border-radius: 8px;
-    border: 1px solid #8447ff4d;
-  }
+.illustrations__slider--text {
+  width: 100px;
+  height: 30px;
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  padding: 8px 20px 8px 20px;
+}
 
-  .illustrations__item--text {
-    width: 227px;
-    height: 50px;
-    font-family: var(--font-family-figaro);
-    font-size: 16px;
-    line-height: 19.2px;
-    font-weight: 600;
-    margin-left: 20px;
-    font-size: 16px;
-  }
+.illustrations__slider--lec {
+  font-family: var(--font-family-figaro);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14.4px;
+  color: #ffffff;
+}
 
-  .illustrations__item--text p {
-    margin-top: 12px;
-  }
+.orange {
+  margin-left: 98px;
+}
 
-  .illustrations__item--describe {
-    margin-bottom: 12px;
-  }
+.illustrations__slider--student {
+  width: 121.39px;
+  height: 54.01px;
+  margin-top: 29.03px;
+  margin-left: 1156px;
+}
 
-  @keyframes logoLoop {
-    from {
-      transform: translateX(0);
-    }
-
-    to {
-      transform: translateX(-100%);
-    }
-  }
-
-  /* lecturer and student */
-  .illustrations__slider--lecturer {
-    width: 125.47px;
-    height: 49.97px;
-    margin-left: 187px;
-    margin-bottom: 13.03px;
-  }
-
-  .illustrations__slider--text {
-    width: 100px;
-    height: 30px;
-    background-color: var(--accent-color);
-    border-radius: 8px;
-    padding: 8px 20px 8px 20px;
-  }
-
-  .illustrations__slider--lec {
-    font-family: var(--font-family-figaro);
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 14.4px;
-    color: #ffffff;
-  }
-
-  .orange {
-    margin-left: 98px;
-  }
-
-  .illustrations__slider--student {
-    width: 121.39px;
-    height: 54.01px;
-    margin-top: 29.03px;
-    margin-left: 1156px;
-  }
-
-  .student {
-    background-color: var(--additional-color);
-    margin-left: 19.39px;
-  }
+.student {
+  background-color: var(--additional-color);
+  margin-left: 19.39px;
+}
