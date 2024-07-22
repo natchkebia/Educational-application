@@ -1,14 +1,21 @@
+@media (max-width: 1270px) {
+  /* courses */
+  #prev,
+  #next {
+    display: none;
+  }
+
+  .cource__tittle,  .cource__slider--text span{
+   margin: 0 5px;
+  }
+ 
+}
+
 @media (max-width: 1024px) {
   .header__logo--link img {
     height: 29px;
   }
-  .header__logo--link img {
-    height: 29px;
-  }
 
-  .header__logo--link {
-    width: 85px;
-  }
   .header__logo--link {
     width: 85px;
   }
@@ -16,13 +23,7 @@
   .navigation {
     height: 60px;
   }
-  .navigation {
-    height: 60px;
-  }
 
-  .header__nav--list .header__nav--list--item {
-    display: none;
-  }
   .header__nav--list .header__nav--list--item {
     display: none;
   }
@@ -30,20 +31,11 @@
   .burger-bar {
     display: block;
   }
-  .burger-bar {
-    display: block;
-  }
 
   .burger-bar.active {
     background-color: #202225;
   }
-  .burger-bar.active {
-    background-color: #202225;
-  }
 
-  .mobile-menu.show {
-    display: block;
-  }
   .mobile-menu.show {
     display: block;
   }
@@ -86,13 +78,13 @@
 
 }
 
-
 @media (max-width: 700px) {
   /* videos and library */
   .library-video__container {
     flex-direction: column;
     margin-top: 30px;
   }
+
 
   .library {
     display: flex;
@@ -188,42 +180,15 @@
     font-size: 14px;
     line-height: 24px;
   }
+
+  /* courses */
+.cource__tittle{
+  font-size: 26px;
+  line-height: 31px;
+}
+.cource__slider--text span {
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 
-
-
-
-@media (max-width: 425px) {
-        .footer__social {
-                flex-direction: column-reverse;
-                padding: 24px 0px;
-        }
-
-
-  /* hero */
-  .slider__slide {
-    max-width: 376px;
-    width: 100%;
-    height: 504px;
-    align-items: center;
-    justify-content: center;
-  }
-  .slider__text {
-    text-align: center;
-    width: 100%;
-    top: 40px;
-  }
-  .slider__text button {
-    margin: 0 auto;
-    margin-top: 12px;
-  }
-  .slider__slide img:first-of-type {
-    display: none;
-  }
-  .slider__slide .mobile {
-    display: block;
-  }
-  .arrow-btn {
-    display: none;
-  }
-}

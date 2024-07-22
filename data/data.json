@@ -26,7 +26,7 @@
     },
     {
       "user_img": "./images/customers/user-4.png",
-      "comment": "„როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
+      "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
       "rating": 2,
       "name": "ანასტასია ს.",
       "username": "@username_of_person",
@@ -58,7 +58,7 @@
     },
     {
       "user_img": "./images/customers/user-4.png",
-      "comment": "„როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
+      "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
       "rating": 1,
       "name": "ანასტასია ს.",
       "username": "@username_of_person",
@@ -90,7 +90,7 @@
     },
     {
       "user_img": "./images/customers/user-4.png",
-      "comment": "„როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
+      "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
       "rating": 2,
       "name": "ანასტასია ს.",
       "username": "@username_of_person",
@@ -122,11 +122,97 @@
     },
     {
       "user_img": "./images/customers/user-4.png",
-      "comment": "„როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
+      "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
       "rating": 1,
       "name": "ანასტასია ს.",
       "username": "@username_of_person",
       "star": "./images/icons/Star.svg"
+    }
+  ],
+  "courses": [
+    {
+      "date": "1 - 28 ივლისი 2024",
+      "title": "კურსის დასახელება 1 ორ ხაზიანი რომ იყოს",
+      "description": "ამ კურსის ჩაშლა რამდენიმე სიტყვით, წინადადებით, მოკლედ და კონკრეტულად...",
+      "stars": 5,
+      "originalPrice": "1400₾",
+      "discountedPrice": "700₾",
+      "lectures": 10,
+      "hours": 30,
+      "spots": 40,
+      "discount": "50%",
+      "imageUrl": "./images/cards-photos/Course1_1.png",
+      "altText": "girl"
+    },
+    {
+      "date": "1 - 28 ივლისი 2024",
+      "title": "კურსის დასახელება 1 ორ ხაზიანი რომ იყოს",
+      "description": "ამ კურსის ჩაშლა რამდენიმე სიტყვით, წინადადებით, მოკლედ და კონკრეტულად...",
+      "stars": 5,
+      "originalPrice": "1600₾",
+      "discountedPrice": "800₾",
+      "lectures": 10,
+      "hours": 30,
+      "spots": 40,
+      "discount": "50%",
+      "imageUrl": "./images/cards-photos/Course2_1.png",
+      "altText": "boy"
+    },
+    {
+      "date": "1 - 28 ივლისი 2024",
+      "title": "კურსის დასახელება 1 ორ ხაზიანი რომ იყოს",
+      "description": "ამ კურსის ჩაშლა რამდენიმე სიტყვით, წინადადებით, მოკლედ და კონკრეტულად...",
+      "stars": 5,
+      "originalPrice": "1000₾",
+      "discountedPrice": "800₾",
+      "lectures": 10,
+      "hours": 30,
+      "spots": 40,
+      "discount": "20%",
+      "imageUrl": "./images/cards-photos/Course3_1.png",
+      "altText": "girl"
+    },
+    {
+      "date": "1 - 28 ივლისი 2024",
+      "title": "კურსის დასახელება 1 ორ ხაზიანი რომ იყოს",
+      "description": "ამ კურსის ჩაშლა რამდენიმე სიტყვით, წინადადებით, მოკლედ და კონკრეტულად...",
+      "stars": 5,
+      "originalPrice": "",
+      "discountedPrice": "700₾",
+      "lectures": 10,
+      "hours": 30,
+      "spots": 40,
+      "discount": "",
+      "imageUrl": "./images/cards-photos/Course4_1.png",
+      "altText": "boy"
+    },
+    {
+      "date": "1 - 28 ივლისი 2024",
+      "title": "კურსის დასახელება 1 ორ ხაზიანი რომ იყოს",
+      "description": "ამ კურსის ჩაშლა რამდენიმე სიტყვით, წინადადებით, მოკლედ და კონკრეტულად...",
+      "stars": 5,
+      "originalPrice": "",
+      "discountedPrice": "700₾",
+      "lectures": 10,
+      "hours": 30,
+      "spots": 40,
+      "discount": "",
+      "imageUrl": "./images/cards-photos/Course1_1.png",
+      "altText": "girl"
+    },
+    {
+      "date": "1 - 28 ივლისი 2024",
+      "title": "კურსის დასახელება 1 ორ ხაზიანი რომ იყოს",
+      "description": "ამ კურსის ჩაშლა რამდენიმე სიტყვით, წინადადებით, მოკლედ და კონკრეტულად...",
+      "stars": 5,
+      "originalPrice": "",
+      "discountedPrice": "700₾",
+      "lectures": 10,
+      "hours": 30,
+      "spots": 40,
+      "discount": "",
+      "imageUrl": "./images/cards-photos/Course1_1.png",
+      "altText": "girl"
     }
   ]
 }
