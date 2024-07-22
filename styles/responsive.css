@@ -160,6 +160,13 @@
   .column .column--title {
     margin-bottom: 0;
   }
+  /* about */
+  .about__cards--wrapper {
+    flex-direction: column;
+  }
+  .about__header--desc {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 700px) {
