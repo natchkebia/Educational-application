@@ -11,8 +11,16 @@
     margin: 0 5px;
   }
 
-}
+  /*  illustrations*/
+  .illustrations__slider {
+    overflow-x: hidden;
+  }
 
+  .illustrations__slider--lecturer,
+  .illustrations__slider--student {
+    display: none;
+  }
+}
 
 @media (max-width: 1024px) {
 
@@ -96,6 +104,32 @@
     font-size: 14px;
   }
 
+  /*  illustrations*/
+  .section__title {
+    margin-bottom: 16px;
+  }
+
+  .section__title--about {
+    font-size: 14px;
+  }
+
+  .illustrations__item {
+    margin-right: 16px;
+    width: 280px;
+    height: 76px;
+  }
+
+  .illustrations__item--text {
+    font-size: 12px;
+  }
+
+  .illustrations__item--text p {
+    margin-top: 8px;
+  }
+
+  .reverse {
+    margin-top: 16px;
+  }
 }
 
 @media (max-width: 700px) {

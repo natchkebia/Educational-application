@@ -815,7 +815,9 @@ main {
 }
 
 .illustrations__slider {
-  overflow-x: hidden;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .overflow {
@@ -836,7 +838,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  animation: logoLoop 18s linear infinite;
+  animation: logoLoop 38s linear infinite;
 }
 
 .illustrations__item {
@@ -860,7 +862,6 @@ main {
   line-height: 19.2px;
   font-weight: 600;
   margin-left: 20px;
-  font-size: 16px;
 }
 
 .illustrations__item--text p {
@@ -881,6 +882,44 @@ main {
   }
 }
 
+/* lecturer and student  arrows*/
+.illustrations__slider--lecturer {
+  width: 125.47px;
+  height: 49.97px;
+  margin-left: 187px;
+  margin-bottom: 13.03px;
+}
+
+.illustrations__slider--text {
+  width: 100px;
+  height: 30px;
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  padding: 8px 20px 8px 20px;
+}
+
+.illustrations__slider--lec {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14.4px;
+  color: #ffffff;
+}
+
+.orange {
+  margin-left: 98px;
+}
+
+.illustrations__slider--student {
+  width: 121.39px;
+  height: 54.01px;
+  margin-top: 29.03px;
+  margin-left: 1156px;
+}
+
+.student {
+  background-color: var(--additional-color);
+  margin-left: 19.39px;
+}
 
 
 /* libary section */
@@ -1260,41 +1299,3 @@ main {
 
 
 
-/* lecturer and student */
-.illustrations__slider--lecturer {
-  width: 125.47px;
-  height: 49.97px;
-  margin-left: 187px;
-  margin-bottom: 13.03px;
-}
-
-.illustrations__slider--text {
-  width: 100px;
-  height: 30px;
-  background-color: var(--accent-color);
-  border-radius: 8px;
-  padding: 8px 20px 8px 20px;
-}
-
-.illustrations__slider--lec {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 14.4px;
-  color: #ffffff;
-}
-
-.orange {
-  margin-left: 98px;
-}
-
-.illustrations__slider--student {
-  width: 121.39px;
-  height: 54.01px;
-  margin-top: 29.03px;
-  margin-left: 1156px;
-}
-
-.student {
-  background-color: var(--additional-color);
-  margin-left: 19.39px;
-}
