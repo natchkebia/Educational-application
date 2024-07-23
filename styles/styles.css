@@ -465,10 +465,10 @@ main {
   transition: background-color 0.6s ease;
 }
 
-/* .active,
+.active,
 .dot:hover {
   background-color: var(--box-color);
-} */
+}
 
 /* section about */
 .about {
@@ -1176,8 +1176,6 @@ main {
 
 .section__title--text {
   margin-bottom: 16px;
-  font-size: 40px;
-  line-height: 48px;
 }
 
 .section__title--about {

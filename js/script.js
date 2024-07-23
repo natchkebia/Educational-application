@@ -52,7 +52,7 @@ function detectSwipe(element, callback) {
 
   function handleSwipe() {
     if (touchEndX < touchStartX) {
-      callback(1); 
+      callback(1);
     } else if (touchEndX > touchStartX) {
       callback(-1);
     }
@@ -68,19 +68,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // courses
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   fetch("./data/data.json")
-    .then(response => response.json())
-    .then(data => {
-      const sliderContainer = document.getElementById('slider-container');
+    .then((response) => response.json())
+    .then((data) => {
+      const sliderContainer = document.getElementById("slider-container");
       sliderContainer.innerHTML = generateCourseCards(data.courses);
       initializeSlider();
     })
-    .catch(error => console.error('Error fetching course data:', error));
+    .catch((error) => console.error("Error fetching course data:", error));
 });
 
 function generateCourseCards(courses) {
-  return courses.map(course => `
+  return courses
+    .map(
+      (course) => `
     <div class="slide">
       <div class="courses__slider--card">
         <div class="slider__card--img">
@@ -96,7 +98,11 @@ function generateCourseCards(courses) {
                 ${generateStars(course.stars)}
               </div>
               <div class="courses__prise">
-                ${course.originalPrice ? `<span class="custom-underline">${course.originalPrice}</span>` : ''}
+                ${
+                  course.originalPrice
+                    ? `<span class="custom-underline">${course.originalPrice}</span>`
+                    : ""
+                }
                 <span>${course.discountedPrice}</span>
               </div>
             </div>
@@ -120,23 +126,30 @@ function generateCourseCards(courses) {
           <div class="courses__slider--wrapper img5"></div>
           <span>${course.spots} ადგილი</span>
         </div>
-        ${course.discount ? `<div class="courses__slider--discount">-${course.discount}<object type="image/svg+xml" data="icons/discount.svg"></object></div>` : ''}
+        ${
+          course.discount
+            ? `<div class="courses__slider--discount">-${course.discount}<object type="image/svg+xml" data="icons/discount.svg"></object></div>`
+            : ""
+        }
       </div>
     </div>
-  `).join('');
+  `
+    )
+    .join("");
 }
 
 function generateStars(starCount) {
-  const starSVG = '<object type="image/svg+xml" data="icons/star.svg"></object>';
+  const starSVG =
+    '<object type="image/svg+xml" data="icons/star.svg"></object>';
   return starSVG.repeat(starCount);
 }
 
 function initializeSlider() {
-  const sliderContainer = document.getElementById('slider-container');
-  const prevButton = document.getElementById('prev');
-  const nextButton = document.getElementById('next');
+  const sliderContainer = document.getElementById("slider-container");
+  const prevButton = document.getElementById("prev");
+  const nextButton = document.getElementById("next");
   let coursesCurrentIndex = 0;
-  const slideWidth = 270 + 24; 
+  const slideWidth = 270 + 24;
   let startX = 0;
   let endX = 0;
 
@@ -161,18 +174,17 @@ function initializeSlider() {
     updateSlider();
   }
 
-  nextButton.addEventListener('click', showNextSlide);
-  prevButton.addEventListener('click', showPrevSlide);
+  nextButton.addEventListener("click", showNextSlide);
+  prevButton.addEventListener("click", showPrevSlide);
 
-
-  sliderContainer.addEventListener('touchstart', (e) => {
+  sliderContainer.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
   });
 
-  sliderContainer.addEventListener('touchend', (e) => {
+  sliderContainer.addEventListener("touchend", (e) => {
     endX = e.changedTouches[0].clientX;
     const distance = endX - startX;
-    if (Math.abs(distance) > 50) { 
+    if (Math.abs(distance) > 50) {
       if (distance < 0) {
         showNextSlide();
       } else {
@@ -184,14 +196,14 @@ function initializeSlider() {
   updateSlider();
   function updateButtonVisibility() {
     if (window.innerWidth <= 1270) {
-      prevButton.style.display = 'none';
-      nextButton.style.display = 'none';
+      prevButton.style.display = "none";
+      nextButton.style.display = "none";
     } else {
-      prevButton.style.display = 'block';
-      nextButton.style.display = 'block';
+      prevButton.style.display = "block";
+      nextButton.style.display = "block";
     }
   }
 
-  window.addEventListener('resize', updateButtonVisibility);
+  window.addEventListener("resize", updateButtonVisibility);
   updateButtonVisibility();
 }
