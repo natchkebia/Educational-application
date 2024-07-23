@@ -1,4 +1,18 @@
-@media (max-width: 1270px) {}
+@media (max-width: 1270px) {
+
+  /* courses */
+  #prev,
+  #next {
+    display: none;
+  }
+
+  .cource__tittle,
+  .cource__slider--text span {
+    margin: 0 5px;
+  }
+
+}
+
 
 @media (max-width: 1024px) {
 
@@ -84,7 +98,19 @@
 
 }
 
-@media (max-width: 700px) {}
+@media (max-width: 700px) {
+
+  /* courses */
+  .cource__tittle {
+    font-size: 26px;
+    line-height: 31px;
+  }
+
+  .cource__slider--text span {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
 
 @media (max-width: 600px) {
 
