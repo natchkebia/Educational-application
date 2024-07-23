@@ -1134,9 +1134,10 @@ main {
   line-height: 19.2px;
 }
 
-/* .arrow {
+
+.arrow {
   display: none;
-} */
+}
 
 .column .list li {
   margin-bottom: 26px;
@@ -1217,22 +1218,8 @@ main {
 .footer__contact--info {
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.illustrations__item {
-  margin: 0 24px 0 0;
-  width: 368px;
-  height: 101px;
   flex-direction: row;
-  display: flex;
-  place-items: center;
-  padding: 0.5rem;
-  aspect-ratio: 30/9;
-  background-color: #f9f6ff;
-  border-radius: 8px;
-  border: 1px solid #8447ff4d;
+  justify-content: space-between;
 }
 
 .footer__contact--call,
@@ -1296,4 +1283,3 @@ main {
 .footer__social--links:last-child {
   margin-right: 0px;
 }
-

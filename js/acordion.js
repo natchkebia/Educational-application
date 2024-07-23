@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   titles.forEach((title) => {
     title.addEventListener("click", () => {
       const column = title.parentElement;
-      column.classList.toggle("active");
+      column.classList.toggle("down");
     });
   });
 });
