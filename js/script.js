@@ -81,47 +81,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function generateCourseCards(courses) {
   return courses.map(course => `
-    <div class="slide">
-      <div class="courses__slider--card">
-        <div class="slider__card--img">
-          <img src="${course.imageUrl}" alt="${course.altText}" />
-        </div>
-        <div class="course__slider--wraper">
-          <div class="slider__card--text">
-            <p>${course.date}</p>
-            <h3>${course.title}</h3>
-            <p>${course.description}</p>
-            <div class="slider__card--text--footer">
-              <div class="stars">
-                ${generateStars(course.stars)}
-              </div>
-              <div class="courses__prise">
-                ${course.originalPrice ? `<span class="custom-underline">${course.originalPrice}</span>` : ''}
-                <span>${course.discountedPrice}</span>
-              </div>
-            </div>
-          </div>
-          <div class="slider__card--footer">
-            <div class="slider__card--footer--svg">
-              <object type="image/svg+xml" data="icons/lection.svg"></object>
-              <span>${course.lectures} ლექცია</span>
-            </div>
-            <div class="slider__card--footer--svg">
-              <object type="image/svg+xml" data="icons/time.svg"></object>
-              <span>${course.hours} საათი</span>
-            </div>
-          </div>
-        </div>
-        <div class="courses__slider--people">
-          <div class="courses__slider--wrapper img1"></div>
-          <div class="courses__slider--wrapper img2"></div>
-          <div class="courses__slider--wrapper img3"></div>
-          <div class="courses__slider--wrapper img4"></div>
-          <div class="courses__slider--wrapper img5"></div>
-          <span>${course.spots} ადგილი</span>
-        </div>
-        ${course.discount ? `<div class="courses__slider--discount">-${course.discount}<object type="image/svg+xml" data="icons/discount.svg"></object></div>` : ''}
+    <div class="courses__slider--card">
+      <div class="slider__card--img">
+        <img src="${course.imageUrl}" alt="${course.altText}" />
       </div>
+      <div class="course__slider--wraper">
+        <div class="slider__card--text">
+          <p>${course.date}</p>
+          <h3>${course.title}</h3>
+          <p>${course.description}</p>
+          <div class="slider__card--text--footer">
+            <div class="stars">
+              ${generateStars(course.stars)}
+            </div>
+            <div class="courses__prise">
+              ${course.originalPrice ? `<span class="custom-underline">${course.originalPrice}</span>` : ''}
+              <span>${course.discountedPrice}</span>
+            </div>
+          </div>
+        </div>
+        <div class="slider__card--footer">
+          <div class="slider__card--footer--svg">
+            <object type="image/svg+xml" data="icons/lection.svg"></object>
+            <span>${course.lectures} ლექცია</span>
+          </div>
+          <div class="slider__card--footer--svg">
+            <object type="image/svg+xml" data="icons/time.svg"></object>
+            <span>${course.hours} საათი</span>
+          </div>
+        </div>
+      </div>
+      <div class="courses__slider--people">
+        <div class="courses__slider--wrapper img1"></div>
+        <div class="courses__slider--wrapper img2"></div>
+        <div class="courses__slider--wrapper img3"></div>
+        <div class="courses__slider--wrapper img4"></div>
+        <div class="courses__slider--wrapper img5"></div>
+        <span>${course.spots} ადგილი</span>
+      </div>
+      ${course.discount ? `<div class="courses__slider--discount">-${course.discount}<object type="image/svg+xml" data="icons/discount.svg"></object></div>` : ''}
     </div>
   `).join('');
 }
@@ -136,7 +134,7 @@ function initializeSlider() {
   const prevButton = document.getElementById('prev');
   const nextButton = document.getElementById('next');
   let coursesCurrentIndex = 0;
-  const slideWidth = 270 + 24; 
+  let slideWidth = 270 + 24; 
   let startX = 0;
   let endX = 0;
 
@@ -147,8 +145,22 @@ function initializeSlider() {
 
   function showNextSlide() {
     coursesCurrentIndex++;
-    if (coursesCurrentIndex > sliderContainer.children.length - 4) {
-      coursesCurrentIndex = 0;
+    if (window.innerWidth <= 547) {
+      if (coursesCurrentIndex > sliderContainer.children.length - 1) {
+        coursesCurrentIndex = 0;
+      }
+    } else if (window.innerWidth <= 860) {
+      if (coursesCurrentIndex > sliderContainer.children.length - 2) {
+        coursesCurrentIndex = 0;
+      }
+    } else if (window.innerWidth <= 1024) {
+      if (coursesCurrentIndex > sliderContainer.children.length - 3) {
+        coursesCurrentIndex = 0;
+      }
+    } else {
+      if (coursesCurrentIndex > sliderContainer.children.length - 4) {
+        coursesCurrentIndex = 0;
+      }
     }
     updateSlider();
   }
@@ -156,14 +168,21 @@ function initializeSlider() {
   function showPrevSlide() {
     coursesCurrentIndex--;
     if (coursesCurrentIndex < 0) {
-      coursesCurrentIndex = sliderContainer.children.length - 4;
+      if (window.innerWidth <= 547) {
+        coursesCurrentIndex = sliderContainer.children.length - 1;
+      } else if (window.innerWidth <= 860) {
+        coursesCurrentIndex = sliderContainer.children.length - 2;
+      } else if (window.innerWidth <= 1024) {
+        coursesCurrentIndex = sliderContainer.children.length - 3;
+      } else {
+        coursesCurrentIndex = sliderContainer.children.length - 4;
+      }
     }
     updateSlider();
   }
 
   nextButton.addEventListener('click', showNextSlide);
   prevButton.addEventListener('click', showPrevSlide);
-
 
   sliderContainer.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
@@ -172,7 +191,7 @@ function initializeSlider() {
   sliderContainer.addEventListener('touchend', (e) => {
     endX = e.changedTouches[0].clientX;
     const distance = endX - startX;
-    if (Math.abs(distance) > 50) { 
+    if (Math.abs(distance) > 50) {
       if (distance < 0) {
         showNextSlide();
       } else {
@@ -182,6 +201,7 @@ function initializeSlider() {
   });
 
   updateSlider();
+
   function updateButtonVisibility() {
     if (window.innerWidth <= 1270) {
       prevButton.style.display = 'none';
@@ -192,6 +212,23 @@ function initializeSlider() {
     }
   }
 
-  window.addEventListener('resize', updateButtonVisibility);
+  function updateSlideWidth() {
+    if (window.innerWidth <= 547) {
+      slideWidth = window.innerWidth;
+    } else if (window.innerWidth <= 860) {
+      slideWidth = (window.innerWidth - 2 * 12) / 2;
+    } else if (window.innerWidth <= 1024) {
+      slideWidth = (window.innerWidth - 2 * 12) / 3;
+    } else {
+      slideWidth = 270 + 24;
+    }
+    sliderContainer.style.transform = `translateX(-${coursesCurrentIndex * slideWidth}px)`;
+  }
+
+  window.addEventListener('resize', () => {
+    updateButtonVisibility();
+    updateSlideWidth();
+  });
   updateButtonVisibility();
+  updateSlideWidth();
 }
