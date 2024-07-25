@@ -11,9 +11,9 @@
     margin: 0 5px;
   }
 
-  .slider-container {
+  /* .slider-container {
     gap: 16px;
-  }
+  } */
 
   /*  illustrations*/
   .illustrations__slider {
@@ -368,6 +368,14 @@
     font-size: 14px;
     line-height: 24px;
   }
+  
+  /* courses */
+  .slider{
+    margin: 0 15px;
+  }
+  .slider-container{
+    gap: 30px;
+  }
 }
 
 @media (max-width: 547px) {
@@ -381,9 +389,7 @@
     left: 15%;
   }
 
-  .slider-container {
-    gap: 0px;
-  }
+
 
   .slider__card--text {
     width: 85%;
