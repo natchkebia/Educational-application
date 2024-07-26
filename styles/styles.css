@@ -569,6 +569,7 @@ main {
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
+  text-wrap: nowrap;
   cursor: pointer;
 }
 
@@ -1087,6 +1088,7 @@ main {
 
 .testimonials__slider-wrapper .arrow-btn {
   border: 1px solid #8447ff;
+  color: var(--box-color);
 }
 
 .testimonials .card-slider {

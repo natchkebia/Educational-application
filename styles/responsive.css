@@ -208,6 +208,10 @@
     width: 280px;
     height: 76px;
   }
+    .illustrations__item img{
+      width: 64px;
+      height: 64px;
+    }
 
   .illustrations__item--text {
     font-size: 12px;
