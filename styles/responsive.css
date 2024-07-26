@@ -85,15 +85,10 @@
   }
 
   /* about */
-
-
-
   .about__header--title,
   .about__header--desc {
     max-width: 100%;
   }
-
-
 
   /* testimonials */
   .testimonials__card {
@@ -218,11 +213,6 @@
     height: 76px;
   }
 
-  .illustrations__item img {
-    width: 64px;
-    height: 64px;
-  }
-
   .illustrations__item--text {
     font-size: 12px;
   }
@@ -328,6 +318,11 @@
     display: flex;
     flex-direction: column-reverse;
   }
+
+  /* testimonials */
+  .testimonials__slider {
+    flex: 0 0 80%;
+  }
 }
 
 @media (max-width: 669px) {
@@ -394,38 +389,6 @@
 }
 
 @media (max-width: 547px) {
-  section {
-    padding: 40px 0;
-  }
-
-  /* about */
-
-  /* .about {
-    margin: 40px auto;
-  } */
-
-  .about__header {
-    margin-bottom: 16px;
-    gap: 16px;
-  }
-
-  .about__header--title {
-    max-width: 260px;
-
-  }
-
-  .about__card--img img {
-    width: 170px;
-    height: 170px;
-  }
-
-  .about__card {
-    max-width: 343px;
-    width: 100%;
-    height: 343px;
-  }
-
-  /* courses */
   .slider {
     width: 100%;
   }
@@ -436,10 +399,13 @@
     left: 15%;
   }
 
+
+
   .slider__card--text {
     width: 85%;
     margin: 33px auto;
   }
+
 
   .courses__slider--card {
     min-width: 100%;
@@ -489,5 +455,36 @@
   .courses__slider--people {
     top: 170px;
     left: 15%;
+  }
+}
+
+
+
+
+/* Mobile view */
+@media (max-width: 768px) {}
+
+
+/* Adjustments for screens around 375px */
+@media (max-width: 375px) {
+  .testimonials__slider {
+    overflow: hidden;
+    /* Hide overflow to show partial neighboring slides */
+  }
+
+  .testimonials__card {
+    flex: 0 0 calc(100% - 40px);
+    /* Adjust width to fit 1 card fully and show parts of neighbors */
+    margin: 0 20px;
+    /* Adjust margin to show parts of neighboring cards */
+    box-sizing: border-box;
+    /* Ensure margins are included in the width calculation */
+  }
+
+  .testimonials__slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: transform 0.3s ease;
   }
 }

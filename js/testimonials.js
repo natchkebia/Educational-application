@@ -65,7 +65,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const slider = document.querySelector(".card-slider");
     const totalCards = slider.children.length;
 
-    const cardsToShow = window.innerWidth <= 768 ? 1 : 4; // Adjust number of cards based on screen width
+    // Determine number of cards to show based on screen width
+    const width = window.innerWidth;
+    const cardsToShow = width <= 375 ? 1 : width <= 768 ? 1 : 4; // Adjust based on your existing conditions
+
+    // Calculate card width including margins
+    const cardWidth =
+      slider.children[0].offsetWidth +
+      parseFloat(getComputedStyle(slider.children[0]).marginLeft) +
+      parseFloat(getComputedStyle(slider.children[0]).marginRight);
+
     const maxIndex = Math.ceil(totalCards / cardsToShow) - 1;
 
     if (index < 0) {
@@ -76,9 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       currentIndex = index;
     }
 
-    slider.style.transform = `translateX(-${
-      currentIndex * (100 / cardsToShow)
-    }%)`;
+    slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
   }
 
   function prevSlide() {
@@ -107,14 +114,17 @@ document.addEventListener("DOMContentLoaded", () => {
       currentX = event.touches[0].clientX;
       const deltaX = currentX - startX;
       slider.style.transform = `translateX(calc(-${
-        currentIndex * 100
-      }% + ${deltaX}px))`;
+        currentIndex *
+        (slider.children[0].offsetWidth +
+          parseFloat(getComputedStyle(slider.children[0]).marginLeft) +
+          parseFloat(getComputedStyle(slider.children[0]).marginRight))
+      }px + ${deltaX}px))`;
     });
 
     slider.addEventListener("touchend", () => {
       if (!isDragging) return;
       const deltaX = currentX - startX;
-      const threshold = slider.offsetWidth / 1; // Adjust threshold as needed
+      const threshold = slider.offsetWidth / 3; // Adjust threshold for swipe sensitivity
       if (deltaX > threshold) {
         prevSlide();
       } else if (deltaX < -threshold) {
