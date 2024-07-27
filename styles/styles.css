@@ -574,7 +574,7 @@ main {
   margin-bottom: 40px;
 }
 
-.cource__slider--text span {
+.cource__slider--text a {
   color: var(--primary-color);
   font-size: 20px;
   font-weight: 600;
