@@ -934,6 +934,11 @@ main {
   border: 1px solid #8447ff4d;
 }
 
+.illustrations__item img {
+  width: 71px;
+  height: 71px;
+}
+
 .illustrations__item--text {
   width: 227px;
   height: 50px;
