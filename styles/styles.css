@@ -241,7 +241,9 @@ section .title {
   border-radius: 8px;
   margin-top: 11px;
   position: absolute;
-  display: none;
+  top: 22px;
+  right: 0;
+  /* display: none; */
 }
 .header__nav--signin {
   width: 150px;
@@ -276,9 +278,12 @@ section .title {
   font-weight: 500;
   color: #ffffff;
 }
-.drop:hover .header__nav--dropdown {
-  display: block;
+.drop {
+  position: relative;
+  top: 0;
+  right: 0;
 }
+
 
 /* mobile menu burger bar */
 
