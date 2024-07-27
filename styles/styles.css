@@ -294,7 +294,6 @@ section .title {
   right: 0;
 }
 
-
 /* mobile menu burger bar */
 
 .burger-bar {
@@ -677,8 +676,15 @@ main {
   overflow: hidden;
 }
 
+.slider__card--img {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+
 .slider__card--text {
-  width: 234px;
+  width: 85%;
   margin: 0 auto;
   margin-top: 33px;
   border-bottom: 1px solid #000;
@@ -769,8 +775,9 @@ main {
   border-radius: 25px;
   position: absolute;
   background-color: white;
-  top: 34%;
-  left: 30px;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%);
 }
 
 .courses__slider--wrapper {
@@ -923,11 +930,6 @@ main {
   background-color: #f9f6ff;
   border-radius: 8px;
   border: 1px solid #8447ff4d;
-}
-
-.illustrations__item img {
-  width: 64px;
-  height: 64px;
 }
 
 .illustrations__item--text {
