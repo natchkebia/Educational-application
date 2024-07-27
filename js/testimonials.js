@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Determine number of cards to show based on screen width
     const width = window.innerWidth;
-    const cardsToShow = width <= 375 ? 1 : width <= 768 ? 1 : 4; // Adjust based on your existing conditions
+    const cardsToShow = width <= 768 ? 1 : 4; // Adjust based on your existing conditions
 
     // Calculate card width including margins
     const cardWidth =

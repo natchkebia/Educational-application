@@ -92,7 +92,7 @@
 
   /* testimonials */
   .testimonials__card {
-    flex: 1 0 29.5%;
+    flex: 1 0 31.5%;
     min-width: 270px;
   }
 
@@ -320,9 +320,9 @@
   }
 
   /* testimonials */
-  .testimonials__slider {
+  /* .testimonials__slider {
     flex: 0 0 80%;
-  }
+  } */
 }
 
 @media (max-width: 669px) {
@@ -455,36 +455,5 @@
   .courses__slider--people {
     top: 170px;
     left: 15%;
-  }
-}
-
-
-
-
-/* Mobile view */
-@media (max-width: 768px) {}
-
-
-/* Adjustments for screens around 375px */
-@media (max-width: 375px) {
-  .testimonials__slider {
-    overflow: hidden;
-    /* Hide overflow to show partial neighboring slides */
-  }
-
-  .testimonials__card {
-    flex: 0 0 calc(100% - 40px);
-    /* Adjust width to fit 1 card fully and show parts of neighbors */
-    margin: 0 20px;
-    /* Adjust margin to show parts of neighboring cards */
-    box-sizing: border-box;
-    /* Ensure margins are included in the width calculation */
-  }
-
-  .testimonials__slider-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    transition: transform 0.3s ease;
   }
 }
