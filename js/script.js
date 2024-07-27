@@ -68,20 +68,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // courses
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   fetch("./data/data.json")
-    .then(response => response.json())
-    .then(data => {
-      const sliderContainer = document.getElementById('slider-container');
+    .then((response) => response.json())
+    .then((data) => {
+      const sliderContainer = document.getElementById("slider-container");
       sliderContainer.innerHTML = generateCourseCards(data.courses);
       initializeSlider();
     })
-    .catch(error => console.error('Error fetching course data:', error));
+    .catch((error) => console.error("Error fetching course data:", error));
 });
 
 function generateCourseCards(courses) {
-  return courses.map(course => `
-    <div class="courses__slider--card">
+  return courses
+    .map(
+      (course) => `
+    <a class="courses__slider--card"  href="./detail-pages/courses-detail-page.html">
       <div class="slider__card--img">
         <img src="${course.imageUrl}" alt="${course.altText}" />
       </div>
@@ -95,7 +97,11 @@ function generateCourseCards(courses) {
               ${generateStars(course.stars)}
             </div>
             <div class="courses__prise">
-              ${course.originalPrice ? `<span class="custom-underline">${course.originalPrice}</span>` : ''}
+              ${
+                course.originalPrice
+                  ? `<span class="custom-underline">${course.originalPrice}</span>`
+                  : ""
+              }
               <span>${course.discountedPrice}</span>
             </div>
           </div>
@@ -119,22 +125,29 @@ function generateCourseCards(courses) {
         <div class="courses__slider--wrapper img5"></div>
         <span>${course.spots} ადგილი</span>
       </div>
-      ${course.discount ? `<div class="courses__slider--discount">-${course.discount}<object type="image/svg+xml" data="icons/discount.svg"></object></div>` : ''}
-    </div>
-  `).join('');
+      ${
+        course.discount
+          ? `<div class="courses__slider--discount">-${course.discount}<object type="image/svg+xml" data="icons/discount.svg"></object></div>`
+          : ""
+      }
+    </a>
+  `
+    )
+    .join("");
 }
 
 function generateStars(starCount) {
-  const starSVG = '<object type="image/svg+xml" data="icons/star.svg"></object>';
+  const starSVG =
+    '<object type="image/svg+xml" data="icons/star.svg"></object>';
   return starSVG.repeat(starCount);
 }
 
 function initializeSlider() {
-  const sliderContainer = document.getElementById('slider-container');
-  const prevButton = document.getElementById('prev');
-  const nextButton = document.getElementById('next');
+  const sliderContainer = document.getElementById("slider-container");
+  const prevButton = document.getElementById("prev");
+  const nextButton = document.getElementById("next");
   let coursesCurrentIndex = 0;
-  let slideWidth = 270 + 24; 
+  let slideWidth = 270 + 24;
   let startX = 0;
   let endX = 0;
 
@@ -181,14 +194,14 @@ function initializeSlider() {
     updateSlider();
   }
 
-  nextButton.addEventListener('click', showNextSlide);
-  prevButton.addEventListener('click', showPrevSlide);
+  nextButton.addEventListener("click", showNextSlide);
+  prevButton.addEventListener("click", showPrevSlide);
 
-  sliderContainer.addEventListener('touchstart', (e) => {
+  sliderContainer.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
   });
 
-  sliderContainer.addEventListener('touchend', (e) => {
+  sliderContainer.addEventListener("touchend", (e) => {
     endX = e.changedTouches[0].clientX;
     const distance = endX - startX;
     if (Math.abs(distance) > 50) {
@@ -204,11 +217,11 @@ function initializeSlider() {
 
   function updateButtonVisibility() {
     if (window.innerWidth <= 1270) {
-      prevButton.style.display = 'none';
-      nextButton.style.display = 'none';
+      prevButton.style.display = "none";
+      nextButton.style.display = "none";
     } else {
-      prevButton.style.display = 'block';
-      nextButton.style.display = 'block';
+      prevButton.style.display = "block";
+      nextButton.style.display = "block";
     }
   }
 
@@ -222,10 +235,12 @@ function initializeSlider() {
     } else {
       slideWidth = 270 + 24;
     }
-    sliderContainer.style.transform = `translateX(-${coursesCurrentIndex * slideWidth}px)`;
+    sliderContainer.style.transform = `translateX(-${
+      coursesCurrentIndex * slideWidth
+    }px)`;
   }
 
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     updateButtonVisibility();
     updateSlideWidth();
   });

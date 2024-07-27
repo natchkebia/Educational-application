@@ -92,7 +92,7 @@
 
   /* testimonials */
   .testimonials__card {
-    flex: 1 0 29.5%;
+    flex: 1 0 31.5%;
     min-width: 270px;
   }
 
@@ -139,7 +139,7 @@
   }
 
   .courses__slider--card {
-    min-width: calc((100% - 2 * 12px) / 3); 
+    min-width: calc((100% - 2 * 12px) / 3);
   }
 }
 
@@ -147,17 +147,19 @@
   .slider {
     width: 100%;
   }
-.courses__slider--people{
-  top: 190px;
-  left: 20%;
-}
+
+  .courses__slider--people {
+    top: 190px;
+    left: 20%;
+  }
+
   .slider-container {
     gap: 24px;
     margin: 0 10px;
   }
 
   .courses__slider--card {
-    min-width: calc((100% - 2 * 12px) / 2); 
+    min-width: calc((100% - 2 * 12px) / 2);
   }
 }
 
@@ -165,17 +167,19 @@
   .slider {
     width: 100%;
   }
-.courses__slider--people{
-  top: 190px;
-  left: 20%;
-}
+
+  .courses__slider--people {
+    top: 190px;
+    left: 20%;
+  }
+
   .slider-container {
     gap: 24px;
     margin: 0 10px;
   }
 
   .courses__slider--card {
-    min-width: calc((100% - 2 * 12px) / 2); 
+    min-width: calc((100% - 2 * 12px) / 2);
   }
 }
 
@@ -285,7 +289,7 @@
 
   /* courses */
 
-  .courses__slider--people{
+  .courses__slider--people {
     top: 165px;
     left: 20%;
   }
@@ -314,10 +318,15 @@
     display: flex;
     flex-direction: column-reverse;
   }
+
+  /* testimonials */
+  /* .testimonials__slider {
+    flex: 0 0 80%;
+  } */
 }
 
 @media (max-width: 669px) {
-  .courses__slider--people{
+  .courses__slider--people {
     top: 130px;
     left: 10%;
   }
@@ -368,12 +377,13 @@
     font-size: 14px;
     line-height: 24px;
   }
-  
+
   /* courses */
-  .slider{
+  .slider {
     margin: 0 15px;
   }
-  .slider-container{
+
+  .slider-container {
     gap: 30px;
   }
 }
@@ -383,7 +393,7 @@
     width: 100%;
   }
 
-  .courses__slider--people{
+  .courses__slider--people {
     top: 270px;
     width: 70%;
     left: 15%;
@@ -396,7 +406,7 @@
     margin: 33px auto;
   }
 
-  
+
   .courses__slider--card {
     min-width: 100%;
     max-width: 100%;
@@ -414,7 +424,7 @@
 }
 
 @media (max-width: 484px) {
-  .courses__slider--people{
+  .courses__slider--people {
     top: 220px;
     left: 15%;
   }
@@ -423,7 +433,7 @@
 
 
 @media (max-width: 434px) {
-  .courses__slider--people{
+  .courses__slider--people {
     top: 200px;
     left: 15%;
   }
@@ -442,7 +452,7 @@
 
 
 @media (max-width: 382px) {
-  .courses__slider--people{
+  .courses__slider--people {
     top: 170px;
     left: 15%;
   }

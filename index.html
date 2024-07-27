@@ -21,7 +21,9 @@
           </div>
           <ul class="header__nav--list">
             <li class="header__nav--list--item">
-              <a class="header__nav--list--link" href="#">კურსები</a>
+              <a class="header__nav--list--link" href="./pages/courses.html"
+                >კურსები</a
+              >
             </li>
             <li class="header__nav--list--item">
               <a class="header__nav--list--link" href="#">ვიდეო ლექციები</a>
@@ -195,7 +197,9 @@
               </div>
               <ul class="mobile-menu__nav">
                 <li class="mobile-menu__nav--item">
-                  <a class="mobile-menu__nav--link" href="#">კურსები</a>
+                  <a class="mobile-menu__nav--link" href="./pages/courses.html"
+                    >კურსები</a
+                  >
                 </li>
                 <li class="mobile-menu__nav--item">
                   <a class="mobile-menu__nav--link" href="#">ვედეო ლექციები</a>
@@ -438,7 +442,7 @@
           <div class="slider">
             <div class="cource__slider--text">
               <h2 class="title cource__tittle">პოპულარული კურსები</h2>
-              <span>ყველას ნახვა</span>
+              <a href="./pages/courses.html">ყველას ნახვა</a>
             </div>
             <div class="slider-container" id="slider-container"></div>
           </div>
@@ -666,7 +670,7 @@
         </div>
       </section>
       <!-- section videos -->
-      <section class="videos">
+      <section class="library-videos">
         <div class="container library-video__container">
           <div class="library-video__container--text">
             <h2 class="title videos__title">ვიდეო ლექციები</h2>
@@ -685,9 +689,7 @@
               alt="Video Lectures" />
           </div>
         </div>
-      </section>
-      <!-- section librarys -->
-      <section class="librarys">
+
         <div class="container library-video__container library">
           <div class="library-video__container--image">
             <img src="./images/Illustrations/library-1.png" alt="Library" />
@@ -728,8 +730,36 @@
             </div>
           </div>
           <div class="arrow__wrapper">
-            <button class="arrow-btn" onclick="prevSlide()">&#10094;</button>
-            <button class="arrow-btn" onclick="nextSlide()">&#10095;</button>
+            <div class="arrow-btn" onclick="prevSlide()">
+              <svg
+                width="7"
+                height="14"
+                viewBox="0 0 7 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6 13L1 7L6 1"
+                  stroke=""
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="arrow-btn" onclick="nextSlide()">
+              <svg
+                width="7"
+                height="14"
+                viewBox="0 0 7 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1 1L6 7L1 13"
+                  stroke=""
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
           </div>
         </div>
       </section>
@@ -766,7 +796,7 @@
                 </span>
               </div>
               <ul class="list">
-                <li><a href="#">კურსები</a></li>
+                <li><a href="./pages/courses.html">კურსები</a></li>
                 <li><a href="#">ვიდეო ლექციები</a></li>
                 <li><a href="#">ბიბლიოთეკა</a></li>
                 <li><a href="#">კონტაქტი</a></li>

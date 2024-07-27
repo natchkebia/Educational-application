@@ -95,6 +95,10 @@ body {
   background: #6323e4;
 }
 
+section {
+  padding: 100px 0;
+}
+
 section .title {
   font-size: 40px;
   font-weight: 600;
@@ -370,6 +374,7 @@ main {
 
 .hero {
   background-color: var(--background-color-2);
+  padding: 0;
 }
 
 .hero__container {
@@ -472,7 +477,7 @@ main {
 
 /* section about */
 .about {
-  margin: 100px auto;
+  /* margin: 100px auto; */
   background-color: var(--background-color-1);
 }
 
@@ -518,6 +523,11 @@ main {
   margin: 16px 18px auto 8px;
 }
 
+.about__card--img img {
+  width: 181px;
+  height: 181px;
+}
+
 .about__card--content {
   height: 154px;
   display: flex;
@@ -560,15 +570,16 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 100px;
+  /* /  margin-top: 100px; */
   margin-bottom: 40px;
 }
 
-.cource__slider--text span {
+.cource__slider--text a {
   color: var(--primary-color);
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
+  text-wrap: nowrap;
   cursor: pointer;
 }
 
@@ -580,7 +591,7 @@ main {
   justify-content: space-between;
   margin: 0 auto;
   position: relative;
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
 }
 
 .slider {
@@ -791,7 +802,8 @@ main {
 
 /* illustrations */
 .illustrations {
-  padding: 100px 0;
+  padding-bottom: 0;
+  cursor: none;
 }
 
 .section__title {
@@ -818,6 +830,7 @@ main {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+  position: relative;
 }
 
 .overflow {
@@ -886,8 +899,9 @@ main {
 .illustrations__slider--lecturer {
   width: 125.47px;
   height: 49.97px;
-  margin-left: 187px;
-  margin-bottom: 13.03px;
+  position: absolute;
+  top: -63px;
+  left: 148px;
 }
 
 .illustrations__slider--text {
@@ -912,8 +926,9 @@ main {
 .illustrations__slider--student {
   width: 121.39px;
   height: 54.01px;
-  margin-top: 29.03px;
-  margin-left: 1156px;
+  position: absolute;
+  right: 162px;
+  bottom: -68px;
 }
 
 .student {
@@ -923,6 +938,9 @@ main {
 
 
 /* libary section */
+/* .library-videos {
+  padding-top: 0;
+} */
 
 .library-video__container {
   display: flex;
@@ -955,7 +973,7 @@ main {
 /* testimonials */
 
 .testimonials {
-  padding: 100px 0 36px;
+  /* padding: 100px 0 36px; */
   background-color: #f9f6ff;
 }
 
@@ -993,6 +1011,7 @@ main {
   left: 0;
   min-height: 236px;
   padding: 21px;
+  margin-right: 24px;
 }
 
 .testimonials__card--img {
@@ -1068,7 +1087,6 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
   height: 338px;
 }
 
@@ -1087,6 +1105,7 @@ main {
 
 .testimonials__slider-wrapper .arrow-btn {
   border: 1px solid #8447ff;
+  color: var(--box-color);
 }
 
 .testimonials .card-slider {
