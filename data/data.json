@@ -1,7 +1,7 @@
 {
   "cardsTestimonials": [
     {
-      "user_img": "./images/customers/user-1.png",
+      "user_img": "./images/customers/person-1.png",
       "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
       "rating": 1,
       "name": "ფელიპე მ.",
@@ -9,7 +9,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-2.png",
+      "user_img": "./images/customers/person-2.png",
       "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
       "rating": 3,
       "name": "ჯენიფერ ჯ.",
@@ -17,7 +17,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-3.png",
+      "user_img": "./images/customers/person-3.png",
       "comment": "მე პირდაპირ გამოვიყენე ცნებები და უნარები, რომლებიც ჩემი კურსებიდან ვისწავლე ახალი საინტერესო პროექტისთვის",
       "rating": 5,
       "name": "ნინო კ.",
@@ -25,7 +25,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-4.png",
+      "user_img": "./images/customers/person-4.png",
       "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
       "rating": 2,
       "name": "ანასტასია ს.",
@@ -33,7 +33,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-1.png",
+      "user_img": "./images/customers/person-1.png",
       "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
       "rating": 3,
       "name": "ფელიპე მ.",
@@ -41,7 +41,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-2.png",
+      "user_img": "./images/customers/person-2.png",
       "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
       "rating": 2,
       "name": "ჯენიფერ ჯ.",
@@ -49,7 +49,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-3.png",
+      "user_img": "./images/customers/person-3.png",
       "comment": "მე პირდაპირ გამოვიყენე ცნებები და უნარები, რომლებიც ჩემი კურსებიდან ვისწავლე ახალი საინტერესო პროექტისთვის",
       "rating": 2,
       "name": "ნინო კ.",
@@ -57,7 +57,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-4.png",
+      "user_img": "./images/customers/person-4.png",
       "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
       "rating": 1,
       "name": "ანასტასია ს.",
@@ -65,7 +65,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-1.png",
+      "user_img": "./images/customers/person-1.png",
       "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
       "rating": 1,
       "name": "ფელიპე მ.",
@@ -73,7 +73,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-2.png",
+      "user_img": "./images/customers/person-2.png",
       "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
       "rating": 3,
       "name": "ჯენიფერ ჯ.",
@@ -81,7 +81,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-3.png",
+      "user_img": "./images/customers/person-3.png",
       "comment": "მე პირდაპირ გამოვიყენე ცნებები და უნარები, რომლებიც ჩემი კურსებიდან ვისწავლე ახალი საინტერესო პროექტისთვის",
       "rating": 5,
       "name": "ნინო კ.",
@@ -89,7 +89,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-4.png",
+      "user_img": "./images/customers/person-4.png",
       "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
       "rating": 2,
       "name": "ანასტასია ს.",
@@ -97,7 +97,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-1.png",
+      "user_img": "./images/customers/person-1.png",
       "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
       "rating": 3,
       "name": "ფელიპე მ.",
@@ -105,7 +105,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-2.png",
+      "user_img": "./images/customers/person-2.png",
       "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
       "rating": 2,
       "name": "ჯენიფერ ჯ.",
@@ -113,7 +113,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-3.png",
+      "user_img": "./images/customers/person-3.png",
       "comment": "მე პირდაპირ გამოვიყენე ცნებები და უნარები, რომლებიც ჩემი კურსებიდან ვისწავლე ახალი საინტერესო პროექტისთვის",
       "rating": 2,
       "name": "ნინო კ.",
@@ -121,7 +121,7 @@
       "star": "./images/icons/Star.svg"
     },
     {
-      "user_img": "./images/customers/user-4.png",
+      "user_img": "./images/customers/person-4.png",
       "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
       "rating": 1,
       "name": "ანასტასია ს.",
