@@ -1390,9 +1390,9 @@ main {
   margin-bottom: 32px;
 }
 
-.autorization__img {
-  /* min-width: 652px; */
-  /* width: 100%; */
+.autorization .header__logo--link img {
+  height: 38px;
+  width: 111px;
 }
 
 .autorization__img img {
