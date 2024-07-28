@@ -142,25 +142,7 @@
   }
 }
 
-@media (min-width: 548px) and (max-width: 860px) {
-  .slider {
-    width: 100%;
-  }
 
-  /* .courses__slider--people {
-    top: 190px;
-    left: 20%;
-  } */
-
-  .slider-container {
-    gap: 24px;
-    margin: 0 10px;
-  }
-
-  .courses__slider--card {
-    min-width: calc((100% - 2 * 12px) / 2);
-  }
-}
 
 @media (min-width: 548px) and (max-width: 860px) {
   .slider {
