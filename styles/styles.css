@@ -105,11 +105,9 @@ section .title {
 }
 
 .gradient-text {
-  background: linear-gradient(
-    90deg,
-    var(--gradient-color-2),
-    var(--gradient-color-1)
-  );
+  background: linear-gradient(90deg,
+      var(--gradient-color-2),
+      var(--gradient-color-1));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -236,6 +234,7 @@ section .title {
   opacity: 100%;
   cursor: pointer;
 }
+
 /* dropdown */
 .header__nav--dropdown {
   width: 200px;
@@ -249,6 +248,7 @@ section .title {
   right: 0;
   /* display: none; */
 }
+
 .header__nav--signin {
   width: 150px;
   height: 40px;
@@ -258,16 +258,20 @@ section .title {
   background-color: transparent;
   margin: 14px 25px;
 }
+
 .header__nav--signin:hover {
   background-color: #dac8ff;
 }
+
 .register {
   margin-top: 12px;
   background-color: #8447ff;
 }
+
 .register:hover {
   background-color: #6323E4;
 }
+
 .header__nav--link {
   font-family: var(--font-family-figaro);
   font-size: 16px;
@@ -275,6 +279,7 @@ section .title {
   font-weight: 500;
   color: #8447ff;
 }
+
 .reg {
   font-family: var(--font-family-figaro);
   font-size: 16px;
@@ -282,6 +287,7 @@ section .title {
   font-weight: 500;
   color: #ffffff;
 }
+
 .drop {
   position: relative;
   top: 0;
@@ -459,7 +465,7 @@ main {
   z-index: 3;
 }
 
-.slider__text > h1 {
+.slider__text>h1 {
   font-family: var(--font-family-Gilroy);
   font-size: 40px;
   font-weight: 900;
@@ -1350,4 +1356,70 @@ main {
 
 .footer__social--links:last-child {
   margin-right: 0px;
+}
+
+
+
+/* || autorization main styles*/
+
+.autorization {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: stretch;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.autorization__container {
+  max-width: 502px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 46px 16px 84px;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.autorization__header {
+  margin-bottom: 36px;
+}
+
+.autorization .header__logo {
+  margin-bottom: 32px;
+}
+
+.autorization__img {
+  /* min-width: 652px; */
+  /* width: 100%; */
+}
+
+.autorization__img img {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.backto .arrow-btn {
+  border: 1px solid #8447FF;
+}
+
+.autorization__main {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+
+}
+
+.autorization-box {
+  padding: 0;
+}
+
+.autorization .form--wrapper {
+  display: flex;
+  flex-direction: column;
 }
