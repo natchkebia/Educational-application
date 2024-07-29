@@ -9,12 +9,16 @@ document
     let firstname = document.getElementById("firstname").value.trim();
     if (!firstname) {
       errors.firstname = "აუცილებელი ველი";
+    } else if (!/^[A-Za-z]+$/.test(firstname)) {
+      errors.firstname = "მხოლოდ ასოები არის დაშვებული";
     }
 
     // Validate Last Name
     let lastname = document.getElementById("lastname").value.trim();
     if (!lastname) {
       errors.lastname = "აუცილებელი ველი";
+    } else if (!/^[A-Za-z]+$/.test(lastname)) {
+      errors.lastname = "მხოლოდ ასოები არის დაშვებული";
     }
 
     // Validate Email
@@ -39,18 +43,20 @@ document
     if (!password) {
       errors.password = "აუცილებელი ველი";
     } else if (password !== passwConfirm) {
-      errors.passwConfirm = "პაროლები არ ემთხვევა";
+      errors.passwConfirm = "შეყვანილი პაროლები ერთმანეთს არ ემთხვევა";
     }
 
     // Display Errors
     document.querySelectorAll(".error-message").forEach((element) => {
       element.innerText = "";
+      element.classList.remove("show-icon"); // Remove icon class initially
     });
 
     for (let key in errors) {
       let errorElement = document.getElementById("error-" + key);
       if (errorElement) {
         errorElement.innerText = errors[key];
+        errorElement.classList.add("show-icon"); // Add icon class if there's an error
       }
     }
 

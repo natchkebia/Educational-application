@@ -1459,6 +1459,12 @@ main {
   flex-direction: column-reverse;
 }
 
+.username {
+  display: flex;
+  gap: 12px;
+}
+
+
 .input-box-label {
   position: absolute;
   top: 50%;
@@ -1496,11 +1502,26 @@ main {
 }
 
 .error-message {
+  position: relative;
+  /* Ensure positioning context for the pseudo-element */
   margin-top: 5px;
-  color: red;
-  font-size: 14px;
+  color: #F44336;
+  font-size: 16px;
   font-weight: 400;
   line-height: 18px;
+}
+
+.error-message.show-icon::before {
+  content: url(../images/autorization/!!.svg);
+  /* Ensure the path to the icon is correct */
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  /* Ensure the height matches the icon's height */
+  vertical-align: middle;
+  /* Align icon with text */
+  margin-right: 8px;
+  /* Space between icon and text */
 }
 
 
@@ -1561,9 +1582,9 @@ main {
 
 .login-register-content {
   text-align: center;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 18px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
 
 }
 
