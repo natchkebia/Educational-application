@@ -217,6 +217,10 @@ section .title {
   font-weight: 500;
 }
 
+#active {
+  font-weight: 600;
+}
+
 .header__nav--list .header__nav--list--link:hover {
   color: var(--box-color);
   opacity: 100%;
@@ -293,6 +297,8 @@ section .title {
   top: 0;
   right: 0;
 }
+
+
 
 /* mobile menu burger bar */
 
