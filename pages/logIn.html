@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>შესვლა</title>
+    <title>ავტორიზაცია</title>
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="stylesheet" href="../styles/responsive.css" />
     <link rel="icon" href="../images/logo/header-logo.svg" />
@@ -13,7 +13,8 @@
       <div class="autorization__img">
         <img
           src="../images/autorization/guramishvili.png"
-          alt="Davit Guramishvili Quote" />
+          alt="Akaki Tsereteli Quote"
+        />
       </div>
       <div class="autorization__container">
         <header class="autorization__header">
@@ -21,7 +22,8 @@
             <a class="header__logo--link" href="../index.html" class="logo">
               <img
                 src="../images/logo/logo2final-01-01.png"
-                alt="Skillup logo" />
+                alt="Skillup logo"
+              />
             </a>
           </div>
           <div class="backto">
@@ -31,13 +33,15 @@
                 height="14"
                 viewBox="0 0 7 14"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   d="M6 13L1 7L6 1"
                   stroke=""
                   stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"></path>
+                  stroke-linejoin="round"
+                ></path>
               </svg>
             </button>
           </div>
@@ -45,7 +49,81 @@
 
         <main class="autorization__main">
           <section class="autorization-box">
-            <div class="form--wrapper"></div>
+            <div class="form--wrapper">
+              <div class="form--wrapper__texts">
+                <h2 class="autorization__title">ავტორიზაცია</h2>
+                <p class="autorization__subtitle">
+                  შენს ანგარიშზე შესასვლელად, გაიარე ავტორიზაცია
+                </p>
+              </div>
+              <form action="#" method="POST" class="autorization__form">
+                <div class="form__group">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="მომხმარებლის ელ. ფოსტა ან ტელ. ნომერი"
+                    required
+                  />
+                  <span class="error-message">
+                    <img src="../icons/error.svg" alt="error">
+                    აუცილებელი ველი
+                  </span>
+                </div>
+                <div class="form__group">
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="პაროლი"
+                    required
+                  />
+                  <label for="password" class="password-toggle">
+                    <img src="../icons/closedEye.svg" alt="eye">
+                  </label>
+                  <span class="error-message">
+                    <img src="../icons/error.svg" alt="error">
+                    აუცილებელი ველი
+                  </span>
+                </div>
+                <div class="form__group--checkbox">
+                  <div id="form__groupe">
+                    <input type="checkbox" name="remember" id="remember" />
+                    <label for="remember" id="remember-text">დამახსოვრება</label>
+                  </div>
+                  <a href="#" class="forgot-password">დაგავიწყდა პაროლი?</a>
+                </div>
+                <button type="submit" class="autorization__button">
+                  ავტორიზაცია
+                </button>
+                <div class="or__wrapper">
+                  <img
+                    src="../images/autorization/Vector 31.png"
+                    alt="vector"
+                  />
+                  <p class="or">ან შედი ანგარიშზე</p>
+                  <img
+                    src="../images/autorization/Vector 31.png"
+                    alt="vector"
+                  />
+                </div>
+               <div class="socmedia">
+                <div class="button__wrapper">
+                  <img src="../icons/google.svg" alt="google icon">
+                  <div class="socmedia-button">
+                    Google-ით ავტორიზაცია
+                  </div>
+                </div>
+                <div class="button__wrapper">
+                  <img src="../icons/facebook.svg" alt="facebook icon">
+                  <div class="socmedia-button">
+                    Facebook-ით ავტორიზაცია
+                  </div>
+                </div>
+               </div>
+               <p class="register-prompt">
+                არ გაქვს ანგარიში? გაიარე <a href="#">რეგისტრაცია</a>
+              </p>
+              </form>
+            </div>
           </section>
         </main>
       </div>

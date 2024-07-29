@@ -26,6 +26,12 @@
   }
 }
 
+@media (max-width: 1070px) {
+.autorization__img {
+  display: none;
+}
+}
+
 @media (max-width: 1024px) {
 
   /* header start */
@@ -163,25 +169,6 @@
   }
 }
 
-@media (min-width: 548px) and (max-width: 860px) {
-  .slider {
-    width: 100%;
-  }
-
-  .courses__slider--people {
-    top: 190px;
-    left: 20%;
-  }
-
-  .slider-container {
-    gap: 24px;
-    margin: 0 10px;
-  }
-
-  .courses__slider--card {
-    min-width: calc((100% - 2 * 12px) / 2);
-  }
-}
 
 @media (max-width: 786px) {
   section .title {
@@ -429,6 +416,14 @@
     left: 15%;
   }
 
+  .or__wrapper img {
+    display: none;
+  }
+
+  .or__wrapper {
+    justify-content: center;
+  }
+
 }
 
 
@@ -460,7 +455,7 @@
 
 
 
-/* Autorization */
+/* Authorization */
 
 @media (max-width: 1024px) {
   .autorization__img img {
