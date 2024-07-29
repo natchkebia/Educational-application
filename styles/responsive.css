@@ -1,5 +1,4 @@
 @media (max-width: 1270px) {
-
   /* courses */
   #prev,
   #next {
@@ -23,7 +22,6 @@
 }
 
 @media (max-width: 1024px) {
-
   /* header start */
   .header__logo--link img {
     height: 29px;
@@ -61,7 +59,7 @@
 
   /* hero */
 
-  .slider__text>h1 {
+  .slider__text > h1 {
     font-size: 20px;
     font-weight: 900;
     line-height: 25px;
@@ -122,6 +120,11 @@
     max-width: 490px;
     width: 100%;
   }
+
+  /* Autorization */
+  .autorization__img img {
+    height: 100%;
+  }
 }
 
 @media (min-width: 860px) and (max-width: 1024px) {
@@ -137,8 +140,6 @@
     min-width: calc((100% - 2 * 12px) / 3);
   }
 }
-
-
 
 @media (min-width: 548px) and (max-width: 860px) {
   .slider {
@@ -268,10 +269,18 @@
     margin-bottom: 0;
   }
 
+  /* authorization */
+
+  .autorization__img {
+    display: none;
+  }
+
+  .backto .arrow-btn {
+    display: block;
+  }
 }
 
 @media (max-width: 700px) {
-
   /* courses */
   .cource__tittle {
     font-size: 26px;
@@ -309,12 +318,9 @@
   .testimonials__heading.container {
     margin-bottom: 24px;
   }
-
 }
 
-
 @media (max-width: 600px) {
-
   /* hero */
   .slider__slide {
     max-width: 376px;
@@ -377,7 +383,6 @@
 
   .about__header--title {
     max-width: 260px;
-
   }
 
   .about__card--img img {
@@ -420,37 +425,10 @@
   }
 }
 
-
 @media (max-width: 425px) {
-
   /* footer */
   .footer__social {
     flex-direction: column-reverse;
     padding: 24px 0px;
-  }
-}
-
-
-
-
-
-
-
-/* Autorization */
-
-@media (max-width: 1024px) {
-  .autorization__img img {
-    height: 100%;
-
-  }
-}
-
-@media (max-width: 786px) {
-  .autorization__img {
-    display: none;
-  }
-
-  .backto .arrow-btn {
-    display: block;
   }
 }
