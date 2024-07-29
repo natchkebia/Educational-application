@@ -1359,8 +1359,6 @@ main {
   margin-right: 0px;
 }
 
-
-
 /* || autorization main styles*/
 
 .autorization {
@@ -1384,7 +1382,7 @@ main {
 }
 
 .autorization__header {
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 .autorization .header__logo {
@@ -1427,15 +1425,80 @@ main {
 
 /* registration */
 
-
-
-.autorization .title{
+.autorization .title {
   font-size: 36px;
-  
+
 }
+
 .autorization .desc {
   font-size: 18px;
   font-weight: 400;
   line-height: 18px;
 }
 
+.input-box {
+  margin-bottom: 20px;
+
+  width: 100%;
+}
+
+.input-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 1px solid #00000080;
+  border-radius: 8px;
+  height: 60px;
+  padding: 10px 16px;
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column-reverse;
+}
+
+.input-box-label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  pointer-events: none;
+  transition: 0.3s;
+  color: #000005;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.input-box__input:focus+.input-box-label,
+.input-box__input:not(:placeholder-shown)+.input-box-label {
+  top: 0;
+  transform: translateY(50%);
+
+  font-size: 12px;
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+
+
+
+
+
+.input-box__input {
+  width: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 14px;
+
+}
+
+.error-message {
+  margin-top: 5px;
+  color: red;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
