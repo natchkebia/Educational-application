@@ -86,6 +86,14 @@ function generateCourseCards(courses) {
     <a class="courses__slider--card"  href="./detail-pages/courses-detail-page.html">
       <div class="slider__card--img">
         <img src="${course.imageUrl}" alt="${course.altText}" />
+        <div class="courses__slider--people">
+        <div class="courses__slider--wrapper img1"></div>
+        <div class="courses__slider--wrapper img2"></div>
+        <div class="courses__slider--wrapper img3"></div>
+        <div class="courses__slider--wrapper img4"></div>
+        <div class="courses__slider--wrapper img5"></div>
+        <span>${course.spots} ადგილი</span>
+      </div>
       </div>
       <div class="course__slider--wraper">
         <div class="slider__card--text">
@@ -117,14 +125,7 @@ function generateCourseCards(courses) {
           </div>
         </div>
       </div>
-      <div class="courses__slider--people">
-        <div class="courses__slider--wrapper img1"></div>
-        <div class="courses__slider--wrapper img2"></div>
-        <div class="courses__slider--wrapper img3"></div>
-        <div class="courses__slider--wrapper img4"></div>
-        <div class="courses__slider--wrapper img5"></div>
-        <span>${course.spots} ადგილი</span>
-      </div>
+      
       ${
         course.discount
           ? `<div class="courses__slider--discount">-${course.discount}<object type="image/svg+xml" data="icons/discount.svg"></object></div>`

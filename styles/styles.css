@@ -269,7 +269,7 @@ section .title {
 }
 
 .register:hover {
-  background-color: #6323E4;
+  background-color: #6323e4;
 }
 
 .header__nav--link {
@@ -293,7 +293,6 @@ section .title {
   top: 0;
   right: 0;
 }
-
 
 /* mobile menu burger bar */
 
@@ -666,7 +665,7 @@ main {
 
 #prev,
 #next {
-  top: 90px;
+  top: 30px;
 }
 
 .courses__slider--card {
@@ -677,8 +676,14 @@ main {
   overflow: hidden;
 }
 
+.slider__card--img {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
 .slider__card--text {
-  width: 234px;
+  width: 85%;
   margin: 0 auto;
   margin-top: 33px;
   border-bottom: 1px solid #000;
@@ -743,8 +748,10 @@ main {
 .slider__card--footer {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 14px 0;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .slider__card--footer--svg {
@@ -769,8 +776,9 @@ main {
   border-radius: 25px;
   position: absolute;
   background-color: white;
-  top: 34%;
-  left: 30px;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%);
 }
 
 .courses__slider--wrapper {
@@ -925,6 +933,11 @@ main {
   border: 1px solid #8447ff4d;
 }
 
+.illustrations__item img {
+  width: 71px;
+  height: 71px;
+}
+
 .illustrations__item--text {
   width: 227px;
   height: 50px;
@@ -993,10 +1006,6 @@ main {
   margin-left: 19.39px;
 }
 
-/* libary section */
-/* .library-videos {
-  padding-top: 0;
-} */
 
 .library-video__container {
   display: flex;
@@ -1029,7 +1038,6 @@ main {
 /* testimonials */
 
 .testimonials {
-  /* padding: 100px 0 36px; */
   background-color: #f9f6ff;
 }
 
