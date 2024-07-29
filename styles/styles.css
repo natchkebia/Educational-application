@@ -1368,6 +1368,10 @@ main {
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
+
+
+  font-weight: 400;
+  line-height: 18px;
 }
 
 .autorization__container {
@@ -1427,13 +1431,12 @@ main {
 
 .autorization .title {
   font-size: 36px;
-
+  margin-bottom: 10px;
 }
 
 .autorization .desc {
   font-size: 18px;
-  font-weight: 400;
-  line-height: 18px;
+  margin-bottom: 32px;
 }
 
 .input-box {
@@ -1475,15 +1478,10 @@ main {
 .input-box__input:not(:placeholder-shown)+.input-box-label {
   top: 0;
   transform: translateY(50%);
-
   font-size: 12px;
   color: var(--primary-color);
   opacity: 1;
 }
-
-
-
-
 
 
 .input-box__input {
@@ -1492,6 +1490,8 @@ main {
   outline: none;
   border: none;
   font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
 
 }
 
@@ -1501,4 +1501,73 @@ main {
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
+}
+
+
+.autorization .terms {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.autorization .btn {
+  height: 60px;
+  width: 100%;
+  margin: 16px 0 25px;
+}
+
+.continue {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #00000083;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+
+}
+
+.registracion__social {
+  border-top: 1px solid #0000007c;
+
+}
+
+.social__btns {
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social__btns .btn {
+  background-color: transparent;
+  border: 1px solid #00000080;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 0;
+
+}
+
+.social__btns .btn object {
+  vertical-align: middle;
+  margin-right: 16px;
+  width: 36px;
+  height: 36px;
+}
+
+.login-register-content {
+  text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+
+}
+
+.login-register-content a {
+  text-decoration-line: underline;
+  color: var(--primary-color);
 }

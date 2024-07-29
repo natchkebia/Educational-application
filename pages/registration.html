@@ -56,107 +56,122 @@
                   name="registration"
                   id="registration-form"
                   onsubmit="return formValidation()">
-                  <form
-                    name="registration"
-                    id="registration-form"
-                    onsubmit="return formValidation()">
-                    <!-- სახელი -->
-                    <div class="input-box">
-                      <div class="input-wrapper">
-                        <input
-                          id="firstname"
-                          type="text"
-                          name="firstname"
-                          class="input-box__input"
-                          placeholder=" " />
-                        <label class="input-box-label" for="firstname"
-                          >სახელი</label
-                        >
-                      </div>
-                      <p class="error-message" id="error-firstname"></p>
+                  <!-- სახელი -->
+                  <div class="input-box">
+                    <div class="input-wrapper">
+                      <input
+                        id="firstname"
+                        type="text"
+                        name="firstname"
+                        class="input-box__input"
+                        placeholder=" " />
+                      <label class="input-box-label" for="firstname"
+                        >სახელი</label
+                      >
                     </div>
+                    <p class="error-message" id="error-firstname"></p>
+                  </div>
 
-                    <!-- გვარი -->
-                    <div class="input-box">
-                      <div class="input-wrapper">
-                        <input
-                          id="lastname"
-                          type="text"
-                          name="lastname"
-                          class="input-box__input"
-                          placeholder=" " />
-                        <label class="input-box-label" for="lastname"
-                          >გვარი</label
-                        >
-                      </div>
-                      <p class="error-message" id="error-lastname"></p>
+                  <!-- გვარი -->
+                  <div class="input-box">
+                    <div class="input-wrapper">
+                      <input
+                        id="lastname"
+                        type="text"
+                        name="lastname"
+                        class="input-box__input"
+                        placeholder=" " />
+                      <label class="input-box-label" for="lastname"
+                        >გვარი</label
+                      >
                     </div>
+                    <p class="error-message" id="error-lastname"></p>
+                  </div>
 
-                    <!-- ელ. ფოსტა -->
-                    <div class="input-box">
-                      <div class="input-wrapper">
-                        <input
-                          id="email"
-                          name="email"
-                          type="email"
-                          class="input-box__input"
-                          placeholder=" " />
-                        <label class="input-box-label" for="email"
-                          >ელ. ფოსტა</label
-                        >
-                      </div>
-                      <p class="error-message" id="error-email"></p>
+                  <!-- ელ. ფოსტა -->
+                  <div class="input-box">
+                    <div class="input-wrapper">
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        class="input-box__input"
+                        placeholder=" " />
+                      <label class="input-box-label" for="email"
+                        >ელ. ფოსტა</label
+                      >
                     </div>
+                    <p class="error-message" id="error-email"></p>
+                  </div>
 
-                    <!-- ტელ. ნომერი -->
-                    <div class="input-box">
-                      <div class="input-wrapper">
-                        <input
-                          id="tel"
-                          name="tel"
-                          type="tel"
-                          class="input-box__input"
-                          placeholder=" " />
-                        <label class="input-box-label" for="tel"
-                          >ტელ. ნომერი</label
-                        >
-                      </div>
-                      <p class="error-message" id="error-tel"></p>
+                  <!-- ტელ. ნომერი -->
+                  <div class="input-box">
+                    <div class="input-wrapper">
+                      <input
+                        id="tel"
+                        name="tel"
+                        type="tel"
+                        class="input-box__input"
+                        placeholder=" " />
+                      <label class="input-box-label" for="tel"
+                        >ტელ. ნომერი</label
+                      >
                     </div>
+                    <p class="error-message" id="error-tel"></p>
+                  </div>
 
-                    <!-- პაროლი -->
-                    <div class="input-box">
-                      <div class="input-wrapper">
-                        <input
-                          id="password"
-                          name="password"
-                          class="input-box__input"
-                          type="password"
-                          placeholder=" " />
-                        <label class="input-box-label" for="password"
-                          >Password</label
-                        >
-                      </div>
-                      <p class="error-message" id="error-password"></p>
+                  <!-- პაროლი -->
+                  <div class="input-box">
+                    <div class="input-wrapper">
+                      <input
+                        id="password"
+                        name="password"
+                        class="input-box__input"
+                        type="password"
+                        placeholder=" " />
+                      <label class="input-box-label" for="password"
+                        >Password</label
+                      >
                     </div>
+                    <p class="error-message" id="error-password"></p>
+                  </div>
 
-                    <!-- გაიმეორე პაროლი -->
-                    <div class="input-box">
-                      <div class="input-wrapper">
-                        <input
-                          id="passwConfirm"
-                          name="passwConfirm"
-                          class="input-box__input"
-                          type="password"
-                          placeholder=" " />
-                        <label class="input-box-label" for="passwConfirm"
-                          >გაიმეორე პაროლი</label
-                        >
-                      </div>
-                      <p class="error-message" id="error-passwConfirm"></p>
+                  <!-- გაიმეორე პაროლი -->
+                  <div class="input-box">
+                    <div class="input-wrapper">
+                      <input
+                        id="passwConfirm"
+                        name="passwConfirm"
+                        class="input-box__input"
+                        type="password"
+                        placeholder=" " />
+                      <label class="input-box-label" for="passwConfirm"
+                        >გაიმეორე პაროლი</label
+                      >
                     </div>
+                    <p class="error-message" id="error-passwConfirm"></p>
+                  </div>
+                  <span class="terms"
+                    >ღილაკზე დაჭერით თქვენ ეთანხმებით SkillUp-ის
+                    <u><b>პოლიტიკას</b></u></span
+                  >
 
-                    <button type="submit" class="btn">Register</button>
+                  <button type="submit" class="btn">რეგისტრაცია</button>
+
+                  <div class="registracion__social">
+                    <span class="continue">ან გააგრძელე როგორც</span>
+
+                    <div class="social__btns">
+                      <button type="submit" class="btn">
+                        <object
+                          data="../images/autorization/gmail.svg"></object>
+                        Google-ით გაგრძელება
+                      </button>
+                      <button type="submit" class="btn">
+                        <object data="../images/autorization/fb.svg"></object>
+                        Facebook-ით გაგრძელება
+                      </button>
+                    </div>
                     <div class="login-register">
                       <p class="login-register-content">
                         უკვე გაქვს ანგარიში? გაიარე
@@ -165,14 +180,6 @@
                         >
                       </p>
                     </div>
-                  </form>
-
-                  <button type="submit" class="btn">Register</button>
-                  <div class="login-register">
-                    <p class="login-register-content">
-                      უკვე გაქვს ანგარიში? გაიარე
-                      <a href="./logIn.html" class="login-link">ავტორიზაცია</a>
-                    </p>
                   </div>
                 </form>
               </div>
