@@ -1,67 +1,99 @@
+// Validate individual fields
+function validateField(fieldId) {
+  let errors = {};
+  const field = document.getElementById(fieldId);
+  const value = field.value.trim();
+  let errorElement = document.getElementById("error-" + fieldId);
+
+  switch (fieldId) {
+    case "firstname":
+      if (!value) {
+        errors.firstname = "აუცილებელი ველი";
+      } else if (!/^[A-Za-z]+$/.test(value)) {
+        errors.firstname = "მხოლოდ ასოები არის დაშვებული";
+      }
+      break;
+    case "lastname":
+      if (!value) {
+        errors.lastname = "აუცილებელი ველი";
+      } else if (!/^[A-Za-z]+$/.test(value)) {
+        errors.lastname = "მხოლოდ ასოები არის დაშვებული";
+      }
+      break;
+    case "email":
+      if (!value) {
+        errors.email = "აუცილებელი ველი";
+      } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+        errors.email = "ელ. ფოსტა არასწორია";
+      }
+      break;
+    case "tel":
+      if (!value) {
+        errors.tel = "აუცილებელი ველი";
+      } else if (!/^[0-9]+$/.test(value)) {
+        errors.tel = "ტელ. ნომერი უნდა იყოს ციფრები";
+      }
+      break;
+    case "password":
+      // No specific validation for password on input
+      break;
+    case "passwConfirm":
+      const password = document.getElementById("password").value.trim();
+      if (password !== value) {
+        errors.passwConfirm = "შეყვანილი პაროლები ერთმანეთს არ ემთხვევა";
+      }
+      break;
+    default:
+      break;
+  }
+
+  // Show or hide error message
+  if (errors[fieldId]) {
+    errorElement.innerText = errors[fieldId];
+    errorElement.classList.add("show-icon");
+  } else {
+    errorElement.innerText = "";
+    errorElement.classList.remove("show-icon");
+  }
+}
+
+// Validate entire form on submit
 document
   .getElementById("registration-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
 
-    let errors = {};
+    // Validate all fields
+    [
+      "firstname",
+      "lastname",
+      "email",
+      "tel",
+      "password",
+      "passwConfirm",
+    ].forEach(validateField);
 
-    // Validate First Name
-    let firstname = document.getElementById("firstname").value.trim();
-    if (!firstname) {
-      errors.firstname = "აუცილებელი ველი";
-    } else if (!/^[A-Za-z]+$/.test(firstname)) {
-      errors.firstname = "მხოლოდ ასოები არის დაშვებული";
-    }
+    // Check if there are any errors
+    const errorMessages = document.querySelectorAll(".error-message");
+    const hasErrors = Array.from(errorMessages).some((element) =>
+      element.classList.contains("show-icon")
+    );
 
-    // Validate Last Name
-    let lastname = document.getElementById("lastname").value.trim();
-    if (!lastname) {
-      errors.lastname = "აუცილებელი ველი";
-    } else if (!/^[A-Za-z]+$/.test(lastname)) {
-      errors.lastname = "მხოლოდ ასოები არის დაშვებული";
-    }
-
-    // Validate Email
-    let email = document.getElementById("email").value.trim();
-    if (!email) {
-      errors.email = "აუცილებელი ველი";
-    } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-      errors.email = "ელ. ფოსტა არასწორია";
-    }
-
-    // Validate Phone Number
-    let tel = document.getElementById("tel").value.trim();
-    if (!tel) {
-      errors.tel = "აუცილებელი ველი";
-    } else if (!/^[0-9]+$/.test(tel)) {
-      errors.tel = "ტელ. ნომერი უნდა იყოს ციფრები";
-    }
-
-    // Validate Password
-    let password = document.getElementById("password").value.trim();
-    let passwConfirm = document.getElementById("passwConfirm").value.trim();
-    if (!password) {
-      errors.password = "აუცილებელი ველი";
-    } else if (password !== passwConfirm) {
-      errors.passwConfirm = "შეყვანილი პაროლები ერთმანეთს არ ემთხვევა";
-    }
-
-    // Display Errors
-    document.querySelectorAll(".error-message").forEach((element) => {
-      element.innerText = "";
-      element.classList.remove("show-icon"); // Remove icon class initially
-    });
-
-    for (let key in errors) {
-      let errorElement = document.getElementById("error-" + key);
-      if (errorElement) {
-        errorElement.innerText = errors[key];
-        errorElement.classList.add("show-icon"); // Add icon class if there's an error
-      }
-    }
-
-    // Submit the form if there are no errors
-    if (Object.keys(errors).length === 0) {
+    // Submit form if there are no errors
+    if (!hasErrors) {
       document.getElementById("registration-form").submit();
     }
   });
+
+function togglePasswordVisibility(passwordId, iconId) {
+  const passwordField = document.getElementById(passwordId);
+  const eyeIcon = document.getElementById(iconId);
+
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+    eyeIcon.src = "../images/autorization/eye.svg"; // Show open eye
+  } else {
+    passwordField.type = "password";
+    eyeIcon.src = "../images/autorization/eyeclose.svg"; // Show closed eye
+  }
+}

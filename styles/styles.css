@@ -1525,6 +1525,26 @@ main {
 }
 
 
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 24px;
+  /* Adjust size as needed */
+  height: 24px;
+  /* Adjust size as needed */
+  z-index: 10;
+  /* Ensure icon is clickable */
+}
+
+.input-wrapper {
+  position: relative;
+  /* Ensure that eye icon is positioned correctly */
+}
+
 .autorization .terms {
   font-size: 16px;
   font-weight: 400;

@@ -65,7 +65,8 @@
                           type="text"
                           name="firstname"
                           class="input-box__input"
-                          placeholder=" " />
+                          placeholder=" "
+                          oninput="validateField('firstname')" />
                         <label class="input-box-label" for="firstname"
                           >სახელი</label
                         >
@@ -81,7 +82,9 @@
                           type="text"
                           name="lastname"
                           class="input-box__input"
-                          placeholder=" " />
+                          placeholder=" "
+                          oninput="validateField('lastname')" />
+
                         <label class="input-box-label" for="lastname"
                           >გვარი</label
                         >
@@ -98,7 +101,8 @@
                         name="email"
                         type="email"
                         class="input-box__input"
-                        placeholder=" " />
+                        placeholder=" "
+                        oninput="validateField('email')" />
                       <label class="input-box-label" for="email"
                         >ელ. ფოსტა</label
                       >
@@ -114,7 +118,8 @@
                         name="tel"
                         type="tel"
                         class="input-box__input"
-                        placeholder=" " />
+                        placeholder=" " 
+                        oninput="validateField('tel')"/>
                       <label class="input-box-label" for="tel"
                         >ტელ. ნომერი</label
                       >
@@ -130,10 +135,17 @@
                         name="password"
                         class="input-box__input"
                         type="password"
-                        placeholder=" " />
+                        placeholder=" "
+                        oninput="validateField('password')" />
                       <label class="input-box-label" for="password"
                         >Password</label
                       >
+                      <img
+                        src="../images/autorization/eyeclose.svg"
+                        id="toggle-password"
+                        class="eye-icon"
+                        alt="Toggle Password Visibility"
+                        onclick="togglePasswordVisibility('password', 'toggle-password')" />
                     </div>
                     <p class="error-message" id="error-password"></p>
                   </div>
@@ -146,10 +158,17 @@
                         name="passwConfirm"
                         class="input-box__input"
                         type="password"
-                        placeholder=" " />
+                        placeholder=" "
+                         oninput="validateField('passwConfirm')" />
                       <label class="input-box-label" for="passwConfirm"
                         >გაიმეორე პაროლი</label
                       >
+                      <img
+                        src="../images/autorization/eyeclose.svg"
+                        id="toggle-passwConfirm"
+                        class="eye-icon"
+                        alt="Toggle Password Visibility"
+                        onclick="togglePasswordVisibility('passwConfirm', 'toggle-passwConfirm')" />
                     </div>
                     <p class="error-message" id="error-passwConfirm"></p>
                   </div>
