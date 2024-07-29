@@ -55,7 +55,7 @@
                 <form
                   name="registration"
                   id="registration-form"
-                  onSubmit="return formValidation();">
+                  onsubmit="return formValidation();">
                   <!-- სახელი -->
                   <div class="input-box">
                     <input
@@ -64,10 +64,9 @@
                       name="firstname"
                       class="input-box__input"
                       placeholder="სახელი" />
-                    <p class="error-message" id="erorr-username"></p>
+                    <p class="error-message" id="error-firstname"></p>
                   </div>
                   <!-- გვარი -->
-
                   <div class="input-box">
                     <input
                       id="lastname"
@@ -75,7 +74,7 @@
                       name="lastname"
                       class="input-box__input"
                       placeholder="გვარი" />
-                    <p class="error-message" id="erorr-lastname"></p>
+                    <p class="error-message" id="error-lastname"></p>
                   </div>
                   <!--  ელ ფოსტა-->
                   <div class="input-box">
@@ -85,7 +84,7 @@
                       type="email"
                       class="input-box__input"
                       placeholder="ელ. ფოსტა" />
-                    <p class="error-message" id="erorr-email"></p>
+                    <p class="error-message" id="error-email"></p>
                   </div>
                   <!-- ტელ -->
                   <div class="input-box">
@@ -95,38 +94,32 @@
                       type="tel"
                       class="input-box__input"
                       placeholder="ტელ. ნომერი" />
-                    <p class="error-message" id="erorr-tel"></p>
+                    <p class="error-message" id="error-tel"></p>
                   </div>
                   <!-- password -->
-
                   <div class="input-box">
                     <input
                       id="password"
                       name="password"
-                      class="input-box-input"
+                      class="input-box__input"
                       type="password"
                       placeholder="პაროლი" />
-
-                    <p class="error-message" id="erorr-password"></p>
+                    <p class="error-message" id="error-password"></p>
                   </div>
                   <!-- password-confirmation -->
-
                   <div class="input-box">
                     <input
-                      id="password-confirmation"
+                      id="passwConfirm"
                       name="passwConfirm"
-                      class="input-box-input"
+                      class="input-box__input"
                       type="password"
                       placeholder="გაიმეორე პაროლი" />
-
-                    <p class="error-message" id="erorr-passwConfirm"></p>
+                    <p class="error-message" id="error-passwConfirm"></p>
                   </div>
-
                   <button type="submit" class="btn">Register</button>
-
                   <div class="login-register">
                     <p class="login-register-content">
-                      უკვე გაქვს ანგარიში?გაიარე
+                      უკვე გაქვს ანგარიში? გაიარე
                       <a href="./logIn.html" class="login-link">ავტორიზაცია</a>
                     </p>
                   </div>

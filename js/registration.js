@@ -1,88 +1,61 @@
-// "use strict";
+document
+  .getElementById("registration-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
 
-// let formElement = document.getElementById("registration-form");
+    let errors = {};
 
-// formElement.addEventListener("submit", function (event) {
-//   event.preventDefault();
+    // Validate First Name
+    let firstname = document.getElementById("firstname").value.trim();
+    if (!firstname) {
+      errors.firstname = "აუცილებელი ველი";
+    }
 
-//   let errors = {};
+    // Validate Last Name
+    let lastname = document.getElementById("lastname").value.trim();
+    if (!lastname) {
+      errors.lastname = "აუცილებელი ველი";
+    }
 
-//   //   username
-//   let usernameValue = document.getElementById("firstname").value;
+    // Validate Email
+    let email = document.getElementById("email").value.trim();
+    if (!email) {
+      errors.email = "აუცილებელი ველი";
+    } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      errors.email = "ელ. ფოსტა არასწორია";
+    }
 
-//   if (usernameValue == "") {
-//     errors.username = "აუცილებელი ველი";
-//   }
+    // Validate Phone Number
+    let tel = document.getElementById("tel").value.trim();
+    if (!tel) {
+      errors.tel = "აუცილებელი ველი";
+    } else if (!/^[0-9]+$/.test(tel)) {
+      errors.tel = "ტელ. ნომერი უნდა იყოს ციფრები";
+    }
 
-    
-    
-    
-  
-//   // password
+    // Validate Password
+    let password = document.getElementById("password").value.trim();
+    let passwConfirm = document.getElementById("passwConfirm").value.trim();
+    if (!password) {
+      errors.password = "აუცილებელი ველი";
+    } else if (password !== passwConfirm) {
+      errors.passwConfirm = "პაროლები არ ემთხვევა";
+    }
 
-//   let passValue = document.getElementById("password").value;
-//   let passConfirmValue = document.getElementById("password-confirmation").value;
+    // Display Errors
+    document.querySelectorAll(".error-message").forEach((element) => {
+      element.innerText = "";
+    });
 
-//   if (passValue == "") {
-//     errors.password = "password field can not be empty";
-//   }
-//   if (passValue != passConfirmValue) {
-//     errors.passwConfirm = "passwords do not match";
-//   }
-// //   // check box
+    for (let key in errors) {
+      let errorElement = document.getElementById("error-" + key);
+      if (errorElement) {
+        errorElement.innerText = errors[key];
+      }
+    }
 
-// //   let checkInput = document.getElementById("agree").checked;
-// //   if (!checkInput) {
-// //     errors.check = "Please agree to the terms";
-// //   }
-//   console.log(errors);
-
-//   formElement.querySelectorAll(".error-message").forEach((element) => {
-//     element.innerText = "";
-//   });
-
-//   for (let item in errors) {
-//     let textError = document.getElementById("erorr-" + item);
-//     if (textError) {
-//       textError.textContent = errors[item];
-//     }
-//   }
-//   if (Object.keys(errors).length == 0) {
-//     formElement.submit();
-//   }
-// });
-
-// let passwShow = document.getElementById("password");
-// let icon = document.getElementById("show-icon");
-
-// let passwShowLogin = document.getElementById("password-in-login");
-// let iconLogin = document.getElementById("show-icon-login");
-
-// // password show
-// // function showHidePasswordLogin() {
-// //   if (passwShowLogin.type == "password") {
-// //     passwShowLogin.setAttribute("type", "text");
-// //     iconLogin.classList.remove("fa-eye");
-// //     iconLogin.classList.add("fa-eye-slash");
-// //   } else {
-// //     passwShowLogin.setAttribute("type", "password");
-// //     iconLogin.classList.remove("fa-eye-slash");
-// //     iconLogin.classList.add("fa-eye");
-// //   }
-// // }
-// // iconLogin.addEventListener("click", showHidePasswordLogin);
-
-// // login form password show
-
-// // function showHidePassword() {
-// //   if (passwShow.type == "password") {
-// //     passwShow.setAttribute("type", "text");
-// //     icon.classList.remove("fa-eye");
-// //     icon.classList.add("fa-eye-slash");
-// //   } else {
-// //     passwShow.setAttribute("type", "password");
-// //     icon.classList.remove("fa-eye-slash");
-// //     icon.classList.add("fa-eye");
-// //   }
-// // }
-// // icon.addEventListener("click", showHidePassword);
+    // Submit the form if there are no errors
+    if (Object.keys(errors).length === 0) {
+      document.getElementById("registration-form").submit();
+    }
+  });
