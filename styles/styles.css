@@ -1368,10 +1368,6 @@ main {
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
-
-
-  font-weight: 400;
-  line-height: 18px;
 }
 
 .autorization__container {
@@ -1431,11 +1427,15 @@ main {
 
 .autorization .title {
   font-size: 36px;
+  line-height: 40px;
   margin-bottom: 10px;
+
 }
 
 .autorization .desc {
   font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
   margin-bottom: 32px;
 }
 
@@ -1470,7 +1470,7 @@ main {
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 18px;
   pointer-events: none;
@@ -1495,15 +1495,16 @@ main {
   background: transparent;
   outline: none;
   border: none;
-  font-size: 14px;
+  font-family: FiraGO;
+  font-size: 16px;
   font-weight: 400;
   line-height: 18px;
+
 
 }
 
 .error-message {
   position: relative;
-  /* Ensure positioning context for the pseudo-element */
   margin-top: 5px;
   color: #F44336;
   font-size: 16px;
@@ -1513,36 +1514,27 @@ main {
 
 .error-message.show-icon::before {
   content: url(../images/autorization/!!.svg);
-  /* Ensure the path to the icon is correct */
   display: inline-block;
   width: 18px;
   height: 18px;
-  /* Ensure the height matches the icon's height */
   vertical-align: middle;
-  /* Align icon with text */
   margin-right: 8px;
-  /* Space between icon and text */
 }
 
 
 .eye-icon {
   position: absolute;
   right: 10px;
-  /* Adjust as needed */
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
   width: 24px;
-  /* Adjust size as needed */
   height: 24px;
-  /* Adjust size as needed */
   z-index: 10;
-  /* Ensure icon is clickable */
 }
 
 .input-wrapper {
   position: relative;
-  /* Ensure that eye icon is positioned correctly */
 }
 
 .autorization .terms {
@@ -1555,6 +1547,9 @@ main {
   height: 60px;
   width: 100%;
   margin: 16px 0 25px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 18px;
 }
 
 .continue {
@@ -1572,7 +1567,9 @@ main {
 
 .registracion__social {
   border-top: 1px solid #0000007c;
-
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 .social__btns {

@@ -477,4 +477,35 @@
   .backto .arrow-btn {
     display: block;
   }
+
+  .username {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .autorization .title {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .autorization .desc {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 24px;
+  }
+
+  .autorization .terms {
+    font-size: 14px;
+  }
+
+  .social__btns .btn,
+  .autorization .btn {
+    font-size: 16px;
+  }
+
+  .continue,
+  .login-register-content {
+    font-size: 14px;
+  }
+
 }
