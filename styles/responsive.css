@@ -11,10 +11,6 @@
     margin: 0 5px;
   }
 
-  /* .slider-container {
-    gap: 16px;
-  } */
-
   /*  illustrations*/
   .illustrations__slider {
     overflow-x: hidden;
@@ -149,11 +145,6 @@
     width: 100%;
   }
 
-  /* .courses__slider--people {
-    top: 190px;
-    left: 20%;
-  } */
-
   .slider-container {
     gap: 24px;
     margin: 0 10px;
@@ -277,12 +268,6 @@
     margin-bottom: 0;
   }
 
-  /* courses */
-
-  /* .courses__slider--people {
-    top: 165px;
-    left: 20%;
-  } */
 }
 
 @media (max-width: 700px) {
@@ -313,10 +298,6 @@
     flex-direction: column-reverse;
   }
 
-  /* testimonials */
-  /* .testimonials__slider {
-    flex: 0 0 80%;
-  } */
   .testimonials {
     margin-bottom: 0;
   }
@@ -331,12 +312,6 @@
 
 }
 
-/* @media (max-width: 669px) {
-  .courses__slider--people {
-    top: 130px;
-    left: 10%;
-  }
-} */
 
 @media (max-width: 600px) {
 
@@ -421,9 +396,7 @@
   }
 
   .courses__slider--people {
-    /* top: 270px; */
     width: 70%;
-    /* left: 15%; */
   }
 
   .slider__card--text {
@@ -447,21 +420,6 @@
   }
 }
 
-/* 
-@media (max-width: 484px) {
-  .courses__slider--people {
-    top: 220px;
-    left: 15%;
-  }
-
-} */
-
-/* @media (max-width: 434px) {
-  .courses__slider--people {
-    top: 200px;
-    left: 15%;
-  }
-} */
 
 @media (max-width: 425px) {
 
@@ -472,9 +430,3 @@
   }
 }
 
-/* @media (max-width: 382px) {
-  .courses__slider--people {
-    top: 170px;
-    left: 15%;
-  }
-} */

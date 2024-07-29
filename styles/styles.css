@@ -105,9 +105,11 @@ section .title {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg,
-      var(--gradient-color-2),
-      var(--gradient-color-1));
+  background: linear-gradient(
+    90deg,
+    var(--gradient-color-2),
+    var(--gradient-color-1)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -269,7 +271,7 @@ section .title {
 }
 
 .register:hover {
-  background-color: #6323E4;
+  background-color: #6323e4;
 }
 
 .header__nav--link {
@@ -464,7 +466,7 @@ main {
   z-index: 3;
 }
 
-.slider__text>h1 {
+.slider__text > h1 {
   font-family: var(--font-family-Gilroy);
   font-size: 40px;
   font-weight: 900;
@@ -665,7 +667,7 @@ main {
 
 #prev,
 #next {
-  top: 90px;
+  top: 30px;
 }
 
 .courses__slider--card {
@@ -681,7 +683,6 @@ main {
   top: 0;
   left: 0;
 }
-
 
 .slider__card--text {
   width: 85%;
@@ -1007,10 +1008,6 @@ main {
   margin-left: 19.39px;
 }
 
-/* libary section */
-/* .library-videos {
-  padding-top: 0;
-} */
 
 .library-video__container {
   display: flex;
@@ -1043,7 +1040,6 @@ main {
 /* testimonials */
 
 .testimonials {
-  /* padding: 100px 0 36px; */
   background-color: #f9f6ff;
 }
 
