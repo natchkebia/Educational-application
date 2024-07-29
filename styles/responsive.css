@@ -432,3 +432,64 @@
     padding: 24px 0px;
   }
 }
+
+
+
+/* @media (max-width: 382px) {
+  .courses__slider--people {
+    top: 170px;
+    left: 15%;
+  }
+} */
+
+
+
+/* Autorization */
+
+@media (max-width: 1024px) {
+  .autorization__img img {
+    height: 100%;
+
+  }
+}
+
+@media (max-width: 786px) {
+  .autorization__img {
+    display: none;
+  }
+
+  .backto .arrow-btn {
+    display: block;
+  }
+
+  .username {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .autorization .title {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .autorization .desc {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 24px;
+  }
+
+  .autorization .terms {
+    font-size: 14px;
+  }
+
+  .social__btns .btn,
+  .autorization .btn {
+    font-size: 16px;
+  }
+
+  .continue,
+  .login-register-content {
+    font-size: 14px;
+  }
+
+}

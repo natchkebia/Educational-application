@@ -185,6 +185,7 @@ section .title {
   z-index: 999;
   top: 0;
   background-color: var(--background-color-1);
+  box-shadow: 0px 0px 30px 4px #0000001A;
 }
 
 .header__logo--link {
@@ -1365,8 +1366,6 @@ main {
   margin-right: 0px;
 }
 
-
-
 /* || autorization main styles*/
 
 .autorization {
@@ -1390,7 +1389,7 @@ main {
 }
 
 .autorization__header {
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 .autorization .header__logo {
@@ -1429,4 +1428,191 @@ main {
 .autorization .form--wrapper {
   display: flex;
   flex-direction: column;
+}
+
+/* registration */
+
+.autorization .title {
+  font-size: 36px;
+  line-height: 40px;
+  margin-bottom: 10px;
+
+}
+
+.autorization .desc {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 32px;
+}
+
+.input-box {
+  margin-bottom: 20px;
+
+  width: 100%;
+}
+
+.input-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 1px solid #00000080;
+  border-radius: 8px;
+  height: 60px;
+  padding: 10px 16px;
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column-reverse;
+}
+
+.username {
+  display: flex;
+  gap: 12px;
+}
+
+
+.input-box-label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  pointer-events: none;
+  transition: 0.3s;
+  color: #000005;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.input-box__input:focus+.input-box-label,
+.input-box__input:not(:placeholder-shown)+.input-box-label {
+  top: 0;
+  transform: translateY(50%);
+  font-size: 12px;
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+
+.input-box__input {
+  width: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-family: FiraGO;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+
+
+}
+
+.error-message {
+  position: relative;
+  margin-top: 5px;
+  color: #F44336;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.error-message.show-icon::before {
+  content: url(../images/autorization/!!.svg);
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  z-index: 10;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.autorization .terms {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.autorization .btn {
+  height: 60px;
+  width: 100%;
+  margin: 16px 0 25px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.continue {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #00000083;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+
+}
+
+.registracion__social {
+  border-top: 1px solid #0000007c;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.social__btns {
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social__btns .btn {
+  background-color: transparent;
+  border: 1px solid #00000080;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 0;
+
+}
+
+.social__btns .btn object {
+  vertical-align: middle;
+  margin-right: 16px;
+  width: 36px;
+  height: 36px;
+}
+
+.login-register-content {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+
+}
+
+.login-register-content a {
+  text-decoration-line: underline;
+  color: var(--primary-color);
 }
