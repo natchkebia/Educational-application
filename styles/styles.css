@@ -187,7 +187,7 @@ section .title {
   z-index: 999;
   top: 0;
   background-color: var(--background-color-1);
-  box-shadow: 0px 0px 30px 4px #0000001A;
+  box-shadow: 0px 0px 30px 4px #0000001a;
 }
 
 .header__logo--link {
@@ -218,6 +218,10 @@ section .title {
   line-height: 19.2px;
   opacity: 60%;
   font-weight: 500;
+}
+
+#active {
+  font-weight: 600;
 }
 
 .header__nav--list .header__nav--list--link:hover {
@@ -1009,7 +1013,6 @@ main {
   margin-left: 19.39px;
 }
 
-
 .library-video__container {
   display: flex;
   align-items: center;
@@ -1378,10 +1381,6 @@ main {
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
-
-
-  font-weight: 400;
-  line-height: 18px;
 }
 
 .autorization__container {
@@ -1607,11 +1606,14 @@ main {
 
 .autorization .title {
   font-size: 36px;
+  line-height: 40px;
   margin-bottom: 10px;
 }
 
 .autorization .desc {
   font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
   margin-bottom: 32px;
 }
 
@@ -1640,13 +1642,12 @@ main {
   gap: 12px;
 }
 
-
 .input-box-label {
   position: absolute;
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 18px;
   pointer-events: none;
@@ -1656,8 +1657,8 @@ main {
   z-index: 1;
 }
 
-.input-box__input:focus+.input-box-label,
-.input-box__input:not(:placeholder-shown)+.input-box-label {
+.input-box__input:focus + .input-box-label,
+.input-box__input:not(:placeholder-shown) + .input-box-label {
   top: 0;
   transform: translateY(50%);
   font-size: 12px;
@@ -1665,23 +1666,21 @@ main {
   opacity: 1;
 }
 
-
 .input-box__input {
   width: 100%;
   background: transparent;
   outline: none;
   border: none;
-  font-size: 14px;
+  font-family: FiraGO;
+  font-size: 16px;
   font-weight: 400;
   line-height: 18px;
-
 }
 
 .error-message {
   position: relative;
-  /* Ensure positioning context for the pseudo-element */
   margin-top: 5px;
-  color: #F44336;
+  color: #f44336;
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
@@ -1689,36 +1688,26 @@ main {
 
 .error-message.show-icon::before {
   content: url(../images/autorization/!!.svg);
-  /* Ensure the path to the icon is correct */
   display: inline-block;
   width: 18px;
   height: 18px;
-  /* Ensure the height matches the icon's height */
   vertical-align: middle;
-  /* Align icon with text */
   margin-right: 8px;
-  /* Space between icon and text */
 }
-
 
 .eye-icon {
   position: absolute;
   right: 10px;
-  /* Adjust as needed */
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
   width: 24px;
-  /* Adjust size as needed */
   height: 24px;
-  /* Adjust size as needed */
   z-index: 10;
-  /* Ensure icon is clickable */
 }
 
 .input-wrapper {
   position: relative;
-  /* Ensure that eye icon is positioned correctly */
 }
 
 .autorization .terms {
@@ -1731,6 +1720,9 @@ main {
   height: 60px;
   width: 100%;
   margin: 16px 0 25px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 18px;
 }
 
 .continue {
@@ -1743,12 +1735,13 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-
 }
 
 .registracion__social {
   border-top: 1px solid #0000007c;
-
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 .social__btns {
@@ -1766,7 +1759,6 @@ main {
   font-weight: 400;
   line-height: 18px;
   margin: 0;
-
 }
 
 .social__btns .btn object {
@@ -1781,10 +1773,142 @@ main {
   font-size: 16px;
   font-weight: 600;
   line-height: 18px;
-
 }
 
 .login-register-content a {
   text-decoration-line: underline;
   color: var(--primary-color);
+}
+
+/* favorite */
+
+.favorite {
+  background-color: #f7f7f7;
+  padding: 16px 0 32px 0;
+}
+
+.favorite__wrapper > p {
+  font-family: var(--font-family-figaro);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.2px;
+}
+
+.favorite__wrapper--content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 774px;
+  width: 98%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.favorite__wrapper--texts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: var(--font-family-figaro);
+}
+
+.favorite__wrapper--texts h2 {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.favorite__wrapper--texts p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.favorite__wrapper--texts a {
+  max-width: 350px;
+  width: 98%;
+  padding: 12px 46px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* courses page*/
+
+.course__container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.filters {
+  width: 240px;
+  padding: 20px 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px 0px #0000001a;
+}
+
+.filter-section {
+  margin-bottom: 10px;
+}
+
+.filter-title {
+  cursor: pointer;
+  background-color: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #e3e3e3;
+  border-radius: 5px;
+}
+
+.filter-content {
+  display: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+#courses {
+  width: 75%;
+  padding: 10px;
+}
+
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.course-card {
+  /* border: 1px solid #ccc; */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.course-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.course-card h3 {
+  margin: 10px 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+.pagination span {
+  margin: 0 10px;
+}
+
+.new__card {
+  box-shadow: 0px 0px 20px 0px #00000014;
 }

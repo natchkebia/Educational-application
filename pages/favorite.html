@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>კურსები</title>
+    <title>ფავორიტები</title>
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="stylesheet" href="../styles/responsive.css" />
     <link rel="icon" href="../images/logo/header-logo.svg" />
@@ -22,10 +22,7 @@
           </div>
           <ul class="header__nav--list">
             <li class="header__nav--list--item">
-              <a
-                class="header__nav--list--link"
-                id="active"
-                href="../pages/courses.html"
+              <a class="header__nav--list--link" href="../pages/courses.html"
                 >კურსები</a
               >
             </li>
@@ -72,19 +69,16 @@
                     href="../pages/favorite.html"
                     aria-label="see favorite courses"
                     ><svg
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
+                      width="22"
+                      height="20"
+                      viewBox="0 0 22 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        opacity="0.6"
-                        d="M30.5 15.625C30.5 12.7258 28.0512 10.375 25.0307 10.375C22.7732 10.375 20.8342 11.6887 20 13.5635C19.1658 11.6887 17.2268 10.375 14.9682 10.375C11.95 10.375 9.5 12.7258 9.5 15.625C9.5 24.0483 20 29.625 20 29.625C20 29.625 30.5 24.0483 30.5 15.625Z"
-                        stroke=""
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        d="M21.5 5.625C21.5 2.72583 19.0512 0.375 16.0307 0.375C13.7732 0.375 11.8342 1.68867 11 3.5635C10.1658 1.68867 8.22683 0.375 5.96817 0.375C2.95 0.375 0.5 2.72583 0.5 5.625C0.5 14.0483 11 19.625 11 19.625C11 19.625 21.5 14.0483 21.5 5.625Z"
+                        fill="#8447FF"
+                        stroke="#8447FF"
                       />
                     </svg>
                   </a>
@@ -233,10 +227,7 @@
               </div>
               <ul class="mobile-menu__nav">
                 <li class="mobile-menu__nav--item">
-                  <a
-                    class="mobile-menu__nav--link"
-                    id="active"
-                    href="../pages/courses.html"
+                  <a class="mobile-menu__nav--link" href="../pages/courses.html"
                     >კურსები</a
                   >
                 </li>
@@ -286,63 +277,22 @@
     </header>
     <!-- main -->
     <main id="main">
-      <section>
-        <div class="container course__container">
-          <div class="filters">
-            <div class="filter-section">
-              <h3 class="filter-title" onclick="toggleFilter('date-filter')">
-                თარიღი
-              </h3>
-              <div id="date-filter" class="filter-content">
-                <input type="checkbox" id="july" name="date" value="July" />
-                <label for="july">ივლისი</label><br />
-                <input type="checkbox" id="august" name="date" value="August" />
-                <label for="august">აგვისტო</label><br />
-              </div>
+      <section class="favorite">
+        <div class="container favorite__wrapper">
+            <p>ფავორიტები</p>
+            <div class="favorite__wrapper--content">
+                <img src="../icons/favorite.svg" alt="favorite">
+                <div class="favorite__wrapper--texts">
+                    <h2>ფავორიტები ცარიელია</h2>
+                    <p>თქვენი ფავორიტების სია ამჟამად ცარიელია. გთხოვთ, დაამატოთ ელემენტები ამ განყოფილების შესავსებად.</p>
+                    <a class="btn" href="../index.html">
+                        მთავარ გვერდზე დაბრუნება
+                        <object
+                          type="image/svg+xml"
+                          data="../icons/buttonErrow.svg"></object>
+                      </a>
+                </div>
             </div>
-            <div class="filter-section">
-              <h3 class="filter-title" onclick="toggleFilter('price-filter')">
-                ფასი
-              </h3>
-              <div id="price-filter" class="filter-content">
-                <input
-                  type="checkbox"
-                  id="price1"
-                  name="price"
-                  value="0-1000"
-                />
-                <label for="price1">0₾ - 1000₾</label><br />
-                <input
-                  type="checkbox"
-                  id="price2"
-                  name="price"
-                  value="1001-2000"
-                />
-                <label for="price2">1001₾ - 2000₾</label><br />
-              </div>
-            </div>
-            <div class="filter-section">
-              <h3 class="filter-title" onclick="toggleFilter('stars-filter')">
-                რეიტინგი
-              </h3>
-              <div id="stars-filter" class="filter-content">
-                <input type="checkbox" id="5-stars" name="stars" value="5" />
-                <label for="5-stars">★★★★★</label><br />
-                <input type="checkbox" id="4-stars" name="stars" value="4" />
-                <label for="4-stars">★★★★</label><br />
-              </div>
-            </div>
-          </div>
-          <div id="courses">
-            <h1>შეარჩიე შენთვის საინტერესო კურსი</h1>
-            <div id="course-list" class="course-list">
-            </div>
-            <div class="pagination">
-              <button id="prev-page">&laquo;</button>
-              <span id="page-numbers"></span>
-              <button id="next-page">&raquo;</button>
-            </div>
-          </div>
         </div>
       </section>
     </main>
@@ -541,6 +491,5 @@
     <script src="../js/mobileMenu.js"></script>
     <script src="../js/acordion.js"></script>
     <script src="../js/signin.js"></script>
-    <script src="../js/courses.js"></script>
   </body>
 </html>
