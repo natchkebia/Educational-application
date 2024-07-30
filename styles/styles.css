@@ -9,7 +9,6 @@
   src: url("../fonts/Gilroy GEO Heavy.ttf");
 }
 
-
 :root {
   --primary-color: #8447ff;
   --secondary-color: #d972ff;
@@ -102,9 +101,11 @@ section .title {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg,
-      var(--gradient-color-2),
-      var(--gradient-color-1));
+  background: linear-gradient(
+    90deg,
+    var(--gradient-color-2),
+    var(--gradient-color-1)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -232,6 +233,85 @@ section .title {
   cursor: pointer;
 }
 
+/* search box */
+.search {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  background-color: hsla(0, 0%, 0%, 0.8);
+  padding: 8rem 1.5rem 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.search__close {
+  position: absolute;
+  top: 17%;
+  right: 0;
+  /* font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer; */
+}
+
+.search__form {
+  margin: 0 auto;
+  width: 686px;
+  height: 69px;
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  background-color: hsl(230, 100%, 97%);
+  box-shadow: 0 8px 32px hsla(230, 75%, 15%, 0.2);
+  padding-inline: 1rem;
+  border-radius: 8px;
+  transition: transform 0.4s;
+}
+.search__icon {
+  font-size: 1.25rem;
+  color: hsl(230, 75%, 15%);
+}
+.search__input {
+  border: none;
+  width: 100%;
+  padding-block: 1rem;
+  background-color: hsl(230, 100%, 97%);
+  color: hsl(230, 12%, 40%);
+}
+
+.search__input::placeholder {
+  color: hsl(230, 12%, 40%);
+}
+.show-search {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.show-search .search__form {
+  transform: translateY(0);
+}
+
+@media (max-width: 876px) {
+  .search {
+    padding-top: 10rem;
+  }
+
+  .search__form {
+    max-width: 450px;
+    margin-inline: auto;
+  }
+
+  .search__close {
+    width: max-content;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    font-size: 2rem;
+  }
+}
 
 /* mobile menu burger bar */
 
@@ -297,7 +377,6 @@ section .title {
   bottom: 0;
   right: 0;
 }
-
 
 .mobile-menu__user--name {
   font-family: var(--font-family-Gilroy);
@@ -403,7 +482,7 @@ main {
   z-index: 3;
 }
 
-.slider__text>h1 {
+.slider__text > h1 {
   font-family: var(--font-family-Gilroy);
   font-size: 40px;
   font-weight: 900;
@@ -921,7 +1000,6 @@ main {
   margin-left: 19.39px;
 }
 
-
 /* libary section */
 
 .library-video__container {
@@ -1133,7 +1211,6 @@ main {
   font-weight: 500;
   line-height: 19.2px;
 }
-
 
 .arrow {
   display: none;
