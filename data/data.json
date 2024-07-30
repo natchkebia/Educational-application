@@ -141,7 +141,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "50%",
-      "imageUrl": "../images/cards-photos/Course1.png",
+      "imageUrl": "./images/cards-photos/Course1.png",
       "altText": "girl"
     },
     {
@@ -155,7 +155,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "50%",
-      "imageUrl": "../images/cards-photos/Course2.png",
+      "imageUrl": "./images/cards-photos/Course2.png",
       "altText": "boy"
     },
     {
@@ -169,7 +169,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "20%",
-      "imageUrl": "../images/cards-photos/Course3.png",
+      "imageUrl": "./images/cards-photos/Course3.png",
       "altText": "girl"
     },
     {
@@ -183,7 +183,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "",
-      "imageUrl": "../images/cards-photos/Course4.png",
+      "imageUrl": "./images/cards-photos/Course4.png",
       "altText": "boy"
     },
     {
@@ -197,7 +197,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "",
-      "imageUrl": "../images/cards-photos/Course1.png",
+      "imageUrl": "./images/cards-photos/Course1.png",
       "altText": "girl"
     },
     {
@@ -211,7 +211,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "",
-      "imageUrl": "../images/cards-photos/Course4.png",
+      "imageUrl": "./images/cards-photos/Course4.png",
       "altText": "girl"
     },
     {
@@ -225,7 +225,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "",
-      "imageUrl": "../images/cards-photos/Course4.png",
+      "imageUrl": "./images/cards-photos/Course4.png",
       "altText": "boy"
     },
     {
@@ -239,7 +239,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "50%",
-      "imageUrl": "../images/cards-photos/Course2.png",
+      "imageUrl": "./images/cards-photos/Course2.png",
       "altText": "boy"
     },
     {
@@ -253,7 +253,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "50%",
-      "imageUrl": "../images/cards-photos/Course1.png",
+      "imageUrl": "./images/cards-photos/Course1.png",
       "altText": "girl"
     },
     {
@@ -267,7 +267,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "50%",
-      "imageUrl": "../images/cards-photos/Course2.png",
+      "imageUrl": "./images/cards-photos/Course2.png",
       "altText": "boy"
     },
     {
@@ -281,7 +281,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "20%",
-      "imageUrl": "../images/cards-photos/Course3.png",
+      "imageUrl": "./images/cards-photos/Course3.png",
       "altText": "girl"
     },
     {
@@ -295,7 +295,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "",
-      "imageUrl": "../images/cards-photos/Course4.png",
+      "imageUrl": "./images/cards-photos/Course4.png",
       "altText": "boy"
     }
   ]
