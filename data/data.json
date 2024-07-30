@@ -141,7 +141,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "50%",
-      "imageUrl": "./images/cards-photos/Course1_1.png",
+      "imageUrl": "../images/cards-photos/Course1.png",
       "altText": "girl"
     },
     {
@@ -155,7 +155,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "50%",
-      "imageUrl": "./images/cards-photos/Course2_1.png",
+      "imageUrl": "../images/cards-photos/Course2.png",
       "altText": "boy"
     },
     {
@@ -169,7 +169,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "20%",
-      "imageUrl": "./images/cards-photos/Course3_1.png",
+      "imageUrl": "../images/cards-photos/Course3.png",
       "altText": "girl"
     },
     {
@@ -183,7 +183,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "",
-      "imageUrl": "./images/cards-photos/Course4_1.png",
+      "imageUrl": "../images/cards-photos/Course4.png",
       "altText": "boy"
     },
     {
@@ -197,7 +197,7 @@
       "hours": 30,
       "spots": 40,
       "discount": "",
-      "imageUrl": "./images/cards-photos/Course1_1.png",
+      "imageUrl": "../images/cards-photos/Course1.png",
       "altText": "girl"
     },
     {
@@ -211,8 +211,92 @@
       "hours": 30,
       "spots": 40,
       "discount": "",
-      "imageUrl": "./images/cards-photos/Course4_1.png",
+      "imageUrl": "../images/cards-photos/Course4.png",
       "altText": "girl"
+    },
+    {
+      "date": "1 - 28 ივლისი 2024",
+      "title": "კურსის დასახელება 1 ორ ხაზიანი რომ იყოს",
+      "description": "ამ კურსის ჩაშლა რამდენიმე სიტყვით, წინადადებით, მოკლედ და კონკრეტულად...",
+      "stars": 3,
+      "originalPrice": "",
+      "discountedPrice": "700₾",
+      "lectures": 10,
+      "hours": 30,
+      "spots": 40,
+      "discount": "",
+      "imageUrl": "../images/cards-photos/Course4.png",
+      "altText": "boy"
+    },
+    {
+      "date": "1 - 28 ივლისი 2024",
+      "title": "კურსის დასახელება 1 ორ ხაზიანი რომ იყოს",
+      "description": "ამ კურსის ჩაშლა რამდენიმე სიტყვით, წინადადებით, მოკლედ და კონკრეტულად...",
+      "stars": 4,
+      "originalPrice": "1600₾",
+      "discountedPrice": "800₾",
+      "lectures": 10,
+      "hours": 30,
+      "spots": 40,
+      "discount": "50%",
+      "imageUrl": "../images/cards-photos/Course2.png",
+      "altText": "boy"
+    },
+    {
+      "date": "1 - 28 ივლისი 2024",
+      "title": "კურსის დასახელება 1 ორ ხაზიანი რომ იყოს",
+      "description": "ამ კურსის ჩაშლა რამდენიმე სიტყვით, წინადადებით, მოკლედ და კონკრეტულად...",
+      "stars": 5,
+      "originalPrice": "1400₾",
+      "discountedPrice": "700₾",
+      "lectures": 10,
+      "hours": 30,
+      "spots": 40,
+      "discount": "50%",
+      "imageUrl": "../images/cards-photos/Course1.png",
+      "altText": "girl"
+    },
+    {
+      "date": "1 - 28 ივლისი 2024",
+      "title": "კურსის დასახელება 1 ორ ხაზიანი რომ იყოს",
+      "description": "ამ კურსის ჩაშლა რამდენიმე სიტყვით, წინადადებით, მოკლედ და კონკრეტულად...",
+      "stars": 5,
+      "originalPrice": "1600₾",
+      "discountedPrice": "800₾",
+      "lectures": 10,
+      "hours": 30,
+      "spots": 40,
+      "discount": "50%",
+      "imageUrl": "../images/cards-photos/Course2.png",
+      "altText": "boy"
+    },
+    {
+      "date": "1 - 28 ივლისი 2024",
+      "title": "კურსის დასახელება 1 ორ ხაზიანი რომ იყოს",
+      "description": "ამ კურსის ჩაშლა რამდენიმე სიტყვით, წინადადებით, მოკლედ და კონკრეტულად...",
+      "stars": 5,
+      "originalPrice": "1000₾",
+      "discountedPrice": "800₾",
+      "lectures": 10,
+      "hours": 30,
+      "spots": 40,
+      "discount": "20%",
+      "imageUrl": "../images/cards-photos/Course3.png",
+      "altText": "girl"
+    },
+    {
+      "date": "1 - 28 ივლისი 2024",
+      "title": "კურსის დასახელება 1 ორ ხაზიანი რომ იყოს",
+      "description": "ამ კურსის ჩაშლა რამდენიმე სიტყვით, წინადადებით, მოკლედ და კონკრეტულად...",
+      "stars": 5,
+      "originalPrice": "",
+      "discountedPrice": "700₾",
+      "lectures": 10,
+      "hours": 30,
+      "spots": 40,
+      "discount": "",
+      "imageUrl": "../images/cards-photos/Course4.png",
+      "altText": "boy"
     }
   ]
 }
