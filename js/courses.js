@@ -54,13 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
  
   function generateCourseCards(courses) {
-    console.log(courses, 'aa');
+    console.log(courses,'aa');
     return courses
       .map(
         (course) => `
           <a class="courses__slider--card new__card" href="../detail-pages/courses-detail-page.html">
             <div class="slider__card--img">
-              <img src="${course.imageUrl}" alt="${course.altText}" />
+              <img src="${course.imageUrl2 || course.imageUrl}" alt="${course.altText}" />
               <div class="courses__slider--people">
                 <div class="courses__slider--wrapper img1"></div>
                 <div class="courses__slider--wrapper img2"></div>
@@ -182,4 +182,3 @@ document.addEventListener("DOMContentLoaded", () => {
   window.onload = () => {
     displayCourses();
   };
-  
