@@ -9,15 +9,20 @@ function validateField(fieldId) {
     case "firstname":
       if (!value) {
         errors.firstname = "აუცილებელი ველი";
-      } else if (!/^[A-Za-z]+$/.test(value)) {
-        errors.firstname = "მხოლოდ ასოები არის დაშვებული";
+      } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
+        errors.firstname = "გამოიყენე ქართული ასოები";
+      } else if (value.length > 20) {
+        errors.firstname = "სახელი არ უნდა აღემატებოდეს 20 ასოს"; // Maximum length exceeded
       }
       break;
+
     case "lastname":
       if (!value) {
-        errors.lastname = "აუცილებელი ველი";
-      } else if (!/^[A-Za-z]+$/.test(value)) {
-        errors.lastname = "მხოლოდ ასოები არის დაშვებული";
+        errors.firstname = "აუცილებელი ველი";
+      } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
+        errors.firstname = "გამოიყენე ქართული ასოები";
+      } else if (value.length > 30) {
+        errors.lastname = "გვარი არ უნდა აღემატებოდეს 30 ასოს"; // Maximum length exceeded
       }
       break;
     case "email":
@@ -31,13 +36,29 @@ function validateField(fieldId) {
       if (!value) {
         errors.tel = "აუცილებელი ველი";
       } else if (!/^[0-9]+$/.test(value)) {
-        errors.tel = "ტელ. ნომერი უნდა იყოს ციფრები";
+        errors.tel = "გამოიყენეთ მხოლოდ ციფრები";
+      } else if (value.length > 9) {
+        errors.tel = "სიმბოლოების რაოდენობა არ უნდა აღემატებოდეს 9–ს"; // Maximum length exceeded
       }
       break;
     case "password":
-      // No specific validation for password on input
+      if (!value) {
+        errors.password = "აუცილებელი ველი";
+      } else if (
+        value.length < 8 ||
+        !/[A-Z]/.test(value) ||
+        !/[a-z]/.test(value) ||
+        !/[0-9]/.test(value) ||
+        !/[!@#$%^&*(),.?":{}|<>]/.test(value)
+      ) {
+        errors.password =
+          "პაროლი უნდა შეიცავდეს მინიმუმ 8 სიმბოლოს, დიდსა და პატარა ასოებს, რიცხვსა და სპეციალურ სიმბოლოს";
+      }
       break;
     case "passwConfirm":
+      if (!value) {
+        errors.passwConfirm = "აუცილებელი ველი";
+      }
       const password = document.getElementById("password").value.trim();
       if (password !== value) {
         errors.passwConfirm = "შეყვანილი პაროლები ერთმანეთს არ ემთხვევა";
