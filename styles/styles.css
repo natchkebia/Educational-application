@@ -1399,6 +1399,9 @@ main {
   width: 100%;
   object-fit: cover;
   object-position: center;
+  position: sticky;
+  top: 0;
+  right: 0;
 }
 
 .backto .arrow-btn {
