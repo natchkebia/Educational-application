@@ -251,8 +251,8 @@
     </header>
     <!-- search box  -->
 
-    <div class="search" id="search">
-      <form action="" class="search__form">
+    <div class="search__box" id="search">
+      <div action="" class="search__form">
         <svg
           class="search__icon"
           width="24"
@@ -269,8 +269,15 @@
             stroke-linecap="round"
           />
         </svg>
-        <input type="text" placeholder="ძებნა" class="search__input" />
-      </form>
+        <input
+          type="text"
+          placeholder="ძებნა"
+          autocomplete="off"
+          class="search__input"
+          id="input__box"
+        />
+      </div>
+
       <svg
         class="search__close"
         id="search-close"
@@ -287,7 +294,23 @@
           stroke-linecap="round"
         />
       </svg>
+      <div class="result__box">
+
+        <!-- <span
+          ><svg
+            width="612"
+            height="2"
+            viewBox="0 0 612 2"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path opacity="0.5" d="M0 1L612 0.999946" stroke="white" />
+          </svg>
+        </span>
+        <a href="search-courses">მეტის ნახვა</a> -->
+      </div>
     </div>
+
     <!-- main -->
     <main id="main">
       <!-- section hero -->
@@ -488,7 +511,7 @@
 
       <!-- section courses -->
 
-      <section class="courses">
+      <section class="courses" id="search-courses">
         <div class="course__slider--wrapper">
           <a class="arrow-btn prew-btn" id="prev">
             <svg

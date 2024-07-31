@@ -234,7 +234,7 @@ section .title {
 }
 
 /* search box */
-.search {
+.search__box {
   position: fixed;
   left: 0;
   top: 0;
@@ -248,12 +248,13 @@ section .title {
   transition: opacity 0.4s;
 }
 .search__close {
+  width: 25px;
+  height: 25px;
+  margin-right: 363px;
   position: absolute;
   top: 17%;
   right: 0;
-  /* font-size: 1.5rem;
-  color: var(--title-color);
-  cursor: pointer; */
+  cursor: pointer;
 }
 
 .search__form {
@@ -311,6 +312,29 @@ section .title {
     margin-inline: auto;
     font-size: 2rem;
   }
+}
+/* result__box*/
+.result__box {
+  overflow-y: scroll;
+  margin-top: 12px;
+  width: 685px;
+  height: 148px;
+  align-items: center;
+  text-align: center;
+}
+/* .result__box ul {
+  padding: 15px 10px;
+} */
+.result__box ul li {
+  cursor: pointer;
+  color: hsla(0, 0%, 100%, 1);
+  font-family: var(--font-family-figaro);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23px;
+}
+.result__box ul li:hover {
+  background: hsla(0, 0%, 56%, 1);
 }
 
 /* mobile menu burger bar */
