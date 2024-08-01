@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "Figaro";
+  font-family: "FiraGo";
   src: url("../fonts/FiraGO-Regular.ttf"), url("../fonts/FiraGO-Medium.ttf"),
     url("../fonts/FiraGO-SemiBold.ttf"), url("../fonts/FiraGO-Bold.ttf");
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../fonts/Gilroy GEO Heavy.ttf");
+  src: url("../fonts/Gilroy\ GEO\ Heavy.ttf");
 }
 
 :root {
@@ -31,7 +31,7 @@
   /* გრადიენტის მეორე ფერი */
   --gradient-color-2: #b947ff;
 
-  --font-family-figaro: "Figaro", sans-serif;
+  --font-family-FiraGo: "FiraGo", sans-serif;
   --font-family-Gilroy: "Gilroy", sans-serif;
 }
 
@@ -61,7 +61,7 @@ svg {
 
 /* Often repeated styles */
 body {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-FiraGo);
   color: var(--text-color);
 }
 
@@ -79,7 +79,7 @@ body {
 .btn {
   border-radius: 8px;
   background-color: var(--box-color);
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-FiraGo);
   font-size: 16px;
   font-weight: 500;
   line-height: 19.2px;
@@ -99,12 +99,16 @@ section {
 }
 
 section .title {
+  font-family: var(--font-family-FiraGo);
+  font-weight: 600;
   font-size: 40px;
   font-weight: 600;
   line-height: 48px;
 }
 
 .gradient-text {
+  font-family: var(--font-family-FiraGo);
+  font-weight: 600;
   background: linear-gradient(
     90deg,
     var(--gradient-color-2),
@@ -280,7 +284,7 @@ section .title {
 }
 
 .header__nav--link {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-FiraGo);
   font-size: 16px;
   line-height: 19.2px;
   font-weight: 500;
@@ -288,7 +292,7 @@ section .title {
 }
 
 .reg {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-FiraGo);
   font-size: 16px;
   line-height: 19.2px;
   font-weight: 500;
@@ -480,12 +484,14 @@ main {
 }
 
 .slider__text p {
+  font-family: var(--font-family-FiraGo);
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
 }
 
 .slider__text span {
+  font-family: var(--font-family-FiraGo);
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
@@ -612,7 +618,6 @@ main {
   display: block;
   width: 24px;
   height: 24px;
-  margin-right: 9px;
 }
 
 .about__card--desc {
@@ -681,6 +686,7 @@ main {
   background-color: white;
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0px 0px 20px 0px #00000014;
 }
 
 .slider__card--img {
@@ -1213,12 +1219,13 @@ main {
 }
 
 .column .column--title {
+  font-family: var(--font-family-FiraGo);
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 36px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 19.2px;
 }
 
@@ -1227,6 +1234,7 @@ main {
 }
 
 .column .list li {
+  font-family: var(--font-family-FiraGo);
   margin-bottom: 26px;
   font-size: 14px;
   font-weight: 400;
@@ -1258,9 +1266,10 @@ main {
 }
 
 .subscription__label {
+  font-family: var(--font-family-FiraGo);
   margin-bottom: 36px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   line-height: 19.2px;
 }
@@ -1273,7 +1282,7 @@ main {
   width: 317px;
   padding: 16px;
   display: inline-block;
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-FiraGo);
   font-size: 14px;
   border: 1px solid #8447ff80;
   border-top-left-radius: 12px;
@@ -1285,7 +1294,7 @@ main {
 
 .subscription__button {
   padding: 16px 40px;
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-FiraGo);
   font-size: 14px;
   font-weight: 500;
   color: #fff;
@@ -1317,8 +1326,9 @@ main {
 
 .footer__contact--call span,
 .footer__contact--email span {
+  font-family: var(--font-family-FiraGo);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 19.2px;
   margin-bottom: 16px;
 }
@@ -1332,6 +1342,7 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 10px;
 }
 
 /*  */
@@ -1503,7 +1514,7 @@ main {
   background: transparent;
   outline: none;
   border: none;
-  font-family: FiraGO;
+  font-family: var(--font-family-FiraGo);
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
@@ -1620,7 +1631,7 @@ main {
 }
 
 .favorite__wrapper > p {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-FiraGo);
   font-weight: 600;
   font-size: 16px;
   line-height: 19.2px;
@@ -1640,7 +1651,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-FiraGo);
 }
 
 .favorite__wrapper--texts h2 {

@@ -85,7 +85,7 @@
 
   /* testimonials */
   .testimonials__card {
-    flex: 1 0 31.5%;
+    /* flex: 1 0 31.5%; */
     min-width: 270px;
   }
 
