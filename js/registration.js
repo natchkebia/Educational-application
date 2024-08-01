@@ -118,3 +118,7 @@ function togglePasswordVisibility(passwordId, iconId) {
     eyeIcon.src = "../images/autorization/eyeclose.svg"; // Show closed eye
   }
 }
+
+
+
+

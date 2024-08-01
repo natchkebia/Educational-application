@@ -51,33 +51,32 @@
                 <p class="desc">
                   შენს ანგარიშზე შესასვლელად, გაიარე ავტორიზაცია
                 </p>
-                <form
-                  name="autorization"
-                  id="autorization-form"
-                  onsubmit="return ">
+                <form id="login-form">
+                  <!-- Email or Mobile Number -->
                   <div class="input-box">
                     <div class="input-wrapper">
                       <input
-                        id="email"
-                        name="email"
-                        type="email"
+                        id="loginIdentifier"
+                        name="loginIdentifier"
+                        type="text"
                         class="input-box__input"
                         placeholder=" "
-                        oninput="validateField('email')" />
-                      <label class="input-box-label" for="email"
-                        >მომხმარებლის ელ. ფოსტა ან ტელ. ნომერი</label
-                      >
+                        oninput="validateField('loginIdentifier')" />
+                      <label class="input-box-label" for="loginIdentifier">
+                        ელ. ფოსტა ან ტელ. ნომერი
+                      </label>
                     </div>
-                    <p class="error-message" id="error-email"></p>
+                    <p class="error-message" id="error-loginIdentifier"></p>
                   </div>
-                  <!-- პაროლი -->
+
+                  <!-- Password -->
                   <div class="input-box">
                     <div class="input-wrapper">
                       <input
                         id="password"
                         name="password"
-                        class="input-box__input"
                         type="password"
+                        class="input-box__input"
                         placeholder=" "
                         oninput="validateField('password')" />
                       <label class="input-box-label" for="password"
@@ -93,6 +92,7 @@
                     <p class="error-message" id="error-password"></p>
                   </div>
 
+                  <!-- Remember Me Checkbox -->
                   <div class="input-box__checkbox">
                     <div id="checkbox">
                       <input type="checkbox" name="remember" id="remember" />
@@ -103,25 +103,32 @@
                     <a href="#" class="forgot-password">დაგავიწყდა პაროლი?</a>
                   </div>
 
+                  <!-- Submit Button -->
                   <button type="submit" class="btn">ავტორიზაცია</button>
 
+                  <!-- Social Logins -->
                   <div class="registracion__social">
                     <span class="continue">ან შედი ანგარიშზე</span>
-
                     <div class="social__btns">
-                      <button type="submit" class="btn">
+                      <button
+                        type="button"
+                        class="btn"
+                        onclick="handleGmailLogin()">
                         <object
                           data="../images/autorization/gmail.svg"></object>
                         Google-ით გაგრძელება
                       </button>
-                      <button type="submit" class="btn">
+                      <button
+                        type="button"
+                        class="btn"
+                        onclick="handleFacebookLogin()">
                         <object data="../images/autorization/fb.svg"></object>
                         Facebook-ით გაგრძელება
                       </button>
                     </div>
                     <div class="login-register">
                       <p class="login-register-content">
-                        არ გაქვს ანგარიში?გაიარე
+                        არ გაქვს ანგარიში? გაიარე
                         <a href="./registration.html" class="login-link"
                           >რეგისტრაცია</a
                         >
@@ -135,6 +142,8 @@
         </main>
       </div>
     </div>
-  </body>
+    <script src="../js/loginform.js"></script>
   <script src="../js/registration.js"></script>
+  </body>
+  
 </html>
