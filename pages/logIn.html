@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>შესვლა</title>
+    <title>ავტორიზაცია</title>
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="stylesheet" href="../styles/responsive.css" />
     <link rel="icon" href="../images/logo/header-logo.svg" />
@@ -45,7 +45,92 @@
 
         <main class="autorization__main">
           <section class="autorization-box">
-            <div class="form--wrapper"></div>
+            <div class="form--wrapper">
+              <div class="login form-box">
+                <h2 class="title">ავტორიზაცია</h2>
+                <p class="desc">
+                  შენს ანგარიშზე შესასვლელად, გაიარე ავტორიზაცია
+                </p>
+                <form
+                  name="autorization"
+                  id="autorization-form"
+                  onsubmit="return ">
+                  <div class="input-box">
+                    <div class="input-wrapper">
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        class="input-box__input"
+                        placeholder=" "
+                        oninput="validateField('email')" />
+                      <label class="input-box-label" for="email"
+                        >მომხმარებლის ელ. ფოსტა ან ტელ. ნომერი</label
+                      >
+                    </div>
+                    <p class="error-message" id="error-email"></p>
+                  </div>
+                  <!-- პაროლი -->
+                  <div class="input-box">
+                    <div class="input-wrapper">
+                      <input
+                        id="password"
+                        name="password"
+                        class="input-box__input"
+                        type="password"
+                        placeholder=" "
+                        oninput="validateField('password')" />
+                      <label class="input-box-label" for="password"
+                        >პაროლი</label
+                      >
+                      <img
+                        src="../images/autorization/eyeclose.svg"
+                        id="toggle-password"
+                        class="eye-icon"
+                        alt="Toggle Password Visibility"
+                        onclick="togglePasswordVisibility('password', 'toggle-password')" />
+                    </div>
+                    <p class="error-message" id="error-password"></p>
+                  </div>
+
+                  <div class="input-box__checkbox">
+                    <div id="checkbox">
+                      <input type="checkbox" name="remember" id="remember" />
+                      <label for="remember" id="remember-text"
+                        >დამახსოვრება</label
+                      >
+                    </div>
+                    <a href="#" class="forgot-password">დაგავიწყდა პაროლი?</a>
+                  </div>
+
+                  <button type="submit" class="btn">ავტორიზაცია</button>
+
+                  <div class="registracion__social">
+                    <span class="continue">ან შედი ანგარიშზე</span>
+
+                    <div class="social__btns">
+                      <button type="submit" class="btn">
+                        <object
+                          data="../images/autorization/gmail.svg"></object>
+                        Google-ით გაგრძელება
+                      </button>
+                      <button type="submit" class="btn">
+                        <object data="../images/autorization/fb.svg"></object>
+                        Facebook-ით გაგრძელება
+                      </button>
+                    </div>
+                    <div class="login-register">
+                      <p class="login-register-content">
+                        არ გაქვს ანგარიში?გაიარე
+                        <a href="./registration.html" class="login-link"
+                          >რეგისტრაცია</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </section>
         </main>
       </div>

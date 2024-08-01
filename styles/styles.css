@@ -105,11 +105,9 @@ section .title {
 }
 
 .gradient-text {
-  background: linear-gradient(
-    90deg,
-    var(--gradient-color-2),
-    var(--gradient-color-1)
-  );
+  background: linear-gradient(90deg,
+      var(--gradient-color-2),
+      var(--gradient-color-1));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -471,7 +469,7 @@ main {
   z-index: 3;
 }
 
-.slider__text > h1 {
+.slider__text>h1 {
   font-family: var(--font-family-Gilroy);
   font-size: 40px;
   font-weight: 900;
@@ -1492,8 +1490,8 @@ main {
   z-index: 1;
 }
 
-.input-box__input:focus + .input-box-label,
-.input-box__input:not(:placeholder-shown) + .input-box-label {
+.input-box__input:focus+.input-box-label,
+.input-box__input:not(:placeholder-shown)+.input-box-label {
   top: 0;
   transform: translateY(50%);
   font-size: 12px;
@@ -1615,6 +1613,27 @@ main {
   color: var(--primary-color);
 }
 
+
+
+/* login  */
+.login .input-box {
+  margin-bottom: 12px;
+}
+
+.input-box__checkbox {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.forgot-password {
+  opacity: 50%;
+}
+
 /* favorite */
 
 .favorite {
@@ -1622,7 +1641,7 @@ main {
   padding: 16px 0 32px 0;
 }
 
-.favorite__wrapper > p {
+.favorite__wrapper>p {
   font-family: var(--font-family-figaro);
   font-weight: 600;
   font-size: 16px;
@@ -1747,3 +1766,7 @@ main {
 .new__card {
   box-shadow: 0px 0px 20px 0px #00000014;
 }
+
+
+
+/*  */
