@@ -83,11 +83,10 @@ facebookSigninBtn.addEventListener("click", () => {
       window.location.href = "index.html"; // Redirect to index.html
     })
     .catch((error) => {
-      const errorMessage = error.message;
-      alert(errorMessage);
+      console.error("Error during Facebook sign-in:", error); // Log error to console
+      alert("Failed to sign in with Facebook: " + error.message);
     });
 });
-
 // Clear form inputs
 function clearForm() {
   document.getElementById("registration-form").reset();
@@ -184,3 +183,24 @@ function validateField(fieldId) {
     errorElement.classList.remove("show-icon");
   }
 }
+
+function togglePasswordVisibility(passwordId, iconId) {
+  const passwordField = document.getElementById(passwordId);
+  const eyeIcon = document.getElementById(iconId);
+
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+    eyeIcon.src = "../images/autorization/eye.svg"; // Path to open eye icon
+  } else {
+    passwordField.type = "password";
+    eyeIcon.src = "../images/autorization/eyeclose.svg"; // Path to closed eye icon
+  }
+}
+
+// Attach togglePasswordVisibility function to icons
+document.getElementById("toggle-password").addEventListener("click", () => {
+  togglePasswordVisibility("password", "toggle-password");
+});
+document.getElementById("toggle-passwConfirm").addEventListener("click", () => {
+  togglePasswordVisibility("passwConfirm", "toggle-passwConfirm");
+});
