@@ -18,9 +18,9 @@ function validateField(fieldId) {
 
     case "lastname":
       if (!value) {
-        errors.firstname = "აუცილებელი ველი";
+        errors.lastname = "აუცილებელი ველი";
       } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
-        errors.firstname = "გამოიყენე ქართული ასოები";
+        errors.lastname = "გამოიყენე ქართული ასოები";
       } else if (value.length > 30) {
         errors.lastname = "გვარი არ უნდა აღემატებოდეს 30 ასოს"; // Maximum length exceeded
       }
@@ -118,7 +118,3 @@ function togglePasswordVisibility(passwordId, iconId) {
     eyeIcon.src = "../images/autorization/eyeclose.svg"; // Show closed eye
   }
 }
-
-
-
-
