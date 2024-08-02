@@ -1,3 +1,105 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+  signInWithPopup,
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBWXkUmUmCZmmATIsQfcdBTszFhOu-IkiM",
+  authDomain: "eduapp-775ab.firebaseapp.com",
+  databaseURL: "https://eduapp-775ab-default-rtdb.firebaseio.com",
+  projectId: "eduapp-775ab",
+  storageBucket: "eduapp-775ab.appspot.com",
+  messagingSenderId: "420498752186",
+  appId: "1:420498752186:web:58dbdc330a7c27db563883",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const auth = getAuth();
+
+// Handle email and password registration
+const signInbtn = document.getElementById("signInbtn");
+signInbtn.addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent form from submitting
+
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let passwConfirm = document.getElementById("passwConfirm").value;
+
+  // Simple validation
+  if (password !== passwConfirm) {
+    alert("Passwords do not match!");
+    return;
+  }
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed up
+      const user = userCredential.user;
+      // Additional user info can be stored here if needed
+      clearForm();
+      window.location.href = "index.html"; // Redirect to index.html
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+});
+
+// Google Sign-In
+const googleSigninBtn = document.getElementById("google-signin");
+googleSigninBtn.addEventListener("click", () => {
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      // The signed-in user info
+      const user = result.user;
+      clearForm();
+      window.location.href = "index.html"; // Redirect to index.html
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+});
+
+// Facebook Sign-In
+const facebookSigninBtn = document.getElementById("facebook-signin");
+facebookSigninBtn.addEventListener("click", () => {
+  const provider = new FacebookAuthProvider();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      // The signed-in user info
+      const user = result.user;
+      clearForm();
+      window.location.href = "index.html"; // Redirect to index.html
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+});
+
+// Clear form inputs
+function clearForm() {
+  document.getElementById("registration-form").reset();
+}
+
+// Validate form fields on input
+document.querySelectorAll(".input-box__input").forEach((input) => {
+  input.addEventListener("input", () => {
+    validateField(input.id);
+  });
+});
+
 // Validate individual fields
 function validateField(fieldId) {
   let errors = {};
@@ -25,6 +127,7 @@ function validateField(fieldId) {
         errors.lastname = "გვარი არ უნდა აღემატებოდეს 30 ასოს"; // Maximum length exceeded
       }
       break;
+
     case "email":
       if (!value) {
         errors.email = "აუცილებელი ველი";
@@ -32,6 +135,7 @@ function validateField(fieldId) {
         errors.email = "ელ. ფოსტა არასწორია";
       }
       break;
+
     case "tel":
       if (!value) {
         errors.tel = "აუცილებელი ველი";
@@ -41,6 +145,7 @@ function validateField(fieldId) {
         errors.tel = "სიმბოლოების რაოდენობა არ უნდა აღემატებოდეს 9–ს"; // Maximum length exceeded
       }
       break;
+
     case "password":
       if (!value) {
         errors.password = "აუცილებელი ველი";
@@ -55,6 +160,7 @@ function validateField(fieldId) {
           "პაროლი უნდა შეიცავდეს მინიმუმ 8 სიმბოლოს, დიდსა და პატარა ინგლისურ ასოებს, რიცხვსა და სპეციალურ სიმბოლოს";
       }
       break;
+
     case "passwConfirm":
       if (!value) {
         errors.passwConfirm = "აუცილებელი ველი";
@@ -64,6 +170,7 @@ function validateField(fieldId) {
         errors.passwConfirm = "შეყვანილი პაროლები ერთმანეთს არ ემთხვევა";
       }
       break;
+
     default:
       break;
   }
@@ -75,46 +182,5 @@ function validateField(fieldId) {
   } else {
     errorElement.innerText = "";
     errorElement.classList.remove("show-icon");
-  }
-}
-
-// Validate entire form on submit
-document
-  .getElementById("registration-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    // Validate all fields
-    [
-      "firstname",
-      "lastname",
-      "email",
-      "tel",
-      "password",
-      "passwConfirm",
-    ].forEach(validateField);
-
-    // Check if there are any errors
-    const errorMessages = document.querySelectorAll(".error-message");
-    const hasErrors = Array.from(errorMessages).some((element) =>
-      element.classList.contains("show-icon")
-    );
-
-    // Submit form if there are no errors
-    if (!hasErrors) {
-      document.getElementById("registration-form").submit();
-    }
-  });
-
-function togglePasswordVisibility(passwordId, iconId) {
-  const passwordField = document.getElementById(passwordId);
-  const eyeIcon = document.getElementById(iconId);
-
-  if (passwordField.type === "password") {
-    passwordField.type = "text";
-    eyeIcon.src = "../images/autorization/eye.svg"; // Show open eye
-  } else {
-    passwordField.type = "password";
-    eyeIcon.src = "../images/autorization/eyeclose.svg"; // Show closed eye
   }
 }

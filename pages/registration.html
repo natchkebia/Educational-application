@@ -52,10 +52,7 @@
                   ახალი ანგარიშის შესაქმნელად, გაიარე რეგისტრაცია
                 </p>
 
-                <form
-                  name="registration"
-                  id="registration-form"
-                  onsubmit="return formValidation()">
+                <form name="registration" id="registration-form">
                   <div class="username">
                     <!-- სახელი -->
                     <div class="input-box">
@@ -84,7 +81,6 @@
                           class="input-box__input"
                           placeholder=" "
                           oninput="validateField('lastname')" />
-
                         <label class="input-box-label" for="lastname"
                           >გვარი</label
                         >
@@ -177,18 +173,19 @@
                     <u><b>პოლიტიკას</b></u></span
                   >
 
-                  <button type="submit" class="btn">რეგისტრაცია</button>
+                  <button type="submit" class="btn" id="signInbtn">
+                    რეგისტრაცია
+                  </button>
 
                   <div class="registracion__social">
                     <span class="continue">ან გააგრძელე როგორც</span>
-
                     <div class="social__btns">
-                      <button type="submit" class="btn">
+                      <button type="button" id="google-signin" class="btn">
                         <object
                           data="../images/autorization/gmail.svg"></object>
                         Google-ით გაგრძელება
                       </button>
-                      <button type="submit" class="btn">
+                      <button type="button" id="facebook-signin" class="btn">
                         <object data="../images/autorization/fb.svg"></object>
                         Facebook-ით გაგრძელება
                       </button>
@@ -209,6 +206,7 @@
         </main>
       </div>
     </div>
-    <script src="../js/registration.js"></script>
+
+    <script type="module" src="../js/registration.js"></script>
   </body>
 </html>
