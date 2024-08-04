@@ -1744,3 +1744,213 @@ main {
 .new__card {
   box-shadow: 0px 0px 20px 0px #00000014;
 }
+
+/* courses details */
+.course__details {
+  display: flex;
+  align-items: flex-start;
+}
+.courses__details {
+  background-image: url(../images/courses-details/game-dev.png);
+  width: 100%;
+  min-height: 436px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  margin-top: 96px;
+}
+.courses__details--links {
+  width: 399px;
+  margin-left: 144px;
+  min-height: 19px;
+  display: flex;
+}
+.courses__details--links a {
+  font-family: var(--font-family-figaro);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  cursor: pointer;
+}
+
+/* .course__desc {
+  max-width: 790px;
+  margin: 0 auto;
+} */
+.course__desc--links {
+  margin-top: 32px;
+  max-width: 758px;
+  height: 50px;
+  gap: 10px;
+}
+.desc__btn {
+  border-radius: 8px;
+  padding: 13px 38px;
+  background-color: var(--background-color-2);
+  font-family: var(--font-family-figaro);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: hsla(260, 100%, 64%, 1);
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.active_link {
+  background-color: hsla(260, 100%, 64%, 1);
+  color: hsla(0, 0%, 100%, 1);
+}
+.course__desc--text {
+  max-width: 790px;
+  width: 100%;
+  margin-top: 32px;
+}
+.course__desc--title {
+  font-family: var(--font-family-figaro);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--primary-color);
+}
+.course__about {
+  margin-top: 24px;
+}
+.course__about--main {
+  font-family: var(--font-family-figaro);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+}
+.course__about--paragraph {
+  font-family: var(--font-family-figaro);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+.course__about--after {
+  margin-top: 24px;
+  max-width: 791px;
+  width: 100%;
+  height: 288px;
+  background-color: #f7f4ff;
+  padding: 24px;
+  border-radius: 8px;
+}
+.course__about--after dd {
+  display: flex;
+  margin-bottom: 24px;
+}
+.course__about--after label {
+  font-family: var(--font-family-figaro);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+}
+.course__description {
+  margin-bottom: 32px;
+}
+.checkbox__label {
+  margin-left: 12px;
+}
+/* .after__checklist{
+  max-width: 743px;
+  margin: 24px;
+}
+.after__checklist--inputs {
+  margin-top: 24px;
+}
+.after__checklist input {
+  width: 18px;
+  height: 18px;
+} */
+
+/* buying */
+.buy__course {
+  max-width: 340px;
+  width: 100%;
+  height: 216px;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0px 0px 20px 0px #00000014;
+  margin-left: 956px;
+}
+.course__price {
+  max-width: 292px;
+  height: 40px;
+  /* justify-content: space-between; */
+  display: flex;
+  flex-direction: row;
+}
+.course__price--new {
+  font-family: var(--font-family-figaro);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
+  color: #8447FF;
+}
+.course__price--old {
+  font-family: var(--font-family-figaro);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #777777;
+  text-decoration: line-through;
+  margin-top: 11px;
+  margin-left: 12px;
+  margin-right: 80px;
+}
+.course__discounts {
+  width: 50px;
+  height: 24px;
+  border-radius: 50px;
+  margin-top: 11px;
+  padding: 2px 8px;
+  background-color: #FFC619;
+  justify-content: flex-end;
+}
+.course__discounts--percent {
+  font-family: var(--font-family-figaro);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19.03px;
+  color: #000000;
+}
+.add__busket {
+  max-width: 292px;
+  height: 50px;
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+.busket__text {
+  width: 230px;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #8447ff;
+  padding: 16px 0;
+  text-align: center;
+}
+.busket__text a {
+  font-family: var(--font-family-figaro);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #8447FF;
+  margin-top: 16px;
+}
+.busket__heart {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #8447ff;
+  padding: 12.5px;
+  margin-left: 12px;
+}
+.buy {
+  width: 292px;
+  background-color: #8447FF;
+}
+.buy a {
+  color: #FFFFFF;
+}
