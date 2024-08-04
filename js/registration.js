@@ -1,6 +1,10 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+import {
+  getDatabase,
+  set,
+  ref,
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -30,9 +34,12 @@ const signInbtn = document.getElementById("signInbtn");
 signInbtn.addEventListener("click", (e) => {
   e.preventDefault(); // Prevent form from submitting
 
+  let firstname = document.getElementById("firstname").value;
+  let lastname = document.getElementById("lastname").value;
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
   let passwConfirm = document.getElementById("passwConfirm").value;
+  let tel = document.getElementById("tel").value;
 
   // Simple validation
   if (password !== passwConfirm) {
@@ -44,9 +51,18 @@ signInbtn.addEventListener("click", (e) => {
     .then((userCredential) => {
       // Signed up
       const user = userCredential.user;
-      // Additional user info can be stored here if needed
-      clearForm();
-      window.location.href = "index.html"; // Redirect to index.html
+      set(ref(database, "users/" + user.uid), {
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        tel: tel,
+      });
+      console.log("Data is sent:", user);
+
+      // Clear the input fields
+      // document.getElementById("registration-form").reset();
+      // Redirect to index.html
+      // window.location.href = "../index.html";
     })
     .catch((error) => {
       const errorMessage = error.message;
@@ -55,6 +71,7 @@ signInbtn.addEventListener("click", (e) => {
 });
 
 // Google Sign-In
+// Google Sign-In
 const googleSigninBtn = document.getElementById("google-signin");
 googleSigninBtn.addEventListener("click", () => {
   const provider = new GoogleAuthProvider();
@@ -62,12 +79,32 @@ googleSigninBtn.addEventListener("click", () => {
     .then((result) => {
       // The signed-in user info
       const user = result.user;
-      clearForm();
-      window.location.href = "index.html"; // Redirect to index.html
+      const userId = user.uid;
+
+      // Create a reference to the user's data in the Realtime Database
+      const userRef = ref(database, "users/" + userId);
+
+      // Store user data in the Realtime Database
+      set(userRef, {
+        displayName: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
+        // Add other user details if needed
+      })
+        .then(() => {
+          console.log("User data successfully written to database:", user);
+          // Clear the form or do other actions
+          // clearForm();
+          // Redirect to index.html
+          // window.location.href = "index.html";
+        })
+        .catch((error) => {
+          console.error("Error writing user data to database:", error);
+        });
     })
     .catch((error) => {
-      const errorMessage = error.message;
-      alert(errorMessage);
+      console.error("Error during Google sign-in:", error);
+      alert("Failed to sign in with Google: " + error.message);
     });
 });
 
@@ -80,13 +117,14 @@ facebookSigninBtn.addEventListener("click", () => {
       // The signed-in user info
       const user = result.user;
       clearForm();
-      window.location.href = "index.html"; // Redirect to index.html
+      // window.location.href = "index.html"; // Redirect to index.html
     })
     .catch((error) => {
       console.error("Error during Facebook sign-in:", error); // Log error to console
       alert("Failed to sign in with Facebook: " + error.message);
     });
 });
+
 // Clear form inputs
 function clearForm() {
   document.getElementById("registration-form").reset();
