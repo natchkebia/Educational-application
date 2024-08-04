@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Figaro";
+  font-family: "Firago";
   src: url("../fonts/FiraGO-Regular.ttf"), url("../fonts/FiraGO-Medium.ttf"),
     url("../fonts/FiraGO-SemiBold.ttf"), url("../fonts/FiraGO-Bold.ttf");
 }
@@ -31,7 +31,7 @@
   /* გრადიენტის მეორე ფერი */
   --gradient-color-2: #b947ff;
 
-  --font-family-figaro: "Figaro", sans-serif;
+  --font-family-Firago: "Firago", sans-serif;
   --font-family-Gilroy: "Gilroy", sans-serif;
 }
 
@@ -61,14 +61,13 @@ svg {
 
 /* Often repeated styles */
 body {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   color: var(--text-color);
 }
 
 .container {
   max-width: 1152px;
   width: 100%;
-  padding: 0 16px;
   margin: 0 auto;
 }
 
@@ -79,7 +78,7 @@ body {
 .btn {
   border-radius: 8px;
   background-color: var(--box-color);
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 16px;
   font-weight: 500;
   line-height: 19.2px;
@@ -207,13 +206,16 @@ section .title {
 }
 
 .header__nav--list {
+  max-width: 740px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 24px;
 }
 
 .header__nav--list .header__nav--list--link {
+  font-family: var(--font-family-Firago);
   font-size: 16px;
   line-height: 19.2px;
   opacity: 60%;
@@ -233,7 +235,7 @@ section .title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 6px;
+  gap: 4px;
 }
 
 .login-btn {
@@ -280,7 +282,7 @@ section .title {
 }
 
 .header__nav--link {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 16px;
   line-height: 19.2px;
   font-weight: 500;
@@ -288,7 +290,7 @@ section .title {
 }
 
 .reg {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 16px;
   line-height: 19.2px;
   font-weight: 500;
@@ -498,6 +500,12 @@ main {
   display: flex;
   align-items: center;
   gap: 10px;
+  width: 240px;
+  height: 43px;
+  font-family: var(--font-family-Firago);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.2;
 }
 
 .prev,
@@ -1273,7 +1281,7 @@ main {
   width: 317px;
   padding: 16px;
   display: inline-block;
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 14px;
   border: 1px solid #8447ff80;
   border-top-left-radius: 12px;
@@ -1285,7 +1293,7 @@ main {
 
 .subscription__button {
   padding: 16px 40px;
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 14px;
   font-weight: 500;
   color: #fff;
@@ -1620,7 +1628,7 @@ main {
 }
 
 .favorite__wrapper > p {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-weight: 600;
   font-size: 16px;
   line-height: 19.2px;
@@ -1640,7 +1648,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
 }
 
 .favorite__wrapper--texts h2 {
