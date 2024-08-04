@@ -4,7 +4,7 @@ const search = document.getElementById("search"),
   searchBtn = document.getElementById("search-btn"),
   searchClose = document.getElementById("search-close");
 
-// show search
+// Search show
 
 searchBtn.addEventListener("click", () => {
   search.classList.add("show-search");
@@ -25,13 +25,8 @@ let availableKeywords = [
   "თამაშების დეველოპმენტი",
   "ეთიკური ჰაკინგი",
   "ციფრული პროდუქტების ტესტირება (QA)",
-  "გრაფიკული დიზაინის კურსი",
-  "პროგრამირება, Front-end დეველოპმენტი",
-  "ციფრული მარკეტინგი",
-  "ქსელების ინჟინერია, Packet Tracer",
-  "თამაშების დეველოპმენტი",
-  "ეთიკური ჰაკინგი",
-  "ციფრული პროდუქტების ტესტირება (QA)",
+  "პერსონალური განვითარება",
+  "მარკეტინგი",
 ];
 
 const resultBox = document.querySelector(".result__box");

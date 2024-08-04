@@ -247,19 +247,18 @@ section .title {
   pointer-events: none;
   transition: opacity 0.4s;
 }
-.search__close {
-  width: 25px;
-  height: 25px;
-  margin-right: 363px;
+.search__box .search__close {
   position: absolute;
-  top: 17%;
-  right: 0;
+  top: 50%;
+  right: -10%;
+  transform: translateY(-50%);
   cursor: pointer;
 }
 
 .search__form {
   margin: 0 auto;
-  width: 686px;
+  max-width: 686px;
+  width: 100%;
   height: 69px;
   display: flex;
   align-items: center;
@@ -275,6 +274,7 @@ section .title {
   color: hsl(230, 75%, 15%);
 }
 .search__input {
+  margin-left: 26px;
   border: none;
   width: 100%;
   padding-block: 1rem;
@@ -295,37 +295,22 @@ section .title {
 }
 
 @media (max-width: 876px) {
-  .search {
-    padding-top: 10rem;
-  }
-
   .search__form {
-    max-width: 450px;
+    max-width: 400px;
     margin-inline: auto;
-  }
-
-  .search__close {
-    width: max-content;
-    top: 5rem;
-    left: 0;
-    right: 0;
-    margin-inline: auto;
-    font-size: 2rem;
   }
 }
+
 /* result__box*/
 .result__box {
-  overflow-y: scroll;
+  cursor: all-scroll;
+  margin: 0 auto;
   margin-top: 12px;
   width: 685px;
   height: 148px;
-  align-items: center;
-  text-align: center;
 }
-/* .result__box ul {
-  padding: 15px 10px;
-} */
 .result__box ul li {
+  margin-left: 73px;
   cursor: pointer;
   color: hsla(0, 0%, 100%, 1);
   font-family: var(--font-family-figaro);
