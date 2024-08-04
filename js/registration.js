@@ -8,6 +8,7 @@ import {
 import {
   getAuth,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   GoogleAuthProvider,
   FacebookAuthProvider,
   signInWithPopup,
@@ -29,27 +30,54 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
 
-// Handle email and password registration
-const signInbtn = document.getElementById("signInbtn");
-signInbtn.addEventListener("click", (e) => {
-  e.preventDefault(); // Prevent form from submitting
+// Handle form submission
+document
+  .getElementById("registration-form")
+  ?.addEventListener("submit", handleFormSubmit);
+document
+  .getElementById("login-form")
+  ?.addEventListener("submit", handleFormSubmit);
 
-  let firstname = document.getElementById("firstname").value;
-  let lastname = document.getElementById("lastname").value;
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
-  let passwConfirm = document.getElementById("passwConfirm").value;
-  let tel = document.getElementById("tel").value;
+// Handle email and password registration
+function handleFormSubmit(event) {
+  event.preventDefault(); // Prevent form from submitting
+
+  const form = event.target;
+  if (form.id === "registration-form") {
+    handleRegistration();
+  } else if (form.id === "login-form") {
+    handleLogin();
+  }
+}
+
+// Handle email and password registration
+function handleRegistration() {
+  const firstname = document.getElementById("firstname").value;
+  const lastname = document.getElementById("lastname").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const passwConfirm = document.getElementById("passwConfirm").value;
+  const tel = document.getElementById("tel").value;
 
   // Simple validation
+  let errors = {};
   if (password !== passwConfirm) {
-    alert("Passwords do not match!");
-    return;
+    errors.password = "პაროლები არ ემთხვევა!";
+  }
+
+  validateField("firstname");
+  validateField("lastname");
+  validateField("email");
+  validateField("tel");
+  validateField("password");
+  validateField("passwConfirm");
+
+  if (Object.keys(errors).length > 0) {
+    return; // Stop execution if there are validation errors
   }
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed up
       const user = userCredential.user;
       set(ref(database, "users/" + user.uid), {
         firstname: firstname,
@@ -58,45 +86,86 @@ signInbtn.addEventListener("click", (e) => {
         tel: tel,
       });
       console.log("Data is sent:", user);
-
-      // Clear the input fields
-      // document.getElementById("registration-form").reset();
-      // Redirect to index.html
+      // clearForm("registration-form");
       // window.location.href = "../index.html";
     })
     .catch((error) => {
       const errorMessage = error.message;
-      alert(errorMessage);
+      console.log(errorMessage);
     });
-});
+}
 
-// Google Sign-In
+// Handle login
+function handleLogin() {
+  const loginIdentifier = document.getElementById("loginIdentifier").value;
+  const password = document.getElementById("password").value;
+
+  // Simple validation
+  let errors = {};
+  if (!loginIdentifier) {
+    errors.loginIdentifier = "აუცილებელი ველი";
+  }
+
+  if (!password) {
+    errors.password = "აუცილებელი ველი";
+  }
+
+  validateField("loginIdentifier");
+  validateField("password");
+
+  if (Object.keys(errors).length > 0) {
+    return; // Stop execution if there are validation errors
+  }
+
+  signInWithEmailAndPassword(auth, loginIdentifier, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log("User logged in:", user);
+      clearForm("login-form");
+      window.location.href = "../index.html"; // Redirect to the main page
+    })
+    .catch((error) => {
+      console.error("Error during login:", error);
+
+      // Handle specific error codes and provide appropriate messages
+      let errorMessage;
+      switch (error.code) {
+        case "auth/user-not-found":
+        case "auth/wrong-password":
+          break;
+        default:
+          errorMessage = "პაროლი ან მომხმარებელი არ არის სწორი";
+      }
+
+      // Display the error message
+      const errorElement =
+        document.getElementById("error-loginIdentifier") ||
+        document.getElementById("error-password");
+      if (errorElement) {
+        errorElement.textContent = errorMessage;
+        errorElement.classList.add("show-icon");
+      }
+    });
+}
 // Google Sign-In
 const googleSigninBtn = document.getElementById("google-signin");
-googleSigninBtn.addEventListener("click", () => {
+googleSigninBtn?.addEventListener("click", () => {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
     .then((result) => {
-      // The signed-in user info
       const user = result.user;
       const userId = user.uid;
 
-      // Create a reference to the user's data in the Realtime Database
       const userRef = ref(database, "users/" + userId);
-
-      // Store user data in the Realtime Database
       set(userRef, {
         displayName: user.displayName,
         email: user.email,
         photoURL: user.photoURL,
-        // Add other user details if needed
       })
         .then(() => {
           console.log("User data successfully written to database:", user);
-          // Clear the form or do other actions
-          // clearForm();
-          // Redirect to index.html
-          // window.location.href = "index.html";
+          // clearForm("login-form"); // or "registration-form"
+          // window.location.href = "../index.html";
         })
         .catch((error) => {
           console.error("Error writing user data to database:", error);
@@ -110,24 +179,23 @@ googleSigninBtn.addEventListener("click", () => {
 
 // Facebook Sign-In
 const facebookSigninBtn = document.getElementById("facebook-signin");
-facebookSigninBtn.addEventListener("click", () => {
+facebookSigninBtn?.addEventListener("click", () => {
   const provider = new FacebookAuthProvider();
   signInWithPopup(auth, provider)
     .then((result) => {
-      // The signed-in user info
       const user = result.user;
-      clearForm();
-      // window.location.href = "index.html"; // Redirect to index.html
+      // clearForm("login-form"); // or "registration-form"
+      // window.location.href = "../index.html";
     })
     .catch((error) => {
-      console.error("Error during Facebook sign-in:", error); // Log error to console
+      console.error("Error during Facebook sign-in:", error);
       alert("Failed to sign in with Facebook: " + error.message);
     });
 });
 
 // Clear form inputs
-function clearForm() {
-  document.getElementById("registration-form").reset();
+function clearForm(formId) {
+  document.getElementById(formId)?.reset();
 }
 
 // Validate form fields on input
@@ -142,7 +210,7 @@ function validateField(fieldId) {
   let errors = {};
   const field = document.getElementById(fieldId);
   const value = field.value.trim();
-  let errorElement = document.getElementById("error-" + fieldId);
+  const errorElement = document.getElementById("error-" + fieldId);
 
   switch (fieldId) {
     case "firstname":
@@ -151,7 +219,7 @@ function validateField(fieldId) {
       } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
         errors.firstname = "გამოიყენე ქართული ასოები";
       } else if (value.length > 20) {
-        errors.firstname = "სახელი არ უნდა აღემატებოდეს 20 ასოს"; // Maximum length exceeded
+        errors.firstname = "სახელი არ უნდა აღემატებოდეს 20 ასოს";
       }
       break;
 
@@ -161,7 +229,7 @@ function validateField(fieldId) {
       } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
         errors.lastname = "გამოიყენე ქართული ასოები";
       } else if (value.length > 30) {
-        errors.lastname = "გვარი არ უნდა აღემატებოდეს 30 ასოს"; // Maximum length exceeded
+        errors.lastname = "გვარი არ უნდა აღემატებოდეს 30 ასოს";
       }
       break;
 
@@ -179,7 +247,7 @@ function validateField(fieldId) {
       } else if (!/^[0-9]+$/.test(value)) {
         errors.tel = "გამოიყენეთ მხოლოდ ციფრები";
       } else if (value.length > 9) {
-        errors.tel = "სიმბოლოების რაოდენობა არ უნდა აღემატებოდეს 9–ს"; // Maximum length exceeded
+        errors.tel = "სიმბოლოების რაოდენობა არ უნდა აღემატებოდეს 9–ს";
       }
       break;
 
@@ -208,20 +276,29 @@ function validateField(fieldId) {
       }
       break;
 
+    case "loginIdentifier":
+      if (!value) {
+        errors.loginIdentifier = "აუცილებელი ველი";
+      }
+      break;
+
     default:
       break;
   }
 
-  // Show or hide error message
-  if (errors[fieldId]) {
-    errorElement.innerText = errors[fieldId];
-    errorElement.classList.add("show-icon");
-  } else {
-    errorElement.innerText = "";
-    errorElement.classList.remove("show-icon");
+  // Update the error message element
+  if (errorElement) {
+    if (errors[fieldId]) {
+      errorElement.textContent = errors[fieldId];
+      errorElement.classList.add("show-icon");
+    } else {
+      errorElement.textContent = "";
+      errorElement.classList.remove("show-icon");
+    }
   }
 }
 
+// Toggle password visibility
 function togglePasswordVisibility(passwordId, iconId) {
   const passwordField = document.getElementById(passwordId);
   const eyeIcon = document.getElementById(iconId);
@@ -236,9 +313,11 @@ function togglePasswordVisibility(passwordId, iconId) {
 }
 
 // Attach togglePasswordVisibility function to icons
-document.getElementById("toggle-password").addEventListener("click", () => {
+document.getElementById("toggle-password")?.addEventListener("click", () => {
   togglePasswordVisibility("password", "toggle-password");
 });
-document.getElementById("toggle-passwConfirm").addEventListener("click", () => {
-  togglePasswordVisibility("passwConfirm", "toggle-passwConfirm");
-});
+document
+  .getElementById("toggle-passwConfirm")
+  ?.addEventListener("click", () => {
+    togglePasswordVisibility("passwConfirm", "toggle-passwConfirm");
+  });
