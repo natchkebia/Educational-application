@@ -76,7 +76,7 @@ function handleRegistration() {
     return; // Stop execution if there are validation errors
   }
 
-  createUserWithEmailAndPassword(auth, email, password)
+  createUserWithEmailAndPassword(auth, email, password, tel)
     .then((userCredential) => {
       const user = userCredential.user;
       set(ref(database, "users/" + user.uid), {
@@ -85,7 +85,7 @@ function handleRegistration() {
         email: email,
         tel: tel,
       });
-      console.log("Data is sent:", user);
+      console.log("Data is sent:", user.email, user.tel);
       // clearForm("registration-form");
       // window.location.href = "../index.html";
     })
@@ -96,6 +96,7 @@ function handleRegistration() {
 }
 
 // Handle login
+// Handle email, mobile number, and password login
 function handleLogin() {
   const loginIdentifier = document.getElementById("loginIdentifier").value;
   const password = document.getElementById("password").value;
@@ -117,10 +118,14 @@ function handleLogin() {
     return; // Stop execution if there are validation errors
   }
 
+  // Determine if loginIdentifier is an email or mobile number
+  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const isEmail = emailRegex.test(loginIdentifier);
+
   signInWithEmailAndPassword(auth, loginIdentifier, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      console.log("User logged in:", user);
+      console.log("User logged in:", user.email);
       clearForm("login-form");
       window.location.href = "../index.html"; // Redirect to the main page
     })
@@ -132,6 +137,7 @@ function handleLogin() {
       switch (error.code) {
         case "auth/user-not-found":
         case "auth/wrong-password":
+          errorMessage = "პაროლი ან მომხმარებელი არ არის სწორი";
           break;
         default:
           errorMessage = "პაროლი ან მომხმარებელი არ არის სწორი";
@@ -211,6 +217,7 @@ function validateField(fieldId) {
   const field = document.getElementById(fieldId);
   const value = field.value.trim();
   const errorElement = document.getElementById("error-" + fieldId);
+  const wrapper = field.closest(".input-wrapper"); // Get the input-wrapper
 
   switch (fieldId) {
     case "firstname":
@@ -291,9 +298,11 @@ function validateField(fieldId) {
     if (errors[fieldId]) {
       errorElement.textContent = errors[fieldId];
       errorElement.classList.add("show-icon");
+      wrapper.classList.add("error"); // Add error class
     } else {
       errorElement.textContent = "";
       errorElement.classList.remove("show-icon");
+      wrapper.classList.remove("error"); // Remove error class
     }
   }
 }
