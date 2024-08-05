@@ -2043,3 +2043,132 @@ main {
 .sixth {
   height: 66px;
 }
+
+/* mentor about*/
+.course__mentor {
+  max-width: 790px;
+  width: 100%;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  /* padding: 24px; */
+}
+.course__mentor--person {
+  max-width: 790px;
+  height: 362px;
+  margin-bottom: 24px;
+  display: flex;
+}
+.course__mentor--about {
+  max-width: 470px;
+  margin-left: 30px;
+}
+.course__mentor--name {
+  font-family: var(--font-family-figaro);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+}
+.course__mentor--text {
+  font-family: var(--font-family-figaro);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  margin-top: 24px;
+}
+.describe {
+  font-weight: 400;
+  line-height: 28px;
+}
+/* mentor contact */
+.mentor__contact {
+  max-width: 790px;
+  height: 114px;
+}
+.mentor__contact h3 {
+  font-family: var(--font-family-figaro);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--primary-color);
+  margin-bottom: 24px;
+}
+.mentor__contact--phone{
+  margin-bottom: 12px;
+}
+.mentor__contact-email{
+  margin-bottom: 24px;
+}
+.mentor__contact--phone,
+.mentor__contact--email {
+  display: flex;
+  flex-direction: column;
+}
+.mentor__contact--phone a,
+.mentor__contact--email a {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.6px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #000000;
+  margin-left: 10px;
+  opacity: 70%;
+  gap: 10px;
+}
+/* mentor portfolio */
+.mentor__portfolio {
+  max-width: 790px;
+  height: 122px;
+  margin-top: 24px;
+}
+.mentor__portfolio h3 {
+  font-family: var(--font-family-figaro);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--primary-color);
+}
+.mentor__portfolio--social {
+  max-width: 790px;
+  height: 68px;
+  justify-content: space-between;
+  margin-top: 24px;
+  display: flex;
+} 
+.portfolio__social--icons {
+  width: 182px;
+  height: 68px;
+  border-radius: 50px;
+  background-color: #F7F4FF;
+  display: flex;
+  text-align: center;
+}
+.portfolio__facebook {
+  width: 48px;
+  height: 48px;
+  border-radius: 109.71px;
+  background-color: #7051EF;
+  margin: 10px;
+  padding: 12.27px 17.6px;
+}
+.facebook-link {
+  font-size: 22px;
+  line-height: 43.67px;
+  font-weight: 500;
+  color: #555560;
+  margin-top: 12px;
+}
+/* mentor courses */
+.mentor__courses {
+  max-width: 564px;
+  height: 444px;
+  margin-top: 24px;
+}
+.mentor__courses h3{
+  font-family: var(--font-family-figaro);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--primary-color);
+}
