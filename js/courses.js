@@ -206,7 +206,7 @@ function generateCourseCards(courses) {
       return `
           <a class="courses__slider--card new__card" href="../detail-pages/courses-detail-page.html">
               <div class="slider__card--img">
-                  <img src="${course.imageUrl}" alt="${
+                  <img src="${course.imageUrl2 || course.imageUrl}" alt="${
         course.altText
       }" />
                   <div class="courses__slider--people">
