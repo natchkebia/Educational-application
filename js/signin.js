@@ -1,5 +1,10 @@
-// signin.js
-import { auth, onAuthStateChanged } from "./firebase-config.js";
+import {
+  auth,
+  onAuthStateChanged,
+  ref,
+  get,
+  getDatabase,
+} from "./firebase-config.js";
 
 const loginBtn = document.querySelector(".login-btn");
 const loginDropdown = document.querySelector(".header__nav--dropdown");
@@ -20,8 +25,22 @@ document.addEventListener("click", (e) => {
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in
-    const displayName = user.displayName;
-    loginBtn.textContent = displayName;
+    const userId = user.uid;
+    const userRef = ref(getDatabase(), "users/" + userId);
+
+    get(userRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const userData = snapshot.val();
+          const displayName = userData.firstname || "User";
+          loginBtn.textContent = displayName;
+        } else {
+          loginBtn.textContent = "User";
+        }
+      })
+      .catch((error) => {
+        console.error("Error retrieving user data:", error);
+      });
 
     signinLink.textContent = "პაროლის შეცვლა";
     signinLink.href = "./pages/changePassword.html"; // Change link to password change page

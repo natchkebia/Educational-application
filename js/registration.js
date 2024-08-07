@@ -114,6 +114,7 @@ function handleLogin() {
       switch (error.code) {
         case "auth/user-not-found":
         case "auth/wrong-password":
+          errorMessage = "პაროლი ან მომხმარებელი არ არის სწორი";
           break;
         default:
           errorMessage = "პაროლი ან მომხმარებელი არ არის სწორი";

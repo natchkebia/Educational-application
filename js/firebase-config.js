@@ -2,8 +2,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 import {
   getDatabase,
-  set,
   ref,
+  set,
+  get, // Ensure get is imported
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 import {
   getAuth,
@@ -12,6 +13,7 @@ import {
   GoogleAuthProvider,
   FacebookAuthProvider,
   signInWithPopup,
+  signOut,
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
@@ -41,5 +43,9 @@ export {
   signInWithPopup,
   ref,
   set,
+  get, // Export get function
   onAuthStateChanged,
+  signOut,
+  getAuth,
+  getDatabase,
 };
