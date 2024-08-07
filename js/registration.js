@@ -2,8 +2,10 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 import {
   getDatabase,
-  set,
+  get,
   ref,
+  update,
+  set,
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 import {
   getAuth,
@@ -12,6 +14,11 @@ import {
   GoogleAuthProvider,
   FacebookAuthProvider,
   signInWithPopup,
+  onAuthStateChanged,
+  signOut,
+  EmailAuthProvider,
+  updatePassword,
+  reauthenticateWithCredential,
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 // Your web app's Firebase configuration
@@ -76,7 +83,7 @@ function handleRegistration() {
     return; // Stop execution if there are validation errors
   }
 
-  createUserWithEmailAndPassword(auth, email, password, tel)
+  createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
       set(ref(database, "users/" + user.uid), {
@@ -85,7 +92,7 @@ function handleRegistration() {
         email: email,
         tel: tel,
       });
-      console.log("Data is sent:", user.email, user.tel);
+      console.log("Data is sent:", user.email, tel);
       // clearForm("registration-form");
       // window.location.href = "../index.html";
     })
@@ -96,7 +103,6 @@ function handleRegistration() {
 }
 
 // Handle login
-// Handle email, mobile number, and password login
 function handleLogin() {
   const loginIdentifier = document.getElementById("loginIdentifier").value;
   const password = document.getElementById("password").value;
@@ -118,21 +124,25 @@ function handleLogin() {
     return; // Stop execution if there are validation errors
   }
 
-  // Determine if loginIdentifier is an email or mobile number
-  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  const isEmail = emailRegex.test(loginIdentifier);
+  // // Determine if loginIdentifier is an email or mobile number
+  // const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  // const isEmail = emailRegex.test(loginIdentifier);
 
   signInWithEmailAndPassword(auth, loginIdentifier, password)
     .then((userCredential) => {
       const user = userCredential.user;
+      const dt = new Date();
+      update(ref(database, "users/" + user.uid), {
+        last_login: dt,
+      });
+
       console.log("User logged in:", user.email);
-      clearForm("login-form");
-      window.location.href = "../index.html"; // Redirect to the main page
+      // clearForm("login-form");
+      // window.location.href = "../index.html";
     })
     .catch((error) => {
       console.error("Error during login:", error);
 
-      // Handle specific error codes and provide appropriate messages
       let errorMessage;
       switch (error.code) {
         case "auth/user-not-found":
@@ -143,7 +153,6 @@ function handleLogin() {
           errorMessage = "პაროლი ან მომხმარებელი არ არის სწორი";
       }
 
-      // Display the error message
       const errorElement =
         document.getElementById("error-loginIdentifier") ||
         document.getElementById("error-password");
@@ -153,6 +162,7 @@ function handleLogin() {
       }
     });
 }
+
 // Google Sign-In
 const googleSigninBtn = document.getElementById("google-signin");
 googleSigninBtn?.addEventListener("click", () => {
@@ -199,6 +209,80 @@ facebookSigninBtn?.addEventListener("click", () => {
     });
 });
 
+// Logout user
+document.getElementById("logout")?.addEventListener("click", () => {
+  signOut(auth)
+    .then(() => {
+      alert("Sign-out successful");
+    })
+    .catch((error) => {
+      console.error("An error occurred during sign-out:", error);
+    });
+});
+
+// Change password
+document
+  .getElementById("password-reset-form")
+  ?.addEventListener("submit", handleChangePassword);
+
+function handleChangePassword(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const oldPassword = document.getElementById("oldpassword").value;
+  const newPassword = document.getElementById("newpassword").value;
+  const passwConfirm = document.getElementById("passwConfirm").value;
+
+  let errors = {};
+  if (!email) {
+    errors.email = "აუცილებელი ველი";
+  }
+  if (!oldPassword) {
+    errors.oldpassword = "აუცილებელი ველი";
+  }
+  if (!newPassword) {
+    errors.newpassword = "აუცილებელი ველი";
+  }
+  if (newPassword !== passwConfirm) {
+    errors.passwConfirm = "პაროლები არ ემთხვევა!";
+  }
+
+  validateField("email");
+  validateField("oldpassword");
+  validateField("newpassword");
+  validateField("passwConfirm");
+
+  if (Object.keys(errors).length > 0) {
+    return;
+  }
+
+  const user = auth.currentUser;
+
+  if (user) {
+    const credential = EmailAuthProvider.credential(user.email, oldPassword);
+
+    reauthenticateWithCredential(user, credential)
+      .then(() => {
+        return updatePassword(user, newPassword);
+      })
+      .then(() => {
+        console.log("Password updated successfully");
+        // clearForm("password-reset-form");
+      })
+      .catch((error) => {
+        console.error("Error updating password:", error);
+        const errorElement = document.getElementById("error-newpassword");
+        if (errorElement) {
+          errorElement.textContent =
+            "Error updating password: " + error.message;
+          errorElement.classList.add("show-icon");
+        }
+      });
+  } else {
+    console.error("No user is currently signed in.");
+  }
+}
+
 // Clear form inputs
 function clearForm(formId) {
   document.getElementById(formId)?.reset();
@@ -206,106 +290,100 @@ function clearForm(formId) {
 
 // Validate form fields on input
 document.querySelectorAll(".input-box__input").forEach((input) => {
-  input.addEventListener("input", () => {
-    validateField(input.id);
+  input.addEventListener("input", (event) => {
+    validateField(event.target.id);
   });
 });
 
-// Validate individual fields
+// Validate a specific field
 function validateField(fieldId) {
-  let errors = {};
   const field = document.getElementById(fieldId);
-  const value = field.value.trim();
-  const errorElement = document.getElementById("error-" + fieldId);
-  const wrapper = field.closest(".input-wrapper"); // Get the input-wrapper
+  const errorElement = document.getElementById(`error-${fieldId}`);
 
+  let errorMessage = "";
   switch (fieldId) {
     case "firstname":
-      if (!value) {
-        errors.firstname = "აუცილებელი ველი";
-      } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
-        errors.firstname = "გამოიყენე ქართული ასოები";
-      } else if (value.length > 20) {
-        errors.firstname = "სახელი არ უნდა აღემატებოდეს 20 ასოს";
-      }
-      break;
+      // if (!value) {
+      //   errors.firstname = "აუცილებელი ველი";
+      // } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
+      //   errors.firstname = "გამოიყენე ქართული ასოები";
+      // } else if (value.length > 20) {
+      //   errors.firstname = "სახელი არ უნდა აღემატებოდეს 20 ასოს";
+      // }
+      // break;
 
     case "lastname":
-      if (!value) {
-        errors.lastname = "აუცილებელი ველი";
-      } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
-        errors.lastname = "გამოიყენე ქართული ასოები";
-      } else if (value.length > 30) {
-        errors.lastname = "გვარი არ უნდა აღემატებოდეს 30 ასოს";
-      }
-      break;
+      // if (!value) {
+      //   errors.lastname = "აუცილებელი ველი";
+      // } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
+      //   errors.lastname = "გამოიყენე ქართული ასოები";
+      // } else if (value.length > 30) {
+      //   errors.lastname = "გვარი არ უნდა აღემატებოდეს 30 ასოს";
+      // }
+      // break;
 
     case "email":
-      if (!value) {
-        errors.email = "აუცილებელი ველი";
-      } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
-        errors.email = "ელ. ფოსტა არასწორია";
-      }
-      break;
+      // if (!value) {
+      //   errors.email = "აუცილებელი ველი";
+      // } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+      //   errors.email = "ელ. ფოსტა არასწორია";
+      // }
+      // break;
 
     case "tel":
-      if (!value) {
-        errors.tel = "აუცილებელი ველი";
-      } else if (!/^[0-9]+$/.test(value)) {
-        errors.tel = "გამოიყენეთ მხოლოდ ციფრები";
-      } else if (value.length > 9) {
-        errors.tel = "სიმბოლოების რაოდენობა არ უნდა აღემატებოდეს 9–ს";
-      }
-      break;
+      // if (!value) {
+      //   errors.tel = "აუცილებელი ველი";
+      // } else if (!/^[0-9]+$/.test(value)) {
+      //   errors.tel = "გამოიყენეთ მხოლოდ ციფრები";
+      // } else if (value.length > 9) {
+      //   errors.tel = "სიმბოლოების რაოდენობა არ უნდა აღემატებოდეს 9–ს";
+      // }
+      // break;
 
     case "password":
-      if (!value) {
-        errors.password = "აუცილებელი ველი";
-      } else if (
-        value.length < 8 ||
-        !/[A-Z]/.test(value) ||
-        !/[a-z]/.test(value) ||
-        !/[0-9]/.test(value) ||
-        !/[!@#$%^&*(),.?":{}|<>]/.test(value)
-      ) {
-        errors.password =
-          "პაროლი უნდა შეიცავდეს მინიმუმ 8 სიმბოლოს, დიდსა და პატარა ინგლისურ ასოებს, რიცხვსა და სპეციალურ სიმბოლოს";
-      }
-      break;
+      // if (!value) {
+      //   errors.password = "აუცილებელი ველი";
+      // } else if (
+      //   value.length < 8 ||
+      //   !/[A-Z]/.test(value) ||
+      //   !/[a-z]/.test(value) ||
+      //   !/[0-9]/.test(value) ||
+      //   !/[!@#$%^&*(),.?":{}|<>]/.test(value)
+      // ) {
+      //   errors.password =
+      //     "პაროლი უნდა შეიცავდეს მინიმუმ 8 სიმბოლოს, დიდსა და პატარა ინგლისურ ასოებს, რიცხვსა და სპეციალურ სიმბოლოს";
+      // }
+      // break;
 
     case "passwConfirm":
-      if (!value) {
-        errors.passwConfirm = "აუცილებელი ველი";
-      }
-      const password = document.getElementById("password").value.trim();
-      if (password !== value) {
-        errors.passwConfirm = "შეყვანილი პაროლები ერთმანეთს არ ემთხვევა";
-      }
-      break;
+      // if (!value) {
+      //   errors.passwConfirm = "აუცილებელი ველი";
+      // }
+      // const password = document.getElementById("password").value.trim();
+      // if (password !== value) {
+      //   errors.passwConfirm = "შეყვანილი პაროლები ერთმანეთს არ ემთხვევა";
+      // }
+      // break;
 
     case "loginIdentifier":
-      if (!value) {
-        errors.loginIdentifier = "აუცილებელი ველი";
-      }
+      // if (!field.value) {
+      //   errorMessage = "აუცილებელი ველი";
+      // }
       break;
-
     default:
+      // No default action needed
       break;
   }
 
-  // Update the error message element
-  if (errorElement) {
-    if (errors[fieldId]) {
-      errorElement.textContent = errors[fieldId];
-      errorElement.classList.add("show-icon");
-      wrapper.classList.add("error"); // Add error class
-    } else {
-      errorElement.textContent = "";
-      errorElement.classList.remove("show-icon");
-      wrapper.classList.remove("error"); // Remove error class
-    }
+  if (errorMessage) {
+    errorElement.textContent = errorMessage;
+    errorElement.classList.add("show-icon");
+  } else {
+    errorElement.textContent = "";
+    errorElement.classList.remove("show-icon");
   }
 }
+
 
 // Toggle password visibility
 function togglePasswordVisibility(passwordId, iconId) {
