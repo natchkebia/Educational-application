@@ -1,4 +1,7 @@
 @media (max-width: 1270px) {
+  .container {
+    padding: 0 16px;
+  }
   /* courses */
   #prev,
   #next {
@@ -506,7 +509,7 @@
     left: 0;
     width: 100%;
   }
-  
+
   .new-class #courses__header {
     background-color: #8447ff;
     position: absolute;

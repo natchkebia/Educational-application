@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Figaro";
+  font-family: "Firago";
   src: url("../fonts/FiraGO-Regular.ttf"), url("../fonts/FiraGO-Medium.ttf"),
     url("../fonts/FiraGO-SemiBold.ttf"), url("../fonts/FiraGO-Bold.ttf");
 }
@@ -31,7 +31,7 @@
   /* გრადიენტის მეორე ფერი */
   --gradient-color-2: #b947ff;
 
-  --font-family-figaro: "Figaro", sans-serif;
+  --font-family-Firago: "Firago", sans-serif;
   --font-family-Gilroy: "Gilroy", sans-serif;
 }
 
@@ -61,14 +61,13 @@ svg {
 
 /* Often repeated styles */
 body {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   color: var(--text-color);
 }
 
 .container {
   max-width: 1152px;
   width: 100%; 
-  padding: 0 16px;
   margin: 0 auto;
 }
 
@@ -79,7 +78,7 @@ body {
 .btn {
   border-radius: 8px;
   background-color: var(--box-color);
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 16px;
   font-weight: 500;
   line-height: 19.2px;
@@ -280,7 +279,7 @@ section .title {
 }
 
 .header__nav--link {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 16px;
   line-height: 19.2px;
   font-weight: 500;
@@ -288,7 +287,7 @@ section .title {
 }
 
 .reg {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 16px;
   line-height: 19.2px;
   font-weight: 500;
@@ -707,7 +706,7 @@ main {
   padding: 0 12px;
   border-radius: 50px;
   height: 20px;
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-weight: 400;
   font-size: 10px;
   line-height: 20px;
@@ -1303,7 +1302,7 @@ main {
   width: 317px;
   padding: 16px;
   display: inline-block;
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 14px;
   border: 1px solid #8447ff80;
   border-top-left-radius: 12px;
@@ -1315,7 +1314,7 @@ main {
 
 .subscription__button {
   padding: 16px 40px;
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 14px;
   font-weight: 500;
   color: #fff;
@@ -1672,7 +1671,7 @@ main {
 }
 
 .favorite__wrapper > p {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-weight: 600;
   font-size: 16px;
   line-height: 19.2px;
@@ -1692,7 +1691,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
 }
 
 .favorite__wrapper--texts h2 {
@@ -1770,7 +1769,7 @@ main {
 }
 
 .filter-title {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 16px;
   line-height: 19.2px;
   font-weight: 500;
@@ -1790,7 +1789,7 @@ main {
 }
 
 .filter-content label {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 14px;
   line-height: 16.8px;
   font-weight: 400;
@@ -1805,7 +1804,7 @@ main {
 }
 
 #courses h1 {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
@@ -1866,7 +1865,7 @@ main {
 }
 
 .pagination span {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
@@ -1892,7 +1891,7 @@ main {
 }
 
 #show-more {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 12px;
   font-weight: 400;
   line-height: 14.4px;
@@ -1955,7 +1954,7 @@ main {
 }
 
 .course__sort h3 {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-weight: 500;
   line-height: 14px;
   font-size: 12px;
@@ -1979,7 +1978,7 @@ main {
 }
 
 .courses__header--content p {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-weight: 500;
   line-height: 14px;
   font-size: 12px;
@@ -2005,7 +2004,7 @@ main {
   display: none;
 }
 .mobile__filter p {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -2022,7 +2021,7 @@ main {
 }
 
 .courses__navigation p {
-  font-family: var(--font-family-figaro);
+  font-family: var(--font-family-Firago);
   font-size: 16px;
   line-height: 19.2px;
   font-weight: 400;
