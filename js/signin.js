@@ -1,30 +1,50 @@
+// signin.js
 import { auth, onAuthStateChanged } from "./firebase-config.js";
 
 const loginBtn = document.querySelector(".login-btn");
-const login = document.querySelector(".header__nav--dropdown");
+const loginDropdown = document.querySelector(".header__nav--dropdown");
+const signinLink = document.getElementById("signin-link");
+const registerLink = document.getElementById("register-link");
 
 loginBtn.addEventListener("click", () => {
-  login.classList.toggle("hide");
+  loginDropdown.classList.toggle("hide");
 });
 
 document.addEventListener("click", (e) => {
-  if (!login.contains(e.target) && e.target !== loginBtn) {
-    login.classList.add("hide");
+  if (!loginDropdown.contains(e.target) && e.target !== loginBtn) {
+    loginDropdown.classList.add("hide");
   }
 });
 
-// Check Authentication State in Redirected HTML Page
-
-// Check if the user is logged in
+// Check user authentication state
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in
-    console.log("User is logged in:", user);
-    // You can display user info or redirect to a different page if needed
+    const displayName = user.displayName;
+    loginBtn.textContent = displayName;
+
+    signinLink.textContent = "პაროლის შეცვლა";
+    signinLink.href = "./pages/changePassword.html"; // Change link to password change page
+
+    registerLink.textContent = "გამოსვლა";
+    registerLink.href = "#"; // Handle logout separately
+    registerLink.addEventListener("click", () => {
+      auth
+        .signOut()
+        .then(() => {
+          window.location.href = "../index.html"; // Redirect to login page after logout
+        })
+        .catch((error) => {
+          console.error("Logout Error:", error);
+        });
+    });
   } else {
     // No user is signed in
-    console.log("No user is logged in");
-    // Redirect to login page or show a message
-    window.location.href = "login.html";
+    loginBtn.textContent = "შესვლა";
+    signinLink.textContent = "ავტორიზაცია";
+    signinLink.href = "./pages/logIn.html";
+
+    registerLink.textContent = "რეგისტრაცია";
+    registerLink.href = "./pages/registration.html";
   }
 });
