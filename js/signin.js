@@ -24,6 +24,7 @@ document.addEventListener("click", (e) => {
 // Check user authentication state
 onAuthStateChanged(auth, (user) => {
   if (user) {
+    showProfile();
     // User is signed in
     const userId = user.uid;
     const userRef = ref(getDatabase(), "users/" + userId);
@@ -65,5 +66,33 @@ onAuthStateChanged(auth, (user) => {
 
     registerLink.textContent = "რეგისტრაცია";
     registerLink.href = "./pages/registration.html";
+
+    // Handle non-authenticated state
+    document.getElementById("profile")?.classList.remove("show");
+    document.getElementById("log-out")?.classList.remove("show");
+
+    // Show authorization links
+    document.querySelectorAll(".authorization-link").forEach((link) => {
+      link.classList.remove("hide");
+    });
   }
 });
+
+// mobile-menu
+
+function openMobileMenu() {
+  document.getElementById("mobile-menu").classList.toggle("show");
+  document.getElementById("burger-icon").classList.toggle("active");
+  document.body.classList.toggle("inactive");
+}
+
+function showProfile() {
+  // Show profile and log-out elements
+  document.getElementById("profile")?.classList.add("show");
+  document.getElementById("log-out")?.classList.add("show");
+
+  // Hide authorization links
+  document.querySelectorAll(".authorization-link").forEach((link) => {
+    link.classList.add("hide");
+  });
+}
