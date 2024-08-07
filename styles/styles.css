@@ -1777,3 +1777,12 @@ main {
 
 /* fixed styles for შესვლა*/
 
+.header__nav--dropdown {
+  width: unset;
+  height: unset;
+}
+
+.header__nav--signin {
+  height: unset;
+width: unset;
+}

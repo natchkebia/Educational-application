@@ -67,9 +67,12 @@ function handleRegistration() {
         email: email,
         tel: tel,
       });
+      handleSuccessfulAction();
       console.log("Data is sent:", user);
-      // clearForm("registration-form");
-      // window.location.href = "../index.html";
+      clearForm("registration-form");
+      setTimeout(() => {
+        window.location.href = "../index.html"; // Redirect to the main page
+      }, 3000); // 5000 milliseconds = 5 seconds
     })
     .catch((error) => {
       const errorMessage = error.message;
@@ -103,8 +106,13 @@ function handleLogin() {
     .then((userCredential) => {
       const user = userCredential.user;
       console.log("User logged in:", user);
+      handleSuccessfulAction();
+
       clearForm("login-form");
-      window.location.href = "../index.html"; // Redirect to the main page
+
+      setTimeout(() => {
+        window.location.href = "../index.html"; // Redirect to the main page
+      }, 3000); // 5000 milliseconds = 5 seconds
     })
     .catch((error) => {
       console.error("Error during login:", error);
@@ -304,3 +312,21 @@ document
   ?.addEventListener("click", () => {
     togglePasswordVisibility("passwConfirm", "toggle-passwConfirm");
   });
+
+// show success message function
+
+function handleSuccessfulAction() {
+  // Hide the registration form
+  const form = document.querySelector(".form");
+  const backTo = document.querySelector(".backto");
+  if (form) {
+    form.classList.add("hide");
+    backTo.classList.add("hide");
+  }
+
+  // Show the success message
+  const successMessage = document.getElementById("success-message");
+  if (successMessage) {
+    successMessage.classList.remove("hide");
+  }
+}
