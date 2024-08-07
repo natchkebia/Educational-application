@@ -1,4 +1,5 @@
 @media (max-width: 1270px) {
+
   /* courses */
   #prev,
   #next {
@@ -22,6 +23,7 @@
 }
 
 @media (max-width: 1024px) {
+
   /* header start */
   .header__logo--link img {
     height: 29px;
@@ -59,7 +61,7 @@
 
   /* hero */
 
-  .slider__text > h1 {
+  .slider__text>h1 {
     font-size: 20px;
     font-weight: 900;
     line-height: 25px;
@@ -309,9 +311,14 @@
     font-size: 14px;
   }
 
+  .message-container p {
+    font-size: 26px;
+
+  }
 }
 
 @media (max-width: 700px) {
+
   /* courses */
   .cource__tittle {
     font-size: 26px;
@@ -352,6 +359,7 @@
 }
 
 @media (max-width: 600px) {
+
   /* hero */
   .slider__slide {
     max-width: 376px;
@@ -457,6 +465,7 @@
 }
 
 @media (max-width: 425px) {
+
   /* footer */
   .footer__social {
     flex-direction: column-reverse;

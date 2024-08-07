@@ -84,7 +84,7 @@ onAuthStateChanged(auth, (user) => {
 
     // Update login button text and links
     signinLink.textContent = "პაროლის შეცვლა";
-    signinLink.href = "./pages/changePassword.html";
+    signinLink.href = ".pages/change-password.html";
 
     registerLink.textContent = "გამოსვლა";
     registerLink.href = "#";

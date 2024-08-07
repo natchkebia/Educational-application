@@ -1784,5 +1784,26 @@ main {
 
 .header__nav--signin {
   height: unset;
-width: unset;
+  width: unset;
+}
+
+
+.message-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 471px;
+  width: 100%;
+}
+
+.message-container svg {
+  margin-bottom: 20px;
+  width: 38px;
+  height: 38px;
+}
+
+.message-container p {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
 }
