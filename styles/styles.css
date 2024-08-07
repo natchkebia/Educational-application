@@ -2047,7 +2047,7 @@ main {
 }
 
 .new-class .mobile__filter {
-  margin: 8px 0 0 16px;
+  margin-left: 16px;
 }
 
 .new-class .filters {
