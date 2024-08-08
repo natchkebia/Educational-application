@@ -292,7 +292,7 @@ function displayPagination(totalCourses) {
       pageNumbers.appendChild(pageNumber);
   }
 
-  totalPagesDiv.textContent = `${totalPages}`;
+  totalPagesDiv.textContent = `30`;
   totalPagesDiv.addEventListener("click", () => {
       currentPage = totalPages;
       displayCourses();
@@ -469,10 +469,10 @@ function toggleShowMore() {
   const showMoreText = document.getElementById('show-more');
   if (additionalFilters.style.display === 'block') {
     additionalFilters.style.display = 'none';
-    showMoreText.innerText = 'იხილეთ მეტი';
+    showMoreText.innerText = 'იხილე მეტი';
   } else {
     additionalFilters.style.display = 'block';
-    showMoreText.innerText = 'ჩაკეცვა';
+    showMoreText.innerText = 'იხილე ნაკლები';
   }
 }
 
