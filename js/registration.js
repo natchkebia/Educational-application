@@ -210,7 +210,7 @@ function handleChangePassword() {
           errorMessage = "გთხოვთ, ხელახლა შეიყვანოთ თქვენი მონაცემები.";
           break;
         default:
-          errorMessage = "პაროლის შეცვლისას მოხდა შეცდომა";
+          errorMessage = "გთხოვთ შეიყვანოთ ვალიდური პაროლი";
       }
 
       // Display the error message
@@ -352,6 +352,8 @@ function validateField(fieldId) {
     case "new-password":
       if (!value) {
         errors["new-password"] = "აუცილებელი ველი";
+      } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+        errors.email = "ელ. ფოსტა არასწორია";
       } else {
         const oldPassword = document
           .getElementById("old-password")
