@@ -1636,6 +1636,18 @@ main {
   opacity: 50%;
 }
 
+/* reset styles */
+
+
+.reset .title {
+  margin-bottom: 12px;
+}
+
+.reset .desc {
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
 /* favorite */
 
 .favorite {
