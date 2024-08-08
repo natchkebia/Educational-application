@@ -270,6 +270,7 @@ function validateField(fieldId) {
   const field = document.getElementById(fieldId);
   const value = field.value.trim();
   const errorElement = document.getElementById("error-" + fieldId);
+  const inputWrapper = field.closest(".input-wrapper"); // Get the closest input wrapper
 
   switch (fieldId) {
     case "firstname":
@@ -386,14 +387,16 @@ function validateField(fieldId) {
       break;
   }
 
-  // Update the error message element
-  if (errorElement) {
+  // Update the error message element and input wrapper class
+  if (errorElement && inputWrapper) {
     if (errors[fieldId]) {
       errorElement.textContent = errors[fieldId];
       errorElement.classList.add("show-icon");
+      inputWrapper.classList.add("input-error"); // Add error class to wrapper
     } else {
       errorElement.textContent = "";
       errorElement.classList.remove("show-icon");
+      inputWrapper.classList.remove("input-error"); // Remove error class if no error
     }
   }
 }

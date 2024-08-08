@@ -1470,6 +1470,14 @@ main {
   flex-direction: column-reverse;
 }
 
+.input-wrapper:hover {
+  border-color: #000000;
+}
+
+::placeholder:hover {
+  color: #000000;
+}
+
 .username {
   display: flex;
   gap: 12px;
@@ -1519,6 +1527,10 @@ main {
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
+}
+.input-wrapper.input-error{
+  border-color: red;
+
 }
 
 .error-message.show-icon::before {
@@ -1646,6 +1658,17 @@ main {
 .reset .desc {
   line-height: 24px;
   margin-bottom: 24px;
+}
+
+.verification-load img {
+  margin-bottom: 20px;
+}
+
+.verification-load span {
+  opacity: 70%;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 /* favorite */

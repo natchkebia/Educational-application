@@ -9,66 +9,58 @@ document.addEventListener("DOMContentLoaded", () => {
   async function handleFormSubmit(event) {
     event.preventDefault();
 
-    // Validate the field
-    validateField("loginIdentifier");
-
     const email = document.getElementById("loginIdentifier").value.trim();
 
-    // Check if there are validation errors
-    if (errorLoginIdentifier.textContent) {
-      return; // Prevent form submission if there's an error
+    // Reset previous error states
+    clearErrorStyles("loginIdentifier");
+
+    if (!email) {
+      setErrorStyles("loginIdentifier", "გთხოვთ, შეიყვანოთ ელ. ფოსტა.");
+      return;
     }
 
     try {
-      await sendPasswordResetEmail(getAuth(), email);
+      const auth = getAuth();
+      await sendPasswordResetEmail(auth, email);
       // Show verification message and hide email input
       resetPassForm.classList.add("hide");
       formDesc.classList.add("hide");
       verificationLoad.classList.remove("hide");
     } catch (error) {
-      // Handle Errors here.
-      errorLoginIdentifier.textContent =
-        "Error sending reset email: " + error.message;
-    }
-  }
-
-  function validateField(fieldId) {
-    let errors = {};
-    const field = document.getElementById(fieldId);
-    const value = field.value.trim();
-    const errorElement = document.getElementById("error-" + fieldId);
-
-    switch (fieldId) {
-      case "loginIdentifier":
-        if (!value) {
-          errors.loginIdentifier = "გთხოვთ, შეიყვანოთ ელ. ფოსტა.";
-        } else if (
-          !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)
-        ) {
-          errors.loginIdentifier = "ელ. ფოსტა არასწორია";
-        }
-        break;
-      default:
-        break;
-    }
-
-    // Update the error message element
-    if (errorElement) {
-      if (errors[fieldId]) {
-        errorElement.textContent = errors[fieldId];
-        errorElement.classList.add("show-icon");
+      if (error.code === "auth/user-not-found") {
+        setErrorStyles(
+          "loginIdentifier",
+          "მომხმარებელი ამ ელ. ფოსტით არ არის რეგისტრირებული."
+        );
       } else {
-        errorElement.textContent = "";
-        errorElement.classList.remove("show-icon");
+        setErrorStyles("loginIdentifier", "შეცდომა: სცადეთ კიდევ ერთხელ.");
       }
     }
   }
 
-  // Attach form submit event
-  resetPassForm.addEventListener("submit", handleFormSubmit);
+  function setErrorStyles(fieldId, errorMessage) {
+    const field = document.getElementById(fieldId);
+    const wrapper = field.closest(".input-wrapper");
+    const errorElement = document.getElementById("error-" + fieldId);
 
-  // Optional: Attach input event listener for live validation
-  document.getElementById("loginIdentifier").addEventListener("input", () => {
-    validateField("loginIdentifier");
-  });
+    if (wrapper && errorElement) {
+      wrapper.classList.add("input-error");
+      errorElement.textContent = errorMessage;
+      errorElement.classList.add("show-icon");
+    }
+  }
+
+  function clearErrorStyles(fieldId) {
+    const field = document.getElementById(fieldId);
+    const wrapper = field.closest(".input-wrapper");
+    const errorElement = document.getElementById("error-" + fieldId);
+
+    if (wrapper && errorElement) {
+      wrapper.classList.remove("input-error");
+      errorElement.textContent = "";
+      errorElement.classList.remove("show-icon");
+    }
+  }
+
+  resetPassForm.addEventListener("submit", handleFormSubmit);
 });
