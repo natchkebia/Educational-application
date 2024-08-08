@@ -19,6 +19,9 @@ document
 document
   .getElementById("login-form")
   ?.addEventListener("submit", handleFormSubmit);
+document
+  .getElementById("change-password-form")
+  ?.addEventListener("submit", handleFormSubmit);
 
 // Handle email and password registration
 function handleFormSubmit(event) {
@@ -29,6 +32,8 @@ function handleFormSubmit(event) {
     handleRegistration();
   } else if (form.id === "login-form") {
     handleLogin();
+  } else if (form.id === "change-password-form") {
+    handleChangePassword();
   }
 }
 
@@ -138,6 +143,66 @@ function handleLogin() {
       }
     });
 }
+
+// Handle password change
+function handleChangePassword() {
+  const oldPassword = document.getElementById("old-password").value;
+  const newPassword = document.getElementById("new-password").value;
+  const confirmNewPassword = document.getElementById(
+    "confirm-new-password"
+  ).value;
+
+  // Simple validation
+  let errors = {};
+  if (newPassword !== confirmNewPassword) {
+    errors.newPassword = "ახალი პაროლები არ ემთხვევა!";
+  }
+
+  validateField("old-password");
+  validateField("new-password");
+  validateField("confirm-new-password");
+
+  if (Object.keys(errors).length > 0) {
+    return; // Stop execution if there are validation errors
+  }
+
+  const user = auth.currentUser;
+  const credential = EmailAuthProvider.credential(user.email, oldPassword);
+
+  reauthenticateWithCredential(user, credential)
+    .then(() => {
+      return updatePassword(user, newPassword);
+    })
+    .then(() => {
+      console.log("Password updated successfully");
+      clearForm("change-password-form");
+      handleSuccessfulAction();
+      setTimeout(() => {
+        window.location.href = "../index.html"; // Redirect to the main page
+      }, 3000); // 5000 milliseconds = 5 seconds
+    })
+    .catch((error) => {
+      console.error("Error during password change:", error);
+
+      // Handle specific error codes and provide appropriate messages
+      let errorMessage;
+      switch (error.code) {
+        case "auth/wrong-password":
+          errorMessage = "ძველი პაროლი არასწორია";
+          break;
+        default:
+          errorMessage = "პაროლის შეცვლისას მოხდა შეცდომა";
+      }
+
+      // Display the error message
+      const errorElement = document.getElementById("error-old-password");
+      if (errorElement) {
+        errorElement.textContent = errorMessage;
+        errorElement.classList.add("show-icon");
+      }
+    });
+}
+
 // Google Sign-In
 const googleSigninBtn = document.getElementById("google-signin");
 googleSigninBtn?.addEventListener("click", () => {
@@ -168,22 +233,6 @@ googleSigninBtn?.addEventListener("click", () => {
     });
 });
 
-// Facebook Sign-In
-const facebookSigninBtn = document.getElementById("facebook-signin");
-facebookSigninBtn?.addEventListener("click", () => {
-  const provider = new FacebookAuthProvider();
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      const user = result.user;
-      // clearForm("login-form"); // or "registration-form"
-      // window.location.href = "../index.html";
-    })
-    .catch((error) => {
-      console.error("Error during Facebook sign-in:", error);
-      alert("Failed to sign in with Facebook: " + error.message);
-    });
-});
-
 // Clear form inputs
 function clearForm(formId) {
   document.getElementById(formId)?.reset();
@@ -209,9 +258,10 @@ function validateField(fieldId) {
         errors.firstname = "აუცილებელი ველი";
       } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
         errors.firstname = "გამოიყენე ქართული ასოები";
-      } else if (value.length > 20) {
-        errors.firstname = "სახელი არ უნდა აღემატებოდეს 20 ასოს";
       }
+      // else if (value.length > 20) {
+      //   errors.firstname = "სახელი არ უნდა აღემატებოდეს 20 ასოს";
+      // }
       break;
 
     case "lastname":
@@ -219,9 +269,10 @@ function validateField(fieldId) {
         errors.lastname = "აუცილებელი ველი";
       } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
         errors.lastname = "გამოიყენე ქართული ასოები";
-      } else if (value.length > 30) {
-        errors.lastname = "გვარი არ უნდა აღემატებოდეს 30 ასოს";
       }
+      // else if (value.length > 30) {
+      //   errors.lastname = "გვარი არ უნდა აღემატებოდეს 30 ასოს";
+      // }
       break;
 
     case "email":
@@ -232,13 +283,20 @@ function validateField(fieldId) {
       }
       break;
 
+    // case "tel":
+    //   if (!value) {
+    //     errors.tel = "აუცილებელი ველი";
+    //   } else if (!/^[0-9]+$/.test(value)) {
+    //     errors.tel = "გამოიყენეთ მხოლოდ ციფრები";
+    //   } else if (value.length > 9) {
+    //     errors.tel = "სიმბოლოების რაოდენობა არ უნდა აღემატებოდეს 9–ს";
+    //   }
+    //   break;
     case "tel":
       if (!value) {
         errors.tel = "აუცილებელი ველი";
-      } else if (!/^[0-9]+$/.test(value)) {
-        errors.tel = "გამოიყენეთ მხოლოდ ციფრები";
-      } else if (value.length > 9) {
-        errors.tel = "სიმბოლოების რაოდენობა არ უნდა აღემატებოდეს 9–ს";
+      } else if (!/^\+9955\d{8}$/.test(value)) {
+        errors.tel = "გთხოვთ, შეიყვანოთ სწორი მობილურის ნომერი";
       }
       break;
 
@@ -303,15 +361,42 @@ function togglePasswordVisibility(passwordId, iconId) {
   }
 }
 
-// Attach togglePasswordVisibility function to icons
-document.getElementById("toggle-password")?.addEventListener("click", () => {
-  togglePasswordVisibility("password", "toggle-password");
-});
-document
-  .getElementById("toggle-passwConfirm")
-  ?.addEventListener("click", () => {
-    togglePasswordVisibility("passwConfirm", "toggle-passwConfirm");
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("toggle-password")?.addEventListener("click", () => {
+    togglePasswordVisibility("password", "toggle-password");
   });
+
+  document
+    .getElementById("toggle-passwConfirm")
+    ?.addEventListener("click", () => {
+      togglePasswordVisibility("passwConfirm", "toggle-passwConfirm");
+    });
+
+  // document.getElementById("password")?.addEventListener("click", () => {
+  //   togglePasswordVisibility("old-password", "toggle-old-password");
+  // });
+
+  document
+    .getElementById("toggle-old-password")
+    ?.addEventListener("click", () => {
+      togglePasswordVisibility("old-password", "toggle-old-password");
+    });
+
+  document
+    .getElementById("toggle-new-password")
+    ?.addEventListener("click", () => {
+      togglePasswordVisibility("new-password", "toggle-new-password");
+    });
+
+  document
+    .getElementById("toggle-confirm-new-password")
+    ?.addEventListener("click", () => {
+      togglePasswordVisibility(
+        "confirm-new-password",
+        "toggle-confirm-new-password"
+      );
+    });
+});
 
 // show success message function
 
