@@ -42,6 +42,7 @@
   }
 
   .new-class {
+    display: block;
     padding-top: 0 !important;
   }
 }
@@ -526,6 +527,10 @@
     padding-top: 12px;
     padding-bottom: 19px;
   }
+  /* courses page slide height */
+  .slider__card--text {
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 425px) {
@@ -534,4 +539,10 @@
     flex-direction: column-reverse;
     padding: 24px 0px;
   }
+
+  /* courses page slide with */
+
+  #courses {
+    margin:0 37px 0 36.2px;
+   }
 }

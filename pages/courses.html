@@ -312,7 +312,7 @@
                 <div id="course-filter" class="filter-content">
                   <input type="checkbox" id="business" name="title" value="ბიზნესი" />
                   <label for="business">ბიზნესი</label><br />
-                  <input type="checkbox" id="design" name="title" value="დიზაინი" />
+                  <input type="checkbox" id="design" name="title" value="გრაფიკული დიზაინი" />
                   <label for="design">დიზაინი</label><br />
                   <input type="checkbox" id="data" name="title" value="მონაცემთა ანალიტიკა" />
                   <label for="data">მონაცემთა ანალიტიკა</label><br />
@@ -419,6 +419,7 @@
                   <h3>სორტირება</h3>
                   <img class="filter__icon" src="../icons/black-arrow-down.svg" alt="arrow-down" /> 
                   <div class="courses__header--content">
+                    <p>სორტირება</p>
                     <p>პოპულარობით</p>
                     <p>ფასის ზრდადობით</p>
                     <p>ფასის კლებადობით</p>
@@ -427,11 +428,17 @@
                 </div>
               </div>
               <div id="course-list" class="course-list"></div>
-              <div class="pagination">
-                <button id="prev-page"><img src="../icons/arrow-left.svg" alt="arrow-left"></button>
-                <span id="page-numbers"></span>
-                <button id="next-page"><img src="../icons/arrow-right.svg" alt="arrow-right"></button>
-              </div>        
+              <div class="pagination-container pagination">
+                <button id="prev-page"><img class="pagination_icon" src="../icons/arrow-left.svg" alt="arrow-left">
+                <img class="disabled_icon" src="../icons/left-gray.svg" alt="arrow-left">
+                </button>
+                <div id="page-numbers"></div>
+                <p>...</p>
+                <div id="total-pages" class="total-pages"></div>
+                <button id="next-page"><img class="pagination_icon" src="../icons/arrow-right.svg" alt="arrow-right">
+                  <img class="disabled_icon" src="../icons/right-gray.svg" alt="arrow-right">
+                </button>
+            </div>
             </div>
           </div>
         </section>

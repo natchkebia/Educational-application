@@ -165,8 +165,11 @@ function sortCourses(courses) {
       );
     case "შეფასებებით":
       return courses.sort((a, b) => b.stars - a.stars);
+      case "სორტირება":
+        return courses
     default:
       return courses;
+      
   }
 }
 
@@ -267,48 +270,71 @@ function generateStars(starCount) {
   return starSVG.repeat(starCount);
 }
 
-const prevButton = document.getElementById("prev-page");
-const nextButton = document.getElementById("next-page");
-
-if (prevButton) {
-  prevButton.addEventListener("click", () => {
-    if (currentPage > 1) {
-      currentPage--;
-      displayCourses();
-    }
-  });
-}
-
-if (nextButton) {
-  nextButton.addEventListener("click", () => {
-    const totalCourses = filterCourses().length;
-    if (currentPage < Math.ceil(totalCourses / coursesPerPage)) {
-      currentPage++;
-      displayCourses();
-    }
-  });
-}
 
 function displayPagination(totalCourses) {
+  const totalPages = Math.ceil(totalCourses / coursesPerPage);
   const pageNumbers = document.getElementById("page-numbers");
+  const totalPagesDiv = document.getElementById("total-pages");
+
   pageNumbers.innerHTML = "";
 
+  for (let i = 1; i <= totalPages; i++) {
+      const pageNumber = document.createElement("span");
+      pageNumber.classList.add("page-number");
+      pageNumber.textContent = i;
+      pageNumber.addEventListener("click", () => {
+          currentPage = i;
+          displayCourses();
+      });
+      if (i === currentPage) {
+          pageNumber.classList.add("active");
+      }
+      pageNumbers.appendChild(pageNumber);
+  }
+
+  totalPagesDiv.textContent = `${totalPages}`;
+  totalPagesDiv.addEventListener("click", () => {
+      currentPage = totalPages;
+      displayCourses();
+  });
+
+  updatePaginationButtons();
+}
+
+function updatePaginationButtons() {
+  const totalCourses = filterCourses().length;
   const totalPages = Math.ceil(totalCourses / coursesPerPage);
 
-  for (let i = 1; i <= totalPages; i++) {
-    const pageNumber = document.createElement("span");
-    pageNumber.className = "page-number";
-    pageNumber.textContent = i;
-    if (i === currentPage) {
-      pageNumber.classList.add("active");
+  const prevButton = document.getElementById("prev-page");
+  const nextButton = document.getElementById("next-page");
+  if (prevButton) {
+      prevButton.addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          displayCourses();
+        }
+      });
     }
-    pageNumber.addEventListener("click", () => {
-      currentPage = i;
-      displayCourses();
+  if (prevButton) {
+      prevButton.disabled = currentPage === 1;
+      prevButton.classList.toggle("disabled", currentPage === 1);
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener("click", () => {
+      const totalCourses = filterCourses().length;
+      if (currentPage < Math.ceil(totalCourses / coursesPerPage)) {
+        currentPage++;
+        displayCourses();
+      }
     });
-    pageNumbers.appendChild(pageNumber);
+  }
+  if (nextButton) {
+      nextButton.disabled = currentPage === totalPages;
+      nextButton.classList.toggle("disabled", currentPage === totalPages);
   }
 }
+
 
 
 function updateFilters() {

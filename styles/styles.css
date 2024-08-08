@@ -1828,12 +1828,34 @@ main {
 .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 32px;
   gap: 10px;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 32px;
+}
+
+.pagination p {
+  color: var(--primary-color);
+  width: 20px;
+  padding: 10px 0 0 0;
+  display: flex;
+  gap: 4px;
+  font-size: 20px;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0;
+  margin-left: -5px;
+  margin-right: -5px;
+  border: none;
+  outline: none;
+}
+.disabled_icon {
+  display: none;
 }
 
 .pagination button,
-.page-number {
+.page-number, .total-pages {
   width: 46px;
   height: 46px;
   border-radius: 50%;
@@ -1847,14 +1869,9 @@ main {
   background-color: #fff;
   border: 1px solid var(--primary-color);
 }
-
-#page-numbers {
-  display: flex;
-  gap: 10px;
-}
-
 .pagination button:hover,
-.page-number:hover {
+.page-number:hover,
+.total-pages:hover {
   background: #8447ff4d;
   color: var(--primary-color);
 }
@@ -1864,7 +1881,26 @@ main {
   color: #fff;
 }
 
-.pagination span {
+.pagination button:disabled {
+  background-color:  #F6F6F6;
+  border: 1px solid #F6F6F6;
+}
+
+.pagination button:disabled .disabled_icon {
+  display: block;
+}
+
+.pagination button:disabled .pagination_icon{
+  display: none;
+}
+
+#page-numbers {
+  display: flex;
+  gap: 10px;
+}
+
+
+.pagination span, .total-pages {
   font-family: var(--font-family-Firago);
   font-weight: 500;
   font-size: 20px;
@@ -2035,6 +2071,7 @@ main {
   padding-top: 0;
 }
 .new-class {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
