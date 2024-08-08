@@ -2074,14 +2074,14 @@ input[type="checkbox"]:checked + label::before {
   gap: 10px;
 }
 
-.courses__navigation p {
+.courses__navigation a {
   font-family: var(--font-family-Firago);
   font-size: 16px;
   line-height: 19.2px;
   font-weight: 400;
 }
 
-.courses__navigation p:last-of-type {
+.courses__navigation a:last-of-type {
   font-weight: 500;
 }
 
