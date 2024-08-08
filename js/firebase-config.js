@@ -19,6 +19,8 @@ import {
   updatePassword,
   sendEmailVerification,
   reauthenticateWithCredential,
+  sendPasswordResetEmail,
+  confirmPasswordReset,
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 // Your web app's Firebase configuration
@@ -56,4 +58,6 @@ export {
   updatePassword,
   sendEmailVerification,
   reauthenticateWithCredential,
+  sendPasswordResetEmail,
+  confirmPasswordReset,
 };
