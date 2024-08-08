@@ -4,10 +4,13 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
-  FacebookAuthProvider,
   signInWithPopup,
   ref,
   set,
+  EmailAuthProvider,
+  updatePassword,
+  sendEmailVerification,
+  reauthenticateWithCredential,
 } from "./firebase-config.js";
 
 // Your registration logic here
@@ -169,17 +172,27 @@ function handleChangePassword() {
   const user = auth.currentUser;
   const credential = EmailAuthProvider.credential(user.email, oldPassword);
 
+  // Re-authenticate the user before updating the password
   reauthenticateWithCredential(user, credential)
     .then(() => {
+      // Send a verification email
+      return sendEmailVerification(user);
+    })
+    .then(() => {
+      console.log(
+        "Verification email sent. Proceeding to update the password..."
+      );
+      // Update the password
       return updatePassword(user, newPassword);
     })
     .then(() => {
       console.log("Password updated successfully");
       clearForm("change-password-form");
       handleSuccessfulAction();
+
       setTimeout(() => {
         window.location.href = "../index.html"; // Redirect to the main page
-      }, 3000); // 5000 milliseconds = 5 seconds
+      }, 3000); // 3000 milliseconds = 3 seconds
     })
     .catch((error) => {
       console.error("Error during password change:", error);
@@ -189,6 +202,12 @@ function handleChangePassword() {
       switch (error.code) {
         case "auth/wrong-password":
           errorMessage = "ძველი პაროლი არასწორია";
+          break;
+        case "auth/too-many-requests":
+          errorMessage = "შეცდომის გამო, თქვენი ანგარიში დროებით დაბლოკილია.";
+          break;
+        case "auth/requires-recent-login":
+          errorMessage = "გთხოვთ, ხელახლა შეიყვანოთ თქვენი მონაცემები.";
           break;
         default:
           errorMessage = "პაროლის შეცვლისას მოხდა შეცდომა";
@@ -324,6 +343,36 @@ function validateField(fieldId) {
         errors.passwConfirm = "შეყვანილი პაროლები ერთმანეთს არ ემთხვევა";
       }
       break;
+    case "old-password":
+      if (!value) {
+        errors["old-password"] = "აუცილებელი ველი";
+      }
+      break;
+
+    case "new-password":
+      if (!value) {
+        errors["new-password"] = "აუცილებელი ველი";
+      } else {
+        const oldPassword = document
+          .getElementById("old-password")
+          .value.trim();
+        if (value === oldPassword) {
+          errors["new-password"] = "ახალი და ძველი პაროლები ერთმანეთს ემთხვევა";
+        }
+      }
+      break;
+
+    case "confirm-new-password":
+      if (!value) {
+        errors["confirm-new-password"] = "აუცილებელი ველი";
+      } else {
+        const newPassword = document
+          .getElementById("new-password")
+          .value.trim();
+        if (newPassword !== value) {
+          errors["confirm-new-password"] = "პაროლები ერთმანეთს არ ემთხვევა";
+        }
+      }
 
     case "loginIdentifier":
       if (!value) {
