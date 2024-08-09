@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>შესვლა</title>
+    <title>ავტორიზაცია</title>
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="stylesheet" href="../styles/responsive.css" />
     <link rel="icon" href="../images/logo/header-logo.svg" />
@@ -45,11 +45,105 @@
 
         <main class="autorization__main">
           <section class="autorization-box">
-            <div class="form--wrapper"></div>
+            <div class="form--wrapper">
+              <div class="login form-box">
+                <h2 class="title">ავტორიზაცია</h2>
+                <p class="desc">
+                  შენს ანგარიშზე შესასვლელად, გაიარე ავტორიზაცია
+                </p>
+                <form id="login-form">
+                  <!-- Email or Mobile Number -->
+                  <div class="input-box">
+                    <div class="input-wrapper">
+                      <input
+                        id="loginIdentifier"
+                        name="loginIdentifier"
+                        type="text"
+                        class="input-box__input"
+                        placeholder=" "
+                        oninput="validateField('loginIdentifier')" />
+                      <label class="input-box-label" for="loginIdentifier">
+                        ელ. ფოსტა ან ტელ. ნომერი
+                      </label>
+                    </div>
+                    <p class="error-message" id="error-loginIdentifier"></p>
+                  </div>
+
+                  <!-- Password -->
+                  <div class="input-box">
+                    <div class="input-wrapper">
+                      <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        class="input-box__input"
+                        placeholder=" "
+                        oninput="validateField('password')" />
+                      <label class="input-box-label" for="password"
+                        >პაროლი</label
+                      >
+                      <img
+                        src="../images/autorization/eyeclose.svg"
+                        id="toggle-password"
+                        class="eye-icon"
+                        alt="Toggle Password Visibility"
+                        onclick="togglePasswordVisibility('password', 'toggle-password')" />
+                    </div>
+                    <p class="error-message" id="error-password"></p>
+                  </div>
+
+                  <!-- Remember Me Checkbox -->
+                  <div class="input-box__checkbox">
+                    <div id="checkbox">
+                      <input type="checkbox" name="remember" id="remember" />
+                      <label for="remember" id="remember-text"
+                        >დამახსოვრება</label
+                      >
+                    </div>
+                    <a href="#" class="forgot-password">დაგავიწყდა პაროლი?</a>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <button type="submit" class="btn">ავტორიზაცია</button>
+
+                  <!-- Social Logins -->
+                  <div class="registracion__social">
+                    <span class="continue">ან შედი ანგარიშზე</span>
+                    <div class="social__btns">
+                      <button
+                        type="button"
+                        class="btn"
+                        onclick="handleGmailLogin()">
+                        <object
+                          data="../images/autorization/gmail.svg"></object>
+                        Google-ით გაგრძელება
+                      </button>
+                      <button
+                        type="button"
+                        class="btn"
+                        onclick="handleFacebookLogin()">
+                        <object data="../images/autorization/fb.svg"></object>
+                        Facebook-ით გაგრძელება
+                      </button>
+                    </div>
+                    <div class="login-register">
+                      <p class="login-register-content">
+                        არ გაქვს ანგარიში? გაიარე
+                        <a href="./registration.html" class="login-link"
+                          >რეგისტრაცია</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </section>
         </main>
       </div>
     </div>
-  </body>
+    <script src="../js/loginform.js"></script>
   <script src="../js/registration.js"></script>
+  </body>
+  
 </html>
