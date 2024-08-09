@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ავტორიზაცია</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/responsive.css" />
+    <link rel="icon" href="../images/logo/header-logo.svg" />
+  </head>
+  <body>
+    <div class="autorization">
+      <div class="autorization__img">
+        <img
+          src="../images/autorization/guramishvili.png"
+          alt="Davit Guramishvili Quote" />
+      </div>
+      <div class="autorization__container">
+        <header class="autorization__header">
+          <div class="header__logo">
+            <a class="header__logo--link" href="../index.html" class="logo">
+              <img
+                src="../images/logo/logo2final-01-01.png"
+                alt="Skillup logo" />
+            </a>
+          </div>
+          <div class="backto">
+            <button class="arrow-btn" onclick="history.back()" title="goBack">
+              <svg
+                width="7"
+                height="14"
+                viewBox="0 0 7 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6 13L1 7L6 1"
+                  stroke=""
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <main class="autorization__main">
+          <section class="autorization-box form">
+            <div class="form--wrapper">
+              <div class="login form-box">
+                <h2 class="title">ავტორიზაცია</h2>
+                <p class="desc">
+                  შენს ანგარიშზე შესასვლელად, გაიარე ავტორიზაცია
+                </p>
+                <form id="login-form">
+                  <!-- Email or Mobile Number -->
+                  <div class="input-box">
+                    <div class="input-wrapper">
+                      <input
+                        id="loginIdentifier"
+                        name="loginIdentifier"
+                        type="text"
+                        class="input-box__input"
+                        placeholder=" "
+                        oninput="validateField('loginIdentifier')" />
+                      <label class="input-box-label" for="loginIdentifier">
+                        ელ. ფოსტა ან ტელ. ნომერი
+                      </label>
+                    </div>
+                    <p class="error-message" id="error-loginIdentifier"></p>
+                  </div>
+
+                  <!-- Password -->
+                  <div class="input-box">
+                    <div class="input-wrapper">
+                      <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        class="input-box__input"
+                        placeholder=" "
+                        oninput="validateField('password')" />
+                      <label class="input-box-label" for="password"
+                        >პაროლი</label
+                      >
+                       <div class="show-pass">
+                      <img
+                        src="../images/autorization/eyeclose.svg"
+                        id="toggle-password"
+                        class="eye-icon"
+                        alt="Toggle Password Visibility"
+                        onclick="togglePasswordVisibility('password', 'toggle-password')" /></div>
+                    </div>
+                    <p class="error-message" id="error-password"></p>
+                  </div>
+
+                  <!-- Remember Me Checkbox -->
+                  <div class="input-box__checkbox">
+                    <div id="checkbox">
+                      <input type="checkbox" name="remember" id="remember" />
+                      <label for="remember" id="remember-text"
+                        >დამახსოვრება</label
+                      >
+                    </div>
+                    <a href="./reset-pass.html" class="forgot-password"
+                      >დაგავიწყდა პაროლი?</a
+                    >
+                  </div>
+
+                  <!-- Submit Button -->
+                  <button type="submit" class="btn" id="signInbtn">
+                    ავტორიზაცია
+                  </button>
+
+                  <!-- Social Logins -->
+                  <div class="registracion__social">
+                    <span class="continue">ან შედი ანგარიშზე</span>
+                    <div class="social__btns">
+                      <button
+                        type="button"
+                        class="btn"
+                        onclick="handleGmailLogin()">
+                        <object
+                          data="../images/autorization/gmail.svg"></object>
+                        Google-ით გაგრძელება
+                      </button>
+                      <button
+                        type="button"
+                        class="btn"
+                        onclick="handleFacebookLogin()">
+                        <object data="../images/autorization/fb.svg"></object>
+                        Facebook-ით გაგრძელება
+                      </button>
+                    </div>
+                    <div class="login-register">
+                      <p class="login-register-content">
+                        არ გაქვს ანგარიში? გაიარე
+                        <a href="./registration.html" class="login-link"
+                          >რეგისტრაცია</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+          <!-- Success Message -->
+          <div id="success-message" class="message-container hide">
+            <svg
+              width="42"
+              height="42"
+              viewBox="0 0 42 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M14.6667 22.5833L19.4167 27.3333L27.3333 16.25M40 21C40 23.4951 39.5086 25.9658 38.5537 28.271C37.5989 30.5762 36.1993 32.6707 34.435 34.435C32.6707 36.1993 30.5762 37.5989 28.271 38.5537C25.9658 39.5086 23.4951 40 21 40C18.5049 40 16.0342 39.5086 13.729 38.5537C11.4238 37.5989 9.32928 36.1993 7.56497 34.435C5.80066 32.6707 4.40113 30.5762 3.44629 28.271C2.49145 25.9658 2 23.4951 2 21C2 15.9609 4.00178 11.1282 7.56497 7.56497C11.1282 4.00178 15.9609 2 21 2C26.0391 2 30.8718 4.00178 34.435 7.56497C37.9982 11.1282 40 15.9609 40 21Z"
+                stroke="#8447FF"
+                stroke-width="3.16667"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+
+            <p>თქვენ წარმატებით გაიარეთ ავტორიზაცია</p>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- <script src="../js/loginform.js"></script> -->
+    <script type="module" src="../js/registration.js"></script>
+  </body>
+</html>

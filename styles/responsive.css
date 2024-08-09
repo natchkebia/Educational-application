@@ -361,6 +361,10 @@
     margin: 0;
   }
 
+  .message-container p {
+    font-size: 26px;
+
+  }
 }
 
 @media (max-width: 700px) {
