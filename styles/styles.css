@@ -1693,6 +1693,19 @@ main {
   line-height: 24px;
 }
 
+.verification-load a {
+  color: #8447FF;
+  text-decoration: underline;
+  margin-top: 20px;
+  display: block;
+}
+
+.verification-load a::after {
+  content: url(../images/autorization/arrow.svg);
+  margin-left: 8px;
+}
+
+
 /* favorite */
 
 .favorite {
