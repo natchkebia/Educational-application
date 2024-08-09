@@ -44,7 +44,7 @@
         </header>
 
         <main class="autorization__main">
-          <section class="autorization-box">
+          <section class="autorization-box form">
             <div class="form--wrapper">
               <div class="registration form-box">
                 <h2 class="title">რეგისტრაცია</h2>
@@ -136,12 +136,13 @@
                       <label class="input-box-label" for="password"
                         >პაროლი</label
                       >
-                      <img
+                      <div class="show-pass"><img
                         src="../images/autorization/eyeclose.svg"
                         id="toggle-password"
                         class="eye-icon"
                         alt="Toggle Password Visibility"
-                        onclick="togglePasswordVisibility('password', 'toggle-password')" />
+                        onclick="togglePasswordVisibility('password', 'toggle-password')" /></div>
+                      
                     </div>
                     <p class="error-message" id="error-password"></p>
                   </div>
@@ -159,12 +160,13 @@
                       <label class="input-box-label" for="passwConfirm"
                         >გაიმეორე პაროლი</label
                       >
-                      <img
+                      <div class="show-pass"> <img
                         src="../images/autorization/eyeclose.svg"
                         id="toggle-passwConfirm"
                         class="eye-icon"
                         alt="Toggle Password Visibility"
-                        onclick="togglePasswordVisibility('passwConfirm', 'toggle-passwConfirm')" />
+                        onclick="togglePasswordVisibility('passwConfirm', 'toggle-passwConfirm')" /></div>
+                     
                     </div>
                     <p class="error-message" id="error-passwConfirm"></p>
                   </div>
@@ -203,6 +205,24 @@
               </div>
             </div>
           </section>
+          <!-- Success Message -->
+          <div id="success-message" class="message-container hide">
+            <svg
+              width="42"
+              height="42"
+              viewBox="0 0 42 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M14.6667 22.5833L19.4167 27.3333L27.3333 16.25M40 21C40 23.4951 39.5086 25.9658 38.5537 28.271C37.5989 30.5762 36.1993 32.6707 34.435 34.435C32.6707 36.1993 30.5762 37.5989 28.271 38.5537C25.9658 39.5086 23.4951 40 21 40C18.5049 40 16.0342 39.5086 13.729 38.5537C11.4238 37.5989 9.32928 36.1993 7.56497 34.435C5.80066 32.6707 4.40113 30.5762 3.44629 28.271C2.49145 25.9658 2 23.4951 2 21C2 15.9609 4.00178 11.1282 7.56497 7.56497C11.1282 4.00178 15.9609 2 21 2C26.0391 2 30.8718 4.00178 34.435 7.56497C37.9982 11.1282 40 15.9609 40 21Z"
+                stroke="#8447FF"
+                stroke-width="3.16667"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+
+            <p>თქვენ წარმატებით გაიარეთ რეგისტრაცია</p>
+          </div>
         </main>
       </div>
     </div>

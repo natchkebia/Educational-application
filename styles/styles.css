@@ -1501,6 +1501,14 @@ main {
   flex-direction: column-reverse;
 }
 
+.input-wrapper:hover {
+  border-color: #000000;
+}
+
+::placeholder:hover {
+  color: #000000;
+}
+
 .username {
   display: flex;
   gap: 12px;
@@ -1550,6 +1558,11 @@ main {
   line-height: 18px;
 }
 
+.input-wrapper.input-error {
+  border-color: red;
+
+}
+
 .error-message.show-icon::before {
   content: url(../images/autorization/!!.svg);
   display: inline-block;
@@ -1559,15 +1572,26 @@ main {
   margin-right: 8px;
 }
 
-.eye-icon {
+.show-pass {
+  padding: 12px;
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.show-pass:hover {
+  background-color: #F1EAFF;
+}
+
+.eye-icon {
+
   width: 24px;
   height: 24px;
-  z-index: 10;
+
 }
 
 .input-wrapper {
@@ -1625,6 +1649,10 @@ main {
   margin: 0;
 }
 
+.social__btns .btn:hover {
+  background-color: #F9F6FF;
+}
+
 .social__btns .btn object {
   vertical-align: middle;
   margin-right: 16px;
@@ -1661,7 +1689,49 @@ main {
 
 .forgot-password {
   opacity: 50%;
+  font-weight: 600;
 }
+
+.forgot-password:hover {
+  opacity: 100%;
+  color: #8447FF;
+}
+
+/* reset styles */
+
+
+.reset .title {
+  margin-bottom: 12px;
+}
+
+.reset .desc {
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
+.verification-load img {
+  margin-bottom: 20px;
+}
+
+.verification-load span {
+  opacity: 70%;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.verification-load a {
+  color: #8447FF;
+  text-decoration: underline;
+  margin-top: 20px;
+  display: block;
+}
+
+.verification-load a::after {
+  content: url(../images/autorization/arrow.svg);
+  margin-left: 8px;
+}
+
 
 /* favorite */
 
@@ -2167,4 +2237,40 @@ display: block;
 
 .filter-section .filter__header[aria-expanded="true"] img.filter__icon {
   transform: rotate(180deg);
+}
+
+
+
+
+/* fixed styles for შესვლა*/
+
+.header__nav--dropdown {
+  width: unset;
+  height: unset;
+}
+
+.header__nav--signin {
+  height: unset;
+  width: unset;
+}
+
+
+.message-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 471px;
+  width: 100%;
+}
+
+.message-container svg {
+  margin-bottom: 20px;
+  width: 38px;
+  height: 38px;
+}
+
+.message-container p {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
 }
