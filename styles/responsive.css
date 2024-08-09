@@ -587,7 +587,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .rating__progress--bar {
     height: 10px;
   }

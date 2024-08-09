@@ -3,18 +3,20 @@
     {
       "user_img": "./images/customers/person-1.png",
       "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
-      "rating": 1,
+      "rating": 5,
       "name": "ფელიპე მ.",
       "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
     },
     {
       "user_img": "./images/customers/person-2.png",
       "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
-      "rating": 3,
+      "rating": 5,
       "name": "ჯენიფერ ჯ.",
       "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
     },
     {
       "user_img": "./images/customers/person-3.png",
@@ -22,63 +24,35 @@
       "rating": 5,
       "name": "ნინო კ.",
       "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
     },
     {
       "user_img": "./images/customers/person-4.png",
       "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
-      "rating": 2,
+      "rating": 4,
       "name": "ანასტასია ს.",
       "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
     },
     {
       "user_img": "./images/customers/person-1.png",
       "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
-      "rating": 3,
+      "rating": 4,
       "name": "ფელიპე მ.",
       "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
     },
     {
       "user_img": "./images/customers/person-2.png",
       "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
-      "rating": 2,
+      "rating": 5,
       "name": "ჯენიფერ ჯ.",
       "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
-    },
-    {
-      "user_img": "./images/customers/person-3.png",
-      "comment": "მე პირდაპირ გამოვიყენე ცნებები და უნარები, რომლებიც ჩემი კურსებიდან ვისწავლე ახალი საინტერესო პროექტისთვის",
-      "rating": 2,
-      "name": "ნინო კ.",
-      "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
-    },
-    {
-      "user_img": "./images/customers/person-4.png",
-      "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
-      "rating": 1,
-      "name": "ანასტასია ს.",
-      "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
-    },
-    {
-      "user_img": "./images/customers/person-1.png",
-      "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
-      "rating": 1,
-      "name": "ფელიპე მ.",
-      "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
-    },
-    {
-      "user_img": "./images/customers/person-2.png",
-      "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
-      "rating": 3,
-      "name": "ჯენიფერ ჯ.",
-      "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
     },
     {
       "user_img": "./images/customers/person-3.png",
@@ -86,15 +60,17 @@
       "rating": 5,
       "name": "ნინო კ.",
       "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
     },
     {
       "user_img": "./images/customers/person-4.png",
       "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
-      "rating": 2,
+      "rating": 5,
       "name": "ანასტასია ს.",
       "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
     },
     {
       "user_img": "./images/customers/person-1.png",
@@ -102,15 +78,53 @@
       "rating": 3,
       "name": "ფელიპე მ.",
       "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
     },
     {
       "user_img": "./images/customers/person-2.png",
       "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
-      "rating": 2,
+      "rating": 3,
       "name": "ჯენიფერ ჯ.",
       "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-3.png",
+      "comment": "მე პირდაპირ გამოვიყენე ცნებები და უნარები, რომლებიც ჩემი კურსებიდან ვისწავლე ახალი საინტერესო პროექტისთვის",
+      "rating": 5,
+      "name": "ნინო კ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-4.png",
+      "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
+      "rating": 5,
+      "name": "ანასტასია ს.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-1.png",
+      "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
+      "rating": 5,
+      "name": "ფელიპე მ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-2.png",
+      "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
+      "rating": 4,
+      "name": "ჯენიფერ ჯ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
     },
     {
       "user_img": "./images/customers/person-3.png",
@@ -118,7 +132,152 @@
       "rating": 2,
       "name": "ნინო კ.",
       "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-4.png",
+      "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
+      "rating": 3,
+      "name": "ანასტასია ს.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-1.png",
+      "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
+      "rating": 5,
+      "name": "ფელიპე მ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-2.png",
+      "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
+      "rating": 5,
+      "name": "ჯენიფერ ჯ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-3.png",
+      "comment": "მე პირდაპირ გამოვიყენე ცნებები და უნარები, რომლებიც ჩემი კურსებიდან ვისწავლე ახალი საინტერესო პროექტისთვის",
+      "rating": 5,
+      "name": "ნინო კ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-4.png",
+      "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
+      "rating": 4,
+      "name": "ანასტასია ს.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-1.png",
+      "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
+      "rating": 4,
+      "name": "ფელიპე მ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-2.png",
+      "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
+      "rating": 5,
+      "name": "ჯენიფერ ჯ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-3.png",
+      "comment": "მე პირდაპირ გამოვიყენე ცნებები და უნარები, რომლებიც ჩემი კურსებიდან ვისწავლე ახალი საინტერესო პროექტისთვის",
+      "rating": 5,
+      "name": "ნინო კ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-4.png",
+      "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
+      "rating": 5,
+      "name": "ანასტასია ს.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-1.png",
+      "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
+      "rating": 3,
+      "name": "ფელიპე მ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-2.png",
+      "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
+      "rating": 1,
+      "name": "ჯენიფერ ჯ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-3.png",
+      "comment": "მე პირდაპირ გამოვიყენე ცნებები და უნარები, რომლებიც ჩემი კურსებიდან ვისწავლე ახალი საინტერესო პროექტისთვის",
+      "rating": 5,
+      "name": "ნინო კ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-4.png",
+      "comment": "როდესაც მჭირდება კურსები იმ თემებზე, რომლებსაც ჩემი უნივერსიტეტი არ გვთავაზობს, skillUP არის ერთ-ერთი საუკეთესო ადგილი.",
+      "rating": 5,
+      "name": "ანასტასია ს.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-1.png",
+      "comment": "შესანიშნავი კურსი! ბევრი ისწავლა.",
+      "rating": 5,
+      "name": "ფელიპე მ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-2.png",
+      "comment": "ჩემივე ტემპით და რიტმით კურსების გავლა საოცარი გამოცდილება იყო. შემიძლია ვისწავლო ყოველთვის, როცა ეს ჩემს განრიგს და განწყობას შეესაბამება.",
+      "rating": 4,
+      "name": "ჯენიფერ ჯ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
+    },
+    {
+      "user_img": "./images/customers/person-3.png",
+      "comment": "მე პირდაპირ გამოვიყენე ცნებები და უნარები, რომლებიც ჩემი კურსებიდან ვისწავლე ახალი საინტერესო პროექტისთვის",
+      "rating": 2,
+      "name": "ნინო კ.",
+      "username": "@username_of_person",
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
     },
     {
       "user_img": "./images/customers/person-4.png",
@@ -126,7 +285,8 @@
       "rating": 1,
       "name": "ანასტასია ს.",
       "username": "@username_of_person",
-      "star": "./images/icons/Star.svg"
+      "star": "./images/icons/Star.svg",
+      "title": "თამაშების დეველოპმენტი"
     }
   ],
   "courses": [
