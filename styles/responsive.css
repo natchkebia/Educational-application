@@ -515,11 +515,11 @@
     background-color: #8447ff;
     position: absolute;
     top: 0;
-    padding: 8px 0;
+    padding: 0 0 8px 0;
   }
 
   .new-class .filters {
-    margin-top: 20px;
+    margin-top: 16px;
   }
   .courses__navigation {
     position: relative;

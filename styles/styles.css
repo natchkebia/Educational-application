@@ -2087,6 +2087,7 @@ input[type="checkbox"]:checked + label::before {
 
 #course {
   padding-top: 0;
+  padding-bottom: 32px;
 }
 .new-class {
   display: none;
@@ -2103,10 +2104,7 @@ input[type="checkbox"]:checked + label::before {
 
 .new-class .mobile__filter {
   margin-left: 16px;
-}
-
-.new-class .filters {
-  display: block;
+  margin-top: 8px;
 }
 
 .new-class #course-list,
@@ -2126,6 +2124,10 @@ input[type="checkbox"]:checked + label::before {
 }
 .new-class .filter__header {
   width: 100%;
+}
+
+.new-class .course__sort, .new-class .pagination {
+  display: none !important;
 }
 
 .new-class .course__container {
@@ -2150,6 +2152,7 @@ display: block;
 .new-class .mobile__filter img:last-of-type{
   display: block;
 }
+
 .filter-content {
   display: none;
 }

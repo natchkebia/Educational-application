@@ -186,7 +186,9 @@ function displayCourses() {
 
   courseList.innerHTML = generateCourseCards(paginatedCourses);
   displayPagination(sortedCourses.length);
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
 
 function generateCourseCards(courses) {
   return courses
@@ -275,7 +277,16 @@ function displayPagination(totalCourses) {
   const totalPages = Math.ceil(totalCourses / coursesPerPage);
   const pageNumbers = document.getElementById("page-numbers");
   const totalPagesDiv = document.getElementById("total-pages");
-
+  const paginationContainer = document.querySelector('.pagination-container')
+  const sortWrapper = document.querySelector('.course__sort')
+  if (totalCourses === 0) {
+    paginationContainer.style.display = "none";
+    sortWrapper.style.display = "none";
+    return;
+  } else {
+    paginationContainer.style.display = "flex";
+    sortWrapper.style.display = "flex";
+  }
   pageNumbers.innerHTML = "";
 
   for (let i = 1; i <= totalPages; i++) {
@@ -300,6 +311,7 @@ function displayPagination(totalCourses) {
 
   updatePaginationButtons();
 }
+
 
 function updatePaginationButtons() {
   const totalCourses = filterCourses().length;
