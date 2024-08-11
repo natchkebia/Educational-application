@@ -560,6 +560,10 @@
 /* course detail styles start*/
 /* rating  start start*/
 @media (max-width: 768px) {
+  .rating__diagram {
+    margin-bottom: 24px;
+  }
+
   .rating__diagram__summering {
     margin-bottom: 16px;
   }
@@ -585,9 +589,19 @@
   .rating__progress--bar {
     height: 16px;
   }
-    .rating__coments .title {
-      font-size: 20px;
-    }
+
+  .rating__coments {
+    margin-bottom: 36px;
+  }
+
+  .rating__coments .title {
+    font-size: 20px;
+  }
+
+  .rating__coments .testimonials__card {
+    margin-bottom: 62x;
+  }
+
 }
 
 @media (max-width: 480px) {

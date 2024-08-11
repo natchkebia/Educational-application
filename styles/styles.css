@@ -2670,6 +2670,10 @@ input[type="checkbox"]:checked+label::before {
 
 /* course detail page   */
 /* rating */
+.rating__diagram{
+  margin-bottom: 32px;
+}
+
 .rating__diagram__summering {
   margin-bottom: 20px;
 }
@@ -2738,14 +2742,53 @@ input[type="checkbox"]:checked+label::before {
   font-weight: 400;
   line-height: 24px;
 }
-
+.rating__coments {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+}
 
 .rating__coments .title {
   font-size: 26px;
   font-weight: 600;
   line-height: 30px;
-  margin-bottom: 24px;
+  margin-bottom: 62px;
+  color: var(--primary-color);
 }
 
+.rating__coments .testimonials {
+  background-color: white;
+}
+
+.rating__coments .testimonials__card {
+  margin-right: 0px;
+  margin-bottom: 54px;
+}
+
+.rating__coments .testimonials__card:last-child {
+  margin-bottom: 0px;
+}
+
+
+.user--comment {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.rating__coments a {
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.2px;
+  text-align: left;
+  text-wrap: nowrap;
+  margin-top: 24px;
+  align-self: flex-end;
+}
+/* .rating__coments a:hover{
+
+} */
 /* course detail page  end */
 /* rating end */
