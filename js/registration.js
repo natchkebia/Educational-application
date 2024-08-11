@@ -279,9 +279,7 @@ function validateField(fieldId) {
       } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
         errors.firstname = "გამოიყენე ქართული ასოები";
       }
-      // else if (value.length > 20) {
-      //   errors.firstname = "სახელი არ უნდა აღემატებოდეს 20 ასოს";
-      // }
+
       break;
 
     case "lastname":
@@ -290,9 +288,7 @@ function validateField(fieldId) {
       } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
         errors.lastname = "გამოიყენე ქართული ასოები";
       }
-      // else if (value.length > 30) {
-      //   errors.lastname = "გვარი არ უნდა აღემატებოდეს 30 ასოს";
-      // }
+
       break;
 
     case "email":
@@ -302,21 +298,11 @@ function validateField(fieldId) {
         errors.email = "ელ. ფოსტა არასწორია";
       }
       break;
-
-    // case "tel":
-    //   if (!value) {
-    //     errors.tel = "აუცილებელი ველი";
-    //   } else if (!/^[0-9]+$/.test(value)) {
-    //     errors.tel = "გამოიყენეთ მხოლოდ ციფრები";
-    //   } else if (value.length > 9) {
-    //     errors.tel = "სიმბოლოების რაოდენობა არ უნდა აღემატებოდეს 9–ს";
-    //   }
-    //   break;
     case "tel":
       if (!value) {
         errors.tel = "აუცილებელი ველი";
       } else if (!/^\+9955\d{8}$/.test(value)) {
-        errors.tel = "გთხოვთ, შეიყვანოთ სწორი მობილურის ნომერი";
+        errors.tel = "ტელეფონის ინდექსი უნდა +995";
       }
       break;
 
@@ -324,14 +310,13 @@ function validateField(fieldId) {
       if (!value) {
         errors.password = "აუცილებელი ველი";
       } else if (
-        value.length < 8 ||
         !/[A-Z]/.test(value) ||
         !/[a-z]/.test(value) ||
         !/[0-9]/.test(value) ||
         !/[!@#$%^&*(),.?":{}|<>]/.test(value)
       ) {
         errors.password =
-          "პაროლი უნდა შეიცავდეს მინიმუმ 8 სიმბოლოს, დიდსა და პატარა ინგლისურ ასოებს, რიცხვსა და სპეციალურ სიმბოლოს";
+          "პაროლი უნდა შეიცავდეს დიდსა და პატარა ინგლისურ ასოებს, რიცხვსა და სპეციალურ სიმბოლოს";
       }
       break;
 
@@ -353,7 +338,12 @@ function validateField(fieldId) {
     case "new-password":
       if (!value) {
         errors["new-password"] = "აუცილებელი ველი";
-      } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+      } else if (
+        !/[A-Z]/.test(value) ||
+        !/[a-z]/.test(value) ||
+        !/[0-9]/.test(value) ||
+        !/[!@#$%^&*(),.?":{}|<>]/.test(value)
+      ) {
         errors.email = "ელ. ფოსტა არასწორია";
       } else {
         const oldPassword = document
