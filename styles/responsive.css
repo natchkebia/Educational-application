@@ -463,3 +463,11 @@
     padding: 24px 0px;
   }
 }
+
+/* syllabus responsive */
+@media (max-width: 630px) {
+  .course__timeline {
+    display: block;
+    height: 518px;
+  }
+}
