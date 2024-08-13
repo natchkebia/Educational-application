@@ -22,6 +22,15 @@
   .illustrations__slider--student {
     display: none;
   }
+
+    /* mentor */
+.buy__course {
+  display: none;
+}
+
+.buy__container, #buy__course2 {
+  display: block;
+}
 }
 
 @media (max-width: 1024px) {
@@ -156,6 +165,18 @@
 
   .courses__slider--card {
     min-width: calc((100% - 2 * 12px) / 2);
+  }
+}
+@media (max-width: 860px) {
+  .mentor__info {
+    flex-direction: column-reverse;
+    gap: 24px;
+  }
+
+  .mentor__portfolio > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 }
 
