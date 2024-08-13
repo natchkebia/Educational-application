@@ -92,6 +92,7 @@ function handleRegistration() {
 function handleLogin() {
   const loginIdentifier = document.getElementById("loginIdentifier").value;
   const password = document.getElementById("password").value;
+  const rememberMe = document.getElementById("remember").checked;
 
   // Simple validation
   let errors = {};
@@ -116,11 +117,20 @@ function handleLogin() {
       console.log("User logged in:", user);
       handleSuccessfulAction();
 
+      // Save credentials if "Remember Me" is checked
+      if (rememberMe) {
+        localStorage.setItem("savedLoginIdentifier", loginIdentifier);
+        localStorage.setItem("savedPassword", password);
+      } else {
+        localStorage.removeItem("savedLoginIdentifier");
+        localStorage.removeItem("savedPassword");
+      }
+
       clearForm("login-form");
 
       setTimeout(() => {
         window.location.href = "../index.html"; // Redirect to the main page
-      }, 3000); // 5000 milliseconds = 5 seconds
+      }, 3000); // 3000 milliseconds = 3 seconds
     })
     .catch((error) => {
       console.error("Error during login:", error);
@@ -429,3 +439,22 @@ function handleSuccessfulAction() {
     successMessage.classList.remove("hide");
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Check for saved credentials in localStorage
+  const savedLoginIdentifier = localStorage.getItem("savedLoginIdentifier");
+  const savedPassword = localStorage.getItem("savedPassword");
+
+  // Populate the form with the saved credentials if they exist
+  if (savedLoginIdentifier) {
+    document.getElementById("loginIdentifier").value = savedLoginIdentifier;
+  }
+  if (savedPassword) {
+    document.getElementById("password").value = savedPassword;
+  }
+
+  // Set the "Remember Me" checkbox to checked if credentials are saved
+  if (savedLoginIdentifier && savedPassword) {
+    document.getElementById("remember").checked = true;
+  }
+});
