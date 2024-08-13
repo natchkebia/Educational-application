@@ -265,7 +265,6 @@
     <!-- main -->
     <main id="main">
       <div class="hero-img">
-
         <ul class="breadcrumb container">
           <li class="breadcrumb__item">
             <a class="breadcrumb__link" href="../index.html" title="home">
@@ -290,6 +289,41 @@
           </li>
           <li class="breadcrumb__item active-page">თამაშების დეველოპმენტი</li>
         </ul>
+      </div>
+      <div class="courses-detail-wrapper container">
+        <section class="courses-detail">
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'about')">
+              მიმოხილვა
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'syllabus')">
+              სილაბუსი
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'mentor')">
+              მენტორი
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'rating')">
+              შეფასებები
+            </button>
+          </div>
+          <div class="tab-content">
+            <div id="about" class="tab-pane">
+              <!-- Content for 'about' tab -->
+            </div>
+            <div id="syllabus" class="tab-pane">
+              <!-- Content for 'syllabus' tab -->
+            </div>
+            <div id="mentor" class="tab-pane">
+              <!-- Content for 'mentor' tab -->
+            </div>
+            <div id="rating" class="tab-pane">
+              <!-- Content for 'rating' tab -->
+            </div>
+          </div>
+        </section>
+        <section class="sidebar">
+          
+        </section>
       </div>
     </main>
 
@@ -478,7 +512,7 @@
     </footer>
     <script src="../js/mobileMenu.js"></script>
     <script src="../js/acordion.js"></script>
-    <script src="../js/signin.js"></script>
     <script src="../js/courses.js"></script>
+    <script src="../js/course-details-tab.js"></script>
   </body>
 </html>
