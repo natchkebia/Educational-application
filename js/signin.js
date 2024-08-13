@@ -84,7 +84,7 @@ onAuthStateChanged(auth, (user) => {
 
     // Update login button text and links
     signinLink.textContent = "პაროლის შეცვლა";
-    signinLink.href = "./pages/change-password.html";
+    signinLink.href = "change-password.html";
 
     registerLink.textContent = "გამოსვლა";
     registerLink.href = "#";
@@ -115,10 +115,10 @@ onAuthStateChanged(auth, (user) => {
     // No user is signed in
     loginBtn.textContent = "შესვლა";
     signinLink.textContent = "ავტორიზაცია";
-    signinLink.href = "./pages/logIn.html";
+    signinLink.href = "logIn.html";
 
     registerLink.textContent = "რეგისტრაცია";
-    registerLink.href = "./pages/registration.html";
+    registerLink.href = "registration.html";
 
     // Hide profile and logout sections in mobile menu
     hideProfile();
