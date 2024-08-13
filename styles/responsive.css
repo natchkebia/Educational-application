@@ -612,3 +612,23 @@
 
 /* course detail styles end*/
 /* rating  start end*/
+
+
+
+/* course detail styles start*/
+@media (max-width:1270px) {
+  .breadcrumb {
+    padding-top: 10px;
+  }
+}
+
+@media (max-width:768px) {
+.hero-img {
+    background-image: url(../images/courses-details/main-mboile.png);
+   
+  }
+        .breadcrumb {
+          font-size: 14px;
+          line-height: 18px;
+        }
+}

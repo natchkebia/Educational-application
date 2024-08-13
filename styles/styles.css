@@ -2801,3 +2801,57 @@ input[type="checkbox"]:checked+label::before {
 
 /* course detail page  end */
 /* rating end */
+.hero-img {
+  background-image: url(../images/courses-details/game-dev.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 436px;
+}
+
+.breadcrumb {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 16px;
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  /* margin-left: 4px; */
+
+}
+
+.breadcrumb__link {
+  display: flex;
+  align-items: center;
+  /* margin-left: 4px; */
+}
+
+.breadcrumb .breadcrumb__item:nth-child(2) .breadcrumb__link {
+  opacity: 0.3;
+}
+
+.breadcrumb li svg {
+  /* margin-right: 4px; */
+  width: 20px;
+  height: 20px;
+}
+
+.breadcrumb li+li:before {
+  content: url(../images/courses-details/breadcrumbsArrow.svg);
+  height: 18px;
+  margin-top: 2px;
+  margin-left: 11px;
+  margin-right: 11px;
+}
+
+.active-page {
+  display: flex;
+  align-items: center;
+}
+
+/* გაერთიანება  end*/
