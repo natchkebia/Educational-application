@@ -2421,17 +2421,13 @@ input[type="checkbox"]:checked+label::before {
 }
 
 
-.tab-content {
+/* .tab-content {
   display: flex;
   overflow-x: auto;
-  /* Enables horizontal scrolling */
   scroll-behavior: smooth;
-  /* Smooth scroll behavior */
   white-space: nowrap;
-  /* Prevents content from wrapping */
   scrollbar-width: none;
-  /* For Firefox */
-}
+} */
 
 .tab-content::-webkit-scrollbar {
   display: none;
@@ -2439,10 +2435,12 @@ input[type="checkbox"]:checked+label::before {
 }
 
 .tab-pane {
-  flex: 0 0 100%;
   /* Each pane takes up full width of container */
   padding: 10px;
   box-sizing: border-box;
+  max-width: 790px;
+    width: 100%;
+    display: block;
 }
 
 
