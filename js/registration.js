@@ -3,7 +3,7 @@ import {
   database,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  GoogleAuthProvider,
+  // GoogleAuthProvider,
   signInWithPopup,
   ref,
   set,
@@ -221,36 +221,6 @@ function handleChangePassword() {
       }
     });
 }
-
-// Google Sign-In
-const googleSigninBtn = document.getElementById("google-signin");
-googleSigninBtn?.addEventListener("click", () => {
-  const provider = new GoogleAuthProvider();
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      const user = result.user;
-      const userId = user.uid;
-
-      const userRef = ref(database, "users/" + userId);
-      set(userRef, {
-        displayName: user.displayName,
-        email: user.email,
-        photoURL: user.photoURL,
-      })
-        .then(() => {
-          console.log("User data successfully written to database:", user);
-          // clearForm("login-form"); // or "registration-form"
-          // window.location.href = "../index.html";
-        })
-        .catch((error) => {
-          console.error("Error writing user data to database:", error);
-        });
-    })
-    .catch((error) => {
-      console.error("Error during Google sign-in:", error);
-      alert("Failed to sign in with Google: " + error.message);
-    });
-});
 
 // Clear form inputs
 function clearForm(formId) {
