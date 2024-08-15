@@ -2251,13 +2251,12 @@ input[type="checkbox"]:checked+label::before {
 
 /* syllabus  start*/
 .course__timeline {
-  max-width: 758px;
-  height: 146px;
   display: flex;
   flex-direction: row;
   align-items: center;
   text-align: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .course__timeline--detail {
@@ -2295,9 +2294,10 @@ input[type="checkbox"]:checked+label::before {
   font-weight: 400;
 }
 
-.course__timeline--calendar{
+.course__timeline--calendar {
   background-color: #ffc5192d;
 }
+
 .course__timeline--schedule {
   background-color: #d972ff2d;
 }
@@ -2361,11 +2361,11 @@ input[type="checkbox"]:checked+label::before {
 
 /* mentor style start */
 /* აქედან იწყება მენტორის გვერდის კონტენტი  */
-#wrapper {
+/* #wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-}
+} */
 
 .mentor__info--wrapper {
   max-width: 790px;
@@ -2412,14 +2412,6 @@ input[type="checkbox"]:checked+label::before {
   gap: 24px;
 }
 
-.mentor__contact--info h3 {
-  font-family: var(--font-family-figaro);
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 30px;
-  color: var(--primary-color);
-}
-
 .info__wrapper {
   display: flex;
   flex-direction: column;
@@ -2442,24 +2434,9 @@ input[type="checkbox"]:checked+label::before {
   gap: 24px;
 }
 
-.mentor__portfolio h3 {
-  font-family: var(--font-family-figaro);
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 30px;
-  color: var(--primary-color);
-}
-
-.mentor__text {
-  font-family: var(--font-family-figaro);
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 30px;
-  color: var(--primary-color);
-}
-
 .mentor__portfolio>div {
   display: flex;
+  flex-wrap: wrap;
   gap: 29px;
 }
 
@@ -2492,106 +2469,6 @@ input[type="checkbox"]:checked+label::before {
 
 /* mentor style end */
 /*  */
-/* buying */
-.buy__course {
-  max-width: 340px;
-  width: 100%;
-  height: 216px;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0px 0px 20px 0px #00000014;
-  margin-left: 956px;
-}
-
-.course__price {
-  max-width: 292px;
-  height: 40px;
-  /* justify-content: space-between; */
-  display: flex;
-  flex-direction: row;
-}
-
-.course__price--new {
-  font-family: var(--font-family-figaro);
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 40px;
-  color: #8447FF;
-}
-
-.course__price--old {
-  font-family: var(--font-family-figaro);
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 18px;
-  color: #777777;
-  text-decoration: line-through;
-  margin-top: 11px;
-  margin-left: 12px;
-  margin-right: 80px;
-}
-
-.course__discounts {
-  width: 50px;
-  height: 24px;
-  border-radius: 50px;
-  margin-top: 11px;
-  padding: 2px 8px;
-  background-color: #FFC619;
-  justify-content: flex-end;
-}
-
-.course__discounts--percent {
-  font-family: var(--font-family-figaro);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 19.03px;
-  color: #000000;
-}
-
-.add__busket {
-  max-width: 292px;
-  height: 50px;
-  display: flex;
-  margin-top: 16px;
-  margin-bottom: 12px;
-}
-
-.busket__text {
-  width: 230px;
-  height: 50px;
-  border-radius: 8px;
-  border: 1px solid #8447ff;
-  padding: 16px 0;
-  text-align: center;
-}
-
-.busket__text a {
-  font-family: var(--font-family-figaro);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 18px;
-  color: #8447FF;
-  margin-top: 16px;
-}
-
-.busket__heart {
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
-  border: 1px solid #8447ff;
-  padding: 12.5px;
-  margin-left: 12px;
-}
-
-.buy {
-  width: 292px;
-  background-color: #8447FF;
-}
-
-.buy a {
-  color: #FFFFFF;
-}
 
 /* about section end */
 
@@ -2779,11 +2656,14 @@ input[type="checkbox"]:checked+label::before {
 
 .courses-detail-wrapper {
   display: flex;
+  gap: 22px;
 }
 
 .courses-detail {
+  width: 70%;
   position: relative;
   overflow: hidden;
+  padding: 32px 0;
 }
 
 
@@ -2803,13 +2683,11 @@ input[type="checkbox"]:checked+label::before {
 
 .tab::-webkit-scrollbar {
   display: none;
-  /* For Chrome, Safari, and Opera */
 }
 
 .tab .tablinks {
-  flex: 1;
-  /* Make tabs evenly spaced */
-  padding: 13px 38px;
+  flex: 1 1 25%;
+  padding: 13px;
   text-align: center;
   background-color: #F7F4FF;
   border: none;
@@ -2829,15 +2707,6 @@ input[type="checkbox"]:checked+label::before {
   color: white;
 }
 
-
-/* .tab-content {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  white-space: nowrap;
-  scrollbar-width: none;
-} */
-
 .tab-content::-webkit-scrollbar {
   display: none;
   /* For Chrome, Safari, and Opera */
@@ -2853,208 +2722,110 @@ input[type="checkbox"]:checked+label::before {
   margin-top: 32px;
 }
 
-
-
-
-
-
 .sidebar {
-  max-width: 320px;
-  width: 100%;
-}
-
-/* გაერთიანება  end*/
-/* Tamar */
-
-.mentor {
+  width: 30%;
+  margin-top: 82px;
+  margin-bottom: 32px;
   padding: 0;
 }
 
-.mentor__section--image {
-  width: 100%;
-  height: 436px;
-  background-image: url(../images/courses-details/game-dev.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
 
-.navigation__container {
-  max-width: 758px;
-  width: 100%;
-  display: flex;
-  gap: 10px;
-  margin-top: 32px;
-}
 
-.desc__btn {
-  border-radius: 8px;
-
-  border: none;
-  cursor: pointer;
-}
-
-.active_link {
-  background-color: hsla(260, 100%, 64%, 1);
-  color: hsla(0, 0%, 100%, 1);
-}
-
-#wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.mentor__info--wrapper {
-  max-width: 790px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-top: 32px;
-}
-
-.mentor__info {
-  width: 100%;
-  display: flex;
-  gap: 30px;
-}
-
-.mentor__info--text {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.mentor__info--text h2 {
-  font-family: var(--font-family-figaro);
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 40px;
-}
-
-.mentor__info--text p {
-  font-family: var(--font-family-figaro);
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 18px;
-}
-
-.mentor__info--text p:last-of-type {
-  font-weight: 400;
-  line-height: 28px;
-}
-
-.mentor__contact--info {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.mentor__contact--info h3 {
-  font-family: var(--font-family-figaro);
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 30px;
-  color: var(--primary-color);
-}
-
-.info__wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.info__wrapper div {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-family-figaro);
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 21.6px;
-}
-
-.mentor__portfolio {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.mentor__portfolio h3 {
-  font-family: var(--font-family-figaro);
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 30px;
-  color: var(--primary-color);
-}
-
-.mentor__text {
-  font-family: var(--font-family-figaro);
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 30px;
-  color: var(--primary-color);
-}
-
-.mentor__portfolio>div {
-  display: flex;
-  gap: 29px;
-}
-
-.media__container {
-  background-color: #f7f4ff;
-  padding: 10px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.media__container>div {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.media__container p {
-  color: #555560;
-  font-family: var(--font-family-figaro);
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 43.67px;
-}
-
-.buy__section {
-  position: absolute;
-  width: 400px;
-  height: 200px;
-  right: 0;
-}
-
-.buy__course {
-  max-width: 340px;
-  width: 100%;
-  height: 216px;
+/* buy  */
+.sidebar .buy-course {
+  position: sticky;
+  top: 178px;
+  box-shadow: 0px 0px 20px 0px #00000014;
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0px 0px 20px 0px #00000014;
+  min-width: 281px;
+  background-color: white;
 }
 
 .course__price {
-  max-width: 292px;
-  height: 40px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
-@@ -1945, 239+2001, 72 @@ main {
+.course__price-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.course__price--new {
+  font-family: var(--font-family-figaro);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
+  color: #8447ff;
+}
+
+.course__price--old {
+  font-family: var(--font-family-figaro);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #777777;
+  text-decoration: line-through;
+  margin-left: 12px;
+}
+
+.course__discounts {
+  width: 50px;
+  height: 24px;
+  border-radius: 50px;
+  padding: 2px 8px;
+  background-color: #ffc619;
+  justify-content: flex-end;
+}
+
+.course__discounts--percent {
+  font-family: var(--font-family-figaro);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19.03px;
+  color: #000000;
+}
+
+.add__course {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.busket__text {
+  width: 230px;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #8447ff;
+  padding: 16px 0;
+  text-align: center;
+}
+
+.busket__text svg {
+  display: none;
+}
+
+.busket__heart {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #8447ff;
+  padding: 12.5px;
+  margin-left: 12px;
+}
+
+.buy {
+  width: 100%;
+  background-color: #8447ff;
+  padding: 16px 0;
+  text-align: center;
+}
+
+.buy a {
   color: #ffffff;
 }
 
-#buy__course2 {
-  max-width: 374px;
-}
+/* გაერთიანება  end*/
