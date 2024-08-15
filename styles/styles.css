@@ -2342,7 +2342,6 @@ input[type="checkbox"]:checked+label::before {
 .syllabus__accordion--answer.open {
   padding: 24px;
   max-height: 1000px;
-  /* Adjust to a large enough value */
 }
 
 .answer-list {
@@ -2360,7 +2359,138 @@ input[type="checkbox"]:checked+label::before {
 
 /* syllabus end */
 
+/* mentor style start */
+/* აქედან იწყება მენტორის გვერდის კონტენტი  */
+#wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
+.mentor__info--wrapper {
+  max-width: 790px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.mentor__info {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+}
+
+.mentor__info--text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mentor__info--text h2 {
+  font-family: var(--font-family-figaro);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.mentor__info--text p {
+  font-family: var(--font-family-figaro);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.mentor__info--text p:last-of-type {
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.mentor__contact--info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mentor__contact--info h3 {
+  font-family: var(--font-family-figaro);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--primary-color);
+}
+
+.info__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info__wrapper div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-family-figaro);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.6px;
+}
+
+.mentor__portfolio {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mentor__portfolio h3 {
+  font-family: var(--font-family-figaro);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--primary-color);
+}
+
+.mentor__text {
+  font-family: var(--font-family-figaro);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--primary-color);
+}
+
+.mentor__portfolio>div {
+  display: flex;
+  gap: 29px;
+}
+
+.media__container {
+  background-color: #f7f4ff;
+  padding: 10px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.media__container>div {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.media__container p {
+  color: #555560;
+  font-family: var(--font-family-figaro);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 43.67px;
+}
+
+/* mentor style end */
 /*  */
 /* buying */
 .buy__course {
