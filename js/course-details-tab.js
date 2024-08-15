@@ -28,35 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // course accordion
-let dropdowns = document.getElementsByClassName(
-  "syllabus__accordion--question"
-);
-let i;
+// Course accordion
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdowns = document.querySelectorAll(".syllabus__accordion--question");
 
-for (i = 0; i < dropdowns.length; i++) {
-  dropdowns[i].addEventListener("click", function () {
-    let isActive = this.classList.contains("open");
-
-    closeAllDropdowns();
-
-    if (!isActive) {
-      this.classList.toggle("open");
-      let dropdownContent = this.nextElementSibling;
-      dropdownContent.style.display = "block";
-
-      let height = dropdownContent.scrollHeight + "px";
-      dropdownContent.style.maxHeight = height;
-    }
+  dropdowns.forEach((dropdown) => {
+    dropdown.addEventListener("click", () => {
+      dropdown.classList.toggle("open");
+      const dropdownContent = dropdown.nextElementSibling;
+      dropdownContent.classList.toggle("open");
+    });
   });
-}
-
-function closeAllDropdowns() {
-  for (i = 0; i < dropdowns.length; i++) {
-    dropdowns[i].classList.remove("open");
-    let dropdownContent = dropdowns[i].nextElementSibling;
-    dropdownContent.style.display = "none";
-    dropdownContent.style.maxHeight = null;
-  }
-}
-
-drop();
+});
