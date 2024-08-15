@@ -308,7 +308,6 @@
   .login-register-content {
     font-size: 14px;
   }
-
 }
 
 @media (max-width: 700px) {
@@ -461,5 +460,14 @@
   .footer__social {
     flex-direction: column-reverse;
     padding: 24px 0px;
+  }
+}
+
+/* course detail page */
+
+@media (max-width: 640px) {
+  .course__about--after {
+    height: 460px;
+    gap: 16px;
   }
 }
