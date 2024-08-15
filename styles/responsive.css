@@ -465,9 +465,20 @@
 }
 
 /* syllabus responsive */
-@media (max-width: 630px) {
-  .course__timeline {
-    display: block;
-    height: 518px;
+@media (max-width: 640px) {
+  .syllabus__accordion--answer {
+    height: 510px;
+  }
+  .second {
+    height: 258px;
+  }
+  .third {
+    height: 414px;
+  }
+  .fourth {
+    height: 363px;
+  }
+  .sixth {
+    height: 84px;
   }
 }

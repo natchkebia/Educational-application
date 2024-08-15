@@ -2010,7 +2010,14 @@ main {
   background-color: #f7f4ff;
   padding: 24px;
   border-radius: 8px;
-  display: none;
+  display: none; 
+}
+.answer-list {
+  display: flex;
+  margin-bottom: 24px;
+}
+.answer-list p {
+  margin-left: 12px;
 }
 .syllabus__accordion .syllabus__accordion--question.open svg {
   transform: rotate(180deg);
@@ -2037,6 +2044,3 @@ main {
 .sixth {
   height: 66px;
 }
-input[type="checkbox"] {
-  accent-color: #8447ff;
-  }

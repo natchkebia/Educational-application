@@ -1,4 +1,4 @@
-// accordion
+// course accordion
 
 function drop() {
     let dropdowns = document.getElementsByClassName("syllabus__accordion--question");
