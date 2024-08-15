@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>კურსები</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/responsive.css" />
+    <link rel="icon" href="../images/logo/header-logo.svg" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="navigation">
+          <div class="header__logo">
+            <a class="header__logo--link" href="../index.html" class="logo">
+              <img
+                src="../images/logo/logo2final-01-01.png"
+                alt="Skillup logo"
+              />
+            </a>
+          </div>
+          <ul class="header__nav--list">
+            <li class="header__nav--list--item">
+              <a class="header__nav--list--link" href="../pages/courses.html"
+                >კურსები</a
+              >
+            </li>
+            <li class="header__nav--list--item">
+              <a class="header__nav--list--link" href="#">ვიდეო ლექციები</a>
+            </li>
+            <li class="header__nav--list--item">
+              <a class="header__nav--list--link" href="#">ბიბლიოთეკა</a>
+            </li>
+            <li class="header__nav--list--item">
+              <a
+                class="header__nav--list--link"
+                id="active"
+                href="../pages/contact.html"
+                >კონტაქტი</a
+              >
+            </li>
+            <!-- header icons -->
+            <li class="header__nav--list--icons">
+              <ul class="header__nav--icons">
+                <!-- search -->
+                <li class="nav--icons-item nav-icons">
+                  <a
+                    class="nav--icons-link"
+                    href="#"
+                    aria-label="search courses"
+                  >
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        opacity="0.6"
+                        d="M25.8653 26L30 30M28.6667 19.3333C28.6667 24.488 24.488 28.6667 19.3333 28.6667C14.1787 28.6667 10 24.488 10 19.3333C10 14.1787 14.1787 10 19.3333 10C24.488 10 28.6667 14.1787 28.6667 19.3333Z"
+                        stroke=""
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <!-- heart -->
+                <li class="nav--icons-item nav-icons">
+                  <a
+                    class="nav--icons-link"
+                    href="../pages/favorite.html"
+                    aria-label="see favorite courses"
+                    ><svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        opacity="0.6"
+                        d="M30.5 15.625C30.5 12.7258 28.0512 10.375 25.0307 10.375C22.7732 10.375 20.8342 11.6887 20 13.5635C19.1658 11.6887 17.2268 10.375 14.9682 10.375C11.95 10.375 9.5 12.7258 9.5 15.625C9.5 24.0483 20 29.625 20 29.625C20 29.625 30.5 24.0483 30.5 15.625Z"
+                        stroke=""
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <!-- busket -->
+                <li class="nav--icons-item nav-icons">
+                  <a
+                    class="nav--icons-link"
+                    href="../pages/basket.html"
+                    aria-label="busket"
+                    ><svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        opacity="0.6"
+                        d="M24.3755 18.25V13C24.3755 11.8397 23.9145 10.7269 23.0941 9.90641C22.2736 9.08594 21.1608 8.625 20.0005 8.625C18.8401 8.625 17.7273 9.08594 16.9069 9.90641C16.0864 10.7269 15.6255 11.8397 15.6255 13V18.25M28.8741 15.9248L30.3476 29.9248C30.4293 30.7007 29.8226 31.375 29.0421 31.375H10.9588C10.7747 31.3752 10.5926 31.3367 10.4244 31.2619C10.2562 31.1872 10.1056 31.0778 9.98233 30.9411C9.8591 30.8043 9.76602 30.6432 9.70913 30.4681C9.65225 30.293 9.63283 30.1079 9.65214 29.9248L11.1268 15.9248C11.1608 15.6023 11.313 15.3038 11.5541 15.0869C11.7952 14.8699 12.108 14.7499 12.4323 14.75H27.5686C28.2406 14.75 28.8041 15.2575 28.8741 15.9248ZM16.063 18.25C16.063 18.366 16.0169 18.4773 15.9348 18.5594C15.8528 18.6414 15.7415 18.6875 15.6255 18.6875C15.5094 18.6875 15.3982 18.6414 15.3161 18.5594C15.2341 18.4773 15.188 18.366 15.188 18.25C15.188 18.134 15.2341 18.0227 15.3161 17.9406C15.3982 17.8586 15.5094 17.8125 15.6255 17.8125C15.7415 17.8125 15.8528 17.8586 15.9348 17.9406C16.0169 18.0227 16.063 18.134 16.063 18.25ZM24.813 18.25C24.813 18.366 24.7669 18.4773 24.6848 18.5594C24.6028 18.6414 24.4915 18.6875 24.3755 18.6875C24.2594 18.6875 24.1482 18.6414 24.0661 18.5594C23.9841 18.4773 23.938 18.366 23.938 18.25C23.938 18.134 23.9841 18.0227 24.0661 17.9406C24.1482 17.8586 24.2594 17.8125 24.3755 17.8125C24.4915 17.8125 24.6028 17.8586 24.6848 17.9406C24.7669 18.0227 24.813 18.134 24.813 18.25Z"
+                        stroke=""
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <!-- burger -->
+
+                <li
+                  id="burger-icon"
+                  class="nav--icons-item burger-bar nav-icons"
+                >
+                  <a
+                    class="nav--icons-link"
+                    href="#"
+                    aria-label="mobile menu"
+                    onclick="openMobileMenu()"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M3 6.75C3 6.55109 3.07902 6.36032 3.21967 6.21967C3.36032 6.07902 3.55109 6 3.75 6H20.25C20.4489 6 20.6397 6.07902 20.7803 6.21967C20.921 6.36032 21 6.55109 21 6.75C21 6.94891 20.921 7.13968 20.7803 7.28033C20.6397 7.42098 20.4489 7.5 20.25 7.5H3.75C3.55109 7.5 3.36032 7.42098 3.21967 7.28033C3.07902 7.13968 3 6.94891 3 6.75ZM3 12C3 11.8011 3.07902 11.6103 3.21967 11.4697C3.36032 11.329 3.55109 11.25 3.75 11.25H20.25C20.4489 11.25 20.6397 11.329 20.7803 11.4697C20.921 11.6103 21 11.8011 21 12C21 12.1989 20.921 12.3897 20.7803 12.5303C20.6397 12.671 20.4489 12.75 20.25 12.75H3.75C3.55109 12.75 3.36032 12.671 3.21967 12.5303C3.07902 12.3897 3 12.1989 3 12ZM3 17.25C3 17.0511 3.07902 16.8603 3.21967 16.7197C3.36032 16.579 3.55109 16.5 3.75 16.5H20.25C20.4489 16.5 20.6397 16.579 20.7803 16.7197C20.921 16.8603 21 17.0511 21 17.25C21 17.4489 20.921 17.6397 20.7803 17.7803C20.6397 17.921 20.4489 18 20.25 18H3.75C3.55109 18 3.36032 17.921 3.21967 17.7803C3.07902 17.6397 3 17.4489 3 17.25Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
+                  <!-- mobile menu -->
+                </li>
+              </ul>
+            </li>
+            <!-- button -->
+            <li class="header__nav--list--item drop">
+              <span class="login-btn btn" href="#">შესვლა</span>
+              <ul class="header__nav--dropdown hide">
+                <li class="header__nav--signin">
+                  <a class="header__nav--link" href="../pages/logIn.html"
+                    >ავტორიზაცია</a
+                  >
+                </li>
+                <li class="header__nav--signin register">
+                  <a
+                    class="header__nav--link reg"
+                    href="../pages/registration.html"
+                    >რეგისტრაცია</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- mobile menu -->
+          <div id="mobile-menu" class="mobile-menu">
+            <div class="container">
+              <div id="profile" class="mobile-menu__user profile">
+                <div class="profile__photo">
+                  <img
+                    src="../images/customers/person-1.png"
+                    alt="ნინო სოფოიანი"
+                  />
+                  <a class="profile__edit">
+                    <svg
+                      class="icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14.9509 1.04907C14.5993 0.697502 14.1224 0.5 13.6252 0.5C13.128 0.5 12.6511 0.697502 12.2995 1.04907L11.4731 1.8755L14.1245 4.52693L14.9509 3.7005C15.3025 3.34888 15.5 2.87201 15.5 2.37478C15.5 1.87756 15.3025 1.40069 14.9509 1.04907ZM13.3666 5.28479L10.7152 2.63336L2.03661 11.3119C1.59579 11.7525 1.27174 12.2961 1.09375 12.8934L0.522325 14.8112C0.494736 14.9038 0.492679 15.0021 0.51637 15.0957C0.540061 15.1893 0.588619 15.2748 0.656907 15.3431C0.725196 15.4114 0.810673 15.4599 0.904296 15.4836C0.99792 15.5073 1.09621 15.5053 1.18876 15.4777L3.10662 14.9062C3.70392 14.7283 4.24745 14.4042 4.68805 13.9634L13.3666 5.28479Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div class="mobile-menu__user--info">
+                  <h3 class="mobile-menu__user--name">სახელი გვარი</h3>
+                  <span class="mobile-menu__user--nickname">@username_1</span>
+                  <span class="mobile-menu__user--contact mobile">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.75 2.25C0.75 1.85218 0.908035 1.47064 1.18934 1.18934C1.47064 0.908035 1.85218 0.75 2.25 0.75H2.936C3.366 0.75 3.741 1.043 3.8455 1.46L4.398 3.6715C4.44277 3.8505 4.43373 4.03873 4.372 4.21261C4.31028 4.38649 4.19861 4.5383 4.051 4.649L3.4045 5.134C3.337 5.1845 3.3225 5.2585 3.3415 5.31C3.62369 6.07743 4.0693 6.77435 4.64747 7.35253C5.22565 7.9307 5.92257 8.37631 6.69 8.6585C6.7415 8.6775 6.815 8.663 6.866 8.5955L7.351 7.949C7.4617 7.80139 7.61351 7.68972 7.78739 7.628C7.96127 7.56627 8.1495 7.55723 8.3285 7.602L10.54 8.1545C10.957 8.259 11.25 8.634 11.25 9.0645V9.75C11.25 10.1478 11.092 10.5294 10.8107 10.8107C10.5294 11.092 10.1478 11.25 9.75 11.25H8.625C4.276 11.25 0.75 7.724 0.75 3.375V2.25Z"
+                        fill="#8447FF"
+                      />
+                    </svg>
+
+                    (+995) 551 55 55 55</span
+                  >
+                  <span class="mobile-menu__user--contact email">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.75 4.33502V8.62502C0.75 9.02285 0.908035 9.40438 1.18934 9.68568C1.47064 9.96699 1.85218 10.125 2.25 10.125H9.75C10.1478 10.125 10.5294 9.96699 10.8107 9.68568C11.092 9.40438 11.25 9.02285 11.25 8.62502V4.33502L6.786 7.08152C6.54962 7.22695 6.27753 7.30394 6 7.30394C5.72247 7.30394 5.45038 7.22695 5.214 7.08152L0.75 4.33502Z"
+                        fill="#8447FF"
+                      />
+                      <path
+                        d="M11.25 3.454V3.375C11.25 2.97718 11.092 2.59564 10.8107 2.31434C10.5294 2.03304 10.1478 1.875 9.75 1.875H2.25C1.85218 1.875 1.47064 2.03304 1.18934 2.31434C0.908035 2.59564 0.75 2.97718 0.75 3.375V3.454L5.607 6.443C5.72519 6.51571 5.86123 6.55421 6 6.55421C6.13877 6.55421 6.27481 6.51571 6.393 6.443L11.25 3.454Z"
+                        fill="#8447FF"
+                      />
+                    </svg>
+                    academy_user9@gmail.com</span
+                  >
+                </div>
+              </div>
+              <ul class="mobile-menu__nav">
+                <li class="mobile-menu__nav--item">
+                  <a
+                    class="mobile-menu__nav--link"
+                    id="active"
+                    href="../pages/courses.html"
+                    >კურსები</a
+                  >
+                </li>
+                <li class="mobile-menu__nav--item">
+                  <a class="mobile-menu__nav--link" href="#">ვედეო ლექციები</a>
+                </li>
+                <li class="mobile-menu__nav--item">
+                  <a class="mobile-menu__nav--link" href="#">ბიბლიოთეკა</a>
+                </li>
+                <li class="mobile-menu__nav--item">
+                  <a class="mobile-menu__nav--link" href="#">კონტაქტი</a>
+                </li>
+                <li class="mobile-menu__nav--item authorization-link">
+                  <a class="mobile-menu__nav--link" href="../pages/logIn.html"
+                    >ავტორიზაცია</a
+                  >
+                </li>
+                <li class="mobile-menu__nav--item authorization-link">
+                  <a
+                    class="mobile-menu__nav--link"
+                    href="../pages/registration.html"
+                    >რეგისტრაცია</a
+                  >
+                </li>
+              </ul>
+              <a id="log-out" class="log-out" href="#"
+                ><svg
+                  width="23"
+                  height="24"
+                  viewBox="0 0 23 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.77799 22.1538C3.27701 22.1538 2.79655 21.9593 2.4423 21.6131C2.08805 21.2669 1.88903 20.7973 1.88903 20.3077L1.88903 3.6923C1.88903 3.20267 2.08805 2.7331 2.4423 2.38688C2.79655 2.04066 3.27701 1.84615 3.77799 1.84615L11.3338 1.84615C11.8348 1.84615 12.3153 2.04066 12.6695 2.38688C13.0238 2.7331 13.2228 3.20267 13.2228 3.6923L13.2228 8.30769C13.2228 8.55251 13.3223 8.78729 13.4994 8.9604C13.6765 9.13351 13.9168 9.23077 14.1673 9.23077C14.4178 9.23077 14.658 9.13351 14.8351 8.9604C15.0122 8.78729 15.1117 8.55251 15.1117 8.30769L15.1117 3.6923C15.1117 2.71304 14.7137 1.77389 14.0052 1.08145C13.2967 0.389006 12.3358 -3.8147e-06 11.3338 -3.8147e-06L3.77799 -3.8147e-06C2.77603 -3.8147e-06 1.8151 0.389006 1.1066 1.08145C0.398106 1.77389 7.62939e-05 2.71304 7.62939e-05 3.6923L7.62939e-05 20.3077C7.62939e-05 21.287 0.398106 22.2261 1.1066 22.9185C1.8151 23.611 2.77603 24 3.77799 24L11.3338 24C12.3358 24 13.2967 23.611 14.0052 22.9185C14.7137 22.2261 15.1117 21.287 15.1117 20.3077L15.1117 15.6923C15.1117 15.4475 15.0122 15.2127 14.8351 15.0396C14.658 14.8665 14.4178 14.7692 14.1673 14.7692C13.9168 14.7692 13.6765 14.8665 13.4994 15.0396C13.3223 15.2127 13.2228 15.4475 13.2228 15.6923L13.2228 20.3077C13.2228 20.7973 13.0238 21.2669 12.6695 21.6131C12.3153 21.9593 11.8348 22.1538 11.3338 22.1538L3.77799 22.1538ZM17.2778 16.3446C17.4548 16.5175 17.6949 16.6146 17.9452 16.6146C18.1955 16.6146 18.4355 16.5175 18.6126 16.3446L22.3905 12.6523C22.5674 12.4792 22.6667 12.2446 22.6667 12C22.6667 11.7554 22.5674 11.5208 22.3905 11.3477L18.6126 7.65538C18.4336 7.49233 18.1968 7.40356 17.9521 7.40778C17.7074 7.412 17.4739 7.50888 17.3009 7.678C17.1278 7.84713 17.0287 8.07529 17.0244 8.31443C17.0201 8.55357 17.1109 8.78501 17.2778 8.96L19.4438 11.0769L5.66695 11.0769C5.41646 11.0769 5.17623 11.1742 4.99911 11.3473C4.82198 11.5204 4.72247 11.7552 4.72247 12C4.72247 12.2448 4.82198 12.4796 4.99911 12.6527C5.17623 12.8258 5.41646 12.9231 5.66695 12.9231L19.4438 12.9231L17.2778 15.04C17.1009 15.2131 17.0015 15.4477 17.0015 15.6923C17.0015 15.9369 17.1009 16.1715 17.2778 16.3446Z"
+                    fill="#F44336"
+                  />
+                </svg>
+                ანგარიშიდან გასვლა</a
+              >
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- main -->
+    <main id="main">
+      <section class="contact">
+        <div class="container">
+          <div class="contact__navigation">
+            <a href="../index.html"
+              ><img src="../images/contact/icons/home.svg" alt="home"
+            /></a>
+            <img src="../images/contact/icons/right-gray.svg" alt="arrow" />
+            <a href="#">კონტაქტი</a>
+          </div>
+          <div class="question__container">
+            <p>
+              ხშირად დასმული <span class="gradient-text">კითხვები</span> (FAQ)
+            </p>
+            <div class="accordion__wrapper">
+              <div class="accordion">
+                <div class="accordion-item">
+                  <div class="accordion-title" onclick="toggleAccordion(this)">
+                    <h3>რა არის SkillUP?</h3>
+                    <img src="../icons/arrow-down.svg" alt="arrow-down" />
+                  </div>
+                  <div class="accordion-content">
+                    <p>
+                      საგანმანათლებლო დაწესებულება, რომელიც 2020 წლიდან
+                      სტუდენტებს მარკეტინგის, ტექნოლოგიების, დიზაინისა და
+                      მენეჯმენტის მიმართულებით სთავაზობს პროფესიულ პროგრამებს.
+                    </p>
+                    <p class="second__text">
+                      ამ წლების განმავლობაში სტუდენტთა კმაყოფილების დონე CSAT
+                      98%-ზე მეტია, ხოლო NPS 80%-ზე მეტი.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <div class="accordion-title" onclick="toggleAccordion(this)">
+                    <h3>
+                      კურსის დასრულების შემდეგ მაქვს დასაქმების შესაძლებლობა?
+                    </h3>
+                    <img src="../icons/arrow-down.svg" alt="arrow-down" />
+                  </div>
+                  <div class="accordion-content">
+                    <p>
+                      ფინალური გამოცდის წარმატებით ჩაბარების შემთხვევაში,
+                      კურსდამთავრებული ავტომატურად ირიცხება Alumni Club-ში,
+                      შემდეგ კი იღებს ექსკლუზიურ შემოთავაზებებს ჩვენი პარტნიორი
+                      კომპანიებიდან. ასევე გარკვეული კურსების შემთხვევაში
+                      მოქმედებს სპეციალური შეთავაზებები, რომლებიც გულისხმობს
+                      გარანტირებულ სტაჟირებებსა და გასაუბრებებს.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <div class="accordion-title" onclick="toggleAccordion(this)">
+                    <h3>სერთიფიკატს ყველა შემთხვევაში ვიღებ?</h3>
+                    <img src="../icons/arrow-down.svg" alt="arrow-down" />
+                  </div>
+                  <div class="accordion-content">
+                    <p>
+                      სერტიფიკატი მხოლოდ კურსის წარმატებით დასრულების
+                      შემთხვევაში გაიცემა, რაც გულისხმობს ფინალური გამოცდის
+                      ჩაბარებას. ამის შემდეგ გაიცემა ორენოვანი სერტიფიკატი
+                      ქართულ და ინგლისურ ენებზე, როგორც ციფრული, ისე ფიზიკური
+                      სახით.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <div class="accordion-title" onclick="toggleAccordion(this)">
+                    <h3>
+                      კარიერული განვითარების კუთხით რა ღონისძებებს ატარებთ?
+                    </h3>
+                    <img src="../icons/arrow-down.svg" alt="arrow-down" />
+                  </div>
+                  <div class="accordion-content">
+                    <p>
+                      კურსის წარმატებით დასრულების შემდეგ სტუდენტი ავტომატურად
+                      ირიცხება კურსდამთავრებულთა კლუბში, რომელიც აქტიურად
+                      მუშაობს კარიერული განვითარების კუთხით და ზრუნავს
+                      ექსკლუზიური ვაკანსიებისა და სტაჟირებების შემოთავაზებაზე
+                      ტოპ კომპანიებიდან. კლუბის ფარგლებში კურსდამთავრებულები
+                      ისარგებლებენ რეკომენდაციებითა და კონსულტაციებით კარიერული
+                      განვითარებისთვის.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <div class="accordion-title" onclick="toggleAccordion(this)">
+                    <h3>როგორია სწავლების მეთოდოლოგია?</h3>
+                    <img src="../icons/arrow-down.svg" alt="arrow-down" />
+                  </div>
+                  <div class="accordion-content">
+                    <p>
+                      შექმნა და განავითაჩვენთან სწავლება Work-based learning
+                      (WBL) მეთოდოლოგიით მიმდინარეობს. პრაქტიკოსი ლექტორების
+                      მიერ გამოცდილების გაზიარება, ისევე როგორც თეორიული და
+                      პრაქტიკული ცოდნის კომბინაცია, სტუდენტს გადასცემს იმ
+                      უნარ-ჩვევებს, რომელიც კარიერული კუთხით განვითარებისთვისაა
+                      საჭირო, ეხმარება ფართო ჭრილში აღიქვას საერთო სურათი და
+                      იპოვოს ამა თუ იმ პრობლემის გადაჭრისთვის საუკეთესო გზა
+                      – უნიკალური სალექციო მასალა, პრაქტიკული დავალებები,
+                      ვორქშოპები.რო მობილური აპლიკაციები და თამაშები
+                      პლატფორმებისთვის, IOS & Android
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <div class="accordion-title" onclick="toggleAccordion(this)">
+                    <h3>პროგრამის ბოლოს გამოცდა გვექნება?</h3>
+                    <img src="../icons/arrow-down.svg" alt="arrow-down" />
+                  </div>
+                  <div class="accordion-content">
+                    <p>
+                      თითოეული კურსის ბოლოს ტარდება ფინალური გამოცდა, სადაც
+                      სტუდენტები ფასდებიან 100 ქულიანი სისტემიდან, გამსვლელი
+                      ქულა კი არის 51
+                    </p>
+                  </div>
+                </div>
+                <!-- Add more items as needed -->
+              </div>
+              <img src="../images/contact/contact1.png" alt="thoughtful man" />
+            </div>
+          </div>
+          <div class="question__section">
+            <div class="question__texts">
+              <p>
+                ვერ იპოვე შენს კითხვაზე
+                <span class="gradient-text">პასუხი?</span>
+              </p>
+              <div>
+                <p>
+                  თუ ჩვენი FAQ-ის განხილვის შემდეგაც გაქვთ კითხვები, ჩვენ აქ
+                  ვართ თქვენს დასახმარებლად! <span>დაგვიტოვე შეტყობინება</span>
+                </p>
+              </div>
+            </div>
+            <div class="contact__us--section">
+              <div class="input__wrapper">
+                <form
+                  name="registration"
+                  id="registration-form"
+                  class="send__text"
+                >
+                  <div class="input-box contact__box">
+                    <div class="input-wrapper contact__wrapper">
+                      <input
+                        id="firstname"
+                        type="text"
+                        name="firstname"
+                        class="input-box__input"
+                        placeholder=" "
+                        oninput="validateField('firstname')"
+                      />
+                      <label class="input-box-label" for="firstname"
+                        >სახელი</label
+                      >
+                    </div>
+                    <p class="error-message" id="error-firstname"></p>
+                  </div>
+
+                  <div class="input-box contact__box">
+                    <div class="input-wrapper contact__wrapper">
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        class="input-box__input"
+                        placeholder=" "
+                        oninput="validateField('email')"
+                      />
+                      <label class="input-box-label" for="email"
+                        >ელ. ფოსტა</label
+                      >
+                    </div>
+                    <p class="error-message" id="error-email"></p>
+                  </div>
+
+                  <div class="input-box contact__box">
+                    <div class="input-wrapper contact__wrapper last__wrapper">
+                      <textarea
+                        id="textarea"
+                        name="text"
+                        class="input-box__input"
+                        placeholder=" "
+                        oninput="validateField('textarea')"
+                      ></textarea>
+                      <label class="input-box-label" for="textarea"
+                        >შეტყობინება</label
+                      >
+                    </div>
+                    <p class="error-message" id="error-textarea"></p>
+                  </div>
+
+                  <button type="submit" class="send__btn">გაგზავნა</button>
+
+                  <div class="success__message" style="display: none">
+                    <img src="../images/contact/icons/check.svg" alt="check" />
+                    <p>
+                      თქვენი შეტყობინება მიღებულია! ჩვენი ოპერატორი უმოკლეს
+                      დროში გიპასუხებთ
+                    </p>
+                  </div>
+                </form>
+
+                <div class="contact__image--wrapper">
+                  <img src="../images/contact/contact2.png" alt="mail man" />
+                  <div>
+                    <div>
+                      <img
+                        src="../images/contact/icons/facebook.svg"
+                        alt="facebook"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="../images/contact/icons/linkdIn.svg"
+                        alt="linkdIn"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="../images/contact/icons/instagram.svg"
+                        alt="instagram"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact__info--section">
+            <div>
+              <img src="../images/contact/icons/purple-phone.svg" alt="phone" />
+              <p>(+995) 321 51 54 51</p>
+            </div>
+            <div>
+              <img src="../images/contact/icons/purple-email.svg" alt="email" />
+              <p>academy@gmail.com</p>
+            </div>
+            <div>
+              <img
+                src="../images/contact/icons/purple-location.svg"
+                alt="location"
+              />
+              <p>8502 Preston Rd. Ingle, USA</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__logo">
+          <a href="index.html"
+            ><img src="../images/logo/logo2final-01-01.png" alt="Skillup Logo"
+          /></a>
+        </div>
+
+        <div class="footer__content">
+          <!-- acordion -->
+          <div class="footer__navigation">
+            <div class="footer__nav column">
+              <div class="column--title">
+                აკადემია
+                <span class="arrow"
+                  ><svg
+                    width="14"
+                    height="8"
+                    viewBox="0 0 14 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      opacity="0.4"
+                      d="M1 1L7 6L13 1"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <ul class="list">
+                <li><a href="./pages/courses.html">კურსები</a></li>
+                <li><a href="#">ვიდეო ლექციები</a></li>
+                <li><a href="#">ბიბლიოთეკა</a></li>
+                <li><a href="#">კონტაქტი</a></li>
+              </ul>
+            </div>
+            <div class="footer__help column">
+              <div class="column--title">
+                დახმარება
+                <span class="arrow"
+                  ><svg
+                    width="14"
+                    height="8"
+                    viewBox="0 0 14 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      opacity="0.4"
+                      d="M1 1L7 6L13 1"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <ul class="list">
+                <li><a href="#">მხარდაჭერა</a></li>
+                <li><a href="#">მონაცემთა დაცვა</a></li>
+                <li><a href="#">წესები და პირობები</a></li>
+                <li><a href="#">დეტალები</a></li>
+              </ul>
+            </div>
+            <div class="footer__resources column">
+              <div class="column--title">
+                რესურსები
+                <span class="arrow"
+                  ><svg
+                    width="14"
+                    height="8"
+                    viewBox="0 0 14 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      opacity="0.4"
+                      d="M1 1L7 6L13 1"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <ul class="list">
+                <li><a href="#">უფასო ლექციები</a></li>
+                <li><a href="#">უფასო ლიტერატურა</a></li>
+                <li><a href="#">იუთუბ არხი</a></li>
+                <li><a href="#">CV-Maker</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- form -->
+          <div class="footer__contact">
+            <!-- SUBSCRIPTION FORM -->
+            <div class="subscription">
+              <form class="subscription__form">
+                <label for="email" class="subscription__label"
+                  >გამოგვიწერეთ სიახლეების მისაღებად</label
+                >
+                <div class="subscription__btn">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="subscription__input"
+                    placeholder="მიუთითე ელფოსტა"
+                    required
+                  />
+                  <button type="submit" class="subscription__button">
+                    გაწევრიანდი
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="footer__contact--info">
+              <div class="footer__contact--call">
+                <span>დაგვირეკე</span>
+                <a href="tel:+995 321 51 54 51"
+                  ><svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M1.5 4.5C1.5 3.70435 1.81607 2.94129 2.37868 2.37868C2.94129 1.81607 3.70435 1.5 4.5 1.5H5.872C6.732 1.5 7.482 2.086 7.691 2.92L8.796 7.343C8.88554 7.701 8.86746 8.07746 8.74401 8.42522C8.62055 8.77299 8.39723 9.07659 8.102 9.298L6.809 10.268C6.674 10.369 6.645 10.517 6.683 10.62C7.24738 12.1549 8.1386 13.5487 9.29495 14.7051C10.4513 15.8614 11.8451 16.7526 13.38 17.317C13.483 17.355 13.63 17.326 13.732 17.191L14.702 15.898C14.9234 15.6028 15.227 15.3794 15.5748 15.256C15.9225 15.1325 16.299 15.1145 16.657 15.204L21.08 16.309C21.914 16.518 22.5 17.268 22.5 18.129V19.5C22.5 20.2956 22.1839 21.0587 21.6213 21.6213C21.0587 22.1839 20.2956 22.5 19.5 22.5H17.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                      fill="#8447FF"
+                    />
+                  </svg>
+                  (+995) 321 51 54 51</a
+                >
+              </div>
+              <div class="footer__contact--email">
+                <span>მოგვწერე</span>
+                <a href="mailto:academy@gmail.com">academy@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__social">
+          <div class="footer__rights">
+            <span>©️2024 ყველა უფლება დაცულია</span>
+          </div>
+          <div class="footer__social--icons">
+            <a
+              class="footer__social--links"
+              href="http://#"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img src="../images/social-icons/fb.svg" alt="Facebook Icon"
+            /></a>
+            <a
+              class="footer__social--links"
+              href="http://#"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img src="../images/social-icons/insta.svg" alt="Instagram Icon"
+            /></a>
+            <a
+              class="footer__social--links"
+              href="http://#"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img src="../images/social-icons/youtube.svg" alt="Youtube Icon"
+            /></a>
+            <a
+              class="footer__social--links"
+              href="http://#"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img src="../images/social-icons/lnk.svg" alt="linkedin Icon"
+            /></a>
+            <a
+              class="footer__social--links"
+              href="http://#"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img src="../images/social-icons/github.svg" alt="Github Icon"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/mobileMenu.js"></script>
+    <script src="../js/acordion.js"></script>
+    <script src="../js/signin.js"></script>
+    <script src="../js/contact.js"></script>
+  </body>
+</html>

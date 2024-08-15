@@ -48,7 +48,6 @@
 }
 
 @media (max-width: 1024px) {
-
   /* header start */
   .header__logo--link img {
     height: 29px;
@@ -86,7 +85,7 @@
 
   /* hero */
 
-  .slider__text>h1 {
+  .slider__text > h1 {
     font-size: 20px;
     font-weight: 900;
     line-height: 25px;
@@ -192,6 +191,38 @@
 @media (max-width: 845px) {
   .course-list {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* contact */
+  .accordion__wrapper,
+  .input__wrapper,
+  .contact__info--section {
+    flex-direction: column;
+  }
+  .contact__info--section > div {
+    width: 100%;
+  }
+  .question__container p {
+    font-size: 26px;
+    line-height: 31.2px;
+  }
+  .accordion-title h3 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .accordion-content p {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: left;
+  }
+  .question__texts p {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 31.2px;
+  }
+  .question__texts > div > p {
+    font-size: 14px;
+    line-height: 26px;
   }
 }
 
@@ -350,12 +381,10 @@
 
   .message-container p {
     font-size: 26px;
-
   }
 }
 
 @media (max-width: 700px) {
-
   /* courses */
   .cource__tittle {
     font-size: 26px;
@@ -396,7 +425,6 @@
 }
 
 @media (max-width: 600px) {
-
   /* hero */
   .slider__slide {
     max-width: 376px;
@@ -542,7 +570,6 @@
 }
 
 @media (max-width: 425px) {
-
   /* footer */
   .footer__social {
     flex-direction: column-reverse;
@@ -552,6 +579,6 @@
   /* courses page slide with */
 
   #courses {
-    margin:0 37px 0 36.2px;
-   }
+    margin: 0 37px 0 36.2px;
+  }
 }
