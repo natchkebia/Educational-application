@@ -2182,7 +2182,246 @@ input[type="checkbox"]:checked+label::before {
 
 
 
-/* course detail page   */
+/* course detail page  start */
+
+.courses-detail h2 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--primary-color);
+  font-family: var(--font-family-figaro);
+}
+
+
+
+
+/* about section start */
+.course__desc--text {
+  max-width: 791px;
+  width: 100%;
+  margin-top: 32px;
+}
+
+
+.course__about {
+  margin-top: 24px;
+}
+
+.course__about--main {
+  font-family: var(--font-family-figaro);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.course__about--paragraph {
+  font-family: var(--font-family-figaro);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.course__about--after {
+  margin-top: 24px;
+  background-color: #f7f4ff;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+
+
+.course__about--text {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.course__about--text:last-child {
+  margin-bottom: 0;
+}
+
+.course__about--text p {
+  margin-left: 12px;
+  font-family: var(--font-family-figaro);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+/* about section start */
+
+/* syllabus  start*/
+
+/* syllabus accordion */
+.syllabus__accordion {
+  max-width: 790px;
+  width: 100%;
+  margin-top: 35px;
+  margin-bottom: 32px;
+  cursor: pointer;
+}
+
+.syllabus__accordion--answer {
+  margin-top: 24px;
+  max-width: 791px;
+  width: 100%;
+  height: 348px;
+  background-color: #f7f4ff;
+  padding: 24px;
+  border-radius: 8px;
+  display: none;
+}
+
+.answer-list {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.answer-list p {
+  margin-left: 12px;
+}
+
+.syllabus__accordion .syllabus__accordion--question.open svg {
+  transform: rotate(180deg);
+}
+
+.syllabus__accordion--answer dd {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.syllabus__accordion--question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.second {
+  height: 186px;
+}
+
+.third {
+  height: 306px;
+}
+
+.fourth {
+  height: 246px;
+}
+
+.sixth {
+  height: 66px;
+}
+
+/* syllabus end */
+/*  */
+
+
+
+
+
+/* buying */
+.buy__course {
+  max-width: 340px;
+  width: 100%;
+  height: 216px;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0px 0px 20px 0px #00000014;
+  margin-left: 956px;
+}
+
+.course__price {
+  max-width: 292px;
+  height: 40px;
+  /* justify-content: space-between; */
+  display: flex;
+  flex-direction: row;
+}
+
+.course__price--new {
+  font-family: var(--font-family-figaro);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
+  color: #8447FF;
+}
+
+.course__price--old {
+  font-family: var(--font-family-figaro);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #777777;
+  text-decoration: line-through;
+  margin-top: 11px;
+  margin-left: 12px;
+  margin-right: 80px;
+}
+
+.course__discounts {
+  width: 50px;
+  height: 24px;
+  border-radius: 50px;
+  margin-top: 11px;
+  padding: 2px 8px;
+  background-color: #FFC619;
+  justify-content: flex-end;
+}
+
+.course__discounts--percent {
+  font-family: var(--font-family-figaro);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19.03px;
+  color: #000000;
+}
+
+.add__busket {
+  max-width: 292px;
+  height: 50px;
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+.busket__text {
+  width: 230px;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #8447ff;
+  padding: 16px 0;
+  text-align: center;
+}
+
+.busket__text a {
+  font-family: var(--font-family-figaro);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #8447FF;
+  margin-top: 16px;
+}
+
+.busket__heart {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #8447ff;
+  padding: 12.5px;
+  margin-left: 12px;
+}
+
+.buy {
+  width: 292px;
+  background-color: #8447FF;
+}
+
+.buy a {
+  color: #FFFFFF;
+}
+
+/* about section end */
+
 /* rating */
 .rating__diagram {
   margin-bottom: 32px;
@@ -2264,9 +2503,6 @@ input[type="checkbox"]:checked+label::before {
 }
 
 .rating__coments .title {
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 30px;
   margin-bottom: 62px;
   color: var(--primary-color);
 }
@@ -2368,7 +2604,7 @@ input[type="checkbox"]:checked+label::before {
   align-items: center;
 }
 
-.courses-detail-wrapper{
+.courses-detail-wrapper {
   display: flex;
 }
 
@@ -2439,8 +2675,8 @@ input[type="checkbox"]:checked+label::before {
   padding: 10px;
   box-sizing: border-box;
   max-width: 790px;
-    width: 100%;
-    display: block;
+  width: 100%;
+  display: block;
 }
 
 
