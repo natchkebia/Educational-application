@@ -289,7 +289,7 @@
       "title": "თამაშების დეველოპმენტი"
     }
   ],
-  "courses": [
+ "courses": [
     {
       "date": "01.01.2024 - 03.01.2024",
       "title": "პროგრამირება",
@@ -304,7 +304,8 @@
       "imageUrl": "./images/cards-photos/Course1.png",
       "imageUrl2": "../images/cards-photos/Course1.png",
       "altText": "girl",
-      "level": "დამწყები"
+      "level": "დამწყები",
+      "mentor" : "ნია ხვიტია"
     },
     {
       "date": "01.01.2024 - 07.01.2024",
@@ -368,7 +369,8 @@
       "imageUrl": "./images/cards-photos/Course1.png",
       "imageUrl2": "../images/cards-photos/Course1.png",
       "altText": "girl",
-      "level": "სამოყვარულო"
+      "level": "სამოყვარულო",
+      "mentor" : "ნია ხვიტია"
     },
     {
       "date": "01.01.2024 - 03.01.2025",
@@ -432,7 +434,8 @@
       "imageUrl": "./images/cards-photos/Course1.png",
       "imageUrl2": "../images/cards-photos/Course1.png",
       "altText": "girl",
-      "level": "პროფესიონალური"
+      "level": "პროფესიონალური",
+      "mentor" : "ნია ხვიტია"
     },
     {
       "date": "01.01.2024 - 02.01.2025",
@@ -484,7 +487,7 @@
     },
     {
       "date": "01.01.2024 - 01.01.2025",
-      "title": "მონაცემთა ანალიტიკა",
+      "title": "პროგრამირება",
       "description": "ამ კურსის ჩაშლა რამდენიმე სიტყვით, წინადადებით, მოკლედ და კონკრეტულად...",
       "stars": 5,
       "originalPrice": "1400₾",
@@ -496,7 +499,8 @@
       "imageUrl": "./images/cards-photos/Course1.png",
       "imageUrl2": "../images/cards-photos/Course1.png",
       "altText": "girl",
-      "level": "პროფესიონალური"
+      "level": "პროფესიონალური",
+      "mentor" : "ნია ხვიტია"
     },
     {
       "date": "01.01.2024 - 02.01.2025",
