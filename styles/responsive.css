@@ -593,6 +593,10 @@
     line-height: 18px;
   }
 
+  .courses-detail h2 {
+    margin-bottom: 16px;
+  }
+
   .courses-detail-wrapper {
     flex-direction: column;
   }

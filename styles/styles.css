@@ -631,7 +631,7 @@ main {
   align-items: center;
   justify-content: space-between;
   /* /  margin-top: 100px; */
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .cource__slider--text a {
@@ -2181,7 +2181,13 @@ input[type="checkbox"]:checked+label::before {
 
 
 
-
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\ */
 /* course detail page  start */
 
 .courses-detail h2 {
@@ -2190,6 +2196,7 @@ input[type="checkbox"]:checked+label::before {
   line-height: 30px;
   color: var(--primary-color);
   font-family: var(--font-family-figaro);
+  margin-bottom: 24px;
 }
 
 
@@ -2372,7 +2379,6 @@ input[type="checkbox"]:checked+label::before {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-top: 32px;
 }
 
 .mentor__info {
@@ -2438,6 +2444,7 @@ input[type="checkbox"]:checked+label::before {
   display: flex;
   flex-wrap: wrap;
   gap: 29px;
+  margin-bottom: 24px;
 }
 
 .media__container {
@@ -2599,8 +2606,7 @@ input[type="checkbox"]:checked+label::before {
 
 
 
-/* course detail page  end */
-/* rating end */
+/* Course Detail Page Styles */
 .hero-img {
   background-image: url(../images/courses-details/game-dev.png);
   background-position: center;
@@ -2608,6 +2614,7 @@ input[type="checkbox"]:checked+label::before {
   height: 436px;
 }
 
+/* Breadcrumb Styles */
 .breadcrumb {
   font-size: 16px;
   font-weight: 600;
@@ -2618,17 +2625,10 @@ input[type="checkbox"]:checked+label::before {
   padding-top: 16px;
 }
 
-.breadcrumb__item {
-  display: flex;
-  align-items: center;
-  /* margin-left: 4px; */
-
-}
-
+.breadcrumb__item,
 .breadcrumb__link {
   display: flex;
   align-items: center;
-  /* margin-left: 4px; */
 }
 
 .breadcrumb .breadcrumb__item:nth-child(2) .breadcrumb__link {
@@ -2636,7 +2636,6 @@ input[type="checkbox"]:checked+label::before {
 }
 
 .breadcrumb li svg {
-  /* margin-right: 4px; */
   width: 20px;
   height: 20px;
 }
@@ -2654,6 +2653,7 @@ input[type="checkbox"]:checked+label::before {
   align-items: center;
 }
 
+/* Courses Detail Section */
 .courses-detail-wrapper {
   display: flex;
   gap: 22px;
@@ -2666,19 +2666,14 @@ input[type="checkbox"]:checked+label::before {
   padding: 32px 0;
 }
 
-
-
+/* Tabs Section */
 .tab {
   display: flex;
   gap: 10px;
   overflow-x: auto;
-  /* Enables horizontal scrolling */
   -webkit-overflow-scrolling: touch;
-  /* Smooth scrolling on mobile */
   white-space: nowrap;
-  /* Prevents buttons from wrapping */
   scrollbar-width: none;
-  /* For Firefox */
 }
 
 .tab::-webkit-scrollbar {
@@ -2698,7 +2693,6 @@ input[type="checkbox"]:checked+label::before {
   font-weight: 500;
   line-height: 24px;
   color: var(--box-color);
-
 }
 
 .tab .tablinks:hover,
@@ -2709,11 +2703,9 @@ input[type="checkbox"]:checked+label::before {
 
 .tab-content::-webkit-scrollbar {
   display: none;
-  /* For Chrome, Safari, and Opera */
 }
 
 .tab-pane {
-  /* Each pane takes up full width of container */
   padding: 10px;
   box-sizing: border-box;
   max-width: 790px;
@@ -2722,6 +2714,7 @@ input[type="checkbox"]:checked+label::before {
   margin-top: 32px;
 }
 
+/* Sidebar Section */
 .sidebar {
   width: 30%;
   margin-top: 82px;
@@ -2729,9 +2722,6 @@ input[type="checkbox"]:checked+label::before {
   padding: 0;
 }
 
-
-
-/* buy  */
 .sidebar .buy-course {
   position: sticky;
   top: 178px;
@@ -2742,6 +2732,7 @@ input[type="checkbox"]:checked+label::before {
   background-color: white;
 }
 
+/* Buy Course Section */
 .course__price {
   display: flex;
   flex-direction: row;
@@ -2827,5 +2818,3 @@ input[type="checkbox"]:checked+label::before {
 .buy a {
   color: #ffffff;
 }
-
-/* გაერთიანება  end*/
