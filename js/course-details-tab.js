@@ -20,15 +20,23 @@ function openTab(evt, tabName) {
   const tabContents = document.querySelector(".tab-content");
   const activeTab = document.getElementById(tabName);
   tabContents.scrollLeft = activeTab.offsetLeft;
+
+  // Show or hide the mentor courses slider based on the active tab
+  const mentorCoursesSlider = document.getElementById("mentor__courses");
+  if (tabName === "mentor") {
+    mentorCoursesSlider.style.display = "flex";
+  } else {
+    mentorCoursesSlider.style.display = "none";
+  }
 }
 
-// Initialize by opening the first tab
+// Initialize by opening the first tab and hiding the mentor slider
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".tablinks").click();
+  document.getElementById("mentor__courses").style.display = "none";
 });
 
 // course accordion
-// Course accordion
 document.addEventListener("DOMContentLoaded", function () {
   const dropdowns = document.querySelectorAll(".syllabus__accordion--question");
 
@@ -40,5 +48,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
-
