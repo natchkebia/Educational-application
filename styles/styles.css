@@ -2455,8 +2455,8 @@ input[type="checkbox"]:checked + label::before {
 
 #textarea {
   height: 125px;
-  overflow: hidden;
-  overflow-y: scroll;
+  overflow-x: hidden;
+  resize: none;
 }
 
 .contact__info--section {
