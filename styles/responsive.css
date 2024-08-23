@@ -198,6 +198,10 @@
   .input__wrapper,
   .contact__info--section {
     flex-direction: column;
+    align-items: center;
+  }
+  .accordion__wrapper > img {
+    margin-top: 0;
   }
   .contact__info--section > div {
     width: 100%;

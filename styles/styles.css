@@ -2300,13 +2300,13 @@ input[type="checkbox"]:checked + label::before {
 
 .accordion__wrapper {
   display: flex;
-  align-items: center;
   gap: 32px;
 }
 
 .accordion__wrapper > img {
   width: 330px;
   height: 330px;
+  margin-top: 90px;
 }
 
 .accordion {
@@ -2453,6 +2453,12 @@ input[type="checkbox"]:checked + label::before {
   height: 165px;
 }
 
+#textarea {
+  height: 125px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
 .contact__info--section {
   display: flex;
   gap: 24px;
@@ -2490,10 +2496,10 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .success__message p {
-font-family: var(--font-family-Firago);
-font-size: 14px;
-font-weight: 500;
-line-height: 18px;
-text-align: left;
-color: #21B792;
+  font-family: var(--font-family-Firago);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: left;
+  color: #21b792;
 }
