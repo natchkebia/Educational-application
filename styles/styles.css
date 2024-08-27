@@ -2206,7 +2206,7 @@ input[type="checkbox"]:checked+label::before {
 .course__desc--text {
   max-width: 791px;
   width: 100%;
-  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 
@@ -2219,6 +2219,7 @@ input[type="checkbox"]:checked+label::before {
   font-size: 16px;
   font-weight: 600;
   line-height: 18px;
+  margin-bottom: 24px;
 }
 
 .course__about--paragraph {
@@ -2226,10 +2227,11 @@ input[type="checkbox"]:checked+label::before {
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
+  margin-bottom: 12px;
 }
 
 .course__about--after {
-  margin-top: 24px;
+  /* margin-top: 24px; */
   background-color: #f7f4ff;
   padding: 24px;
   border-radius: 8px;
@@ -2474,6 +2476,10 @@ input[type="checkbox"]:checked+label::before {
   line-height: 43.67px;
 }
 
+.mentor__courses--section .arrow-btn {
+  margin: 0 10px;
+}
+
 /* mentor style end */
 /*  */
 
@@ -2656,14 +2662,14 @@ input[type="checkbox"]:checked+label::before {
 /* Courses Detail Section */
 .courses-detail-wrapper {
   display: flex;
-  gap: 22px;
+  column-gap: 20px;
 }
 
 .courses-detail {
   width: 70%;
   position: relative;
   overflow: hidden;
-  padding: 32px 0;
+  padding: 32px 0 0 0;
 }
 
 /* Tabs Section */

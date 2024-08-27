@@ -594,8 +594,10 @@
   }
 
   .courses-detail h2 {
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
+    font-size: 20px;
   }
+
 
   .courses-detail-wrapper {
     flex-direction: column;
@@ -622,9 +624,34 @@
     gap: 16px;
   }
 
+  .course__price--new {
+    font-size: 28px;
+    line-height: 18px;
+  }
+
+  .course__price--old {
+    font-size: 16px;
+  }
+
+  .course__about--paragraph {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+
   .courses-detail {
     width: 100%;
+    padding-top: 24px;
   }
+
+  .tab-pane {
+    margin-top: 24px;
+  }
+
+  .course__about--main {
+    font-size: 14px;
+  }
+
 
   /*  */
   .rating__diagram {
@@ -703,6 +730,8 @@
 
   .buy {
     padding: 11px;
+    font-size: 14px;
+    line-height: 18px;
   }
 }
 
