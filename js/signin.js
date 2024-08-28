@@ -115,11 +115,12 @@ onAuthStateChanged(auth, (user) => {
     // No user is signed in
     loginBtn.textContent = "შესვლა";
     signinLink.textContent = "ავტორიზაცია";
-    signinLink.href = "logIn.html";
+    signinLink.href = "/pages/logIn.html";
 
     registerLink.textContent = "რეგისტრაცია";
-    registerLink.href = "registration.html";
+    registerLink.href = "/pages/registration.html";
 
+    
     // Hide profile and logout sections in mobile menu
     hideProfile();
   }
