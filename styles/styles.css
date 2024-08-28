@@ -217,8 +217,9 @@ section .title {
   font-weight: 500;
 }
 
-#active {
-  font-weight: 600;
+
+.headline-active{
+  font-weight: 600 !important; 
 }
 
 .header__nav--list .header__nav--list--link:hover {
