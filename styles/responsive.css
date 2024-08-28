@@ -576,6 +576,10 @@
   .mentor__info {
     flex-direction: column-reverse;
   }
+
+  .hero-img {
+    background-size: unset;
+  }
 }
 
 
@@ -652,6 +656,23 @@
     font-size: 14px;
   }
 
+  .course__timeline {
+  margin: 40px auto;
+      justify-content: center;
+  }
+
+    .syllabus__accordion--answer.open {
+      margin-top: 16px;
+
+    }
+.course__about--text p,
+.answer-list p{
+  font-size: 14px;
+}
+
+  .sidebar .buy-course {
+    margin: 0 -16px;
+  }
 
   /*  */
   .rating__diagram {
