@@ -565,6 +565,10 @@
     padding-top: 10px;
   }
 
+  .mentor__courses--section .mentor__text {
+    margin-left: 16px;
+  }
+
   /* detail page start*/
 
   /* detail page end*/
@@ -580,6 +584,12 @@
   .hero-img {
     background-size: unset;
   }
+
+  .media__container {
+    width: 48%;
+  }
+
+
 }
 
 
@@ -612,7 +622,9 @@
     bottom: 0;
     width: 100%;
     margin-top: 0;
+    margin-bottom: 24px;
   }
+
 
   .add__course {
     margin-bottom: 0;
@@ -657,22 +669,53 @@
   }
 
   .course__timeline {
-  margin: 40px auto;
-      justify-content: center;
+    margin: 40px auto;
+    justify-content: center;
   }
 
-    .syllabus__accordion--answer.open {
-      margin-top: 16px;
+  .syllabus__accordion--answer.open {
+    margin-top: 16px;
 
-    }
-.course__about--text p,
-.answer-list p{
-  font-size: 14px;
-}
+  }
+
+  .course__about--text p,
+  .answer-list p {
+    font-size: 14px;
+  }
 
   .sidebar .buy-course {
     margin: 0 -16px;
   }
+
+  /*  */
+  .mentor__info--text {
+    gap: 16px;
+  }
+
+  .mentor__info--text h2 {
+    font-size: 26.15px;
+    font-weight: 600;
+    line-height: 40.23px;
+  }
+
+  .mentor__info--text p {
+    font-size: 14px;
+  }
+
+  .mentor__contact--info,
+  .mentor__portfolio {
+    gap: 16px;
+  }
+
+  .mentor__courses--section .mentor__text,
+  .mentor__courses--section .mentor__tex span {
+    font-size: 20px;
+  }
+
+
+
+
+
 
   /*  */
   .rating__diagram {
@@ -720,6 +763,12 @@
 
 }
 
+@media (max-width: 600px) {
+  .mentor__courses--section .mentor__text {
+    margin-left: unset;
+  }
+}
+
 @media (max-width: 480px) {
   .rating__progress--bar {
     height: 10px;
@@ -753,6 +802,10 @@
     padding: 11px;
     font-size: 14px;
     line-height: 18px;
+  }
+
+  .media__container {
+    width: 100%;
   }
 }
 

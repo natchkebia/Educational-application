@@ -634,6 +634,7 @@ main {
   margin-bottom: 24px;
 }
 
+
 .cource__slider--text a {
   color: var(--primary-color);
   font-size: 20px;
@@ -2195,8 +2196,6 @@ input[type="checkbox"]:checked+label::before {
   font-weight: 600;
   line-height: 30px;
   color: var(--primary-color);
-  font-family: var(--font-family-figaro);
-  /* margin-bottom: 24px; */
 }
 
 
@@ -2209,6 +2208,9 @@ input[type="checkbox"]:checked+label::before {
   margin-bottom: 32px;
 }
 
+.course__desc .course__desc--title {
+  margin-bottom: 24px;
+}
 
 .course__about {
   margin-top: 24px;
@@ -2249,7 +2251,7 @@ input[type="checkbox"]:checked+label::before {
 }
 
 .course__about--text p,
- .answer-list p{
+.answer-list p {
   margin-left: 12px;
   font-family: var(--font-family-figaro);
   font-size: 16px;
@@ -2401,10 +2403,9 @@ input[type="checkbox"]:checked+label::before {
 }
 
 .mentor__info--text h2 {
-  font-family: var(--font-family-figaro);
   font-size: 32px;
-  font-weight: 600;
   line-height: 40px;
+  color: #000;
 }
 
 .mentor__info--text p {
@@ -2429,6 +2430,7 @@ input[type="checkbox"]:checked+label::before {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  opacity: 70%;
 }
 
 .info__wrapper div {
@@ -2441,6 +2443,11 @@ input[type="checkbox"]:checked+label::before {
   line-height: 21.6px;
 }
 
+.info__wrapper img {
+  width: 24px;
+  height: 24px;
+}
+
 .mentor__portfolio {
   display: flex;
   flex-direction: column;
@@ -2450,7 +2457,8 @@ input[type="checkbox"]:checked+label::before {
 .mentor__portfolio>div {
   display: flex;
   flex-wrap: wrap;
-  gap: 29px;
+  justify-content: space-between;
+  gap: 8px;
   margin-bottom: 24px;
 }
 
@@ -2460,6 +2468,7 @@ input[type="checkbox"]:checked+label::before {
   border-radius: 50px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -2477,12 +2486,21 @@ input[type="checkbox"]:checked+label::before {
   color: #555560;
   font-family: var(--font-family-figaro);
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 43.67px;
 }
 
 .mentor__courses--section .arrow-btn {
   margin: 0 10px;
+}
+
+.mentor__courses--section .mentor__text,
+.mentor__courses--section .mentor__text span {
+
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--primary-color);
 }
 
 /* mentor style end */
