@@ -2369,19 +2369,9 @@ input[type="checkbox"]:checked+label::before {
   margin-bottom: 0;
 }
 
-/* .answer-list p {
-  margin-left: 12px;
-} */
-
 /* syllabus end */
 
 /* mentor style start */
-/* აქედან იწყება მენტორის გვერდის კონტენტი  */
-/* #wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-} */
 
 .mentor__info--wrapper {
   max-width: 790px;
@@ -2718,7 +2708,6 @@ input[type="checkbox"]:checked+label::before {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-family: var(--font-family-Firago);
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
@@ -2736,8 +2725,6 @@ input[type="checkbox"]:checked+label::before {
 }
 
 .tab-pane {
-  /* padding: 10px;
-  box-sizing: border-box; */
   max-width: 790px;
   width: 100%;
   display: block;
