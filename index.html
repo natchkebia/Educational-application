@@ -22,18 +22,26 @@
           </div>
           <ul class="desktop-nav header__nav--list">
             <li class="header__nav--list--item">
-              <a class="header__nav--list--link disappear" href="./pages/courses.html"
+              <a
+                class="header__nav--list--link disappear"
+                href="./pages/courses.html"
                 >კურსები</a
               >
             </li>
             <li class="header__nav--list--item">
-              <a class="header__nav--list--link disappear" href="#">ვიდეო ლექციები</a>
+              <a class="header__nav--list--link disappear" href="#"
+                >ვიდეო ლექციები</a
+              >
             </li>
             <li class="header__nav--list--item">
-              <a class="header__nav--list--link disappear" href="#">ბიბლიოთეკა</a>
+              <a class="header__nav--list--link disappear" href="#"
+                >ბიბლიოთეკა</a
+              >
             </li>
             <li class="header__nav--list--item">
-              <a class="header__nav--list--link disappear" href="./pages/contact.html"
+              <a
+                class="header__nav--list--link disappear"
+                href="./pages/contact.html"
                 >კონტაქტი</a
               >
             </li>
@@ -291,7 +299,7 @@
             </div>
           </div>
         </nav>
-        
+
         <!-- end of navigation -->
 
         <div class="search-container hides" id="search">
@@ -313,7 +321,12 @@
               </svg>
             </div>
             <form action="">
-              <input type="text" placeholder="ძებნა" id="input__box" />
+              <input
+                type="text"
+                placeholder="ძებნა"
+                autocomplete="off"
+                id="input__box"
+              />
             </form>
           </div>
           <div class="link-close">
@@ -333,46 +346,79 @@
               />
             </svg>
           </div>
-
+           <!-- search result -->
           <div class="result__box">
-            <!-- <h2>ბოლოს მოძებნილი</h2>
-            <ul>
-              <div>
-                <li>
-                  <svg
-                    width="22"
-                    height="22"
-                    viewBox="0 0 22 22"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16.8653 17L21 21M19.6667 10.3333C19.6667 15.488 15.488 19.6667 10.3333 19.6667C5.17868 19.6667 1 15.488 1 10.3333C1 5.17868 5.17868 1 10.3333 1C15.488 1 19.6667 5.17868 19.6667 10.3333Z"
-                      stroke="black"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                  <a href="#">გრაფიკული დიზაინის კურსი</a>
-                </li>
-              </div>
+            <button class="btn result--search">ძებნა</button>
+          </div>
+          <div class="quick-links">
+            <div class="last-search">
+              <h2>ბოლოს მოძებნილი</h2>
+              <h2 class="delete">გასუფთავება</h2>
+            </div>
 
+            <ul>
               <li>
-                <a href="#">გახდი გრაფიკოს დიზაინერი SkillUp-თან ერთად!</a>
-              </li>
-              <li>
-                <a href="#">შესავალი გრაფიკულ დიზაინში</a>
-              </li>
-              <li>
-                <a href="#">გრაფიკული დიზაინის შესასწავლი 3 თვიანი კურსი</a>
-              </li>
-              <li>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="24" height="24" rx="4.8" fill="#F9F6FF" />
+                  <path
+                    d="M15.5192 15.6L18 18M17.2 11.6C17.2 14.6928 14.6928 17.2 11.6 17.2C8.50721 17.2 6 14.6928 6 11.6C6 8.50721 8.50721 6 11.6 6C14.6928 6 17.2 8.50721 17.2 11.6Z"
+                    stroke="#8447FF"
+                    stroke-opacity="0.4"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+
                 <a href="#"
-                  >შეისწავლე გრაფიკული დიზაინი სრულყოფილად ნია ხვიტიასთან
-                  ერთად</a
+                  >გრაფიკული დიზაინის კურსი
+                  <h6 class="graphic">11 აგვ 2024 - 22:15</h6></a
                 >
               </li>
-            </ul> -->
+              <span
+                ><svg
+                  width="497"
+                  height="2"
+                  viewBox="0 0 497 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    opacity="0.2"
+                    d="M0 1H497"
+                    stroke="black"
+                    stroke-width="0.5"
+                  />
+                </svg>
+              </span>
+              <li>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="24" height="24" rx="4.8" fill="#F9F6FF" />
+                  <path
+                    d="M15.5192 15.6L18 18M17.2 11.6C17.2 14.6928 14.6928 17.2 11.6 17.2C8.50721 17.2 6 14.6928 6 11.6C6 8.50721 8.50721 6 11.6 6C14.6928 6 17.2 8.50721 17.2 11.6Z"
+                    stroke="#8447FF"
+                    stroke-opacity="0.4"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+
+                <a href="#">გახდი გრაფიკოს დიზაინერი SkillUp-თან ერთად!
+                  <h6 class="become">11 აგვ 2024 - 18:30</h6>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -384,54 +430,12 @@
               <input type="text" placeholder="ძებნა" />
             </form>
           </div>
-          <!-- <span class="cancel-btn">Cancel</span> -->
-
-          <div class="quick-links">
-            <h2>ბოლოს მოძებნილი</h2>
-            <ul>
-              <div>
-                <li>
-                  <!-- <svg
-                    width="22"
-                    height="22"
-                    viewBox="0 0 22 22"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16.8653 17L21 21M19.6667 10.3333C19.6667 15.488 15.488 19.6667 10.3333 19.6667C5.17868 19.6667 1 15.488 1 10.3333C1 5.17868 5.17868 1 10.3333 1C15.488 1 19.6667 5.17868 19.6667 10.3333Z"
-                      stroke="black"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                    />
-                  </svg> -->
-                  <a href="#">გრაფიკული დიზაინის კურსი</a>
-                </li>
-              </div>
-
-              <li>
-                <a href="#">გახდი გრაფიკოს დიზაინერი SkillUp-თან ერთად!</a>
-              </li>
-              <li>
-                <a href="#">შესავალი გრაფიკულ დიზაინში</a>
-              </li>
-              <li>
-                <a href="#">გრაფიკული დიზაინის შესასწავლი 3 თვიანი კურსი</a>
-              </li>
-              <li>
-                <a href="#"
-                  >შეისწავლე გრაფიკული დიზაინი სრულყოფილად ნია ხვიტიასთან
-                  ერთად</a
-                >
-              </li>
-            </ul>
-          </div>
+          <span class="cancel-btn">Cancel</span> 
         </div>
       </div>
-      <!-- <div class="overlay">
-
-      </div> -->
+      
     </header>
+    <div class="overlay"></div> 
     <!-- main -->
     <main id="main">
       <!-- section hero -->
@@ -1194,6 +1198,7 @@
     </footer>
 
     <!-- scripts -->
+    <script src="./js/result-box.js"></script>
     <script src="./js/search-bar.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/mobileMenu.js"></script>
