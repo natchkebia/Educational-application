@@ -3,7 +3,7 @@ import {
   database,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  GoogleAuthProvider,
+  // GoogleAuthProvider,
   signInWithPopup,
   ref,
   set,
@@ -92,6 +92,7 @@ function handleRegistration() {
 function handleLogin() {
   const loginIdentifier = document.getElementById("loginIdentifier").value;
   const password = document.getElementById("password").value;
+  const rememberMe = document.getElementById("remember").checked;
 
   // Simple validation
   let errors = {};
@@ -116,11 +117,20 @@ function handleLogin() {
       console.log("User logged in:", user);
       handleSuccessfulAction();
 
+      // Save credentials if "Remember Me" is checked
+      if (rememberMe) {
+        localStorage.setItem("savedLoginIdentifier", loginIdentifier);
+        localStorage.setItem("savedPassword", password);
+      } else {
+        localStorage.removeItem("savedLoginIdentifier");
+        localStorage.removeItem("savedPassword");
+      }
+
       clearForm("login-form");
 
       setTimeout(() => {
         window.location.href = "../index.html"; // Redirect to the main page
-      }, 3000); // 5000 milliseconds = 5 seconds
+      }, 3000); // 3000 milliseconds = 3 seconds
     })
     .catch((error) => {
       console.error("Error during login:", error);
@@ -221,36 +231,6 @@ function handleChangePassword() {
       }
     });
 }
-
-// Google Sign-In
-const googleSigninBtn = document.getElementById("google-signin");
-googleSigninBtn?.addEventListener("click", () => {
-  const provider = new GoogleAuthProvider();
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      const user = result.user;
-      const userId = user.uid;
-
-      const userRef = ref(database, "users/" + userId);
-      set(userRef, {
-        displayName: user.displayName,
-        email: user.email,
-        photoURL: user.photoURL,
-      })
-        .then(() => {
-          console.log("User data successfully written to database:", user);
-          // clearForm("login-form"); // or "registration-form"
-          // window.location.href = "../index.html";
-        })
-        .catch((error) => {
-          console.error("Error writing user data to database:", error);
-        });
-    })
-    .catch((error) => {
-      console.error("Error during Google sign-in:", error);
-      alert("Failed to sign in with Google: " + error.message);
-    });
-});
 
 // Clear form inputs
 function clearForm(formId) {
@@ -459,3 +439,22 @@ function handleSuccessfulAction() {
     successMessage.classList.remove("hide");
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Check for saved credentials in localStorage
+  const savedLoginIdentifier = localStorage.getItem("savedLoginIdentifier");
+  const savedPassword = localStorage.getItem("savedPassword");
+
+  // Populate the form with the saved credentials if they exist
+  if (savedLoginIdentifier) {
+    document.getElementById("loginIdentifier").value = savedLoginIdentifier;
+  }
+  if (savedPassword) {
+    document.getElementById("password").value = savedPassword;
+  }
+
+  // Set the "Remember Me" checkbox to checked if credentials are saved
+  if (savedLoginIdentifier && savedPassword) {
+    document.getElementById("remember").checked = true;
+  }
+});

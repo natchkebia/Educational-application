@@ -323,6 +323,8 @@ section .title {
   overflow: hidden;
   height: calc(100vh - 60px);
   padding: 40px 0;
+  /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100 - 60px);
 }
 
 /*  */
@@ -1532,13 +1534,16 @@ main {
 }
 
 .input-box__input:focus+.input-box-label,
-.input-box__input:not(:placeholder-shown)+.input-box-label {
+.input-box__input:not(:placeholder-shown)+.input-box-label,
+input:-webkit-autofill+.input-box-label {
   top: 0;
   transform: translateY(50%);
   font-size: 12px;
   color: var(--primary-color);
   opacity: 1;
 }
+
+
 
 .input-box__input {
   width: 100%;
@@ -1969,6 +1974,7 @@ main {
   gap: 10px;
 }
 
+
 .pagination span,
 .total-pages {
   font-family: var(--font-family-Firago);
@@ -1981,8 +1987,8 @@ input[type="checkbox"] {
   display: none;
 }
 
-input[type="checkbox"] + label::before {
-  content: "";
+input[type="checkbox"]+label::before {
+  content: '';
   display: inline-block;
   width: 18px;
   height: 18px;
@@ -2124,6 +2130,7 @@ input[type="checkbox"]:checked+label::before {
   gap: 3px;
   cursor: pointer;
 }
+
 .mobile__filter img:last-of-type {
   display: none;
 }
@@ -3436,3 +3443,29 @@ input[type="checkbox"]:checked+label::before {
 .buy a {
   color: #ffffff;
 }
+
+
+/* fix bags registration start*/
+.input-box__input:focus+.input-box-label,
+.input-box__input:not(:placeholder-shown)+.input-box-label,
+input:-webkit-autofill+.input-box-label {
+  top: 0;
+  transform: translateY(50%);
+  font-size: 12px;
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+
+input:-webkit-autofill {
+  background-color: #fff !important;
+  /* Change this to your desired background color */
+  color: #000;
+  /* Change the text color if needed */
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  /* This is a hack to override the default background color */
+  box-shadow: 0 0 0px 1000px #fff inset;
+  /* For non-webkit browsers if needed */
+}
+
+/* fix bags registration end*/
