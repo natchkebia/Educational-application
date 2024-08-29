@@ -9,19 +9,19 @@
     <link rel="icon" href="../images/logo/header-logo.svg" />
   </head>
   <body>
-    <header class="header">
+   <header class="header">
       <div class="container">
         <nav class="navigation">
           <div class="header__logo">
-            <a class="header__logo--link" href="../index.html" class="logo">
+            <a class="header__logo--link" href="index.html" class="logo">
               <img
-                src="../images/logo/logo2final-01-01.png"
+                src="/images/logo/logo2final-01-01.png"
                 alt="Skillup logo" />
             </a>
           </div>
           <ul class="header__nav--list">
             <li class="header__nav--list--item">
-              <a class="header__nav--list--link" href="../pages/courses.html"
+              <a class="header__nav--list--link" href="/pages/courses.html"
                 >კურსები</a
               >
             </li>
@@ -62,18 +62,21 @@
                 <li class="nav--icons-item nav-icons">
                   <a
                     class="nav--icons-link"
-                    href="../pages/favorite.html"
+                    href="/pages/favorite.html"
                     aria-label="see favorite courses"
                     ><svg
-                      width="22"
-                      height="20"
-                      viewBox="0 0 22 20"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg">
                       <path
-                        d="M21.5 5.625C21.5 2.72583 19.0512 0.375 16.0307 0.375C13.7732 0.375 11.8342 1.68867 11 3.5635C10.1658 1.68867 8.22683 0.375 5.96817 0.375C2.95 0.375 0.5 2.72583 0.5 5.625C0.5 14.0483 11 19.625 11 19.625C11 19.625 21.5 14.0483 21.5 5.625Z"
-                        fill="#8447FF"
-                        stroke="#8447FF" />
+                        opacity="0.6"
+                        d="M30.5 15.625C30.5 12.7258 28.0512 10.375 25.0307 10.375C22.7732 10.375 20.8342 11.6887 20 13.5635C19.1658 11.6887 17.2268 10.375 14.9682 10.375C11.95 10.375 9.5 12.7258 9.5 15.625C9.5 24.0483 20 29.625 20 29.625C20 29.625 30.5 24.0483 30.5 15.625Z"
+                        stroke=""
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
                     </svg>
                   </a>
                 </li>
@@ -81,7 +84,7 @@
                 <li class="nav--icons-item nav-icons">
                   <a
                     class="nav--icons-link"
-                    href="../pages/basket.html"
+                    href="/pages/basket.html"
                     aria-label="busket"
                     ><svg
                       width="40"
@@ -143,12 +146,16 @@
           <!-- mobile menu -->
           <div id="mobile-menu" class="mobile-menu">
             <div class="container">
+              <!--  /*when user is loged in add class "show" in #profile here.
+                    and log-out */
+    
+              -->
               <div id="profile" class="mobile-menu__user profile">
                 <div class="profile__photo">
                   <img
-                    src="../images/customers/person-1.png"
+                    src="/images/customers/person-1.png"
                     alt="ნინო სოფოიანი" />
-                  <a class="profile__edit">
+                  <a class="profile__edit" href="/pages/change-password.html" title="change-password">
                     <svg
                       class="icon"
                       width="16"
@@ -163,9 +170,15 @@
                   </a>
                 </div>
                 <div class="mobile-menu__user--info">
-                  <h3 class="mobile-menu__user--name">სახელი გვარი</h3>
-                  <span class="mobile-menu__user--nickname">@username_1</span>
-                  <span class="mobile-menu__user--contact mobile">
+                  <h3 class="mobile-menu__user--name" id="user-name">
+                    სახელი გვარი
+                  </h3>
+                  <span class="mobile-menu__user--nickname" id="user-nickname"
+                    >@username_1</span
+                  >
+                  <span
+                    class="mobile-menu__user--contact mobile"
+                    id="user-contact-phone">
                     <svg
                       width="12"
                       height="12"
@@ -178,10 +191,13 @@
                         d="M0.75 2.25C0.75 1.85218 0.908035 1.47064 1.18934 1.18934C1.47064 0.908035 1.85218 0.75 2.25 0.75H2.936C3.366 0.75 3.741 1.043 3.8455 1.46L4.398 3.6715C4.44277 3.8505 4.43373 4.03873 4.372 4.21261C4.31028 4.38649 4.19861 4.5383 4.051 4.649L3.4045 5.134C3.337 5.1845 3.3225 5.2585 3.3415 5.31C3.62369 6.07743 4.0693 6.77435 4.64747 7.35253C5.22565 7.9307 5.92257 8.37631 6.69 8.6585C6.7415 8.6775 6.815 8.663 6.866 8.5955L7.351 7.949C7.4617 7.80139 7.61351 7.68972 7.78739 7.628C7.96127 7.56627 8.1495 7.55723 8.3285 7.602L10.54 8.1545C10.957 8.259 11.25 8.634 11.25 9.0645V9.75C11.25 10.1478 11.092 10.5294 10.8107 10.8107C10.5294 11.092 10.1478 11.25 9.75 11.25H8.625C4.276 11.25 0.75 7.724 0.75 3.375V2.25Z"
                         fill="#8447FF" />
                     </svg>
-
-                    (+995) 551 55 55 55</span
-                  >
-                  <span class="mobile-menu__user--contact email">
+                    <span id="user-contact-phone-value"
+                      >(+995) 551 55 55 55</span
+                    >
+                  </span>
+                  <span
+                    class="mobile-menu__user--contact email"
+                    id="user-contact-email">
                     <svg
                       width="12"
                       height="12"
@@ -195,13 +211,15 @@
                         d="M11.25 3.454V3.375C11.25 2.97718 11.092 2.59564 10.8107 2.31434C10.5294 2.03304 10.1478 1.875 9.75 1.875H2.25C1.85218 1.875 1.47064 2.03304 1.18934 2.31434C0.908035 2.59564 0.75 2.97718 0.75 3.375V3.454L5.607 6.443C5.72519 6.51571 5.86123 6.55421 6 6.55421C6.13877 6.55421 6.27481 6.51571 6.393 6.443L11.25 3.454Z"
                         fill="#8447FF" />
                     </svg>
-                    academy_user9@gmail.com</span
-                  >
+                    <span id="user-contact-email-value"
+                      >academy_user9@gmail.com</span
+                    >
+                  </span>
                 </div>
               </div>
               <ul class="mobile-menu__nav">
                 <li class="mobile-menu__nav--item">
-                  <a class="mobile-menu__nav--link" href="../pages/courses.html"
+                  <a class="mobile-menu__nav--link" href="/pages/courses.html"
                     >კურსები</a
                   >
                 </li>
@@ -215,14 +233,14 @@
                   <a class="mobile-menu__nav--link" href="#">კონტაქტი</a>
                 </li>
                 <li class="mobile-menu__nav--item authorization-link">
-                  <a class="mobile-menu__nav--link" href="../pages/logIn.html"
+                  <a class="mobile-menu__nav--link" href="/pages/logIn.html"
                     >ავტორიზაცია</a
                   >
                 </li>
                 <li class="mobile-menu__nav--item authorization-link">
                   <a
                     class="mobile-menu__nav--link"
-                    href="../pages/registration.html"
+                    href="/pages/registration.html"
                     >რეგისტრაცია</a
                   >
                 </li>
