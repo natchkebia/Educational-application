@@ -322,6 +322,8 @@ section .title {
   overflow: hidden;
   height: calc(100vh - 60px);
   padding: 40px 0;
+  /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100 - 60px);
 }
 
 /*  */
