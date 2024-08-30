@@ -13,7 +13,22 @@ const loginDropdown = document.querySelector(".header__nav--dropdown");
 const signinLink = document.getElementById("signin-link");
 const registerLink = document.getElementById("register-link");
 const profileSection = document.getElementById("profile");
-const logoutSection = document.getElementById("log-out"); // Updated for mobile logout button
+const logoutSection = document.getElementById("log-out");
+const loader = document.getElementById("loader"); // Loader element
+
+// Function to show the loader
+function showLoader() {
+  if (loader) {
+    loader.style.display = "flex";
+  }
+}
+
+// Function to hide the loader
+function hideLoader() {
+  if (loader) {
+    loader.style.display = "none";
+  }
+}
 
 // Function to show profile and logout in the mobile menu
 function showProfile() {
@@ -46,8 +61,9 @@ function updateDesktopUI(firstname) {
 
 // Check user authentication state
 onAuthStateChanged(auth, (user) => {
+  showLoader(); // Show the loader when checking authentication state
+
   if (user) {
-    // User is signed in
     const userId = user.uid;
     const userRef = ref(getDatabase(), "users/" + userId);
 
@@ -60,7 +76,6 @@ onAuthStateChanged(auth, (user) => {
           const userPhone = userData.tel || "(+995) 551 55 55 55";
           const userEmail = userData.email || "academy_user9@gmail.com";
 
-          // Update mobile menu with user data
           document.getElementById("user-name").textContent =
             firstname + " " + (userData.lastname || "");
           document.getElementById("user-nickname").textContent = userNickname;
@@ -69,10 +84,7 @@ onAuthStateChanged(auth, (user) => {
           document.getElementById("user-contact-email-value").textContent =
             userEmail;
 
-          // Update desktop UI with only the first name
           updateDesktopUI(firstname);
-
-          // Show profile and logout sections in mobile menu
           showProfile();
         } else {
           console.error("No user data found in database");
@@ -80,9 +92,11 @@ onAuthStateChanged(auth, (user) => {
       })
       .catch((error) => {
         console.error("Error retrieving user data:", error);
+      })
+      .finally(() => {
+        hideLoader(); // Hide the loader after the data is retrieved
       });
 
-    // Update login button text and links
     signinLink.textContent = "პაროლის შეცვლა";
     signinLink.href = "change-password.html";
 
@@ -98,7 +112,6 @@ onAuthStateChanged(auth, (user) => {
         });
     });
 
-    // Add event listener for mobile logout button
     if (logoutSection) {
       logoutSection.addEventListener("click", (event) => {
         event.preventDefault();
@@ -112,7 +125,8 @@ onAuthStateChanged(auth, (user) => {
       });
     }
   } else {
-    // No user is signed in
+    hideLoader(); // Hide the loader if no user is signed in
+
     loginBtn.textContent = "შესვლა";
     signinLink.textContent = "ავტორიზაცია";
     signinLink.href = "./pages/registration.html";
@@ -120,8 +134,6 @@ onAuthStateChanged(auth, (user) => {
     registerLink.textContent = "რეგისტრაცია";
     registerLink.href = "./pages/registration.html";
 
-    
-    // Hide profile and logout sections in mobile menu
     hideProfile();
   }
 });
@@ -138,15 +150,12 @@ document.addEventListener("click", (e) => {
   }
 });
 
-
 // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 let vh = window.innerHeight * 0.01;
-// Then we set the value in the --vh custom property to the root of the document
-document.documentElement.style.setProperty('--vh', `${vh}px`);
+document.documentElement.style.setProperty("--vh", `${vh}px`);
 
 // We listen to the resize event
-window.addEventListener('resize', () => {
-  // We execute the same script as before
+window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
 });
