@@ -3,7 +3,6 @@ import {
   database,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  // GoogleAuthProvider,
   signInWithPopup,
   ref,
   set,
@@ -42,12 +41,12 @@ function handleFormSubmit(event) {
 
 // Handle email and password registration
 function handleRegistration() {
-  const firstname = document.getElementById("firstname").value;
-  const lastname = document.getElementById("lastname").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const passwConfirm = document.getElementById("passwConfirm").value;
-  const tel = document.getElementById("tel").value;
+  const firstname = document.getElementById("firstname").value.trim();
+  const lastname = document.getElementById("lastname").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const passwConfirm = document.getElementById("passwConfirm").value.trim();
+  const tel = document.getElementById("tel").value.trim();
 
   // Simple validation
   let errors = {};
@@ -69,6 +68,11 @@ function handleRegistration() {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
+
+      // Save email to local storage
+      localStorage.setItem("registeredEmail", email);
+
+      // Store additional user data in Realtime Database
       set(ref(database, "users/" + user.uid), {
         firstname: firstname,
         lastname: lastname,
@@ -86,6 +90,11 @@ function handleRegistration() {
       const errorMessage = error.message;
       console.log(errorMessage);
     });
+
+  const registeredEmails =
+    JSON.parse(localStorage.getItem("registeredEmails")) || [];
+  registeredEmails.push(email);
+  localStorage.setItem("registeredEmails", JSON.stringify(registeredEmails));
 }
 
 // Handle login
@@ -360,15 +369,15 @@ function validateField(fieldId) {
   // Update the error message element and input wrapper class
   if (errorElement && inputWrapper) {
     if (errors[fieldId]) {
-      errorElement.textContent = errors[fieldId];
-      errorElement.classList.add("show-icon");
+    errorElement.textContent = errors[fieldId];
+    errorElement.classList.add("show-icon");
       inputWrapper.classList.add("input-error"); // Add error class to wrapper
-    } else {
-      errorElement.textContent = "";
-      errorElement.classList.remove("show-icon");
+  } else {
+    errorElement.textContent = "";
+    errorElement.classList.remove("show-icon");
       inputWrapper.classList.remove("input-error"); // Remove error class if no error
-    }
   }
+}
 }
 
 // Toggle password visibility
