@@ -19,6 +19,17 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // Check if the email exists in localStorage
+    const storedEmail = localStorage.getItem("registeredEmail"); // Adjust this key as needed
+
+    if (!storedEmail || storedEmail !== email) {
+      setErrorStyles(
+        "loginIdentifier",
+        "მომხმარებელი ამ ელ. ფოსტით არ არის რეგისტრირებული."
+      );
+      return;
+    }
+
     try {
       const auth = getAuth();
       await sendPasswordResetEmail(auth, email);
@@ -27,14 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       formDesc.classList.add("hide");
       verificationLoad.classList.remove("hide");
     } catch (error) {
-      if (error.code === "auth/user-not-found") {
-        setErrorStyles(
-          "loginIdentifier",
-          "მომხმარებელი ამ ელ. ფოსტით არ არის რეგისტრირებული."
-        );
-      } else {
-        setErrorStyles("loginIdentifier", "შეცდომა: სცადეთ კიდევ ერთხელ.");
-      }
+      handleResetPasswordError(error);
     }
   }
 
