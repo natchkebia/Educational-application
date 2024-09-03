@@ -3537,6 +3537,7 @@ input:-webkit-autofill {
 
 .article__img {
   border-radius: 8px;
+  margin-bottom: 16px;
 }
 
 .article__img img {
@@ -3548,6 +3549,74 @@ input:-webkit-autofill {
 
 .article__img--mobile {
   display: none;
+}
+
+.library__content {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 50%;
+  margin-bottom: 16px;
+}
+
+.place::before {
+  content: url('/images/library/place-icon.svg');
+  margin-right: 6.5px;
+  vertical-align: middle;
+  display: inline-block;
+  height: 20px;
+
+}
+
+.library__content p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-bottom: 16px;
+}
+
+.subheadline .title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 34px;
+  margin-bottom: 16px;
+}
+
+.subheadline__img {
+  margin-bottom: 16px;
+}
+
+.subheadline__img img {
+  min-height: 438px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.higligthed-text {
+  font-weight: 500;
+  line-height: 23px;
+  padding: 15px 10px;
+  
+  border-left: 5px solid #8447FF;
+  margin-bottom: 16px;
+  background-color: #F9F6FF;
+}
+.higligthed-text p {
+  margin: 0;
+}
+.higligthed-text span {
+  color: #FF78B9;
 }
 
 /* lybrary detail page end */
