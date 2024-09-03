@@ -3555,6 +3555,7 @@ input:-webkit-autofill {
   max-width: 760px;
   width: 100%;
   margin: 0 auto;
+  margin-bottom: 32px;
 }
 
 .location {
@@ -3607,16 +3608,34 @@ input:-webkit-autofill {
   font-weight: 500;
   line-height: 23px;
   padding: 15px 10px;
-  
+
   border-left: 5px solid #8447FF;
   margin-bottom: 16px;
   background-color: #F9F6FF;
 }
+
 .higligthed-text p {
   margin: 0;
 }
+
 .higligthed-text span {
   color: #FF78B9;
+}
+
+.share-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 10px;
+  row-gap: 26px;
+}
+
+.media__container span {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 43.67px;
+  color: #555560;
+  text-wrap: nowrap;
 }
 
 /* lybrary detail page end */
