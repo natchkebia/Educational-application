@@ -266,7 +266,7 @@
     <main id="main">
       <div class="el-books container">
         <div class="el-books-wrapper">
-          <ul class="breadcrumb container">
+          <ul class="breadcrumb">
             <li class="breadcrumb__item">
               <a class="breadcrumb__link" href="../index.html" title="home">
                 <svg
@@ -296,7 +296,48 @@
           </ul>
           <div class="el-book__content--wrapper">
             <!-- img galery -->
-           
+            <div class="gallery">
+              <div class="gallery__main-image">
+                <img
+                  src="../images/library/el-book1.png"
+                  alt="Main Slide"
+                  id="mainSlide" />
+              </div>
+
+              <div class="gallery__navigation">
+                <div class="gallery__btn gallery__btn--active" data-target="1">
+                  <img
+                    src="../images/library/el-book1.png"
+                    alt="Slide 1 Thumbnail"
+                    id="thumb1" />
+                </div>
+                <div class="gallery__btn" data-target="2">
+                  <img
+                    src="../images/library/el-book2.png"
+                    alt="Slide 2 Thumbnail"
+                    id="thumb2" />
+                </div>
+                <div class="gallery__btn" data-target="3">
+                  <img
+                    src="../images/library/el-book3.png"
+                    alt="Slide 3 Thumbnail"
+                    id="thumb3" />
+                </div>
+                <div class="gallery__btn" data-target="4">
+                  <img
+                    src="../images/library/el-book4.png"
+                    alt="Slide 4 Thumbnail"
+                    id="thumb4" />
+                </div>
+                <div class="gallery__btn" data-target="5">
+                  <img
+                    src="../images/library/el-book5.png"
+                    alt="Slide 5 Thumbnail"
+                    id="thumb5" />
+                </div>
+              </div>
+            </div>
+
             <!-- img galery end -->
             <div class="el-book__content">
               <div class="el-book__desc">
@@ -615,5 +656,6 @@
     <script src="../js/mobileMenu.js"></script>
     <script src="../js/acordion.js"></script>
     <script type="module" src="/js/signin.js"></script>
+    <script src="../js/el-books.js"></script>
   </body>
 </html>

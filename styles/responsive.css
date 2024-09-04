@@ -51,6 +51,11 @@
     padding-top: 10px;
   }
 
+  .breadcrumb li+li:before {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
   .mentor__courses--section .mentor__text {
     margin-left: 16px;
   }
@@ -848,6 +853,15 @@
     height: 29px;
   }
 
+  .el-book__content--wrapper {
+    flex-direction: column;
+  }
+
+  .el-book__content {
+    width: 100%;
+  }
+
+
 
 }
 
@@ -907,6 +921,19 @@
     flex-direction: column;
   }
 
+  /* el-books */
+
+  .gallery {
+    flex-direction: column;
+  }
+
+  .gallery__navigation {
+    flex-direction: row;
+  }
+
+  .el-books .breadcrumb {
+    margin-bottom: 28px;
+  }
 }
 
 @media (max-width: 425px) {
@@ -921,6 +948,10 @@
 
   .article__img--mobile {
     display: block;
+  }
+
+  .gallery {
+    width: 100%;
   }
 }
 
