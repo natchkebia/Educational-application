@@ -934,6 +934,20 @@
   .el-books .breadcrumb {
     margin-bottom: 28px;
   }
+
+  .el-book__details--container span {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .el-book__details {
+    margin-bottom: 28px;
+  }
+
+  .el-book__desc {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 @media (max-width: 425px) {

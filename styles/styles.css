@@ -3713,4 +3713,109 @@ input:-webkit-autofill {
 
 /* gallery end */
 
+/* el-book content */
+.el-book__heading {
+  margin-bottom: 32px;
+}
+
+
+
+.el-book__title {
+  margin-bottom: 16px;
+}
+
+.el-book__title h1 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  margin-bottom: 8px;
+}
+
+.el-book__title h3 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.el-book__rating {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.author {
+  margin-bottom: 8px;
+}
+
+.author a {
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rating__count {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 10px;
+  margin-left: 6px;
+}
+
+.rating .stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating .stars__img {
+  gap: 6px;
+}
+
+.el-book__rating .stars__img img {
+  width: 16px;
+  height: 16px;
+}
+
+.el-book__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 32px;
+}
+
+.el-book__details--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+.el-book__details--container svg {
+  width: 32px;
+  margin-bottom: 4px;
+}
+
+.el-book__details--container span {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 2px;
+}
+
+.el-book__details--container .el-book__details--desc {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.el-book__details--container .download-link {
+  color: #FF9A15;
+  line-height: 20px;
+}
+
 /* el-books detail page end */
