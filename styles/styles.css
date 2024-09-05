@@ -3943,3 +3943,28 @@ input:-webkit-autofill {
 }
 
 /* el-books detail page end */
+
+/* fixing header */
+.header__nav--list--item .profile__photo {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+
+.header__nav--list--item .profile__photo::after {
+  content: url(../icons/arrow-down.svg);
+  display: inline-block;
+  scale: 1.5;
+}
+
+.header__nav--list--item .profile__photo img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.header__nav--list--item .mobile-menu__user--info {
+  display: none;
+}
