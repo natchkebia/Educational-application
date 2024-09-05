@@ -3950,6 +3950,9 @@ input:-webkit-autofill {
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
+  position: relative;
+  top: 0;
+  right: 0;
 }
 
 
@@ -3966,5 +3969,23 @@ input:-webkit-autofill {
 }
 
 .header__nav--list--item .mobile-menu__user--info {
-  display: none;
+    position: absolute;
+      right: 0;
+      background: white;
+  /* display: none; */
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  box-shadow: 0px 0px 20px 0px #00000014;
+  border-radius: 10px;
 }
+
+.header__nav--list--item .mobile-menu__user--info a {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  text-wrap: nowrap;
+  color: #808080;
+}
+
