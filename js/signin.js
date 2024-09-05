@@ -115,7 +115,7 @@ onAuthStateChanged(auth, (user) => {
     // No user is signed in
     loginBtn.textContent = "შესვლა";
     signinLink.textContent = "ავტორიზაცია";
-    signinLink.href = "./pages/registration.html";
+    signinLink.href = "./pages/login.html";
 
     registerLink.textContent = "რეგისტრაცია";
     registerLink.href = "./pages/registration.html";
