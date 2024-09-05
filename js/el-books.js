@@ -14,3 +14,23 @@ document.querySelectorAll(".gallery__btn").forEach((btn) => {
     document.getElementById("mainSlide").src = newSrc;
   });
 });
+
+// acordion
+
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll(".accordion__section");
+
+  sections.forEach((section) => {
+    section.addEventListener("click", function () {
+      // Toggle "down" class only for the clicked section
+      section.classList.toggle("show-content");
+
+      // Optionally close other sections
+      sections.forEach((otherSection) => {
+        if (otherSection !== section) {
+          otherSection.classList.remove("down");
+        }
+      });
+    });
+  });
+});

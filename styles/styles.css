@@ -3834,12 +3834,77 @@ input:-webkit-autofill {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  margin-top: 24px;
+}
+
+.accordion__section .accordion__content {
+  display: none;
+}
+
+.accordion__section.show-content .accordion__content {
+  display: block;
 }
 
 .bold {
   font-weight: 600;
 }
 
+.accordion__content .review {
+  background-color: var(--background-color-2);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  padding: 16px;
+}
+
+.accordion__section--review .accordion__content {
+  padding-left: 0;
+}
+
+.review div {
+  width: 88%;
+  padding: 8px 12px;
+}
+
+.review span:last-child {
+  align-self: self-end;
+}
+
+.review div p:last-child {
+  font-size: 14px;
+}
+
+.accordion__content li {
+  margin-bottom: 8px;
+}
+
+.accordion__section--about p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.more__content p {
+  margin-top: 20px;
+}
+
+
+.accordion__link {
+  display: flex;
+  color: var(--primary-color);
+  align-items: baseline;
+  text-decoration: underline;
+  line-height: 19px;
+}
+
+.accordion__more span {
+  display: block;
+}
+
+.accordion__title.active .accordion__arrow {
+  transform: rotate(180deg);
+}
 
 
 /* el-books detail page end */
