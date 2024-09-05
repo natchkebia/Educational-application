@@ -3643,6 +3643,7 @@ input:-webkit-autofill {
   align-items: flex-start;
   row-gap: 24px;
   column-gap: 12px;
+  margin-bottom: 32px;
 }
 
 .el-book__content {
@@ -3812,12 +3813,14 @@ input:-webkit-autofill {
   line-height: 20px;
 }
 
-/* el-book acordion */
+/* el-book accordion */
 
+/* Container */
 .accordion {
   margin: 0 auto;
 }
 
+/* Accordion Title */
 .accordion__title {
   display: flex;
   align-items: baseline;
@@ -3826,15 +3829,13 @@ input:-webkit-autofill {
   font-weight: 700;
   line-height: 24px;
   padding: 12px 0;
-
 }
 
+/* Accordion Content */
 .accordion__content {
-  /* display: none; */
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  margin-top: 24px;
 }
 
 .accordion__section .accordion__content {
@@ -3845,8 +3846,9 @@ input:-webkit-autofill {
   display: block;
 }
 
-.bold {
-  font-weight: 600;
+/* Review Section */
+.accordion__section--review .accordion__content {
+  padding-left: 0;
 }
 
 .accordion__content .review {
@@ -3857,10 +3859,6 @@ input:-webkit-autofill {
   flex-wrap: nowrap;
   align-items: stretch;
   padding: 16px;
-}
-
-.accordion__section--review .accordion__content {
-  padding-left: 0;
 }
 
 .review div {
@@ -3876,20 +3874,39 @@ input:-webkit-autofill {
   font-size: 14px;
 }
 
-.accordion__content li {
-  margin-bottom: 8px;
-}
-
+/* About Section */
 .accordion__section--about p {
   font-size: 14px;
   line-height: 20px;
 }
 
-.more__content p {
+/* Text Styling */
+.accordion__text {
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.3s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.accordion__text p {
   margin-top: 20px;
 }
 
+.accordion__text p:first-child {
+  margin-top: 0;
+}
 
+/* Expanded Text */
+.accordion__text.expanded {
+  max-height: 1000px;
+  /* Ensure enough height for full content */
+  display: block;
+}
+
+/* Link and Button Styling */
 .accordion__link {
   display: flex;
   color: var(--primary-color);
@@ -3898,13 +3915,31 @@ input:-webkit-autofill {
   line-height: 19px;
 }
 
-.accordion__more span {
-  display: block;
+
+.accordion__more .accordion__link {
+  display: flex;
+  align-items: center;
+  color: #8447FF;
+  text-decoration: none;
 }
 
-.accordion__title.active .accordion__arrow {
+/* Icon Rotation */
+.accordion__icon {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.accordion__icon.rotate {
   transform: rotate(180deg);
 }
 
+/* Additional Styles */
+.bold {
+  font-weight: 600;
+}
+
+.accordion__content li {
+  margin-bottom: 8px;
+}
 
 /* el-books detail page end */
