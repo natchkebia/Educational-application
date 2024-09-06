@@ -2642,7 +2642,7 @@ input[type="checkbox"]:checked + label::before {
 }
 /* Desktop Nav Animation */
 
-.desktop-nav li {
+/* .desktop-nav li {
   transition: all 400ms ease;
 }
 
@@ -2650,15 +2650,13 @@ input[type="checkbox"]:checked + label::before {
   opacity: 0;
   transform: scale(0.8);
   pointer-events: none;
-}
+} */
 
 /* Overlay Animation */
 
 .overlay {
   transition: all 400ms ease;
 }
-
-
 
 /* Search Container Animation */
 
@@ -2722,8 +2720,7 @@ input[type="checkbox"]:checked + label::before {
   font-family: var(--font-family-figaro);
   font-weight: 500;
   font-size: 12px;
-  margin-left: 48px;
-  margin-top: 12px;
+  margin: 12px;
   line-height: 14.4px;
   color: #000000;
   cursor: pointer;
@@ -2736,5 +2733,3 @@ input[type="checkbox"]:checked + label::before {
   height: 40px;
   display: none;
 }
-
-

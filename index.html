@@ -300,7 +300,7 @@
           </div>
         </nav>
 
-        <!-- end of navigation -->
+        <!-- end of navigation - search-->
 
         <div class="search-container hides" id="search">
           <div class="search-bar">
@@ -322,8 +322,9 @@
             </div>
             <form action="">
               <input
+                onclick="myFunction()"
                 type="text"
-                placeholder="ძებნა"
+                placeholder="ძებნა..."
                 autocomplete="off"
                 id="input__box"
               />
@@ -331,6 +332,7 @@
           </div>
           <div class="link-close">
             <svg
+            id="close-toggle"
               width="22"
               height="22"
               viewBox="0 0 22 22"
@@ -346,11 +348,11 @@
               />
             </svg>
           </div>
-           <!-- search result -->
+          <!-- search result -->
           <div class="result__box">
             <button class="btn result--search">ძებნა</button>
           </div>
-          <div class="quick-links">
+          <div class="quick-links" id="quick-toggle">
             <div class="last-search">
               <h2>ბოლოს მოძებნილი</h2>
               <h2 class="delete">გასუფთავება</h2>
@@ -414,7 +416,8 @@
                   />
                 </svg>
 
-                <a href="#">გახდი გრაფიკოს დიზაინერი SkillUp-თან ერთად!
+                <a href="#"
+                  >გახდი გრაფიკოს დიზაინერი SkillUp-თან ერთად!
                   <h6 class="become">11 აგვ 2024 - 18:30</h6>
                 </a>
               </li>
@@ -430,12 +433,12 @@
               <input type="text" placeholder="ძებნა" />
             </form>
           </div>
-          <span class="cancel-btn">Cancel</span> 
+          <span class="cancel-btn">Cancel</span>
         </div>
       </div>
-      
     </header>
-    <div class="overlay"></div> 
+    <div class="overlay"></div>
+    <span></span>
     <!-- main -->
     <main id="main">
       <!-- section hero -->
