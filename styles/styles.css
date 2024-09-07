@@ -4014,3 +4014,8 @@ input:-webkit-autofill {
 .header__nav--list--item .mobile-menu__user--info.hide {
   display: none;
 }
+
+.profile__photo.hide,
+.profile__photo.hide .mobile-menu__user--info {
+  display: none;
+}

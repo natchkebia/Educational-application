@@ -9,13 +9,12 @@ import {
 
 // Select DOM elements
 const signinLink = document.getElementById("signin-link");
-const signin = document.getElementById("signin-btn-desktop");
+const signinBtnDesktop = document.getElementById("signin-btn-desktop");
 const profileSection = document.getElementById("profile");
 const logoutSection = document.getElementById("log-out-1");
 const logoutDesktop = document.getElementById("log-out-2");
 const profileBtn = document.getElementById("desktop-profile");
 const profileInfo = document.getElementById("profile-info");
-const signinBtnDesktop = document.getElementById("signin-btn-desktop");
 const signinDropdown = signinBtnDesktop.querySelector(".header__nav--dropdown");
 
 // Function to show profile and logout in the mobile menu
@@ -59,11 +58,17 @@ onAuthStateChanged(auth, (user) => {
           // Update mobile menu with user data
           document.getElementById("user-name").textContent =
             firstname + " " + (userData.lastname || "");
+          document.getElementById("user-name-deskt").textContent =
+            firstname + " " + (userData.lastname || "");
           document.getElementById("user-nickname").textContent = userNickname;
           document.getElementById("user-contact-phone-value").textContent =
             userPhone;
           document.getElementById("user-contact-email-value").textContent =
             userEmail;
+
+          // Show profile button and hide sign-in button
+          profileBtn.classList.remove("hide");
+          signinBtnDesktop.classList.add("hide");
 
           // Show profile and logout sections in mobile menu
           showProfile();
@@ -76,6 +81,11 @@ onAuthStateChanged(auth, (user) => {
       });
   } else {
     // No user is signed in
+    // Hide profile button and show sign-in button
+    profileBtn.classList.add("hide");
+    signinBtnDesktop.classList.remove("hide");
+
+    // Hide profile and logout sections in mobile menu
     hideProfile();
   }
 });
@@ -103,17 +113,7 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// Handle user logout
-logoutSection.addEventListener("click", () => {
-  signOut(auth)
-    .then(() => {
-      console.log("User signed out successfully.");
-    })
-    .catch((error) => {
-      console.error("Error signing out:", error);
-    });
-});
-
+// Function to handle user logout
 function handleLogout(event, redirectUrl) {
   event.preventDefault(); // Prevent the default anchor behavior
   signOut(auth)
@@ -127,6 +127,7 @@ function handleLogout(event, redirectUrl) {
     });
 }
 
+// Attach event listeners to logout elements
 if (logoutSection) {
   logoutSection.addEventListener("click", (event) =>
     handleLogout(event, "./pages/login.html")
