@@ -3953,6 +3953,8 @@ input:-webkit-autofill {
   position: relative;
   top: 0;
   right: 0;
+  border-radius: 100px;
+  background-color: var(--background-color-2);
 }
 
 
@@ -3960,6 +3962,7 @@ input:-webkit-autofill {
   content: url(../icons/arrow-down.svg);
   display: inline-block;
   scale: 1.5;
+  margin-right: 16px;
 }
 
 .header__nav--list--item .profile__photo img {
@@ -3969,9 +3972,9 @@ input:-webkit-autofill {
 }
 
 .header__nav--list--item .mobile-menu__user--info {
-    position: absolute;
-      right: 0;
-      background: white;
+  position: absolute;
+  right: 0;
+  background: white;
   /* display: none; */
   padding: 25px;
   display: flex;
@@ -3979,6 +3982,7 @@ input:-webkit-autofill {
   gap: 11px;
   box-shadow: 0px 0px 20px 0px #00000014;
   border-radius: 10px;
+  min-width: 230px;
 }
 
 .header__nav--list--item .mobile-menu__user--info a {
@@ -3987,5 +3991,23 @@ input:-webkit-autofill {
   gap: 3px;
   text-wrap: nowrap;
   color: #808080;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14.4px;
 }
 
+.header__nav--list--item .mobile-menu__user--name {
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.header__nav--list--item .mobile-menu__user--nickname {
+  margin-bottom: 0;
+}
+
+.loader {
+  font-size: 16px;
+  color: #808080;
+  text-align: center;
+  padding: 10px;
+}
