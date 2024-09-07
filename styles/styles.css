@@ -3975,9 +3975,8 @@ input:-webkit-autofill {
   position: absolute;
   right: 0;
   background: white;
-  /* display: none; */
-  padding: 25px;
   display: flex;
+  padding: 25px;
   flex-direction: column;
   gap: 11px;
   box-shadow: 0px 0px 20px 0px #00000014;
@@ -4010,4 +4009,8 @@ input:-webkit-autofill {
   color: #808080;
   text-align: center;
   padding: 10px;
+}
+
+.header__nav--list--item .mobile-menu__user--info.hide {
+  display: none;
 }

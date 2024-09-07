@@ -8,12 +8,16 @@ import {
 } from "./firebase-config.js";
 
 // Select DOM elements
-const loginBtn = document.querySelector(".login-btn");
-const loginDropdown = document.querySelector(".header__nav--dropdown");
 const signinLink = document.getElementById("signin-link");
+const signin = document.getElementById("signin-btn-desktop");
 const registerLink = document.getElementById("register-link");
 const profileSection = document.getElementById("profile");
 const logoutSection = document.getElementById("log-out"); // Updated for mobile logout button
+
+const profileBtn = document.getElementById("desktop-profile");
+const profileInfo = document.getElementById("profile-info");
+const signinBtnDesktop = document.getElementById("signin-btn-desktop");
+const signinDropdown = signinBtnDesktop.querySelector(".header__nav--dropdown");
 
 // Function to show profile and logout in the mobile menu
 function showProfile() {
@@ -35,13 +39,6 @@ function hideProfile() {
 
   const authLinks = document.querySelectorAll(".authorization-link");
   authLinks.forEach((link) => link.classList.remove("hide"));
-}
-
-// Function to update desktop UI elements with the first name
-function updateDesktopUI(firstname) {
-  if (loginBtn) {
-    loginBtn.textContent = firstname;
-  }
 }
 
 // Check user authentication state
@@ -69,9 +66,6 @@ onAuthStateChanged(auth, (user) => {
           document.getElementById("user-contact-email-value").textContent =
             userEmail;
 
-          // Update desktop UI with only the first name
-          updateDesktopUI(firstname);
-
           // Show profile and logout sections in mobile menu
           showProfile();
         } else {
@@ -81,69 +75,53 @@ onAuthStateChanged(auth, (user) => {
       .catch((error) => {
         console.error("Error retrieving user data:", error);
       });
-
-    // Update login button text and links
-    signinLink.textContent = "პაროლის შეცვლა";
-    signinLink.href = "change-password.html";
-
-    registerLink.textContent = "გამოსვლა";
-    registerLink.href = "#";
-    registerLink.addEventListener("click", () => {
-      signOut(auth)
-        .then(() => {
-          window.location.href = "../index.html";
-        })
-        .catch((error) => {
-          console.error("Logout Error:", error);
-        });
-    });
-
-    // Add event listener for mobile logout button
-    if (logoutSection) {
-      logoutSection.addEventListener("click", (event) => {
-        event.preventDefault();
-        signOut(auth)
-          .then(() => {
-            window.location.href = "../index.html";
-          })
-          .catch((error) => {
-            console.error("Logout Error:", error);
-          });
-      });
-    }
   } else {
     // No user is signed in
-    loginBtn.textContent = "შესვლა";
-    signinLink.textContent = "ავტორიზაცია";
-    signinLink.href = "./pages/logIn.html";
-    registerLink.textContent = "რეგისტრაცია";
-    registerLink.href = "./pages/registration.html";
-
-    // Hide profile and logout sections in mobile menu
     hideProfile();
   }
 });
 
-// Handle dropdown menu toggle
-loginBtn.addEventListener("click", () => {
-  loginDropdown.classList.toggle("hide");
+// Handle profile button click
+profileBtn.addEventListener("click", () => {
+  profileInfo.classList.toggle("hide");
+  signinDropdown.classList.add("hide");
 });
 
-// Close dropdown when clicking outside
-document.addEventListener("click", (e) => {
-  if (!loginDropdown.contains(e.target) && e.target !== loginBtn) {
-    loginDropdown.classList.add("hide");
+// Handle sign-in dropdown toggle
+signinBtnDesktop.addEventListener("click", () => {
+  signinDropdown.classList.toggle("hide");
+  profileInfo.classList.add("hide");
+});
+
+// Hide dropdowns when clicking outside
+document.addEventListener("click", (event) => {
+  if (
+    !signinBtnDesktop.contains(event.target) &&
+    !profileBtn.contains(event.target)
+  ) {
+    profileInfo.classList.add("hide");
+    signinDropdown.classList.add("hide");
   }
 });
 
-// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+// Handle user logout
+logoutSection.addEventListener("click", () => {
+  signOut(auth)
+    .then(() => {
+      console.log("User signed out successfully.");
+      // Optionally, redirect to login or home page
+      window.location.href = "/login.html";
+    })
+    .catch((error) => {
+      console.error("Error signing out:", error);
+    });
+});
+
+// Adjust viewport height for CSS custom property
 let vh = window.innerHeight * 0.01;
-// Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty("--vh", `${vh}px`);
 
-// We listen to the resize event
 window.addEventListener("resize", () => {
-  // We execute the same script as before
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 });
