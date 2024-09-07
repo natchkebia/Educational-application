@@ -161,9 +161,7 @@
               </div>
 
               <div class="mobile-menu__user--info hide" id="profile-info">
-                <h3 class="mobile-menu__user--name" id="user-name">
-                  
-                </h3>
+                <h3 class="mobile-menu__user--name" id="user-name"></h3>
                 <span class="mobile-menu__user--nickname" id="user-nickname"
                   >@username_1</span
                 >
@@ -199,7 +197,10 @@
                   </svg>
                   პაროლის შეცვლა</a
                 >
-                <a href="#" id="register-link"
+                <a
+                  id="log-out-2"
+                  href="#"
+                  onclick="handleLogout(event, './index.html')"
                   ><svg
                     width="20"
                     height="20"
@@ -249,9 +250,7 @@
                   </a>
                 </div>
                 <div class="mobile-menu__user--info">
-                  <h3 class="mobile-menu__user--name" id="user-name">
-                    სახელი გვარი
-                  </h3>
+                  <h3 class="mobile-menu__user--name" id="user-name"></h3>
                   <span class="mobile-menu__user--nickname" id="user-nickname"
                     >@username_1</span
                   >
@@ -326,7 +325,12 @@
                   >
                 </li>
               </ul>
-              <a id="log-out" class="log-out" href="#"
+              <a
+                class="log-out"
+                href="#"
+                id="log-out-1"
+                href="#"
+                onclick="handleLogout(event, './pages/login.html')"
                 ><svg
                   width="23"
                   height="24"

@@ -10,10 +10,9 @@ import {
 // Select DOM elements
 const signinLink = document.getElementById("signin-link");
 const signin = document.getElementById("signin-btn-desktop");
-const registerLink = document.getElementById("register-link");
 const profileSection = document.getElementById("profile");
-const logoutSection = document.getElementById("log-out"); // Updated for mobile logout button
-
+const logoutSection = document.getElementById("log-out-1");
+const logoutDesktop = document.getElementById("log-out-2");
 const profileBtn = document.getElementById("desktop-profile");
 const profileInfo = document.getElementById("profile-info");
 const signinBtnDesktop = document.getElementById("signin-btn-desktop");
@@ -109,13 +108,36 @@ logoutSection.addEventListener("click", () => {
   signOut(auth)
     .then(() => {
       console.log("User signed out successfully.");
-      // Optionally, redirect to login or home page
-      window.location.href = "/login.html";
     })
     .catch((error) => {
       console.error("Error signing out:", error);
     });
 });
+
+function handleLogout(event, redirectUrl) {
+  event.preventDefault(); // Prevent the default anchor behavior
+  signOut(auth)
+    .then(() => {
+      console.log("User signed out successfully.");
+      // Redirect to the specified URL
+      window.location.href = redirectUrl;
+    })
+    .catch((error) => {
+      console.error("Error signing out:", error);
+    });
+}
+
+if (logoutSection) {
+  logoutSection.addEventListener("click", (event) =>
+    handleLogout(event, "./pages/login.html")
+  );
+}
+
+if (logoutDesktop) {
+  logoutDesktop.addEventListener("click", (event) =>
+    handleLogout(event, "./index.html")
+  );
+}
 
 // Adjust viewport height for CSS custom property
 let vh = window.innerHeight * 0.01;
