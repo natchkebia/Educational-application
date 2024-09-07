@@ -41,28 +41,17 @@
               >
             </li>
             <!-- header icons -->
-            <li class="header__nav--list--icons ">
+            <li class="header__nav--list--icons">
               <ul class="header__nav--icons">
                 <!-- search -->
                 <li class="nav--icons-item nav-icons">
-                  <a
-                    class="nav--icons-link"
-                    href="#"
-                    aria-label="search courses">
-                    <svg
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        opacity="0.6"
-                        d="M25.8653 26L30 30M28.6667 19.3333C28.6667 24.488 24.488 28.6667 19.3333 28.6667C14.1787 28.6667 10 24.488 10 19.3333C10 14.1787 14.1787 10 19.3333 10C24.488 10 28.6667 14.1787 28.6667 19.3333Z"
-                        stroke=""
-                        stroke-width="2"
-                        stroke-linecap="round" />
-                    </svg>
-                  </a>
+                  <div class="search">
+                    <div class="icon"></div>
+                    <div class="input" id="input-search">
+                      <input type="text" placeholder="ძებნა..." />
+                    </div>
+                    <span class="clear" onclick="clearInput()"></span>
+                  </div>
                 </li>
                 <!-- heart -->
                 <li class="nav--icons-item nav-icons">
@@ -136,7 +125,9 @@
               </ul>
             </li>
             <!-- button -->
-            <li class="header__nav--list--item drop hide" id="signin-btn-desktop">
+            <li
+              class="header__nav--list--item drop hide"
+              id="signin-btn-desktop">
               <span class="login-btn btn">შესვლა</span>
               <ul class="header__nav--dropdown hide">
                 <li class="header__nav--signin">
@@ -1070,5 +1061,6 @@
     <script src="./js/acordion.js"></script>
     <script src="./js/testimonials.js"></script>
     <script type="module" src="./js/signin.js"></script>
+    <script src="./js/search.js"></script>
   </body>
 </html>
