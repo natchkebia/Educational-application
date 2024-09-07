@@ -16,6 +16,18 @@ const logoutDesktop = document.getElementById("log-out-2");
 const profileBtn = document.getElementById("desktop-profile");
 const profileInfo = document.getElementById("profile-info");
 const signinDropdown = signinBtnDesktop.querySelector(".header__nav--dropdown");
+const mobileMenuLoader = document.getElementById("mobile-menu-loader");
+const profileLoader = document.getElementById("profile-loader");
+
+// Function to show loader
+function showLoader(loaderElement) {
+  loaderElement.classList.remove("hide");
+}
+
+// Function to hide loader
+function hideLoader(loaderElement) {
+  loaderElement.classList.add("hide");
+}
 
 // Function to show profile and logout in the mobile menu
 function showProfile() {
@@ -41,6 +53,10 @@ function hideProfile() {
 
 // Check user authentication state
 onAuthStateChanged(auth, (user) => {
+  // Show loaders while authentication state is being checked
+  showLoader(mobileMenuLoader);
+  showLoader(profileLoader);
+
   if (user) {
     // User is signed in
     const userId = user.uid;
@@ -75,9 +91,17 @@ onAuthStateChanged(auth, (user) => {
         } else {
           console.error("No user data found in database");
         }
+
+        // Hide loaders after data is retrieved
+        hideLoader(mobileMenuLoader);
+        hideLoader(profileLoader);
       })
       .catch((error) => {
         console.error("Error retrieving user data:", error);
+
+        // Hide loaders if there's an error
+        hideLoader(mobileMenuLoader);
+        hideLoader(profileLoader);
       });
   } else {
     // No user is signed in
@@ -87,6 +111,10 @@ onAuthStateChanged(auth, (user) => {
 
     // Hide profile and logout sections in mobile menu
     hideProfile();
+
+    // Hide loaders when no user is signed in
+    hideLoader(mobileMenuLoader);
+    hideLoader(profileLoader);
   }
 });
 
