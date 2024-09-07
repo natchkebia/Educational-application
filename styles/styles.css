@@ -4022,10 +4022,20 @@ input:-webkit-autofill {
 
 
 /* Basic loader style */
+
+
+.mobile-menu .loader {
+  width: 74px;
+  height: 74px;
+  border: 7px solid rgba(0, 0, 0, 0.1);
+  border-top: 7px solid var(--primary-color);
+  margin: 0 auto;
+}
+
 .loader {
-  border: 4px solid rgba(0, 0, 0, 0.1);
+  border: 7px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  border-top: 4px solid #3498db;
+  border-top: 4px solid var(--primary-color);
   width: 30px;
   height: 30px;
   animation: spin 1s linear infinite;

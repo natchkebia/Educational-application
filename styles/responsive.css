@@ -79,7 +79,9 @@
   .header__nav--list .header__nav--list--item {
     display: none;
   }
-
+#profile-loader{
+  display: none;
+}
  
 
   .burger-bar {

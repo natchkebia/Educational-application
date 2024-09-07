@@ -15,6 +15,7 @@ const logoutSection = document.getElementById("log-out-1");
 const logoutDesktop = document.getElementById("log-out-2");
 const profileBtn = document.getElementById("desktop-profile");
 const profileInfo = document.getElementById("profile-info");
+const authLinks = document.querySelectorAll(".authorization-link");
 const signinDropdown = signinBtnDesktop.querySelector(".header__nav--dropdown");
 const mobileMenuLoader = document.getElementById("mobile-menu-loader");
 const profileLoader = document.getElementById("profile-loader");
@@ -22,11 +23,16 @@ const profileLoader = document.getElementById("profile-loader");
 // Function to show loader
 function showLoader(loaderElement) {
   loaderElement.classList.remove("hide");
+  profileBtn.classList.add("hide");
+  signinBtnDesktop.classList.add("hide");
+  authLinks.forEach((link) => link.classList.add("hide"));
 }
 
 // Function to hide loader
 function hideLoader(loaderElement) {
   loaderElement.classList.add("hide");
+  // profileBtn.classList.remove("hide");
+  // signinBtnDesktop.classList.remove("hide");
 }
 
 // Function to show profile and logout in the mobile menu
@@ -36,7 +42,6 @@ function showProfile() {
     logoutSection.classList.add("show");
   }
 
-  const authLinks = document.querySelectorAll(".authorization-link");
   authLinks.forEach((link) => link.classList.add("hide"));
 }
 
@@ -47,7 +52,6 @@ function hideProfile() {
     logoutSection.classList.remove("show");
   }
 
-  const authLinks = document.querySelectorAll(".authorization-link");
   authLinks.forEach((link) => link.classList.remove("hide"));
 }
 
@@ -106,7 +110,7 @@ onAuthStateChanged(auth, (user) => {
   } else {
     // No user is signed in
     // Hide profile button and show sign-in button
-    profileBtn.classList.add("hide");
+    // profileBtn.classList.add("hide");
     signinBtnDesktop.classList.remove("hide");
 
     // Hide profile and logout sections in mobile menu
@@ -158,7 +162,7 @@ function handleLogout(event, redirectUrl) {
 // Attach event listeners to logout elements
 if (logoutSection) {
   logoutSection.addEventListener("click", (event) =>
-    handleLogout(event, "./pages/login.html")
+    handleLogout(event, "./index.html")
   );
 }
 
