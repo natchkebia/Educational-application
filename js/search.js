@@ -167,7 +167,16 @@ function showResults(results) {
         <small>Mentor: ${result.mentor}, Price: ${result.discountedPrice} (Discount: ${result.discount})</small>
       </div>
     `;
+    li.dataset.title = result.title; // Store the title in data attribute
+    li.dataset.description = result.description; // Store the description in data attribute
     searchResults.appendChild(li);
+
+    // Add click event listener to redirect to the result page
+    li.addEventListener("click", () => {
+      window.location.href = `./detail-pages/courses-detail-page.html?id=${encodeURIComponent(
+        result.id
+      )}`;
+    });
   });
 
   searchDropdown.classList.add("show");
