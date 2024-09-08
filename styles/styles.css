@@ -4057,14 +4057,11 @@ input:-webkit-autofill {
 }
 
 
-
-
 .search {
-  position: absolute;
+  position: relative;
   right: 0;
   width: 40px;
   height: 40px;
-  border-radius: 50px;
   transition: 0.5s;
   overflow: hidden;
 }
@@ -4075,28 +4072,18 @@ input:-webkit-autofill {
   left: 0;
   width: 40px;
   height: 40px;
-  border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
-.search .icon::before {
-  content: url(../icons/search.svg);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .search.active {
   width: 521px;
   background-color: #F7F4FF;
+  border-radius: 50px;
 }
-.search.active .clear{
-  display: flex;
-}
+
 .search .input {
   position: relative;
   width: 521px;
@@ -4126,6 +4113,7 @@ input:-webkit-autofill {
   right: 20px;
   cursor: pointer;
   display: none;
+  /* Initially hidden */
   justify-content: center;
   align-items: center;
 }
@@ -4136,3 +4124,12 @@ input:-webkit-autofill {
   width: 20px;
   height: 20px;
 }
+
+/* .header__nav--list--item:nth-child(-n+4) {
+  display: none;
+} */
+
+
+
+
+/* და შემოსატანია შედეგების გვერდი */
