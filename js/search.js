@@ -100,14 +100,18 @@ clearBtn.onclick = function () {
 // Show or hide the clear button when the user types
 function onInputChange() {
   const query = input.value.trim();
-  if (query.length > 0) {
+
+  if (query.length >= 3) {
     clearBtn.style.display = "flex";
     handleSearch(query); // Trigger search as the user types
     searchHistoryDropdown.classList.remove("show"); // Hide search history dropdown while searching
   } else {
     clearBtn.style.display = "none";
     searchDropdown.classList.remove("show"); // Hide dropdown if input is empty
-    showSearchHistory(); // Show search history dropdown when input is empty
+    // Show search history only if the input is focused
+    if (input === document.activeElement) {
+      showSearchHistory(); // Show search history dropdown when input is empty
+    }
   }
 }
 
@@ -168,10 +172,10 @@ function showResults(results) {
       </div>
     `;
     li.dataset.title = result.title; // Store the title in data attribute
-    li.dataset.description = result.description; // Store the description in data attribute
+    li.dataset.id = result.id; // Assuming each course has a unique ID
     searchResults.appendChild(li);
 
-    // Add click event listener to redirect to the result page
+    // Add click event listener to redirect to the detail page
     li.addEventListener("click", () => {
       window.location.href = `./detail-pages/courses-detail-page.html?id=${encodeURIComponent(
         result.id
@@ -184,7 +188,7 @@ function showResults(results) {
 
 // Function to handle search
 async function handleSearch(query) {
-  if (query.length > 0) {
+  if (query.length >= 3) {
     const courses = await fetchCourses(); // Fetch courses data
     const filteredResults = searchCourses(courses, query); // Filter courses based on query
     showResults(filteredResults); // Display filtered results
@@ -199,12 +203,29 @@ function addToSearchHistory(query) {
   const dateTime = formatDateTime(new Date()); // Get current date and time
   searchHistory = searchHistory.filter((entry) => entry.query !== query); // Remove any existing entry with the same query
   searchHistory.push({ query, dateTime }); // Add new entry
+
+  // Save updated search history to local storage
+  localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 }
 
 function showSearchHistory() {
+  // Load search history from local storage
+  const savedHistory = localStorage.getItem("searchHistory");
+  if (savedHistory) {
+    searchHistory = JSON.parse(savedHistory);
+  } else {
+    searchHistory = [];
+  }
+
+  // Sort by date (newest first)
+  searchHistory.sort((a, b) => new Date(b.dateTime) - new Date(a.dateTime));
+
+  // Limit to the latest 4 entries
+  const limitedHistory = searchHistory.slice(0, 4);
+
   searchHistoryDropdown.innerHTML = "";
 
-  searchHistory.forEach((historyItem) => {
+  limitedHistory.forEach((historyItem) => {
     const li = document.createElement("li");
     li.innerHTML = `
       <div>
@@ -217,3 +238,14 @@ function showSearchHistory() {
 
   searchHistoryDropdown.classList.add("show");
 }
+
+// Show search history when the input field is focused
+input.addEventListener("focus", showSearchHistory);
+
+// Hide search history when the input field loses focus
+input.addEventListener("blur", () => {
+  // Delay hiding to allow for clicks on the search history
+  setTimeout(() => {
+    searchHistoryDropdown.classList.remove("show");
+  }, 200);
+});
