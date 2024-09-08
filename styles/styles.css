@@ -4134,11 +4134,11 @@ input:-webkit-autofill {
 
 /* და შემოსატანია შედეგების გვერდი */
 
-
-.search-dropdown {
+.search-dropdown,
+.search-history {
   position: absolute;
   top: 74px;
-  /* left: 0; */
+  /* Adjust if needed */
   max-width: 521px;
   width: 100%;
   max-height: 300px;
@@ -4151,17 +4151,18 @@ input:-webkit-autofill {
   z-index: 1000;
 }
 
-.search-dropdown.show {
+.search-dropdown.show,
+.search-history.show {
   display: block;
-  /* Show dropdown */
 }
 
-
-.search-dropdown li {
+.search-dropdown li,
+.search-history li {
   padding: 10px;
   cursor: pointer;
 }
 
-.search-dropdown li:hover {
+.search-dropdown li:hover,
+.search-history li:hover {
   background-color: #f0f0f0;
 }

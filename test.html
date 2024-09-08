@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar with Dropdown</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #searchBar { width: 300px; padding: 8px; }
+        #dropdown { border: 1px solid #ccc; display: none; position: absolute; width: 300px; background-color: white; max-height: 200px; overflow-y: auto; }
+        .dropdown-item { padding: 8px; cursor: pointer; }
+        .dropdown-item:hover { background-color: #f0f0f0; }
+        .history-item { font-style: italic; color: blue; }
+    </style>
+</head>
+<body>
+
+    <h1>Search Bar with Dropdown</h1>
+    <input type="text" id="searchBar" placeholder="Search..." autocomplete="off" />
+    
+    <div id="dropdown"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
