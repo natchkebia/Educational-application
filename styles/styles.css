@@ -4133,3 +4133,35 @@ input:-webkit-autofill {
 
 
 /* და შემოსატანია შედეგების გვერდი */
+
+
+.search-dropdown {
+  position: absolute;
+  top: 74px;
+  /* left: 0; */
+  max-width: 521px;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 1000;
+}
+
+.search-dropdown.show {
+  display: block;
+  /* Show dropdown */
+}
+
+
+.search-dropdown li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-dropdown li:hover {
+  background-color: #f0f0f0;
+}

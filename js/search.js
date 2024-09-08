@@ -7,6 +7,9 @@ const navItems = document.querySelectorAll(
 ); // Select first 4 nav items
 const searchWrapper = document.getElementById("search-wrapper"); // Select search wrapper
 
+const searchDropdown = document.getElementById("search-dropdown");
+const searchResults = document.getElementById("search-results");
+
 // Toggle active class when search icon is clicked
 icon.onclick = function (event) {
   search.classList.toggle("active");
@@ -67,5 +70,62 @@ input.addEventListener("input", function () {
     clearBtn.style.display = "flex"; // Show clear button
   } else {
     clearBtn.style.display = "none"; // Hide clear button when input is empty
+  }
+});
+
+// Function to display search results in the dropdown
+function showResults(results) {
+  searchResults.innerHTML = ""; // Clear previous results
+  if (results.length === 0) {
+    searchDropdown.classList.remove("show");
+    return;
+  }
+
+  results.forEach((result) => {
+    const li = document.createElement("li");
+    li.textContent = result; // Set result text
+    searchResults.appendChild(li);
+  });
+
+  searchDropdown.classList.add("show");
+}
+
+// Function to simulate fetching results (replace with real API call)
+function fetchResults(query) {
+  // Simulate a search result
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([
+        `Result 1 for "${query}"`,
+        `Result 2 for "${query}"`,
+        `Result 3 for "${query}"`,
+      ]);
+    }, 500); // Simulate network delay
+  });
+}
+
+// Show the search dropdown when the user types
+input.addEventListener("input", async function () {
+  const query = input.value.trim();
+
+  if (query.length > 0) {
+    clearBtn.style.display = "flex"; // Show clear button
+
+    const results = await fetchResults(query); // Fetch search results
+    showResults(results);
+  } else {
+    clearBtn.style.display = "none"; // Hide clear button
+    searchDropdown.classList.remove("show"); // Hide dropdown
+  }
+});
+
+// Update search results on search input change
+input.addEventListener("input", async function () {
+  const query = input.value.trim();
+  if (query.length > 0) {
+    const results = await fetchResults(query); // Fetch search results
+    showResults(results);
+  } else {
+    searchDropdown.classList.remove("show"); // Hide dropdown
   }
 });

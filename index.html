@@ -62,9 +62,19 @@
                       </svg>
                     </div>
                     <div class="input" id="input-search">
-                      <input type="text" placeholder="ძებნა..." />
+                      <input
+                        type="text"
+                        placeholder="ძებნა..."
+                        id="search-input" />
                     </div>
                     <span class="clear" onclick="clearInput()"></span>
+                  </div>
+
+                  <!-- Dropdown for search results -->
+                  <div class="search-dropdown" id="search-dropdown">
+                    <ul id="search-results">
+                      <!-- Results will be dynamically added here -->
+                    </ul>
                   </div>
                 </li>
                 <!-- heart -->
