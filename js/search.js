@@ -10,7 +10,42 @@ const searchDropdown = document.getElementById("search-dropdown");
 const searchResults = document.getElementById("search-results");
 const searchHistoryDropdown = document.getElementById("search-history");
 
-let searchHistory = []; // Store search terms with dates
+let searchHistory = [];
+let debounceTimeout;
+
+// Debounce function to delay execution
+function debounce(func, delay) {
+  return function (...args) {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => func(...args), delay);
+  };
+}
+
+// Function to format the date and time
+function formatDateTime(date) {
+  const months = [
+    "იანვ",
+    "ფებ",
+    "მარ",
+    "აპრ",
+    "მაი",
+    "ივნ",
+    "ივლ",
+    "აგვ",
+    "სექ",
+    "ოქტ",
+    "ნოემბ",
+    "დეკ",
+  ];
+
+  const day = date.getDate().toString().padStart(2, "0");
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+  const hours = date.getHours().toString().padStart(2, "0");
+  const minutes = date.getMinutes().toString().padStart(2, "0");
+
+  return `${day} ${month} ${year} - ${hours}:${minutes}`;
+}
 
 // Toggle active class when search icon is clicked
 icon.onclick = function (event) {
@@ -43,27 +78,27 @@ document.addEventListener("click", function (event) {
 // Close the search and reset elements
 function closeSearch() {
   navItems.forEach((item) => {
-    item.style.display = ""; // Reset to default
+    item.style.display = "";
   });
 
   clearBtn.style.display = "none";
   input.value = "";
   search.classList.remove("active");
   searchWrapper.classList.remove("search-wrapper");
-  searchDropdown.classList.remove("show"); // Hide search results dropdown
-  searchHistoryDropdown.classList.remove("show"); // Hide search history dropdown
+  searchDropdown.classList.remove("show");
+  searchHistoryDropdown.classList.remove("show");
 }
 
 // Clear the input field when the clear button is clicked
 clearBtn.onclick = function () {
   input.value = "";
   clearBtn.style.display = "none";
-  searchDropdown.classList.remove("show"); // Hide search results dropdown
+  searchDropdown.classList.remove("show");
   searchHistoryDropdown.classList.add("show"); // Show search history dropdown
 };
 
 // Show or hide the clear button when the user types
-input.addEventListener("input", function () {
+function onInputChange() {
   const query = input.value.trim();
   if (query.length > 0) {
     clearBtn.style.display = "flex";
@@ -74,7 +109,11 @@ input.addEventListener("input", function () {
     searchDropdown.classList.remove("show"); // Hide dropdown if input is empty
     showSearchHistory(); // Show search history dropdown when input is empty
   }
-});
+}
+
+const debouncedInputChange = debounce(onInputChange, 500); // Debounce with 500ms delay
+
+input.addEventListener("input", debouncedInputChange);
 
 // Function to fetch courses from data.json
 async function fetchCourses() {
@@ -148,9 +187,9 @@ async function handleSearch(query) {
 
 // Search history functions
 function addToSearchHistory(query) {
-  const date = new Date().toLocaleDateString(); // Get current date
+  const dateTime = formatDateTime(new Date()); // Get current date and time
   searchHistory = searchHistory.filter((entry) => entry.query !== query); // Remove any existing entry with the same query
-  searchHistory.push({ query, date }); // Add new entry
+  searchHistory.push({ query, dateTime }); // Add new entry
 }
 
 function showSearchHistory() {
@@ -161,7 +200,7 @@ function showSearchHistory() {
     li.innerHTML = `
       <div>
         <strong>${historyItem.query}</strong><br>
-        <small>Date: ${historyItem.date}</small>
+        <small>${historyItem.dateTime}</small>
       </div>
     `;
     searchHistoryDropdown.appendChild(li);
