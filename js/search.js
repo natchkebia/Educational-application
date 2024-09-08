@@ -56,12 +56,16 @@ function closeSearch() {
 
   // Remove class 'search-wrapper' from #search-wrapper when search is closed
   searchWrapper.classList.remove("search-wrapper");
+
+  // Hide the search dropdown when search is closed
+  searchDropdown.classList.remove("show");
 }
 
 // Clear the input field when the clear button is clicked
 clearBtn.onclick = function () {
   input.value = ""; // Clear input
   clearBtn.style.display = "none"; // Hide clear button
+  searchDropdown.classList.remove("show"); // Hide dropdown
 };
 
 // Show or hide the clear button when the user types
@@ -104,21 +108,6 @@ function fetchResults(query) {
   });
 }
 
-// Show the search dropdown when the user types
-input.addEventListener("input", async function () {
-  const query = input.value.trim();
-
-  if (query.length > 0) {
-    clearBtn.style.display = "flex"; // Show clear button
-
-    const results = await fetchResults(query); // Fetch search results
-    showResults(results);
-  } else {
-    clearBtn.style.display = "none"; // Hide clear button
-    searchDropdown.classList.remove("show"); // Hide dropdown
-  }
-});
-
 // Update search results on search input change
 input.addEventListener("input", async function () {
   const query = input.value.trim();
@@ -126,6 +115,6 @@ input.addEventListener("input", async function () {
     const results = await fetchResults(query); // Fetch search results
     showResults(results);
   } else {
-    searchDropdown.classList.remove("show"); // Hide dropdown
+    searchDropdown.classList.remove("show"); // Hide dropdown if input is empty
   }
 });
