@@ -79,10 +79,11 @@
   .header__nav--list .header__nav--list--item {
     display: none;
   }
-#profile-loader{
-  display: none;
-}
- 
+
+  #profile-loader {
+    display: none;
+  }
+
 
   .burger-bar {
     display: block;
@@ -982,8 +983,48 @@
 
 
 /* header fixing */
+@media (max-width: 1024px) {
+  .search.active {
+    width: 350px;
+  }
+
+}
+
+
+
 @media (max-width: 768px) {
   #desktop-profile {
     display: none;
+  }
+
+  .search.active {
+    width: 250px;
+  }
+}
+
+@media (max-width: 547px) {
+  .search.active {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .search-wrapper {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    left: 0;
+    border: 5px solid white;
+    background: white;
+  }
+
+
+  .search .input {
+    position: relative;
+    width: 80%;
+    height: 40px;
+    left: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

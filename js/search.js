@@ -5,6 +5,7 @@ const clearBtn = document.querySelector(".clear"); // Select clear button
 const navItems = document.querySelectorAll(
   ".header__nav--list--item:nth-child(-n+4)"
 ); // Select first 4 nav items
+const searchWrapper = document.getElementById("search-wrapper"); // Select search wrapper
 
 // Toggle active class when search icon is clicked
 icon.onclick = function (event) {
@@ -15,6 +16,9 @@ icon.onclick = function (event) {
     navItems.forEach((item) => {
       item.style.display = "none";
     });
+
+    // Add class 'search-wrapper' to #search-wrapper when search is open
+    searchWrapper.classList.add("search-wrapper");
   } else {
     closeSearch();
   }
@@ -46,6 +50,9 @@ function closeSearch() {
   clearBtn.style.display = "none";
   input.value = ""; // Clear input
   search.classList.remove("active");
+
+  // Remove class 'search-wrapper' from #search-wrapper when search is closed
+  searchWrapper.classList.remove("search-wrapper");
 }
 
 // Clear the input field when the clear button is clicked

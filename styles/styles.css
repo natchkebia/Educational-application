@@ -4086,7 +4086,7 @@ input:-webkit-autofill {
 
 .search .input {
   position: relative;
-  width: 521px;
+  width: 80%;
   height: 40px;
   left: 40px;
   display: flex;
