@@ -2522,6 +2522,18 @@ input[type="checkbox"]:checked + label::before {
   width: 20px;
 }
 
+.search__form {
+  display: flex;
+}
+.search__form-text {
+  margin-right: 44px;
+  margin-top: 10px;
+  font-family: ;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #8447FF;
+}
 /* Search Container */
 
 .search-container.hides {
@@ -2537,7 +2549,7 @@ input[type="checkbox"]:checked + label::before {
   margin: 0 auto;
   position: fixed;
   top: 28px;
-  left: 112px;
+  left: 200px;
   right: 0;
   z-index: 200;
 }
@@ -2618,8 +2630,22 @@ input[type="checkbox"]:checked + label::before {
   color: #000000;
   margin-left: 12px;
 }
-.search-container .quick-links ul li:hover {
+/* .quick-links ul :hover {
   color: #8447ff;
+} */
+.quick__search-icon {
+  width: 24px;
+  height: 24px;
+  background-color: #F9F6FF;
+  border-radius: 4.8px;
+  padding: 6px;
+}
+.quick__link-icons:hover {
+  color: #8447ff;
+}
+
+.quick__search-icon:hover svg {
+  stroke-width: 0;
 }
 .last-search {
   display: flex;
@@ -2733,3 +2759,11 @@ input[type="checkbox"]:checked + label::before {
   height: 40px;
   display: none;
 }
+
+/* Overlay Animation */
+
+.overlay {
+  transition: all 400ms ease;
+}
+
+

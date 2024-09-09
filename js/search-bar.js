@@ -55,17 +55,9 @@ cancelBtn.addEventListener("click", () => {
 // toggle
 function myFunction() {
   const x = document.getElementById("quick-toggle");
-  const y = document.getElementById("close-toggle");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
     x.style.display = "none";
   }
-  if (y.style.display === "none") {
-    y.style.display = "block";
-  } else {
-    y.style.display = "none";
-  }
-  
-  
 }
