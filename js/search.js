@@ -1,3 +1,6 @@
+// main.js
+import { getLinkPath } from "./adress.js";
+
 const icon = document.querySelector(".icon");
 const search = document.querySelector(".search");
 const input = document.querySelector(".input input");
@@ -127,7 +130,7 @@ input.addEventListener("input", debouncedInputChange);
 // Function to fetch courses from data.json
 async function fetchCourses() {
   try {
-    const response = await fetch("./data/data.json");
+    const response = await fetch(getLinkPath("./data/data.json"));
     if (!response.ok) {
       throw new Error("Failed to fetch courses data");
     }
@@ -158,15 +161,11 @@ function showResults(results) {
   if (results.length === 0) {
     console.log("No results found");
     searchDropdown.classList.add("show");
-    // Log to console if no results
     searchResults.style.display = "none"; // Hide search results
-    noResults.style.display = "block";
-
-    // Show "No results found" image
+    noResults.style.display = "block"; // Show "No results found" image
     return;
   }
 
-  // Show search results
   searchResults.style.display = "block";
   noResults.style.display = "none"; // Hide "No results found" image
 
@@ -183,9 +182,12 @@ function showResults(results) {
 
     // Add click event listener to redirect to the detail page
     li.addEventListener("click", () => {
-      window.location.href = `./detail-pages/courses-detail-page.html?id=${encodeURIComponent(
-        result.id
-      )}`;
+      const detailPageUrl = getLinkPath(
+        `detail-pages/courses-detail-page.html?id=${encodeURIComponent(
+          result.id
+        )}`
+      );
+      window.location.href = detailPageUrl;
     });
   });
 

@@ -7,6 +7,8 @@ import {
   signOut,
 } from "./firebase-config.js";
 
+import { getLinkPath } from "./adress.js";
+
 // Select DOM elements
 const signinLink = document.getElementById("signin-link");
 const signinBtnDesktop = document.getElementById("signin-btn-desktop");
@@ -152,7 +154,7 @@ function handleLogout(event, redirectUrl) {
     .then(() => {
       console.log("User signed out successfully.");
       // Redirect to the specified URL
-      window.location.href = redirectUrl;
+      window.location.href = getLinkPath(redirectUrl);
     })
     .catch((error) => {
       console.error("Error signing out:", error);
@@ -162,13 +164,13 @@ function handleLogout(event, redirectUrl) {
 // Attach event listeners to logout elements
 if (logoutSection) {
   logoutSection.addEventListener("click", (event) =>
-    handleLogout(event, "./index.html")
+    handleLogout(event, getLinkPath("./index.html"))
   );
 }
 
 if (logoutDesktop) {
   logoutDesktop.addEventListener("click", (event) =>
-    handleLogout(event, "./index.html")
+    handleLogout(event, getLinkPath("./index.html"))
   );
 }
 
