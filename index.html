@@ -75,12 +75,17 @@
                     <ul id="search-results">
                       <!-- Results will be dynamically added here -->
                     </ul>
+                    <input type="submit" text="ძიება" id="search-submit" placeholder="ძიება">
                   </div>
 
                   <!-- Dropdown for search history -->
                   <div class="search-history" id="search-history">
-                    <span> ბოლოს მოძებნილი</span>
-                    <button onclick="deleteHistory()">გასუფთავება</button>
+                    <div class="search-history__heading">
+                      <span>ბოლოს მოძებნილი</span>
+                      <button onclick="deleteHistory()" id="clear-history-btn">
+                        გასუფთავება
+                      </button>
+                    </div>
                     <ul id="history-results"></ul>
                   </div>
                 </li>
@@ -241,7 +246,7 @@
                 >
               </div>
             </li>
-            <div id="profile-loader" class="loader hide"></div>
+            <li><div id="profile-loader" class="loader hide"></div></li>
           </ul>
 
           <!-- mobile menu -->

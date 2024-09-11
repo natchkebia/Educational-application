@@ -9,6 +9,7 @@ const searchWrapper = document.getElementById("search-wrapper");
 const searchDropdown = document.getElementById("search-dropdown");
 const searchResults = document.getElementById("search-results");
 const searchHistoryDropdown = document.getElementById("search-history");
+const clearHistoryBtn = document.getElementById("clear-history-btn");
 
 let searchHistory = [];
 let debounceTimeout;
@@ -142,10 +143,7 @@ function searchCourses(courses, query) {
     const title = course.title ? course.title.toLowerCase() : "";
     const mentor = course.mentor ? course.mentor.toLowerCase() : "";
 
-    return (
-      title.includes(lowerCaseQuery) ||
-      mentor.includes(lowerCaseQuery)
-    );
+    return title.includes(lowerCaseQuery) || mentor.includes(lowerCaseQuery);
   });
 }
 
@@ -162,9 +160,7 @@ function showResults(results) {
     const li = document.createElement("li");
     li.innerHTML = `
       <div>
-        <strong>${result.title}</strong><br>
-      
-        <small>Mentor: ${result.mentor}, Price: ${result.discountedPrice} (Discount: ${result.discount})</small>
+        ${result.title}
       </div>
     `;
     li.dataset.title = result.title; // Store the title in data attribute
@@ -213,14 +209,16 @@ function showSearchHistory() {
     searchHistory = [];
   }
 
-  // Sort by date (newest first)
-  searchHistory.sort((a, b) => new Date(b.dateTime) - new Date(a.dateTime));
+  // Sort by date in descending order (newest first)
+  searchHistory.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
 
   // Limit to the latest 4 entries
   const limitedHistory = searchHistory.slice(0, 4);
 
-  searchHistoryDropdown.innerHTML = "";
+  const historyResults = document.getElementById("history-results");
+  historyResults.innerHTML = ""; // Clear previous results
 
+  // Append items in the order of newest first
   limitedHistory.forEach((historyItem) => {
     const li = document.createElement("li");
     li.innerHTML = `
@@ -229,21 +227,10 @@ function showSearchHistory() {
         <span class="date">${historyItem.dateTime}</span>
       </div>
     `;
-    searchHistoryDropdown.appendChild(li);
+    historyResults.appendChild(li);
   });
 
   searchHistoryDropdown.classList.add("show");
-}
-
-
-function deleteHistory() {
-  // Clear search history in local storage
-  localStorage.removeItem("searchHistory");
-  searchHistory = []; // Clear the in-memory search history
-
-  // Remove the history from the dropdown
-  const historyList = document.getElementById("history-results");
-  historyList.innerHTML = "<li>ძიების ისტორია არ მოიძებნა</li>"; // Show no history message
 }
 
 // Show search history when the input field is focused
@@ -255,4 +242,30 @@ input.addEventListener("blur", () => {
   setTimeout(() => {
     searchHistoryDropdown.classList.remove("show");
   }, 200);
+});
+
+// Clear search history function
+function deleteHistory(event) {
+  // Prevent search bar from closing
+  event.stopPropagation();
+
+  // Clear search history from local storage
+  localStorage.removeItem("searchHistory");
+
+  // Clear the searchHistory array in memory
+  searchHistory = [];
+
+  // Clear the history results displayed in the UI
+  const historyResults = document.getElementById("history-results");
+  historyResults.innerHTML = "";
+
+  // Optionally hide the search history dropdown
+  searchHistoryDropdown.classList.remove("show");
+}
+
+clearHistoryBtn.addEventListener("click", deleteHistory);
+
+document.getElementById("search-submit").addEventListener("click", () => {
+  // Redirect to the new page
+  window.location.href = "./pages/search-result.html";
 });
