@@ -1012,9 +1012,24 @@
     width: 250px;
     /* top: 58px; */
   }
-    .search-history li div{
-      flex-direction: column;
-    }
+
+  .search-history li div {
+    flex-direction: column;
+  }
+
+  .search-result {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .search-result .hero-img {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-result .breadcrumb {
+    display: none;
+  }
 }
 
 @media (max-width: 547px) {
@@ -1049,9 +1064,15 @@
     align-items: center;
   }
 
-    #search-results {
+  #search-results {
 
-      margin: 0 auto;
-      width: 80%;
-    }
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .search-result #courses__header {
+    width: 106%;
+    margin: 0 -16px;
+  }
+  
 }

@@ -4269,10 +4269,43 @@ input:-webkit-autofill {
 /* search result page*/
 
 .search-result {
-  height: 1500px;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 44px;
 }
 
 .search-result .hero-img {
   background-image: url(../images/searcdh-hero.png);
   height: 160px;
 }
+
+.search-result #course {
+  padding: 0;
+}
+
+.search-result #courses {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.search-result #courses__header {
+  position: static;
+}
+.search-result .search__courses.new-class #searched-list{
+  display: none;
+
+}
+
+
+.search-result .course__sort{
+  position: relative;
+}
+.search-result .courses__header--content{
+  max-width: unset;
+  width: 161px;
+}
+
+
+/* pagination */
