@@ -4092,6 +4092,7 @@ input:-webkit-autofill {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .search .input input {
@@ -4102,6 +4103,9 @@ input:-webkit-autofill {
   outline: none;
   padding: 10px 0;
   background-color: #F7F4FF;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
 }
 
 .clear {
@@ -4149,6 +4153,10 @@ input:-webkit-autofill {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: none;
   z-index: 1000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14.4px;
+  padding: 16px 12px 0;
 }
 
 .search-dropdown.show,
@@ -4158,13 +4166,61 @@ input:-webkit-autofill {
 
 .search-dropdown li,
 .search-history li {
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #0000020f;
   cursor: pointer;
+  position: relative;
+}
+
+
+.search-history li div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
 }
 
 .search-dropdown li:hover,
 .search-history li:hover {
   background-color: #f0f0f0;
+}
+
+.history-clean {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.history-clean-btn {
+  opacity: 50%;
+}
+
+.search-history {
+  padding: 0 12px;
+}
+
+.search-dropdown li::before,
+.search-history li::before {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  content: url(../icons/search.svg);
+  padding: 6px;
+  background-color: #F9F6FF;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.search-dropdown li:last-child,
+.search-history li:last-child {
+  border: none;
 }
 
 

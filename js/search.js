@@ -140,14 +140,10 @@ function searchCourses(courses, query) {
 
   return courses.filter((course) => {
     const title = course.title ? course.title.toLowerCase() : "";
-    const description = course.description
-      ? course.description.toLowerCase()
-      : "";
     const mentor = course.mentor ? course.mentor.toLowerCase() : "";
 
     return (
       title.includes(lowerCaseQuery) ||
-      description.includes(lowerCaseQuery) ||
       mentor.includes(lowerCaseQuery)
     );
   });
@@ -167,7 +163,7 @@ function showResults(results) {
     li.innerHTML = `
       <div>
         <strong>${result.title}</strong><br>
-        ${result.description}<br>
+      
         <small>Mentor: ${result.mentor}, Price: ${result.discountedPrice} (Discount: ${result.discount})</small>
       </div>
     `;
@@ -229,14 +225,25 @@ function showSearchHistory() {
     const li = document.createElement("li");
     li.innerHTML = `
       <div>
-        <strong>${historyItem.query}</strong><br>
-        <small>${historyItem.dateTime}</small>
+        <span>${historyItem.query}</span>
+        <span class="date">${historyItem.dateTime}</span>
       </div>
     `;
     searchHistoryDropdown.appendChild(li);
   });
 
   searchHistoryDropdown.classList.add("show");
+}
+
+
+function deleteHistory() {
+  // Clear search history in local storage
+  localStorage.removeItem("searchHistory");
+  searchHistory = []; // Clear the in-memory search history
+
+  // Remove the history from the dropdown
+  const historyList = document.getElementById("history-results");
+  historyList.innerHTML = "<li>ძიების ისტორია არ მოიძებნა</li>"; // Show no history message
 }
 
 // Show search history when the input field is focused
