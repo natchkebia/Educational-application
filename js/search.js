@@ -169,7 +169,10 @@ function showResults(results) {
   searchResults.style.display = "block";
   noResults.style.display = "none"; // Hide "No results found" image
 
-  // Store results in localStorage
+  // Clear the existing search results in localStorage
+  localStorage.removeItem("searchResults");
+
+  // Store new search results in localStorage
   localStorage.setItem("searchResults", JSON.stringify(results));
 
   results.forEach((result) => {
@@ -196,6 +199,7 @@ function showResults(results) {
 
   searchDropdown.classList.add("show");
 }
+
 
 // Function to handle search
 async function handleSearch(query) {
