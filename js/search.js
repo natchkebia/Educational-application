@@ -60,6 +60,7 @@ icon.onclick = function (event) {
     searchWrapper.classList.add("search-wrapper");
   } else {
     closeSearch();
+    
   }
 
   event.stopPropagation();
@@ -70,7 +71,9 @@ document.addEventListener("click", function (event) {
   if (
     search.classList.contains("active") &&
     !search.contains(event.target) &&
-    !icon.contains(event.target)
+    !icon.contains(event.target) &&
+    !searchDropdown.contains(event.target) &&
+    !searchHistoryDropdown.contains(event.target)
   ) {
     closeSearch();
   }
@@ -183,8 +186,11 @@ async function handleSearch(query) {
   if (query.length >= 3) {
     const courses = await fetchCourses(); // Fetch courses data
     const filteredResults = searchCourses(courses, query); // Filter courses based on query
-    showResults(filteredResults); // Display filtered results
-    addToSearchHistory(query); // Add search term to history
+    if (filteredResults.length > 0) {
+      showResults(filteredResults); // Display filtered results
+    } else {
+      searchDropdown.classList.remove("show"); // Hide dropdown if no results
+    }
   } else {
     searchDropdown.classList.remove("show"); // Hide dropdown if input is empty
   }
@@ -209,7 +215,7 @@ function showSearchHistory() {
     searchHistory = [];
   }
 
-  // Sort by date in descending order (newest first)
+  // Sort by date in ascending order (oldest first)
   searchHistory.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
 
   // Limit to the latest 4 entries
@@ -218,7 +224,7 @@ function showSearchHistory() {
   const historyResults = document.getElementById("history-results");
   historyResults.innerHTML = ""; // Clear previous results
 
-  // Append items in the order of newest first
+  // Append items in the order of oldest first
   limitedHistory.forEach((historyItem) => {
     const li = document.createElement("li");
     li.innerHTML = `
@@ -228,6 +234,15 @@ function showSearchHistory() {
       </div>
     `;
     historyResults.appendChild(li);
+  });
+
+  historyResults.querySelectorAll("li").forEach((item) => {
+    item.addEventListener("click", () => {
+      const query = item.querySelector("span").textContent; // Get query from the span text content
+      input.value = query; // Set input value
+      handleSearch(query); // Trigger search
+      searchHistoryDropdown.classList.remove("show"); // Hide history dropdown
+    });
   });
 
   searchHistoryDropdown.classList.add("show");

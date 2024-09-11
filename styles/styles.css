@@ -4177,7 +4177,7 @@ input:-webkit-autofill {
   line-height: 19.2px;
   color: white;
   border-radius: 8px;
-  margin-bottom: 12px;
+  margin: 12px auto;
 }
 
 
