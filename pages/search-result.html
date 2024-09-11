@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>search-result</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/responsive.css" />
+    <link rel="icon" href="../images/logo/header-logo.svg" />
   </head>
   <body>
     <header class="header">
@@ -383,7 +386,324 @@
         </nav>
       </div>
     </header>
-    <main id="main"></main>
+    <main id="main">
+      <div class="parent-container">
+        <div class="courses__navigation">
+          <a href="../index.html">მთავარი</a>
+          <img src="../icons/black-arrow-right.svg" alt="arrow-right" />
+          <a href="#">კურსები</a>
+        </div>
+        <section id="course">
+          <div class="container course__container">
+            <div class="filters">
+              <!-- Courses -->
+              <div class="filter-section">
+                <div class="selected">
+                  <div class="selected__header">
+                    <h3 class="filter-title">მონიშნული ფილტრები</h3>
+                    <img
+                      class="filter__icon"
+                      id="garbage__icon1"
+                      src="../icons/garbage.svg"
+                      alt="garbage"
+                      onclick="clearSelectedFilters()" />
+                    <img
+                      class="filter__icon"
+                      id="garbage__icon"
+                      src="../icons/white-garbage.svg"
+                      alt="garbage"
+                      onclick="clearSelectedFilters()" />
+                  </div>
+                  <div id="selected-filters"></div>
+                </div>
+                <div
+                  class="filter__header firs__filter"
+                  onclick="toggleFilter('course-filter', this)">
+                  <h3 class="filter-title">კურსები</h3>
+                  <img
+                    class="filter__icon"
+                    src="../icons/arrow-down.svg"
+                    alt="arrow-down" />
+                </div>
+                <div id="course-filter" class="filter-content">
+                  <input
+                    type="checkbox"
+                    id="business"
+                    name="title"
+                    value="ბიზნესი" />
+                  <label for="business">ბიზნესი</label><br />
+                  <input
+                    type="checkbox"
+                    id="design"
+                    name="title"
+                    value="გრაფიკული დიზაინი" />
+                  <label for="design">დიზაინი</label><br />
+                  <input
+                    type="checkbox"
+                    id="data"
+                    name="title"
+                    value="მონაცემთა ანალიტიკა" />
+                  <label for="data">მონაცემთა ანალიტიკა</label><br />
+                  <input
+                    type="checkbox"
+                    id="programming"
+                    name="title"
+                    value="პროგრამირება" />
+                  <label for="programming">პროგრამირება</label><br />
+
+                  <div id="additional-filters" class="additional-filters">
+                    <input
+                      type="checkbox"
+                      id="marketing"
+                      name="title"
+                      value="ციფრული მარკეტინგი" />
+                    <label for="marketing">ციფრული მარკეტინგი</label><br />
+                    <input
+                      type="checkbox"
+                      id="Engineering"
+                      name="title"
+                      value="ქსელების ინჟინერია" />
+                    <label for="Engineering"
+                      >ქსელების ინჟინერია, Packet Tracer</label
+                    ><br />
+                    <input
+                      type="checkbox"
+                      id="ui/ux"
+                      name="title"
+                      value="UI/UX დიზაინი" />
+                    <label for="ui/ux">UI/UX დიზაინი</label><br />
+                    <input
+                      type="checkbox"
+                      id="development"
+                      name="title"
+                      value="პერსონალური განვითარება" />
+                    <label for="development">პერსონალური განვითარება</label
+                    ><br />
+                  </div>
+
+                  <p id="show-more" onclick="toggleShowMore()">იხილეთ მეტი</p>
+                </div>
+              </div>
+
+              <!-- Levels -->
+              <div class="filter-section">
+                <div
+                  class="filter__header"
+                  onclick="toggleFilter('level-filter', this)">
+                  <h3 class="filter-title">დონეები</h3>
+                  <img
+                    class="filter__icon"
+                    src="../icons/arrow-down.svg"
+                    alt="arrow-down" />
+                </div>
+                <div id="level-filter" class="filter-content">
+                  <input
+                    type="checkbox"
+                    id="level1"
+                    name="level"
+                    value="დამწყები" />
+                  <label for="level1">დამწყები</label><br />
+                  <input
+                    type="checkbox"
+                    id="level2"
+                    name="level"
+                    value="სამოყვარულო" />
+                  <label for="level2">საშუალო</label><br />
+                  <input
+                    type="checkbox"
+                    id="level3"
+                    name="level"
+                    value="პროფესიონალური" />
+                  <label for="level3">მაღალი</label><br />
+                </div>
+              </div>
+
+              <!-- Duration -->
+              <div class="filter-section">
+                <div
+                  class="filter__header"
+                  onclick="toggleFilter('duration-filter', this)">
+                  <h3 class="filter-title">ხანგრძლივობა</h3>
+                  <img
+                    class="filter__icon"
+                    src="../icons/arrow-down.svg"
+                    alt="arrow-down" />
+                </div>
+                <div id="duration-filter" class="filter-content">
+                  <input
+                    type="checkbox"
+                    id="duration1"
+                    name="duration"
+                    value="1-3" />
+                  <label for="duration1">1-3 თვე</label><br />
+                  <input
+                    type="checkbox"
+                    id="duration2"
+                    name="duration"
+                    value="3-6" />
+                  <label for="duration2">3-6 თვე</label><br />
+                  <input
+                    type="checkbox"
+                    id="duration3"
+                    name="duration"
+                    value="1-12" />
+                  <label for="duration3">1 წლამდე</label><br />
+                  <input
+                    type="checkbox"
+                    id="duration4"
+                    name="duration"
+                    value="12-24" />
+                  <label for="duration4">1 წელზე მეტი</label><br />
+                </div>
+              </div>
+
+              <!-- Stars -->
+              <div class="filter-section">
+                <div
+                  class="filter__header"
+                  onclick="toggleFilter('stars-filter', this)">
+                  <h3 class="filter-title">შეფასება</h3>
+                  <img
+                    class="filter__icon"
+                    src="../icons/arrow-down.svg"
+                    alt="arrow-down" />
+                </div>
+                <div id="stars-filter" class="filter-content">
+                  <input type="checkbox" id="5-stars" name="stars" value="5" />
+                  <label for="5-stars"
+                    ><img src="../icons/five-stare.svg" alt="stars" /><span
+                      class="star__text"
+                      >5 ვარსკვლავი</span
+                    ></label
+                  ><br />
+                  <input type="checkbox" id="4-stars" name="stars" value="4" />
+                  <label for="4-stars"
+                    ><img src="../icons/fore-star.svg" alt="stars" /><span
+                      class="star__text"
+                      >4 ვარსკვლავი</span
+                    ></label
+                  ><br />
+                  <input type="checkbox" id="3-stars" name="stars" value="3" />
+                  <label for="3-stars"
+                    ><img src="../icons/three-star.svg" alt="stars" /><span
+                      class="star__text"
+                      >3 ვარსკვლავი</span
+                    ></label
+                  ><br />
+                  <input type="checkbox" id="2-stars" name="stars" value="2" />
+                  <label for="2-stars"
+                    ><img src="../icons/two-star.svg" alt="stars" /><span
+                      class="star__text"
+                      >2 ვარსკვლავი</span
+                    ></label
+                  ><br />
+                  <input type="checkbox" id="1-stars" name="stars" value="1" />
+                  <label for="1-stars"
+                    ><img src="../icons/one-star.svg" alt="stars" /><span
+                      class="star__text"
+                      >1 ვარსკვლავი</span
+                    ></label
+                  ><br />
+                </div>
+              </div>
+
+              <!-- Price -->
+              <div class="filter-section last__section">
+                <div
+                  class="filter__header"
+                  onclick="toggleFilter('price-filter', this)">
+                  <h3 class="filter-title">ფასი</h3>
+                  <img
+                    class="filter__icon"
+                    src="../icons/arrow-down.svg"
+                    alt="arrow-down" />
+                </div>
+                <div id="price-filter" class="filter-content">
+                  <input
+                    type="checkbox"
+                    id="price1"
+                    name="discountedPrice"
+                    value="0-600" />
+                  <label for="price1">0₾ - 600₾</label><br />
+                  <input
+                    type="checkbox"
+                    id="price2"
+                    name="discountedPrice"
+                    value="600-1200" />
+                  <label for="price2">600₾ - 1200₾</label><br />
+                  <input
+                    type="checkbox"
+                    id="price3"
+                    name="discountedPrice"
+                    value="1200-2400" />
+                  <label for="price3">1200₾ - 2400₾</label><br />
+                  <input
+                    type="checkbox"
+                    id="price4"
+                    name="discountedPrice"
+                    value="2400-5000" />
+                  <label for="price4">2400₾ დან</label><br />
+                </div>
+              </div>
+            </div>
+            <div id="courses">
+              <div id="courses__header">
+                <h1>შეარჩიე შენთვის საინტერესო კურსი</h1>
+                <div class="mobile__filter" id="filter-button">
+                  <img src="../icons/Frame.svg" alt="filter" />
+                  <img src="../icons/white-errow.svg" alt="arrow" />
+                  <p>ფილტრაცია</p>
+                </div>
+                <div class="courses__header course__sort">
+                  <h3>სორტირება</h3>
+                  <img
+                    class="filter__icon"
+                    src="../icons/black-arrow-down.svg"
+                    alt="arrow-down" />
+                  <div class="courses__header--content">
+                    <p>სორტირება</p>
+                    <p>პოპულარობით</p>
+                    <p>ფასის ზრდადობით</p>
+                    <p>ფასის კლებადობით</p>
+                    <p>შეფასებებით</p>
+                  </div>
+                </div>
+              </div>
+              
+                <div id="search-result">
+
+                
+              </div>
+              <div class="pagination-container pagination">
+                <button id="prev-page">
+                  <img
+                    class="pagination_icon"
+                    src="../icons/arrow-left.svg"
+                    alt="arrow-left" />
+                  <img
+                    class="disabled_icon"
+                    src="../icons/left-gray.svg"
+                    alt="arrow-left" />
+                </button>
+                <div id="page-numbers"></div>
+                <p>...</p>
+                <div id="total-pages" class="total-pages"></div>
+                <button id="next-page">
+                  <img
+                    class="pagination_icon"
+                    src="../icons/arrow-right.svg"
+                    alt="arrow-right" />
+                  <img
+                    class="disabled_icon"
+                    src="../icons/right-gray.svg"
+                    alt="arrow-right" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
     <footer class="footer">
       <div class="container">
         <div class="footer__logo">
@@ -568,7 +888,10 @@
     </footer>
     <script src="../js/mobileMenu.js"></script>
     <script src="../js/acordion.js"></script>
+    <script src="../js/courses.js"></script>
+
     <script type="module" src="../js/signin.js"></script>
     <script type="module" src="../js/search.js"></script>
+    <script type="module" src="../js/search-result.js"></script>
   </body>
 </html>

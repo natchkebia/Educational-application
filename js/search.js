@@ -169,6 +169,9 @@ function showResults(results) {
   searchResults.style.display = "block";
   noResults.style.display = "none"; // Hide "No results found" image
 
+  // Store results in localStorage
+  localStorage.setItem("searchResults", JSON.stringify(results));
+
   results.forEach((result) => {
     const li = document.createElement("li");
     li.innerHTML = `
@@ -288,3 +291,8 @@ function deleteHistory(event) {
 
 // Attach the deleteHistory function to the clearHistoryBtn
 clearHistoryBtn.addEventListener("click", deleteHistory);
+
+document.getElementById("search-submit").addEventListener("click", () => {
+  // Redirect to the new page
+  window.location.href = getLinkPath("./pages/search-result.html");
+});
