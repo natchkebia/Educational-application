@@ -388,12 +388,41 @@
       </div>
     </header>
     <main id="main">
-      <div class="parent-container">
-        <div class="courses__navigation">
-          <a href="../index.html">მთავარი</a>
-          <img src="../icons/black-arrow-right.svg" alt="arrow-right" />
-          <a href="#">კურსები</a>
+      <div class="search-result parent-container">
+        <div class="hero-img">
+          <ul class="breadcrumb container">
+            <li class="breadcrumb__item">
+              <a class="breadcrumb__link" href="../index.html" title="home">
+                <svg
+                  width="20"
+                  height="18"
+                  viewBox="0 0 20 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    opacity="0.3"
+                    d="M1.875 9.00006L9.33667 1.53756C9.70333 1.17173 10.2967 1.17173 10.6625 1.53756L18.125 9.00006M3.75 7.12506V15.5626C3.75 16.0801 4.17 16.5001 4.6875 16.5001H8.125V12.4376C8.125 11.9201 8.545 11.5001 9.0625 11.5001H10.9375C11.455 11.5001 11.875 11.9201 11.875 12.4376V16.5001H15.3125C15.83 16.5001 16.25 16.0801 16.25 15.5626V7.12506M6.875 16.5001H13.75"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+            </li>
+            <li class="breadcrumb__item">
+              <a class="breadcrumb__link" href="../pages/courses.html">ძიება</a>
+            </li>
+            <li class="breadcrumb__item active-page">ძიების შედეგები</li>
+          </ul>
+          <div class="search-result__count">
+            <p>
+              <span class="number-of-result"></span>შედეგი ნაპოვნია "<span
+                class="search-text"></span>
+              "-ზე
+            </p>
+          </div>
         </div>
+
         <section id="course">
           <div class="container course__container">
             <div class="filters">

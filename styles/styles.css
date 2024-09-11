@@ -4257,7 +4257,7 @@ input:-webkit-autofill {
   border: none;
 }
 
-.no-result img{
+.no-result img {
   margin: 0 auto;
 }
 
@@ -4265,3 +4265,14 @@ input:-webkit-autofill {
 
 */
 /*  */
+
+/* search result page*/
+
+.search-result {
+  height: 1500px;
+}
+
+.search-result .hero-img {
+  background-image: url(../images/searcdh-hero.png);
+  height: 160px;
+}

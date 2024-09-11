@@ -1,4 +1,3 @@
-// main.js
 import { getLinkPath } from "./adress.js";
 
 const icon = document.querySelector(".icon");
@@ -171,13 +170,15 @@ function showResults(results) {
 
   // Clear the existing search results in localStorage
   localStorage.removeItem("searchResults");
+  localStorage.removeItem("searchQuery");
 
-  // Store new search results in localStorage
+  // Store new search results and query in localStorage
   localStorage.setItem("searchResults", JSON.stringify(results));
+  localStorage.setItem("searchQuery", input.value); // Store the query string
 
   results.forEach((result) => {
     const li = document.createElement("li");
-    li.innerHTML = `
+    li.innerHTML = ` 
       <div>
         ${result.title}
       </div>
@@ -199,7 +200,6 @@ function showResults(results) {
 
   searchDropdown.classList.add("show");
 }
-
 
 // Function to handle search
 async function handleSearch(query) {
