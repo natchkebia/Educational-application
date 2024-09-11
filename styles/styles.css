@@ -4257,6 +4257,9 @@ input:-webkit-autofill {
   border: none;
 }
 
+.no-result img{
+  margin: 0 auto;
+}
 
 /* შედეგები და ისტორია
 gasworeba resfonsivze

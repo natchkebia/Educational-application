@@ -10,6 +10,7 @@ const searchDropdown = document.getElementById("search-dropdown");
 const searchResults = document.getElementById("search-results");
 const searchHistoryDropdown = document.getElementById("search-history");
 const clearHistoryBtn = document.getElementById("clear-history-btn");
+const noResults = document.getElementById("no-results");
 
 let searchHistory = [];
 let debounceTimeout;
@@ -60,7 +61,6 @@ icon.onclick = function (event) {
     searchWrapper.classList.add("search-wrapper");
   } else {
     closeSearch();
-    
   }
 
   event.stopPropagation();
@@ -91,6 +91,7 @@ function closeSearch() {
   searchWrapper.classList.remove("search-wrapper");
   searchDropdown.classList.remove("show");
   searchHistoryDropdown.classList.remove("show");
+  noResults.style.display = "none"; // Hide "No results found" image
 }
 
 // Clear the input field when the clear button is clicked
@@ -155,9 +156,19 @@ function showResults(results) {
   searchResults.innerHTML = "";
 
   if (results.length === 0) {
-    searchDropdown.classList.remove("show");
+    console.log("No results found");
+    searchDropdown.classList.add("show");
+    // Log to console if no results
+    searchResults.style.display = "none"; // Hide search results
+    noResults.style.display = "block";
+
+    // Show "No results found" image
     return;
   }
+
+  // Show search results
+  searchResults.style.display = "block";
+  noResults.style.display = "none"; // Hide "No results found" image
 
   results.forEach((result) => {
     const li = document.createElement("li");
@@ -186,13 +197,11 @@ async function handleSearch(query) {
   if (query.length >= 3) {
     const courses = await fetchCourses(); // Fetch courses data
     const filteredResults = searchCourses(courses, query); // Filter courses based on query
-    if (filteredResults.length > 0) {
-      showResults(filteredResults); // Display filtered results
-    } else {
-      searchDropdown.classList.remove("show"); // Hide dropdown if no results
-    }
+    showResults(filteredResults); // Display results
   } else {
     searchDropdown.classList.remove("show"); // Hide dropdown if input is empty
+    searchResults.style.display = "none"; // Hide search results
+    noResults.style.display = "none"; // Hide "No results found" image
   }
 }
 
@@ -273,14 +282,7 @@ function deleteHistory(event) {
   // Clear the history results displayed in the UI
   const historyResults = document.getElementById("history-results");
   historyResults.innerHTML = "";
-
-  // Optionally hide the search history dropdown
-  searchHistoryDropdown.classList.remove("show");
 }
 
+// Attach the deleteHistory function to the clearHistoryBtn
 clearHistoryBtn.addEventListener("click", deleteHistory);
-
-document.getElementById("search-submit").addEventListener("click", () => {
-  // Redirect to the new page
-  window.location.href = "./pages/search-result.html";
-});
