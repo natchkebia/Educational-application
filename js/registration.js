@@ -41,29 +41,27 @@ function handleFormSubmit(event) {
 
 // Handle email and password registration
 function handleRegistration() {
+  let formIsValid = true;
+
+  // Validate individual fields and stop if any validation fails
+  formIsValid = validateField("firstname") && formIsValid;
+  formIsValid = validateField("lastname") && formIsValid;
+  formIsValid = validateField("email") && formIsValid;
+  formIsValid = validateField("tel") && formIsValid;
+  formIsValid = validateField("password") && formIsValid;
+  formIsValid = validateField("passwConfirm") && formIsValid;
+
+  // Stop execution if any validation error exists
+  if (!formIsValid) {
+    return;
+  }
+
+  // If no errors, proceed with user registration
   const firstname = document.getElementById("firstname").value.trim();
   const lastname = document.getElementById("lastname").value.trim();
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
-  const passwConfirm = document.getElementById("passwConfirm").value.trim();
   const tel = document.getElementById("tel").value.trim();
-
-  // Simple validation
-  let errors = {};
-  if (password !== passwConfirm) {
-    errors.password = "პაროლები არ ემთხვევა!";
-  }
-
-  validateField("firstname");
-  validateField("lastname");
-  validateField("email");
-  validateField("tel");
-  validateField("password");
-  validateField("passwConfirm");
-
-  if (Object.keys(errors).length > 0) {
-    return; // Stop execution if there are validation errors
-  }
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -79,16 +77,17 @@ function handleRegistration() {
         email: email,
         tel: tel,
       });
+
       handleSuccessfulAction();
-      console.log("Data is sent:", user);
       clearForm("registration-form");
+
       setTimeout(() => {
-        window.location.href = "../index.html"; // Redirect to the main page
-      }, 3000); // 5000 milliseconds = 5 seconds
+        window.location.href = "../index.html"; // Redirect to main page
+      }, 3000);
     })
     .catch((error) => {
       const errorMessage = error.message;
-      console.log(errorMessage);
+      alert(errorMessage);
     });
 
   const registeredEmails =
@@ -259,7 +258,7 @@ function validateField(fieldId) {
   const field = document.getElementById(fieldId);
   const value = field.value.trim();
   const errorElement = document.getElementById("error-" + fieldId);
-  const inputWrapper = field.closest(".input-wrapper"); // Get the closest input wrapper
+  const inputWrapper = field.closest(".input-wrapper");
 
   switch (fieldId) {
     case "firstname":
@@ -268,7 +267,6 @@ function validateField(fieldId) {
       } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
         errors.firstname = "გამოიყენე ქართული ასოები";
       }
-
       break;
 
     case "lastname":
@@ -277,7 +275,6 @@ function validateField(fieldId) {
       } else if (!/^[\u10A0-\u10FF]+$/.test(value)) {
         errors.lastname = "გამოიყენე ქართული ასოები";
       }
-
       break;
 
     case "email":
@@ -287,6 +284,7 @@ function validateField(fieldId) {
         errors.email = "ელ. ფოსტა არასწორია";
       }
       break;
+
     case "tel":
       if (!value) {
         errors.tel = "აუცილებელი ველი";
@@ -368,16 +366,19 @@ function validateField(fieldId) {
 
   // Update the error message element and input wrapper class
   if (errorElement && inputWrapper) {
-    if (errors[fieldId]) {
-    errorElement.textContent = errors[fieldId];
-    errorElement.classList.add("show-icon");
-      inputWrapper.classList.add("input-error"); // Add error class to wrapper
-  } else {
-    errorElement.textContent = "";
-    errorElement.classList.remove("show-icon");
-      inputWrapper.classList.remove("input-error"); // Remove error class if no error
+    if (Object.keys(errors).length > 0) {
+      errorElement.textContent = errors[fieldId];
+      errorElement.classList.add("show-icon");
+      inputWrapper.classList.add("input-error");
+      return false; // Return false if there's an error
+    } else {
+      errorElement.textContent = "";
+      errorElement.classList.remove("show-icon");
+      inputWrapper.classList.remove("input-error");
+      return true; // Return true if no errors
+    }
   }
-}
+  return true; // Default return true if no error elements were found
 }
 
 // Toggle password visibility
