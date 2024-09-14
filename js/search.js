@@ -1,4 +1,3 @@
-// main.js
 import { getLinkPath } from "./adress.js";
 
 const icon = document.querySelector(".icon");
@@ -169,9 +168,17 @@ function showResults(results) {
   searchResults.style.display = "block";
   noResults.style.display = "none"; // Hide "No results found" image
 
+  // Clear the existing search results in localStorage
+  localStorage.removeItem("searchResults");
+  localStorage.removeItem("searchQuery");
+
+  // Store new search results and query in localStorage
+  localStorage.setItem("searchResults", JSON.stringify(results));
+  localStorage.setItem("searchQuery", input.value); // Store the query string
+
   results.forEach((result) => {
     const li = document.createElement("li");
-    li.innerHTML = `
+    li.innerHTML = ` 
       <div>
         ${result.title}
       </div>
@@ -288,3 +295,8 @@ function deleteHistory(event) {
 
 // Attach the deleteHistory function to the clearHistoryBtn
 clearHistoryBtn.addEventListener("click", deleteHistory);
+
+document.getElementById("search-submit").addEventListener("click", () => {
+  // Redirect to the new page
+  window.location.href = getLinkPath("./pages/search-result.html");
+});
