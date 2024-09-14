@@ -4,6 +4,7 @@ const icon = document.querySelector(".icon");
 const search = document.querySelector(".search");
 const input = document.querySelector(".input input");
 const clearBtn = document.querySelector(".clear");
+const searchSubmitBtn = document.getElementById("search-submit"); // Grab the search submit button
 const navItems = document.querySelectorAll(
   ".header__nav--list--item:nth-child(-n+4)"
 );
@@ -94,6 +95,7 @@ function closeSearch() {
   searchDropdown.classList.remove("show");
   searchHistoryDropdown.classList.remove("show");
   noResults.style.display = "none"; // Hide "No results found" image
+  searchSubmitBtn.disabled = true; // Disable submit button on search close
 }
 
 // Clear the input field when the clear button is clicked
@@ -102,6 +104,7 @@ clearBtn.onclick = function () {
   clearBtn.style.display = "none";
   searchDropdown.classList.remove("show");
   searchHistoryDropdown.classList.add("show"); // Show search history dropdown
+  searchSubmitBtn.disabled = true; // Disable submit button when cleared
 };
 
 // Show or hide the clear button when the user types
@@ -115,6 +118,7 @@ function onInputChange() {
   } else {
     clearBtn.style.display = "none";
     searchDropdown.classList.remove("show"); // Hide dropdown if input is empty
+    searchSubmitBtn.disabled = true; // Disable submit button if query is less than 3 characters
     // Show search history only if the input is focused
     if (input === document.activeElement) {
       showSearchHistory(); // Show search history dropdown when input is empty
@@ -162,11 +166,13 @@ function showResults(results) {
     searchDropdown.classList.add("show");
     searchResults.style.display = "none"; // Hide search results
     noResults.style.display = "block"; // Show "No results found" image
+    searchSubmitBtn.disabled = true; // Disable submit button if no results
     return;
   }
 
   searchResults.style.display = "block";
   noResults.style.display = "none"; // Hide "No results found" image
+  searchSubmitBtn.disabled = false; // Enable submit button if results found
 
   // Clear the existing search results in localStorage
   localStorage.removeItem("searchResults");
@@ -211,6 +217,7 @@ async function handleSearch(query) {
     searchDropdown.classList.remove("show"); // Hide dropdown if input is empty
     searchResults.style.display = "none"; // Hide search results
     noResults.style.display = "none"; // Hide "No results found" image
+    searchSubmitBtn.disabled = true; // Disable submit button if no query
   }
 }
 
