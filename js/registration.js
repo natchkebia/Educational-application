@@ -175,8 +175,15 @@ function handleChangePassword() {
 
   // Simple validation
   let errors = {};
+
+  // Check if new password is the same as the old password
+  if (newPassword === oldPassword) {
+    errors.newPassword = "ახალი პაროლი არ უნდა ემთხვეოდეს ძველს!";
+  }
+
+  // Check if the new passwords match
   if (newPassword !== confirmNewPassword) {
-    errors.newPassword = "ახალი პაროლები არ ემთხვევა!";
+    errors.confirmNewPassword = "ახალი პაროლები არ ემთხვევა!";
   }
 
   validateField("old-password");
@@ -184,6 +191,20 @@ function handleChangePassword() {
   validateField("confirm-new-password");
 
   if (Object.keys(errors).length > 0) {
+    if (errors.newPassword) {
+      const errorElement = document.getElementById("error-new-password");
+      errorElement.textContent = errors.newPassword;
+      errorElement.classList.add("show-icon");
+    }
+
+    if (errors.confirmNewPassword) {
+      const errorElement = document.getElementById(
+        "error-confirm-new-password"
+      );
+      errorElement.textContent = errors.confirmNewPassword;
+      errorElement.classList.add("show-icon");
+    }
+
     return; // Stop execution if there are validation errors
   }
 
@@ -302,8 +323,7 @@ function validateField(fieldId) {
         !/[0-9]/.test(value) ||
         !/[!@#$%^&*(),.?":{}|<>]/.test(value)
       ) {
-        errors.password =
-          "პაროლი უნდა შეიცავდეს დიდსა და პატარა ინგლისურ ასოებს, რიცხვსა და სპეციალურ სიმბოლოს";
+        errors.password = "პაროლი უნდა შეიცავდეს დიდსა და პატარა ინგლისურ ასოებს, რიცხვსა და სპეციალურ სიმბოლოს";
       }
       break;
 
@@ -316,6 +336,7 @@ function validateField(fieldId) {
         errors.passwConfirm = "შეყვანილი პაროლები ერთმანეთს არ ემთხვევა";
       }
       break;
+
     case "old-password":
       if (!value) {
         errors["old-password"] = "აუცილებელი ველი";
@@ -331,11 +352,9 @@ function validateField(fieldId) {
         !/[0-9]/.test(value) ||
         !/[!@#$%^&*(),.?":{}|<>]/.test(value)
       ) {
-        errors.email = "ელ. ფოსტა არასწორია";
+        errors["new-password"] = "პაროლი უნდა შეიცავდეს დიდსა და პატარა ინგლისურ ასოებს, რიცხვსა და სპეციალურ სიმბოლოს";
       } else {
-        const oldPassword = document
-          .getElementById("old-password")
-          .value.trim();
+        const oldPassword = document.getElementById("old-password").value.trim();
         if (value === oldPassword) {
           errors["new-password"] = "ახალი და ძველი პაროლები ერთმანეთს ემთხვევა";
         }
@@ -346,13 +365,12 @@ function validateField(fieldId) {
       if (!value) {
         errors["confirm-new-password"] = "აუცილებელი ველი";
       } else {
-        const newPassword = document
-          .getElementById("new-password")
-          .value.trim();
+        const newPassword = document.getElementById("new-password").value.trim();
         if (newPassword !== value) {
           errors["confirm-new-password"] = "პაროლები ერთმანეთს არ ემთხვევა";
         }
       }
+      break;
 
     case "loginIdentifier":
       if (!value) {
@@ -380,6 +398,7 @@ function validateField(fieldId) {
   }
   return true; // Default return true if no error elements were found
 }
+
 
 // Toggle password visibility
 function togglePasswordVisibility(passwordId, iconId) {
