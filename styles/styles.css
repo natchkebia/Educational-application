@@ -1901,7 +1901,6 @@ input:-webkit-autofill+.input-box-label {
   display: flex;
   justify-content: center;
   gap: 10px;
-  max-width: 300px;
   width: 100%;
   margin: 0 auto;
   margin-top: 32px;
@@ -4293,16 +4292,18 @@ input:-webkit-autofill {
 .search-result #courses__header {
   position: static;
 }
-.search-result .search__courses.new-class #searched-list{
+
+.search-result .search__courses.new-class #searched-list {
   display: none;
 
 }
 
 
-.search-result .course__sort{
+.search-result .course__sort {
   position: relative;
 }
-.search-result .courses__header--content{
+
+.search-result .courses__header--content {
   max-width: unset;
   width: 161px;
 }

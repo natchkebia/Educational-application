@@ -1074,5 +1074,19 @@
     width: 106%;
     margin: 0 -16px;
   }
-  
+
+  .pagination button,
+  .page-number,
+  .total-pages {
+    width: 35px;
+    height: 35px;
+  }
+
+  .pagination {
+    max-width: 300px;
+  }
+
+  .pagination {
+    justify-content: center;
+  }
 }
